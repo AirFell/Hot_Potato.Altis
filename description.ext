@@ -27,7 +27,7 @@ author = "Airfell and Sanguine";
 onLoadMission = "Fear the Potato";
 onLoadMissionTime = 1;
 OnLoadIntroTime = 1;
-//LoadScreen = "images\AAWLogov3.paa";
+LoadScreen = "images\HotPotato.paa";
 briefing = 0;
 
 disableChannels[] = {0,2};
