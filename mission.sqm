@@ -6,13 +6,21 @@ class Mission
 		"a3_map_altis",
 		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
-		"A3_Structures_F_EPC_Items_Electronics"
+		"A3_Structures_F_EPC_Items_Electronics",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Soft_F_Gamma_Offroad",
+		"a3_soft_f_offroad_01",
+		"A3_Structures_F_Mil_BagBunker"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
 		"A3_Structures_F_EPC_Items_Electronics",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Soft_F_Gamma_Offroad",
+		"a3_soft_f_offroad_01",
+		"A3_Structures_F_Mil_BagBunker",
 		"a3_map_altis"
 	};
 	randomSeed=2922631;
@@ -28,14 +36,14 @@ class Mission
 		year=2035;
 		month=6;
 		day=24;
-		hour=2;
-		minute=55;
+		hour=19;
+		minute=20;
 		startFogDecay=0.013;
 		forecastFogDecay=0.013;
 	};
 	class Groups
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			side="WEST";
@@ -44,8 +52,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={15046.001,17.974483,16593.363};
-					azimut=-122.18336;
+					position[]={15008.775,17.969999,16578.461};
+					azimut=-303.086;
 					id=0;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -55,17 +63,124 @@ class Mission
 				};
 			};
 		};
+		class Item1
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={15004.205,17.974392,16585.49};
+					azimut=-298.20279;
+					id=1;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=1;
+		items=6;
 		class Item0
 		{
-			position[]={15026.598,17.969999,16592.984};
-			id=1;
+			position[]={15020.476,17.969999,16587.525};
+			id=2;
 			side="EMPTY";
 			vehicle="Land_Device_assembled_F";
 			skill=0.60000002;
+			text="The_Bomb";
+		};
+		class Item1
+		{
+			position[]={14979.923,17.97323,16571.541};
+			id=3;
+			side="EMPTY";
+			vehicle="Flag_FD_Blue_F";
+			skill=0.60000002;
+		};
+		class Item2
+		{
+			position[]={15050.381,17.968945,16566.709};
+			id=4;
+			side="EMPTY";
+			vehicle="Flag_FD_Green_F";
+			skill=0.60000002;
+		};
+		class Item3
+		{
+			position[]={15025.443,17.955704,16624.734};
+			id=5;
+			side="EMPTY";
+			vehicle="Flag_FD_Red_F";
+			skill=0.60000002;
+		};
+		class Item4
+		{
+			position[]={15000.632,17.98172,16591.922};
+			azimut=102.41048;
+			id=6;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+		};
+		class Item5
+		{
+			position[]={15002.761,17.976679,16599.732};
+			azimut=-58.064377;
+			id=7;
+			side="EMPTY";
+			vehicle="Land_BagBunker_Tower_F";
+			skill=0.60000002;
+		};
+	};
+	class Markers
+	{
+		items=6;
+		class Item0
+		{
+			position[]={14974.257,17.966763,16569.928};
+			name="respawn_west1";
+			type="Empty";
+			angle=81.968399;
+		};
+		class Item1
+		{
+			position[]={15024.884,17.913189,16630.195};
+			name="respawn_east1";
+			type="Empty";
+			angle=171.23488;
+		};
+		class Item2
+		{
+			position[]={15054.665,17.951315,16562.15};
+			name="respawn_guerrila1";
+			type="Empty";
+			angle=-45.226768;
+		};
+		class Item3
+		{
+			position[]={14979.884,17.973179,16571.586};
+			name="west_base";
+			type="mil_objective";
+			colorName="ColorWEST";
+		};
+		class Item4
+		{
+			position[]={15025.459,17.955786,16624.83};
+			name="east_base";
+			type="mil_objective";
+			colorName="ColorEAST";
+		};
+		class Item5
+		{
+			position[]={15050.364,17.969048,16566.785};
+			name="guerrila_base";
+			type="mil_objective";
+			colorName="ColorGUER";
 		};
 	};
 };

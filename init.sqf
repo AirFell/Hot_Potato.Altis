@@ -23,6 +23,7 @@ execVM "R3F_LOG\init.sqf";
 
 	_nul = []execVM 'client\player_markers.sqf';
 	_nul = []execVM "client\taginit.sqf";
+	_nul = []execVM "client\Arm_Bomb.sqf";
 //	_nul = []execVM "onPlayerKilled.sqf";
 	
 //	playerCredits = 0;

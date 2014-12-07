@@ -1,0 +1,9 @@
+Where to start?
+Bomb functionality.
+
+
+list of things to do:
+Mapmarker for "The_Bomb" that tracks its current position and state(armed or unarmed)
+Delete marker after bomb is blown.
+Remake marker on respawn.
+Add animation and delay to arming bomb.
