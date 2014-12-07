@@ -14,7 +14,7 @@ execVM "R3F_LOG\init.sqf";
 	diag_log "The server is Running!";
 	call compile preprocessFile"server\SHK_pos\shk_pos_init.sqf";
 //	_nul = []execVM "server\randomMarkerGen.sqf";
-//	_nul = []execVM "server\GlobalVars.sqf";
+	_nul = []execVM "server\GlobalVars.sqf";
 
 	diag_log "And the server got through all its init files!";
 //	_nul = []execVM "server\missions\mission_init.sqf";
@@ -63,3 +63,11 @@ execVM "R3F_LOG\init.sqf";
 	
 	diag_log "The client got through all its init files!";
 //};
+
+player addAction [
+	"Animation Viwer",
+	{
+		[] call BIS_fnc_animViewer
+	},
+	nil, 1, True, True, "", ""
+];
