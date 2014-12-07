@@ -7,7 +7,7 @@ player addaction [
 			playSound3D ["A3\Sounds_F\sfx\siren.wss", The_Bomb, false, getPos The_Bomb, 5, 1, 500];
 			sleep 2;
 		};
-		_objectsList = nearestObjects [getPos The_Bomb, ["Static","Thing","Strategic","Object"], 75] - The_Bomb;
+		_objectsList = nearestObjects [getPos The_Bomb, ["Static","Thing","Strategic","Object"], 75] - [The_Bomb];
 		{
 			_x setDamage 1;
 			deleteVehicle _x;
