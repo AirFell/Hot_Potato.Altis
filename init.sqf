@@ -8,7 +8,9 @@ enableSaving [false, false];
 execVM "R3F_LOG\init.sqf";
 
 //if (isDedicated) then {
-
+///////////////////////////////////////////////////////////////
+///////////////////////Server-side stuff///////////////////////
+///////////////////////////////////////////////////////////////
 	diag_log "The server is Running!";
 	call compile preprocessFile"server\SHK_pos\shk_pos_init.sqf";
 //	_nul = []execVM "server\randomMarkerGen.sqf";
@@ -18,8 +20,31 @@ execVM "R3F_LOG\init.sqf";
 //	_nul = []execVM "server\missions\mission_init.sqf";
 //} else {
 
+///////////////////////////////////////////////////////////////
+///////////////////////Client-side stuff///////////////////////
+///////////////////////////////////////////////////////////////
 	diag_log "The client is running!";
+
+//a side switch to make an array to choose from based on playerside.
+	_nul = switch (side player) do {
+		case west: {
+			diag_log format ["%1 is on the %2 team.", player, side player];
+			BaseArray = [east_base, guer_base];
+		};
+		
+		case east: {
+			diag_log format ["%1 is on the %2 team.", player, side player];
+			BaseArray = [west_base, guer_base];
+		};
+	
+		case resistance: {
+			diag_log format ["%1 is on the %2 team.", player, side player];
+			BaseArray = [west_base, east_base];
+		};
+	};
+	
 //Client-side stuff
+	diag_log "The client is running!";
 
 	_nul = []execVM 'client\player_markers.sqf';
 	_nul = []execVM "client\taginit.sqf";
@@ -38,6 +63,3 @@ execVM "R3F_LOG\init.sqf";
 	
 	diag_log "The client got through all its init files!";
 //};
-
-
-//vehicle and uniform test moved to client\sideswitch

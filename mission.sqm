@@ -99,24 +99,27 @@ class Mission
 			position[]={14979.923,17.97323,16571.541};
 			id=3;
 			side="EMPTY";
-			vehicle="Flag_FD_Blue_F";
+			vehicle="Flag_Blue_F";
 			skill=0.60000002;
+			text="west_base";
 		};
 		class Item2
 		{
 			position[]={15050.381,17.968945,16566.709};
 			id=4;
 			side="EMPTY";
-			vehicle="Flag_FD_Green_F";
+			vehicle="Flag_Green_F";
 			skill=0.60000002;
+			text="guer_base";
 		};
 		class Item3
 		{
 			position[]={15025.443,17.955704,16624.734};
 			id=5;
 			side="EMPTY";
-			vehicle="Flag_FD_Red_F";
+			vehicle="Flag_Red_F";
 			skill=0.60000002;
+			text="east_base";
 		};
 		class Item4
 		{
@@ -139,7 +142,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=6;
+		items=3;
 		class Item0
 		{
 			position[]={14974.257,17.966763,16569.928};
@@ -160,27 +163,6 @@ class Mission
 			name="respawn_guerrila1";
 			type="Empty";
 			angle=-45.226768;
-		};
-		class Item3
-		{
-			position[]={14979.884,17.973179,16571.586};
-			name="west_base";
-			type="mil_objective";
-			colorName="ColorWEST";
-		};
-		class Item4
-		{
-			position[]={15025.459,17.955786,16624.83};
-			name="east_base";
-			type="mil_objective";
-			colorName="ColorEAST";
-		};
-		class Item5
-		{
-			position[]={15050.364,17.969048,16566.785};
-			name="guerrila_base";
-			type="mil_objective";
-			colorName="ColorGUER";
 		};
 	};
 };
