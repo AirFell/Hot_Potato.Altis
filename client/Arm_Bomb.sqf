@@ -36,8 +36,7 @@ player addaction [
 				2 cutText ["", "PLAIN DOWN", 1];
 			};
 		}; 
-		if(player distance The_Bomb > 5) exitWith { // If the player dies, revert state.
-				hint "you gotta get closer to do that silly";
+
 		//how long do we want until the "bomb" goes off?
 		for [{_lc = 0},{_lc < 10},{_lc = _lc +1}] do{
 			playSound3D ["A3\Sounds_F\sfx\siren.wss", The_Bomb, false, getPos The_Bomb, 5, 1, 500];
