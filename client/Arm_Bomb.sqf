@@ -2,6 +2,42 @@ player addaction [
 	"Arm Bomb",
 	{
 		diag_log "Siren Started.";
+
+		_stringEscapePercent = "%";	
+		_totalDuration = 30; //duration of arming sequence
+		_lockDuration = _totalDuration;
+		_iteration = 0;
+
+		
+		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
+		for "_iteration" from 1 to _lockDuration do {
+    
+			if (!(alive player)) exitWith {// If the player dies, revert state.
+				hint "You died while arming the bomb";
+			};	
+					
+			if(player distance The_Bomb > 5) exitWith { // If the player dies, revert state.
+				hint "you gotta get closer to do that silly";
+
+			};                  
+                                                        	    
+			if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the placement.
+				player switchMove "AinvPknlMstpSlayWrflDnon_medic";
+			};
+    	    
+			_lockDuration = _lockDuration - 1;
+			_iterationPercentage = floor (_iteration / _totalDuration * 100);
+					    
+			2 cutText [format["Arming Bomb %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
+			sleep 1;
+					    
+			if (_iteration >= _totalDuration) exitWith { // Sleep a little extra to show that place has completed.
+				sleep 1;
+				2 cutText ["", "PLAIN DOWN", 1];
+			};
+		}; 
+		if(player distance The_Bomb > 5) exitWith { // If the player dies, revert state.
+				hint "you gotta get closer to do that silly";
 		//how long do we want until the "bomb" goes off?
 		for [{_lc = 0},{_lc < 10},{_lc = _lc +1}] do{
 			playSound3D ["A3\Sounds_F\sfx\siren.wss", The_Bomb, false, getPos The_Bomb, 5, 1, 500];
