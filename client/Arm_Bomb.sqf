@@ -4,7 +4,7 @@ player addaction [
 		diag_log "Siren Started.";
 
 		_stringEscapePercent = "%";	
-		_totalDuration = 30; //duration of arming sequence
+		_totalDuration = 10; //duration of arming sequence
 		_lockDuration = _totalDuration;
 		_iteration = 0;
 
@@ -49,39 +49,37 @@ player addaction [
 			deleteVehicle _x;
 		}forEach _objectsList;
 		_bomb1 = "M_Mo_82mm_AT_LG" createVehicle [(getPos The_Bomb select 0),( getPos The_Bomb select 1), 0];
-		sleep 2;
+		sleep 3;
 		_bomb2 = "HelicopterExploBig" createVehicle [(getPos The_Bomb select 0),( getPos The_Bomb select 1), 0];
 		sleep 0.5;
 		_number = random 15;
-		_number2 = random 3;
-		_bomb3 = "R_60mm_HE" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1) + _number, 0];
+		_bomb3 = "R_60mm_HE" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1), 0];
 		sleep 0.25;
-		_number = random 15;
-		_number2 = random 3;
-		_bomb4 = "Bo_GBU12_LGB_MI10" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1) - _number, 0];
+		_number = random 20;
+		_number2 = random 2;
+		_bomb4 = "Bo_GBU12_LGB_MI10" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1), 0];
 		sleep _number2;
 		_number = random 15;
-		_number2 = random 3;
-		_bomb5 = "M_Mo_82mm_AT_LG" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1) + _number, 0];
+		_number2 = random 2;
+		_bomb5 = "M_Mo_82mm_AT_LG" createVehicle [(getPos The_Bomb select 0),(getPos The_Bomb select 1) + _number, 0];
 		sleep _number2;
-		_number = random 15;
-		_number2 = random 3;
-		_bomb6 = "Bo_Mk82" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1) - _number, 0];
+		_number = random 20;
+		_number2 = random 2;
+		_bomb6 = "Bo_Mk82" createVehicle [(getPos The_Bomb select 0),(getPos The_Bomb select 1) - _number, 0];
 		sleep 0.1;
 		_number = random 15;
-		_number2 = random 3;
-		_bomb7 = "R_60mm_HE" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1) + _number, 0];
+		_number2 = random 2;
+		_bomb7 = "R_60mm_HE" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1) + _number, 0];
 		sleep 0.25;
-		_number = random 15;
-		_number2 = random 3;
-		_bomb8 = "Bo_GBU12_LGB_MI10" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1) - _number, 0];
+		_number = random 20;
+		_number2 = random 2;
+		_bomb8 = "Bo_GBU12_LGB_MI10" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1) - _number, 0];
 		sleep _number2;
 		_number = random 15;
-		_number2 = random 3;
+		_number2 = random 10;
 		_bomb9 = "M_Mo_82mm_AT_LG" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1) + _number, 0];
 		sleep _number2;
-		_number = random 15;
-		_number2 = random 3;
+		_number = random 20;
 		_bomb10 = "Bo_Mk82" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1) - _number, 0];
 		deleteVehicle The_Bomb;
 		sleep 30;
