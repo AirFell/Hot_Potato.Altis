@@ -16,7 +16,7 @@ player addaction [
 				hint "You died while arming the bomb";
 			};	
 					
-			if(player distance The_Bomb > 5) exitWith { // If the player dies, revert state.
+			if(player distance The_Bomb > 3) exitWith { // If the player dies, revert state.
 				hint "you gotta get closer to do that silly";
 
 			};                  
@@ -47,27 +47,41 @@ player addaction [
 			_x setDamage 1;
 			deleteVehicle _x;
 		}forEach _objectsList;
-		_number = random 15;
-		_number2 = random 3;
 		_bomb1 = "M_Mo_82mm_AT_LG" createVehicle [(getPos The_Bomb select 0),( getPos The_Bomb select 1), 0];
 		sleep 2;
 		_bomb2 = "HelicopterExploBig" createVehicle [(getPos The_Bomb select 0),( getPos The_Bomb select 1), 0];
 		sleep 0.5;
+		_number = random 15;
+		_number2 = random 3;
 		_bomb3 = "R_60mm_HE" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1) + _number, 0];
 		sleep 0.25;
-		_bomb4 = "Bo_GBU12_LGB_MI10" createVehicle [(getPos The_Bomb select 0) + _number * _number,(getPos The_Bomb select 1) - _number * _number, 0];
+		_number = random 15;
+		_number2 = random 3;
+		_bomb4 = "Bo_GBU12_LGB_MI10" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1) - _number, 0];
 		sleep _number2;
-		_bomb5 = "M_Mo_82mm_AT_LG" createVehicle [(getPos The_Bomb select 0) - _number * _number,(getPos The_Bomb select 1) + _number * _number, 0];
+		_number = random 15;
+		_number2 = random 3;
+		_bomb5 = "M_Mo_82mm_AT_LG" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1) + _number, 0];
 		sleep _number2;
-		_bomb6 = "Bo_Mk82" createVehicle [(getPos The_Bomb select 0) + _number * _number,(getPos The_Bomb select 1) - _number * _number, 0];
+		_number = random 15;
+		_number2 = random 3;
+		_bomb6 = "Bo_Mk82" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1) - _number, 0];
 		sleep 0.1;
+		_number = random 15;
+		_number2 = random 3;
 		_bomb7 = "R_60mm_HE" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1) + _number, 0];
 		sleep 0.25;
-		_bomb8 = "Bo_GBU12_LGB_MI10" createVehicle [(getPos The_Bomb select 0) + _number * _number,(getPos The_Bomb select 1) - _number * _number, 0];
+		_number = random 15;
+		_number2 = random 3;
+		_bomb8 = "Bo_GBU12_LGB_MI10" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1) - _number, 0];
 		sleep _number2;
-		_bomb9 = "M_Mo_82mm_AT_LG" createVehicle [(getPos The_Bomb select 0) - _number * _number,(getPos The_Bomb select 1) + _number * _number, 0];
+		_number = random 15;
+		_number2 = random 3;
+		_bomb9 = "M_Mo_82mm_AT_LG" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1) + _number, 0];
 		sleep _number2;
-		_bomb10 = "Bo_Mk82" createVehicle [(getPos The_Bomb select 0) + _number * _number,(getPos The_Bomb select 1) - _number * _number, 0];
+		_number = random 15;
+		_number2 = random 3;
+		_bomb10 = "Bo_Mk82" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1) - _number, 0];
 		deleteVehicle The_Bomb;
 		sleep 30;
 		
