@@ -1,3 +1,6 @@
+#include "client\defines.hpp"
+#include "R3F_LOG\desc_include.h"
+
 respawn = 3;
 respawnDelay = 1;
 respawnDialog = 3;
@@ -39,10 +42,3 @@ corpseRemovalMaxTime = 600;
 wreckLimit = 15; //adjust this if we have lag issues.
 wreckRemovalMinTime = 300;
 wreckRemovalMaxTime = 600;
-
-/*
-class RscTitles
-{
- 	#include "client\hud\dialog\AAWhud.hpp"
-};
-*/

@@ -10,7 +10,18 @@ class Mission
 		"A3_Structures_F_Mil_Flags",
 		"A3_Soft_F_Gamma_Offroad",
 		"a3_soft_f_offroad_01",
-		"A3_Structures_F_Mil_BagBunker"
+		"A3_Structures_F_Mil_BagBunker",
+		"A3_Air_F_Heli_Heli_Transport_03",
+		"A3_Air_F_Heli_Heli_Transport_04",
+		"A3_Air_F_Heli_Light_02",
+		"A3_Air_F_Beta_Heli_Transport_01",
+		"A3_Air_F_EPB_Heli_Light_03",
+		"A3_Air_F_Heli_Light_01",
+		"A3_Soft_F_Gamma_HEMTT",
+		"A3_Soft_F_HEMTT",
+		"A3_Soft_F_EPC_Truck_03",
+		"A3_Soft_F_TruckHeavy",
+		"A3_Soft_F_Truck"
 	};
 	addOnsAuto[]=
 	{
@@ -21,6 +32,17 @@ class Mission
 		"A3_Soft_F_Gamma_Offroad",
 		"a3_soft_f_offroad_01",
 		"A3_Structures_F_Mil_BagBunker",
+		"A3_Air_F_Heli_Heli_Transport_03",
+		"A3_Air_F_Heli_Heli_Transport_04",
+		"A3_Air_F_Heli_Light_02",
+		"A3_Air_F_Beta_Heli_Transport_01",
+		"A3_Air_F_EPB_Heli_Light_03",
+		"A3_Air_F_Heli_Light_01",
+		"A3_Soft_F_Gamma_HEMTT",
+		"A3_Soft_F_HEMTT",
+		"A3_Soft_F_EPC_Truck_03",
+		"A3_Soft_F_TruckHeavy",
+		"A3_Soft_F_Truck",
 		"a3_map_altis"
 	};
 	randomSeed=2922631;
@@ -84,7 +106,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=6;
+		items=18;
 		class Item0
 		{
 			position[]={15020.476,17.969999,16587.525};
@@ -139,10 +161,118 @@ class Mission
 			vehicle="Land_BagBunker_Tower_F";
 			skill=0.60000002;
 		};
+		class Item6
+		{
+			position[]={15023.813,17.79686,16677.482};
+			azimut=-195.18382;
+			id=8;
+			side="EMPTY";
+			vehicle="B_Heli_Transport_03_F";
+			skill=0.60000002;
+		};
+		class Item7
+		{
+			position[]={15006.689,17.57233,16657.688};
+			azimut=-190.5154;
+			id=9;
+			side="EMPTY";
+			vehicle="O_Heli_Transport_04_box_F";
+			skill=0.60000002;
+		};
+		class Item8
+		{
+			position[]={14987.163,17.832262,16642.053};
+			azimut=170.43965;
+			id=10;
+			side="EMPTY";
+			vehicle="O_Heli_Light_02_F";
+			skill=0.60000002;
+		};
+		class Item9
+		{
+			position[]={14973.496,17.9,16627.4};
+			azimut=170.12862;
+			id=11;
+			side="EMPTY";
+			vehicle="B_Heli_Transport_01_F";
+			skill=0.60000002;
+		};
+		class Item10
+		{
+			position[]={14956.573,17.816259,16613.723};
+			azimut=172.38957;
+			id=12;
+			side="EMPTY";
+			vehicle="I_Heli_light_03_unarmed_F";
+			skill=0.60000002;
+		};
+		class Item11
+		{
+			position[]={14943.881,17.904863,16601.352};
+			azimut=174.9655;
+			id=13;
+			side="EMPTY";
+			vehicle="B_Heli_Light_01_F";
+			skill=0.60000002;
+		};
+		class Item12
+		{
+			position[]={15040.209,17.91,16519.295};
+			azimut=-78.798561;
+			id=14;
+			side="EMPTY";
+			vehicle="B_Truck_01_mover_F";
+			skill=0.60000002;
+		};
+		class Item13
+		{
+			position[]={15048.671,17.91,16528.41};
+			azimut=-80.950485;
+			id=15;
+			side="EMPTY";
+			vehicle="B_Truck_01_transport_F";
+			skill=0.60000002;
+		};
+		class Item14
+		{
+			position[]={15058.434,17.91,16539.48};
+			azimut=-84.855911;
+			id=16;
+			side="EMPTY";
+			vehicle="O_Truck_03_transport_F";
+			skill=0.60000002;
+		};
+		class Item15
+		{
+			position[]={15070.476,17.91,16551.857};
+			azimut=-76.014725;
+			id=17;
+			side="EMPTY";
+			vehicle="I_Truck_02_transport_F";
+			skill=0.60000002;
+		};
+		class Item16
+		{
+			position[]={15080.237,17.91,16561.951};
+			azimut=-79.70163;
+			id=18;
+			side="EMPTY";
+			vehicle="O_Truck_02_transport_F";
+			skill=0.60000002;
+		};
+		class Item17
+		{
+			position[]={15033.377,17.91,16510.178};
+			azimut=-80.585136;
+			id=19;
+			side="EMPTY";
+			vehicle="B_G_Van_01_transport_F";
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			position[]={14974.257,17.966763,16569.928};
@@ -163,6 +293,12 @@ class Mission
 			name="respawn_guerrila1";
 			type="Empty";
 			angle=-45.226768;
+		};
+		class Item3
+		{
+			position[]={15029.471,17.969999,16590.281};
+			name="respawn_bomb";
+			type="Empty";
 		};
 	};
 };
