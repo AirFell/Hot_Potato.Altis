@@ -54,6 +54,9 @@ player addaction [
 				if (_armingComplete == 1) then {
 					Bomb_Armed_Tracker = 1;
 					publicVariable "Bomb_Armed_Tracker";
+					
+					The_Bomb setVariable ["R3F_LOG_disabled", true, true];
+					
 					hint "Bomb armed!";
 				} else {
 					sleep 2;
