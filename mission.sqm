@@ -74,7 +74,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={15008.775,17.969999,16578.461};
+					position[]={15015.763,17.959471,16621.16};
 					azimut=-303.086;
 					id=0;
 					side="WEST";
@@ -109,7 +109,7 @@ class Mission
 		items=18;
 		class Item0
 		{
-			position[]={15020.476,17.969999,16587.525};
+			position[]={15021.974,17.954769,16623.982};
 			id=2;
 			side="EMPTY";
 			vehicle="Land_Device_assembled_F";
@@ -118,7 +118,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={14979.923,17.97323,16571.541};
+			position[]={14984.414,17.979219,16569.545};
 			id=3;
 			side="EMPTY";
 			vehicle="Flag_Blue_F";
@@ -272,10 +272,10 @@ class Mission
 	};
 	class Markers
 	{
-		items=4;
+		items=7;
 		class Item0
 		{
-			position[]={14974.257,17.966763,16569.928};
+			position[]={15015.683,17.953426,16625.611};
 			name="respawn_west1";
 			type="Empty";
 			angle=81.968399;
@@ -296,8 +296,26 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={15029.471,17.969999,16590.281};
+			position[]={15047.94,17.969999,16569.311};
 			name="respawn_bomb";
+			type="Empty";
+		};
+		class Item4
+		{
+			position[]={14976.238,17.968319,16569.324};
+			name="west_base_respawn";
+			type="Empty";
+		};
+		class Item5
+		{
+			position[]={15037.129,17.995684,16630};
+			name="east_base_respawn";
+			type="Empty";
+		};
+		class Item6
+		{
+			position[]={15058.841,17.958307,16572.57};
+			name="guer_base_respawn";
 			type="Empty";
 		};
 	};

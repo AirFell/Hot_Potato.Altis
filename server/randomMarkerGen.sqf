@@ -7,9 +7,30 @@ Note::: respawn markers _blank-3 are reserved for bases/barracks ONLY.
 Server/Client build may vary from this. This script should be somewhere in the realm of ifsever, then client should find variable
 via global/public or a direct call. Not sure exactly how it works, need to read stuff.
 
-Next TODO: Make arrays add each marker to them to be called from the respawn(Interem spawnSystem\onTrig2.sqf) script. Then: Write respawn script, build dialog.
-*/
 
+*/
+//////////////////////////////////////////////////////
+//////////////Bomb Respawn Function/Loop//////////////
+//////////////////////////////////////////////////////
+_markerLoopCounterBomb = 4;
+bombRespawnArray = [];
+
+fnc_createMarkerBomb = {
+  private ["_pos","_m"];
+  _pos = _this select 0;
+  _m = createMarker [format["marker_bomb%1", _markerLoopCounterBomb],_pos];
+  _m setmarkerColor (_this select 1);
+  _m setMarkerShape "Icon";
+  _m setMarkerType "empty";
+  format["%1", _m] setMarkerText format["bomb%1", _markerLoopCounterBomb];
+};
+
+for "_i" from 0 to 50 do {
+	_p = ["mrkBlue",0,[], 100] call SHK_pos;
+	[_p,"ColorBlack"] call fnc_createMarkerBomb;
+	bombRespawnArray = bombRespawnArray + [format["marker_bomb%1", _markerLoopCounterBomb]];
+	_markerLoopCounterBomb = _markerLoopCounterBomb + 1;
+};
 
 //////////////////////////////////////////////////////
 //////////////West Respawn Function/Loop//////////////
