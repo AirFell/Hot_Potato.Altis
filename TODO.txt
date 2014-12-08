@@ -12,3 +12,15 @@ base radar
 
 Polish things for later:
 create dialog for bomb interaction
+
+
+**Should we replace the bomb addaction with a GUI arm/disarm function?
+This will make it easier to set counters and handle who can and can't manage it.
+Will look more professional as well.
+Arm/Disarm Dialog:
+top center has a bomb status and timer.
+Status: Locked/Stable/Armed X digit randomizer in top left that brings up a random
+code when you open the dialog. Below the code display is AF's keypad script in the
+bottom left with a display for entering code. Right side has buttons
+(in order top to bottom) arm bomb, disarm bomb, cancel(closes the display)
+PLayers must match the code on the top with the keypad, then hit the arm or disarm button.
