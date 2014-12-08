@@ -3,10 +3,10 @@ player addaction [
 		diag_log "Arming script started.";
 		_distanceCheck = 0;
 		{
-			if ((The_Bomb distance _x) < 10) then {
+			if ((The_Bomb distance _x) < 20) then {
 				_distanceCheck = _distanceCheck + 1;
 			};
-		} forEach BaseArray;
+		} forEach EnemyBaseArray;
 			
 		if (_distanceCheck == 1) then {
 			if (vehicle player == player) then {
@@ -69,5 +69,5 @@ player addaction [
 			hint "You can't arm the bomb here!";
 		};
 	},
-	nil, 1, True, True, "", "Bomb_Armed_Tracker == 0 && (player distance The_Bomb) < 3"
+	nil, 1, True, True, "", "Bomb_Armed_Tracker == 0 && (player distance The_Bomb) < 3 && ((player distance EnemyBase1) < 30 || (player distance EnemyBase2) < 30)"
 ];

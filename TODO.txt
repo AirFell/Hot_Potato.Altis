@@ -1,9 +1,15 @@
-Where to start?
-Bomb functionality.
+remove R3F during armed state
+"base" respawn script-
+	side switch of off "this select 1" in init script.
+remove bomb from R3F vehicle inventories
+attach/unattach to trucks
+bomb map marker-simple map marker update on a whiletrue-do loop. Sleep 30 seconds.
+	on bomb detonate/delete, delete marker as well. Re-Create marker on respawn.
+add bomb respawn marker array(SHK pos)
+expand bomb damage radius for vehicles(trucks/tanks/helis-just disable tail rotor :D )
+randomize base and bomb spawns
+map markers for bases visible to all, respawn bases only visible to teams.
+base radar
 
-
-list of things to do:
-Mapmarker for "The_Bomb" that tracks its current position and state(armed or unarmed)
-Delete marker after bomb is blown.
-Remake marker on respawn.
-Add animation and delay to arming bomb.
+Polish things for later:
+create dialog for bomb interaction

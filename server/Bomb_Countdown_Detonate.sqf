@@ -4,7 +4,7 @@ if (isServer) then {
         if (Bomb_Armed_Tracker == 1) then {
 			diag_log "Siren Started.";
 //how long do we want until the "bomb" goes off?
-			for [{_lc = 0},{_lc < 60},{_lc = _lc +1}] do {
+			for [{_lc = 0},{_lc < 30},{_lc = _lc +1}] do {
 				if (Bomb_Armed_Tracker == 1) then {
 					playSound3D ["A3\Sounds_F\sfx\siren.wss", The_Bomb, false, getPos The_Bomb, 5, 1, 500];
 					sleep 2;

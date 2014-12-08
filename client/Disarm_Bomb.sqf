@@ -58,5 +58,5 @@ player addaction [
 				hint "You can't disarm the bomb from inside a vehicle.";
 			};
 	},
-	nil, 1, True, True, "", "Bomb_Armed_Tracker == 1 && (player distance The_Bomb) < 3"
+	nil, 1, True, True, "", "Bomb_Armed_Tracker == 1 && (player distance The_Bomb) < 3 && (player distance FriendlyBase) < 30"
 ];

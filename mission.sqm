@@ -109,7 +109,7 @@ class Mission
 		items=18;
 		class Item0
 		{
-			position[]={15021.974,17.954769,16623.982};
+			position[]={15051.243,18.01,16638.15};
 			id=2;
 			side="EMPTY";
 			vehicle="Land_Device_assembled_F";
@@ -275,7 +275,7 @@ class Mission
 		items=7;
 		class Item0
 		{
-			position[]={15015.683,17.953426,16625.611};
+			position[]={15058.168,18.01,16641.986};
 			name="respawn_west1";
 			type="Empty";
 			angle=81.968399;
