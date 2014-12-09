@@ -5,6 +5,9 @@ publicVariable "Error_pos";
 ///////Bomb Tracker PV's////////////
 ////////////////////////////////////
 
+Base_Destroyed_Tracker = 0;
+publicVariable "Base_Destroyed_Tracker";
+
 Bomb_Destroyed_Tracker = 0;
 publicVariable "Bomb_Destroyed_Tracker";
 

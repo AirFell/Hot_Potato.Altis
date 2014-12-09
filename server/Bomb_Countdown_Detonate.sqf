@@ -65,7 +65,9 @@ diag_log "Bomb_Countdown_Detonate script started.";
 						
 				diag_log "Objects damaged.";
 				
-						
+				Base_Destroyed_Tracker = 1;
+				publicVariable "Base_Destroyed_Tracker";
+				
 				Bomb_Destroyed_Tracker = 1;
 				publicVariable "Bomb_Destroyed_Tracker";
 						

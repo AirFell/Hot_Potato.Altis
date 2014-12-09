@@ -3,12 +3,13 @@ File: vehRespawn.sqf
 Author: Iceman77
 Modified: AirFell
 ---------------------------------------------------------------------------------------------------- */
+diag_log "BombRespawn script started.";
 
 _veh = The_Bomb;
 _deadDelay = 30;
 _vehtype = typeOf _veh; 
 
-if (isServer) then {
+//if (isDedicated) then {
     While {True} Do {
         sleep 5;
            if (Bomb_Destroyed_Tracker == 1) then {
@@ -25,4 +26,6 @@ if (isServer) then {
 			diag_log "bomb respawned.";
         };
     };
-};
+//};
+
+diag_log "BombRespawn script Ended. ***THIS IS BAD***";
