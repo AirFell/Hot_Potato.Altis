@@ -1,9 +1,10 @@
-base respawn- build and add loss scoring system.
+base markers: bombbase, respawn bases1,2 and 3.
+	-map markers for bases visible to all, respawn bases only visible to teams.
+bomb marker
 attach/unattach to trucks
-bomb map marker-simple map marker update on a whiletrue-do loop. Sleep 30 seconds.
-	on bomb detonate/delete, delete marker as well. Re-Create marker on respawn.
 expand bomb damage radius for vehicles(trucks/tanks/helis-just disable tail rotor :D )
 add bomb respawn marker array(SHK pos)
+add base respawn marker array(SHK pos)
 money system-
 	points for arming bomb
 	points for disarming bomb
@@ -12,8 +13,6 @@ money system-
 	points for killing enemy players
 	points for destroying enemy vehicles
 
-randomize base and bomb spawns
-map markers for bases visible to all, respawn bases only visible to teams.
 base radar
 
 Polish things for later:

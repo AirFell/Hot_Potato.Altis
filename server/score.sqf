@@ -8,26 +8,39 @@
 				publicVariable "West_Score";
 				diag_log format["West_Score: %1", West_Score];
 			};
-				
 			case east: {
 				East_Score = East_Score + 1;
 				publicVariable "East_Score";
 				diag_log format["East_Score: %1", East_Score];
 			};
-			
 			case resistance: {
 				Guer_Score = Guer_Score + 1;
 				publicVariable "Guer_Score";
 				diag_log format["Guer_Score: %1", Guer_Score];
 			};
 		};
+		switch (Bombed_Team) do {
+			case west: {
+				if (West_Score >= 1) then {
+					West_Score = West_Score - 1;
+					publicVariable "West_Score";
+				};
+			};
+			case east: {
+				if (East_Score >= 1) then {
+					East_Score = East_Score - 1;
+					publicVariable "East_Score";
+				};
+			};
+			case resistance: {
+				if (Guer_Score >= 1) then {
+					Guer_Score = Guer_Score - 1;
+					publicVariable "Guer_Score";
+				};
+			};
+		};
 	};
-
+	diag_log format[":::Score Update::: West: %1, East: %2, Guer: %3", West_score, East_Score, Guer_Score];
 	diag_log "server-score script ended.";
 
 //};
-
-/*
-NOTE: Score-Loss needs to be tracked by base destroyed. Removed some PV's from this script. Pre-Score script still has bombed-team variables
-in it. Leaving there for the time being.
-*/

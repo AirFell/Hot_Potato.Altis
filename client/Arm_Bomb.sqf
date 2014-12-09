@@ -22,7 +22,8 @@ player addaction [
 				diag_log "Arming animation started.";
 				player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 				
-				arming_bomb = arming_bomb + 1;
+				The_Bomb setVariable ["R3F_LOG_disabled", true, true];
+				arming_bomb = 1;
 				
 				while {_lockDuration > 1} do {
 					if (alive player) then {// If the player dies, end loop.
@@ -46,6 +47,9 @@ player addaction [
 							_lockDuration = 0;
 							sleep 1;
 							2 cutText ["", "PLAIN DOWN", 1];
+							
+							The_Bomb setVariable ["R3F_LOG_disabled", false, true];
+							arming_bomb = 0;
 							_armingComplete = 0;
 							hint "You must be closer to the bomb!";
 						};
@@ -53,6 +57,9 @@ player addaction [
 						_lockDuration = 0;
 						sleep 1;
 						2 cutText ["", "PLAIN DOWN", 1];
+						
+						The_Bomb setVariable ["R3F_LOG_disabled", false, true];
+						arming_bomb = 0;
 						_armingComplete = 0;
 						diag_log "Player died while arming the bomb.";
 					};
