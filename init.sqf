@@ -49,12 +49,11 @@ execVM "R3F_LOG\init.sqf";
 	diag_log "The client got through all its init files!";
 //};
 
-/*
+
 player addAction [
-	"Animation Viwer",
+	"Show Score",
 	{
-		[] call BIS_fnc_animViewer
+		hint format["West:%1 East:%2 Guer:%3", West_Score, East_Score, Guer_Score];
 	},
 	nil, 1, True, True, "", ""
 ];
-*/

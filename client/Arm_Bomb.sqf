@@ -58,6 +58,9 @@ player addaction [
 					The_Bomb setVariable ["R3F_LOG_disabled", true, true];
 					
 					hint "Bomb armed!";
+					
+					[]execVM "client\pre_score.sqf"
+					
 				} else {
 					sleep 2;
 					hint "Arming Incomplete.";

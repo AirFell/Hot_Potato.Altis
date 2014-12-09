@@ -48,6 +48,14 @@ player addaction [
 					Bomb_Armed_Tracker = 0;
 					publicVariable "Bomb_Armed_Tracker";
 					
+					Armed_Team = "";
+					publicVariable "Armed_Team";
+					diag_log format["Armed Team = %1", Armed_Team];
+					
+					Bombed_Team = "";
+					publicVariable "Bombed_Team";
+					diag_log format["Armed Team = %1", Bombed_Team];
+					
 					The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 					
 					hint "Bomb Disarmed!";

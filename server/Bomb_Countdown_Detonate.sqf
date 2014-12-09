@@ -1,4 +1,4 @@
-if (isServer) then {
+if (isDedicated) then {
     While {True} Do {
         sleep 5;
         if (Bomb_Armed_Tracker == 1) then {
@@ -62,12 +62,17 @@ if (isServer) then {
 				_distanceCheck = 0;
 						
 				diag_log "Objects damaged.";
+				
 						
 				Bomb_Destroyed_Tracker = 1;
 				publicVariable "Bomb_Destroyed_Tracker";
 						
 				Bomb_Armed_Tracker = 0;
 				publicVariable "Bomb_Armed_Tracker";
+				
+				[]execVm "server\score.sqf";
+				
+				diag_log "Bomb_Countdown_detonate script ended.";
 			};
         };
     };

@@ -16,3 +16,20 @@ publicVariable "Bomb_Armed_Tracker";
 ///////	/////Base Values////////////
 ////////////////////////////////////
 
+West_Score = 0;
+publicVariable "West_Score";
+
+East_Score = 0;
+publicVariable "East_Score";
+
+Guer_Score = 0;
+publicVariable "Guer_Score";
+
+////////////////////////////////////
+////////////pre-score///////////////
+////////////////////////////////////
+Armed_Team = "";
+publicVariable "Armed_Team";
+
+Bombed_Team = "";
+publicVariable "Bombed_Team";
