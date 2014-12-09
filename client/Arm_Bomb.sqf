@@ -1,3 +1,6 @@
+diag_log "arm_bomb script started.";
+arming_bomb = 0;
+
 player addaction [
 	"Arm Bomb",{
 		diag_log "Arming script started.";
@@ -18,6 +21,9 @@ player addaction [
 
 				diag_log "Arming animation started.";
 				player switchMove "AinvPknlMstpSlayWrflDnon_medic";
+				
+				arming_bomb = arming_bomb + 1;
+				
 				while {_lockDuration > 1} do {
 					if (alive player) then {// If the player dies, end loop.
 						if(player distance The_Bomb < 3) then { // If the player moves away, end loop.
@@ -25,7 +31,8 @@ player addaction [
 								player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 							};
 							_iteration = _iteration + 1;
-							_lockDuration = _lockDuration - 1;								_iterationPercentage = floor (_iteration / _totalDuration * 100);
+							_lockDuration = _lockDuration - 1;
+							_iterationPercentage = floor (_iteration / _totalDuration * 100);
 							
 							2 cutText [format["Arming Bomb %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
 							sleep 1;
@@ -54,8 +61,8 @@ player addaction [
 				if (_armingComplete == 1) then {
 					Bomb_Armed_Tracker = 1;
 					publicVariable "Bomb_Armed_Tracker";
-					
 					The_Bomb setVariable ["R3F_LOG_disabled", true, true];
+					arming_bomb = 0;
 					
 					hint "Bomb armed!";
 					
@@ -75,5 +82,5 @@ player addaction [
 			hint "You can't arm the bomb here!";
 		};
 	},
-	nil, 1, True, True, "", "Bomb_Armed_Tracker == 0 && (player distance The_Bomb) < 3 && ((player distance EnemyBase1) < 30 || (player distance EnemyBase2) < 30)"
+	nil, 1, True, True, "", "arming_bomb == 0 && Bomb_Armed_Tracker == 0 && (player distance The_Bomb) < 3 && ((player distance EnemyBase1) < 30 || (player distance EnemyBase2) < 30)"
 ];

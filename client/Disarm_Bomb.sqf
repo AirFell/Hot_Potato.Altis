@@ -1,3 +1,6 @@
+diag_log "disarm_bomb script started.";
+disarming_bomb = 0;
+
 player addaction [
 	"Disarm Bomb",{
 		diag_log "Disarming script started.";
@@ -10,6 +13,9 @@ player addaction [
 
 				diag_log "Arming animation started.";
 				player switchMove "AinvPknlMstpSlayWrflDnon_medic";
+				
+				disarming_bomb = disarming_bomb + 1;
+				
 				while {_lockDuration > 1} do {
 					if (alive player) then {// If the player dies, end loop.
 						if(player distance The_Bomb < 3) then { // If the player moves away, end loop.
@@ -57,6 +63,8 @@ player addaction [
 					diag_log format["Armed Team = %1", Bombed_Team];
 					
 					The_Bomb setVariable ["R3F_LOG_disabled", false, true];
+					
+					disarming_bomb = 0;
 					
 					hint "Bomb Disarmed!";
 				} else {

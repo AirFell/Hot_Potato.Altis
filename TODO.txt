@@ -1,9 +1,8 @@
+base respawn- build and add loss scoring system.
 attach/unattach to trucks
 bomb map marker-simple map marker update on a whiletrue-do loop. Sleep 30 seconds.
 	on bomb detonate/delete, delete marker as well. Re-Create marker on respawn.
 expand bomb damage radius for vehicles(trucks/tanks/helis-just disable tail rotor :D )
-"base" respawn script-
-	side switch of off "this select 1" in init script.
 add bomb respawn marker array(SHK pos)
 
 randomize base and bomb spawns

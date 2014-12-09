@@ -1,4 +1,6 @@
-if (isDedicated) then {
+diag_log "Bomb_Countdown_Detonate script started.";
+
+//if (isDedicated) then {
     While {True} Do {
         sleep 5;
         if (Bomb_Armed_Tracker == 1) then {
@@ -71,9 +73,9 @@ if (isDedicated) then {
 				publicVariable "Bomb_Armed_Tracker";
 				
 				[]execVm "server\score.sqf";
-				
-				diag_log "Bomb_Countdown_detonate script ended.";
 			};
         };
     };
-};
+//};
+
+diag_log "Bomb_Countdown_detonate script ended. ***THIS IS BAD***";
