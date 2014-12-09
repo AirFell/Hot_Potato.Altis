@@ -1,4 +1,4 @@
-_nul = switch (side player) do {
+switch (side player) do {
 	case west: {
 		diag_log format ["%1 is on the %2 team.", player, side player];
 		EnemyBaseArray = [east_base, guer_base];

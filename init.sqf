@@ -19,6 +19,7 @@ execVM "R3F_LOG\init.sqf";
 	_nul = []execVM "server\BombRespawn.sqf";
 	_nul = []execVM "server\BaseRespawn.sqf";
 	_nul = []execVM "server\Bomb_Countdown_Detonate.sqf";
+	_nul = []execVM "server\Bomb_Marker.sqf";
 
 	diag_log "The server got through all its init files!";
 //	_nul = []execVM "server\missions\mission_init.sqf";

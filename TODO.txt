@@ -1,8 +1,7 @@
 base markers: bombbase, respawn bases1,2 and 3.
 	-map markers for bases visible to all, respawn bases only visible to teams.
-bomb marker
+*****check distance to arm bomb on respawn tower. May have an issue.
 attach/unattach to trucks
-expand bomb damage radius for vehicles(trucks/tanks/helis-just disable tail rotor :D )
 add bomb respawn marker array(SHK pos)
 add base respawn marker array(SHK pos)
 money system-
@@ -18,6 +17,7 @@ base radar
 Polish things for later:
 create dialog for bomb interaction
 increase blast radius to take out helicopter tail rotors
+Configure R3F transport values, disallow heli towing of trucks
 
 **Should we replace the bomb addaction with a GUI arm/disarm function?
 This will make it easier to set counters and handle who can and can't manage it.
@@ -29,3 +29,5 @@ code when you open the dialog. Below the code display is AF's keypad script in t
 bottom left with a display for entering code. Right side has buttons
 (in order top to bottom) arm bomb, disarm bomb, cancel(closes the display)
 PLayers must match the code on the top with the keypad, then hit the arm or disarm button.
+
+this setVariable ["R3F_LOG_disabled", false];

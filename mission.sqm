@@ -132,7 +132,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={15400.741,9.452261,16226.71};
+					position[]={15439.504,4.5938354,16067.553};
 					azimut=298.57101;
 					id=3;
 					side="GUER";
@@ -170,7 +170,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={15413.284,9.9507208,16210.301};
+					position[]={15457.794,4.8216381,16031.884};
 					id=5;
 					side="GUER";
 					vehicle="I_soldier_F";
@@ -192,6 +192,7 @@ class Mission
 			vehicle="Land_Device_assembled_F";
 			skill=0.60000002;
 			text="The_Bomb";
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item1
 		{
@@ -204,7 +205,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={15400.412,9.0437002,16217.463};
+			position[]={15450.399,4.7260642,16050.553};
 			id=8;
 			side="EMPTY";
 			vehicle="Flag_Green_F";
@@ -222,12 +223,13 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={15390.024,8.9663868,16206.777};
-			azimut=220.39806;
+			position[]={15430.123,4.4292021,16065.941};
+			azimut=220.39799;
 			id=10;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item5
 		{
@@ -241,92 +243,102 @@ class Mission
 		class Item6
 		{
 			position[]={14281.122,19.171274,16336.892};
-			azimut=345.55942;
+			azimut=345.55899;
 			id=12;
 			side="EMPTY";
 			vehicle="O_Heli_Light_02_F";
 			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item7
 		{
 			position[]={15172.567,17.91,17218.375};
-			azimut=345.24841;
+			azimut=345.24799;
 			id=13;
 			side="EMPTY";
 			vehicle="B_Heli_Transport_01_F";
 			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item8
 		{
-			position[]={15421.387,9.960063,16214.867};
-			azimut=347.50934;
+			position[]={15455.47,4.5614915,16069.352};
+			azimut=347.509;
 			id=14;
 			side="EMPTY";
 			vehicle="I_Heli_light_03_unarmed_F";
 			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item9
 		{
-			position[]={15392.94,9.1843843,16217.182};
-			azimut=350.0853;
+			position[]={15425.288,4.2887721,16083.832};
+			azimut=233.974;
 			id=15;
 			side="EMPTY";
 			vehicle="B_Heli_Light_01_F";
 			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item10
 		{
 			position[]={14527.722,17.59267,16843.713};
-			azimut=170.2896;
+			azimut=170.28999;
 			id=16;
 			side="EMPTY";
 			vehicle="B_Truck_01_mover_F";
 			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item11
 		{
 			position[]={15170.445,17.91,17254.098};
-			azimut=-451.88297;
+			azimut=-451.883;
 			id=17;
 			side="EMPTY";
 			vehicle="B_Truck_01_transport_F";
 			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item12
 		{
 			position[]={14328.259,18.733137,16356.376};
-			azimut=146.30092;
+			azimut=146.30099;
 			id=18;
 			side="EMPTY";
 			vehicle="O_Truck_03_transport_F";
 			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item13
 		{
 			position[]={15154.705,17.91,17261.463};
-			azimut=268.9939;
+			azimut=268.99399;
 			id=19;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
 			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item14
 		{
-			position[]={15403.222,9.663723,16207.344};
-			azimut=-197.21634;
+			position[]={15443.32,4.4182005,16021.041};
+			azimut=-197.216;
 			id=20;
 			side="EMPTY";
 			vehicle="O_Truck_02_transport_F";
 			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item15
 		{
 			position[]={15113.039,17.91,17186.855};
-			azimut=45.314346;
+			azimut=45.314301;
 			id=21;
 			side="EMPTY";
 			vehicle="B_G_Van_01_transport_F";
 			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 	};
 	class Markers
@@ -348,10 +360,10 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={15390.504,9.612812,16227.645};
+			position[]={15469.092,4.8699045,16032.515};
 			name="respawn_guerrila1";
 			type="Empty";
-			angle=129.60457;
+			angle=303.68277;
 		};
 		class Item3
 		{
@@ -376,10 +388,10 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={15407.533,9.6353903,16210.998};
+			position[]={15450.303,4.7189255,16050.91};
 			name="guer_base_respawn";
 			type="Empty";
-			angle=-50.545471;
+			angle=-116.6115;
 		};
 	};
 };
