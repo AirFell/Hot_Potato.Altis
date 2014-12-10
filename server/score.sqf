@@ -1,4 +1,4 @@
-//if (isDedicated) then {
+if (isDedicated) then {
 	diag_log "server-score script started.";
 	
 	if (Bomb_Destroyed_Tracker == 1 && Bomb_Armed_Tracker == 0) then {
@@ -43,4 +43,4 @@
 	diag_log format[":::Score Update::: West: %1, East: %2, Guer: %3", West_score, East_Score, Guer_Score];
 	diag_log "server-score script ended.";
 
-//};
+};

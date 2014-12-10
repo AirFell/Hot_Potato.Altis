@@ -10,7 +10,7 @@ _veh = The_Bomb;
 _deadDelay = 30;
 _vehtype = typeOf _veh; 
 
-//if (isDedicated) then {
+if (isDedicated) then {
     While {True} Do {
         sleep 5;
            if (Bomb_Destroyed_Tracker == 1) then {
@@ -31,6 +31,6 @@ _vehtype = typeOf _veh;
 			diag_log "bomb respawned.";
         };
     };
-//};
+};
 
 diag_log "BombRespawn script Ended. ***THIS IS BAD***";

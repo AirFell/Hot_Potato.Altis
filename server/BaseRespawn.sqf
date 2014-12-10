@@ -7,7 +7,7 @@ Modified: AirFell
 diag_log "BaseRespawn.sqf loaded.";
 
 
-//if (isDedicated) then {
+if (isDedicated) then {
 _deadDelay = 30;
 	
 	while {True} do {
@@ -94,6 +94,6 @@ _deadDelay = 30;
 			};
 		};
 	};
-//};
+};
 
 diag_log "BaseRespawn script Ended. ***THIS IS BAD***";

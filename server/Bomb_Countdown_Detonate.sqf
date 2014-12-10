@@ -1,6 +1,6 @@
 diag_log "Bomb_Countdown_Detonate script started.";
 
-//if (isDedicated) then {
+if (isDedicated) then {
     While {True} Do {
         sleep 5;
         if (Bomb_Armed_Tracker == 1) then {
@@ -14,7 +14,12 @@ diag_log "Bomb_Countdown_Detonate script started.";
 					diag_log "Siren Stopped.";
 				};
 			};
-		
+
+/*
+add a distance check between the bomb and the base. If bomb left the base during the countdown, it still explodes
+unless someone disarms it. Just remove scoring.
+*/
+	
 //one last check to make sure the bomb wasn't disarmed during the siren countdown
 			if (Bomb_Armed_Tracker == 1) then {		
 //get objects and delete them.
@@ -90,6 +95,6 @@ diag_log "Bomb_Countdown_Detonate script started.";
 			};
         };
     };
-//};
+};
 
 diag_log "Bomb_Countdown_detonate script ended. ***THIS IS BAD***";

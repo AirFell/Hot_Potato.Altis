@@ -7,7 +7,7 @@ enableSaving [false, false];
 
 execVM "R3F_LOG\init.sqf";
 
-//if (isDedicated) then {
+if (isDedicated) then {
 ///////////////////////////////////////////////////////////////
 ///////////////////////Server-side stuff///////////////////////
 ///////////////////////////////////////////////////////////////
@@ -25,7 +25,7 @@ execVM "R3F_LOG\init.sqf";
 
 	diag_log "The server got through all its init files!";
 //	_nul = []execVM "server\missions\mission_init.sqf";
-//} else {
+} else {
 
 ///////////////////////////////////////////////////////////////
 ///////////////////////Client-side stuff///////////////////////
@@ -52,7 +52,7 @@ execVM "R3F_LOG\init.sqf";
 //	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
 	
 	diag_log "The client got through all its init files!";
-//};
+};
 
 
 player addAction [
@@ -60,5 +60,4 @@ player addAction [
 	{
 		hint format["West:%1 East:%2 Guer:%3", West_Score, East_Score, Guer_Score];
 	},
-	nil, 1, True, True, "", ""
-];
+	nil, 1, True, True, "", ""];
