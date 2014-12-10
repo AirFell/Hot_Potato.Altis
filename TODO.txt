@@ -1,4 +1,5 @@
-base markers: bombbase, respawn bases1,2 and 3.
+base spawn script- for each team?
+random base markers and sorting script
 	-map markers for bases visible to all, respawn bases only visible to teams.
 *****check distance to arm bomb on respawn tower. May have an issue.
 attach/unattach to trucks
@@ -31,3 +32,13 @@ bottom left with a display for entering code. Right side has buttons
 PLayers must match the code on the top with the keypad, then hit the arm or disarm button.
 
 this setVariable ["R3F_LOG_disabled", false];
+
+Variables that need to be adjusted for gameplay:
+Bomb marker timer: server\Bomb_Marker.sqf line 2
+Bomb arm addaction range of enemy base: client\Arm_Bomb.sqf line 92
+Bomb arm range of enemy base: clinet\Arm_Bomb.sqf line 9
+Duration of arming animation: client\Arm_Bomb.sqf line 17
+Duration of disarming animation: client\Diarm_Bomb.sqf line 9
+Length of Countdown Timer: server\Bomb_Countdown_Detonate.sqf line 9
+Range of Damage from "explosion": server\Bomb_Countdown_Detonate.sqf line 21
+Bomb respawn delay: server\BombRespawn.sqf line 9

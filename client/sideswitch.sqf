@@ -1,3 +1,6 @@
+diag_log "**3** sideswitch.sqf loading...";
+sleep 10;
+
 switch (side player) do {
 	case west: {
 		diag_log format ["%1 is on the %2 team.", player, side player];
@@ -23,3 +26,5 @@ switch (side player) do {
 		EnemyBase2 = east_base;
 	};
 };
+
+diag_log "sideswitch.sqf loaded";

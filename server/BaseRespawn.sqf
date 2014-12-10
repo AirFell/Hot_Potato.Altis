@@ -4,7 +4,7 @@ Author: Iceman77
 Modified: AirFell
 ---------------------------------------------------------------------------------------------------- */
 
-diag_log "BaseRespawn script started.";
+diag_log "BaseRespawn.sqf loaded.";
 
 
 //if (isDedicated) then {
@@ -21,9 +21,9 @@ _deadDelay = 30;
 			switch (Bombed_Team) do {
 				case west: {
 //Custom Side Choosing Script~ AirFell
-//					_RandomPosB = bombRespawnArray select floor random count bombRespawnArray;
-//					_posMrk = getMarkerPos _RandomPosB;
-					_posMrk = getMarkerPos "west_base_respawn";
+					_RandomPos_West_Base = West_Base_Array select floor random count West_Base_Array;
+					_posMrk = getMarkerPos _RandomPos_West_Base;
+//					_posMrk = getMarkerPos "west_base_respawn";
 						
 					west_base = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					west_base setPos [_posMrk select 0, _posMrk select 1,0];
@@ -33,14 +33,16 @@ _deadDelay = 30;
 						
 					Base_Destroyed_Tracker = 0;
 					publicVariable "Base_Destroyed_Tracker";
+					
+					"west_base_marker" setMarkerPos getPos west_base;
 						
 					diag_log format ["Case West: Base %1 respawned", Bombed_Team];
 				};
 				case east: {		
 //Custom Side Choosing Script~ AirFell
-//					_RandomPosB = bombRespawnArray select floor random count bombRespawnArray;
-//					_posMrk = getMarkerPos _RandomPosB;
-					_posMrk = getMarkerPos "east_base_respawn";
+					_RandomPos_East_Base = East_Base_Array select floor random count East_Base_Array;
+					_posMrk = getMarkerPos _RandomPos_East_Base;
+//					_posMrk = getMarkerPos "east_base_respawn";
 							
 					east_base = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					east_base setPos [_posMrk select 0, _posMrk select 1,0];
@@ -50,14 +52,16 @@ _deadDelay = 30;
 						
 					Base_Destroyed_Tracker = 0;
 					publicVariable "Base_Destroyed_Tracker";
+					
+					"east_base_marker" setMarkerPos getPos east_base;
 						
 					diag_log format ["Case East: Base %1 respawned", Bombed_Team];
 				};
 				case resistance: {
 //Custom Side Choosing Script~ AirFell
-//					_RandomPosB = bombRespawnArray select floor random count bombRespawnArray;
-//					_posMrk = getMarkerPos _RandomPosB;
-					_posMrk = getMarkerPos "guer_base_respawn";
+					_RandomPos_Guer_Base = Guer_Base_Array select floor random count Guer_Base_Array;
+					_posMrk = getMarkerPos _RandomPos_Guer_Base;
+//					_posMrk = getMarkerPos "guer_base_respawn";
 							
 					guer_base = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					guer_base setPos [_posMrk select 0, _posMrk select 1,0];
@@ -67,6 +71,8 @@ _deadDelay = 30;
 					
 					Base_Destroyed_Tracker = 0;
 					publicVariable "Base_Destroyed_Tracker";
+					
+					"guer_base_marker" setMarkerPos getPos guer_base;
 						
 					diag_log format ["Case Guer: Base %1 respawned", Bombed_Team];
 				};

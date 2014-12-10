@@ -3,7 +3,7 @@ File: vehRespawn.sqf
 Author: Iceman77
 Modified: AirFell
 ---------------------------------------------------------------------------------------------------- */
-diag_log "BombRespawn script started.";
+diag_log "BombRespawn.sqf script loaded.";
 
 _veh = The_Bomb;
 _deadDelay = 30;

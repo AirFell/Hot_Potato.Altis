@@ -16,6 +16,7 @@ execVM "R3F_LOG\init.sqf";
 	call compile preprocessFile"server\SHK_pos\shk_pos_init.sqf";
 //	_nul = []execVM "server\randomMarkerGen.sqf";
 	_nul = []execVM "server\GlobalVars.sqf";
+	_nul = []execVM "server\Base_Spawn.sqf";
 	_nul = []execVM "server\BombRespawn.sqf";
 	_nul = []execVM "server\BaseRespawn.sqf";
 	_nul = []execVM "server\Bomb_Countdown_Detonate.sqf";
