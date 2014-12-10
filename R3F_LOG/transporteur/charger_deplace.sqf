@@ -10,7 +10,7 @@
 
 if (R3F_LOG_mutex_local_verrou) then
 {
-	systemChat STR_R3F_LOG_mutex_action_en_cours;
+	hintC STR_R3F_LOG_mutex_action_en_cours;
 }
 else
 {
@@ -22,8 +22,9 @@ else
 	_transporteur = [_objet, 5] call R3F_LOG_FNCT_3D_cursorTarget_virtuel;
 	
 	if (!isNull _transporteur && {
-		{_transporteur isKindOf _x} count R3F_LOG_classes_transporteurs > 0 && alive _transporteur && (vectorMagnitude velocity _transporteur < 6) &&
-		(abs ((getPosASL _transporteur select 2) - (getPosASL player select 2)) < 2) && !(_transporteur getVariable "R3F_LOG_disabled")
+		_transporteur getVariable ["R3F_LOG_fonctionnalites", R3F_LOG_CST_zero_log] select R3F_LOG_IDX_can_transport_cargo &&
+		alive _transporteur && (vectorMagnitude velocity _transporteur < 6) && !(_transporteur getVariable "R3F_LOG_disabled") &&
+		(abs ((getPosASL _transporteur select 2) - (getPosASL player select 2)) < 2.5)
 	}) then
 	{
 		if (isNull (_objet getVariable ["R3F_LOG_remorque", objNull])) then
@@ -31,11 +32,13 @@ else
 			private ["_objets_charges", "_chargement", "_cout_chargement_objet"];
 			
 			_chargement = [_transporteur] call R3F_LOG_FNCT_calculer_chargement_vehicule;
-			_cout_chargement_objet = [_objet] call R3F_LOG_FNCT_determiner_cout_chargement;
+			_cout_chargement_objet = _objet getVariable "R3F_LOG_fonctionnalites" select R3F_LOG_IDX_can_be_transported_cargo_cout;
 			
 			// Si l'objet loge dans le véhicule
 			if ((_chargement select 0) + _cout_chargement_objet <= (_chargement select 1)) then
 			{
+				[_transporteur, player] call R3F_LOG_FNCT_definir_proprietaire_verrou;
+				
 				// On mémorise sur le réseau le nouveau contenu du véhicule
 				_objets_charges = _transporteur getVariable ["R3F_LOG_objets_charges", []];
 				_objets_charges = _objets_charges + [_objet];
@@ -47,7 +50,7 @@ else
 				R3F_LOG_joueur_deplace_objet = objNull;
 				waitUntil {_objet getVariable "R3F_LOG_est_deplace_par" != player};
 				
-				_objet attachTo [R3F_LOG_PUBVAR_point_attache, call R3F_LOG_FNCT_3D_tirer_position_degagee_ciel];
+				_objet attachTo [R3F_LOG_PUBVAR_point_attache, [] call R3F_LOG_FNCT_3D_tirer_position_degagee_ciel];
 				
 				systemChat format [STR_R3F_LOG_action_charger_fait,
 					getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName"),
@@ -55,12 +58,12 @@ else
 			}
 			else
 			{
-				systemChat STR_R3F_LOG_action_charger_pas_assez_de_place;
+				hintC STR_R3F_LOG_action_charger_pas_assez_de_place;
 			};
 		}
 		else
 		{
-			systemChat format [STR_R3F_LOG_objet_remorque_en_cours, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
+			hintC format [STR_R3F_LOG_objet_remorque_en_cours, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
 		};
 	};
 	

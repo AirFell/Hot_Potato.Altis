@@ -24,66 +24,14 @@ uiNamespace setVariable ["R3F_LOG_dlg_LO_usine", _usine];
 call R3F_LOG_VIS_FNCT_demarrer_visualisation;
 
 // Pré-calculer une fois pour toutes les usines la liste des objets du CfgVehicles classés par catégorie
-if (isNil {_usine getVariable "R3F_LOG_cfgVehicles_par_categories"}) then
+if (isNil {_usine getVariable "R3F_LOG_CF_cfgVehicles_par_categories"}) then
 {
-	private ["_cfgVehicles_categories", "_cfgVehicles_par_categories", "_nb_config", "_categorie", "_idx_categorie", "_idx_config", "_config"];
-	_cfgVehicles_categories = [];
-	_cfgVehicles_par_categories = [];
+	private ["_retour_liste_cfgVehicles_par_categories"];
 	
-	// Récupération de la liste des catégories de véhicules
-	_nb_config = count (configFile >> "CfgVehicleClasses");
-	for [{_idx_config = 0}, {_idx_config < _nb_config}, {_idx_config = _idx_config+1}] do
-	{
-		_config = (configFile >> "CfgVehicleClasses") select _idx_config;
-		if (isClass _config) then
-		{
-			// Si la catégorie est autorisé (en fonction de la white ou black list)
-			if ((_usine getVariable "R3F_LOG_CF_blackwhitelist_mode" == "white") isEqualTo (configName _config in (_usine getVariable "R3F_LOG_CF_blackwhitelist_categories"))) then
-			{
-				_cfgVehicles_categories = _cfgVehicles_categories + [configName _config];
-				_cfgVehicles_par_categories = _cfgVehicles_par_categories + [[]];
-			};
-		};
-	};
+	_retour_liste_cfgVehicles_par_categories = [_usine] call R3F_LOG_FNCT_recuperer_liste_cfgVehicles_par_categories;
 	
-	// Création de la liste des véhicules, classés par catégorie
-	_nb_config = count (configFile >> "CfgVehicles");
-	for [{_idx_config = 0}, {_idx_config < _nb_config}, {_idx_config = _idx_config+1}] do
-	{
-		_config = (configFile >> "CfgVehicles") select _idx_config;
-		if (isClass _config) then
-		{
-			// Objet instanciable
-			if (getNumber (_config >> "scope") == 2 && !(configName _config isKindOf "Man")) then
-			{
-				// Si l'objet correspond à une side valide
-				if (getNumber (_config >> "side") in (_usine getVariable "R3F_LOG_CF_num_sides")) then
-				{
-					_categorie = getText (_config >> "vehicleClass");
-					_idx_categorie = _cfgVehicles_categories find _categorie;
-					
-					if (_idx_categorie != -1) then
-					{
-						(_cfgVehicles_par_categories select _idx_categorie) set [count (_cfgVehicles_par_categories select _idx_categorie), configName _config];
-					};
-				};
-			};
-		};
-	};
-	
-	// Suppression des catégories ne possédant aucun objet
-	_tmp_cfgVehicles_categories = [];
-	_tmp_cfgVehicles_par_categories = [];
-	{
-		if (count (_cfgVehicles_par_categories select _forEachIndex) > 0) then
-		{
-			_tmp_cfgVehicles_categories = _tmp_cfgVehicles_categories + [_x];
-			_tmp_cfgVehicles_par_categories = _tmp_cfgVehicles_par_categories + [_cfgVehicles_par_categories select _forEachIndex];
-		};
-	} forEach _cfgVehicles_categories;
-	
-	_usine setVariable ["R3F_LOG_CF_cfgVehicles_categories", + _tmp_cfgVehicles_categories];
-	_usine setVariable ["R3F_LOG_CF_cfgVehicles_par_categories", + _tmp_cfgVehicles_par_categories];
+	_usine setVariable ["R3F_LOG_CF_cfgVehicles_categories", + (_retour_liste_cfgVehicles_par_categories select 0)];
+	_usine setVariable ["R3F_LOG_CF_cfgVehicles_par_categories", + (_retour_liste_cfgVehicles_par_categories select 1)];
 };
 
 createDialog "R3F_LOG_dlg_liste_objets";

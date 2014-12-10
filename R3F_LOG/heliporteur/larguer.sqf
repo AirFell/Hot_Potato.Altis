@@ -12,7 +12,7 @@
 
 if (R3F_LOG_mutex_local_verrou) then
 {
-	systemChat STR_R3F_LOG_mutex_action_en_cours;
+	hintC STR_R3F_LOG_mutex_action_en_cours;
 }
 else
 {

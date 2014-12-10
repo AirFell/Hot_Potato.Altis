@@ -4,8 +4,8 @@
  * THIS TOOL IS UNOFFICIAL AND FOR EXPERT ONLY !
  * READ THE PDF DOCUMENTATION TO KNOW HOW TO USE IT !
  * 
- * @usage execVM "R3F_LOG\addons_config\logistics_config_maker_tool\launch_config_tool.sqf";
  * @usage Don't forget to fill the list of class names to configure in list_of_objects_to_config.sqf.
+ * @usage execVM "R3F_LOG\addons_config\logistics_config_maker_tool\launch_config_tool.sqf";
  * 
  * Copyright (C) 2014 Team ~R3F~
  * 
@@ -24,41 +24,19 @@ TAB_class_names_to_config = [
 	#include "list_of_objects_to_config.sqf"
 ];
 
-private ["_fnct_retourner_tableau"];
-
-/**
- * Fonction inversant l'ordre des éléments d'un tableau
- * @param le tableau à inverser
- * @return nouveau tableau inversé (copie)
- */
-_fnct_retourner_tableau =
-{
-	private ["_tab", "_tab_inv", "_dernier_index"];
-	
-	_tab = _this;
-	_tab_inv = [];
-	_dernier_index = count _tab - 1;
-	
-	{
-		_tab_inv set [_dernier_index - _forEachIndex, _x];
-	} forEach _tab;
-	
-	_tab_inv
-};
-
 /*
  * On inverse l'ordre de toutes les listes de noms de classes pour donner
  * la priorité aux classes spécifiques sur les classes génériques
  */
-R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow call _fnct_retourner_tableau;
-R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed call _fnct_retourner_tableau;
-R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift call _fnct_retourner_tableau;
-R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted call _fnct_retourner_tableau;
-R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo call _fnct_retourner_tableau;
-R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo call _fnct_retourner_tableau;
-R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player call _fnct_retourner_tableau;
-R3F_LOG_classes_transporteurs = R3F_LOG_classes_transporteurs call _fnct_retourner_tableau;
-R3F_LOG_classes_objets_transportables = R3F_LOG_classes_objets_transportables call _fnct_retourner_tableau;
+reverse R3F_LOG_CFG_can_tow;
+reverse R3F_LOG_CFG_can_be_towed;
+reverse R3F_LOG_CFG_can_lift;
+reverse R3F_LOG_CFG_can_be_lifted;
+reverse R3F_LOG_CFG_can_transport_cargo;
+reverse R3F_LOG_CFG_can_be_transported_cargo;
+reverse R3F_LOG_CFG_can_be_moved_by_player;
+reverse R3F_LOG_classes_transporteurs;
+reverse R3F_LOG_classes_objets_transportables;
 
 R3F_LOG_spawn_position = player modelToWorld [0, 30, 0];
 
@@ -97,7 +75,7 @@ FNCT_onKeyDown =
 		case 28:
 		{
 			private ["_class_name"];
-			_class_name = configName (configFile >> "CfgVehicles" >> (TAB_class_names_to_config select IDX_requested_vehicle));
+			_class_name = toLower configName (configFile >> "CfgVehicles" >> (TAB_class_names_to_config select IDX_requested_vehicle));
 			
 			switch (KEY_mode) do
 			{
@@ -136,7 +114,7 @@ FNCT_onKeyDown =
 					R3F_LOG_CFG_objets_transportables_new = [];
 					for [{_idx = 0}, {_idx < count R3F_LOG_CFG_can_be_transported_cargo}, {_idx = _idx+1}] do
 					{
-						if (R3F_LOG_CFG_can_be_transported_cargo select _idx select 0 != _class_name) then
+						if (toLower (R3F_LOG_CFG_can_be_transported_cargo select _idx select 0) != _class_name) then
 						{
 							R3F_LOG_CFG_objets_transportables_new = R3F_LOG_CFG_objets_transportables_new + [R3F_LOG_CFG_can_be_transported_cargo select _idx];
 						};
@@ -155,7 +133,7 @@ FNCT_onKeyDown =
 					R3F_LOG_CFG_transporteurs_new = [];
 					for [{_idx = 0}, {_idx < count R3F_LOG_CFG_can_transport_cargo}, {_idx = _idx+1}] do
 					{
-						if (R3F_LOG_CFG_can_transport_cargo select _idx select 0 != _class_name) then
+						if (toLower (R3F_LOG_CFG_can_transport_cargo select _idx select 0) != _class_name) then
 						{
 							R3F_LOG_CFG_transporteurs_new = R3F_LOG_CFG_transporteurs_new + [R3F_LOG_CFG_can_transport_cargo select _idx];
 						};
@@ -173,7 +151,7 @@ FNCT_onKeyDown =
 		case 211:
 		{
 			private ["_class_name"];
-			_class_name = configName (configFile >> "CfgVehicles" >> (TAB_class_names_to_config select IDX_requested_vehicle));
+			_class_name = toLower configName (configFile >> "CfgVehicles" >> (TAB_class_names_to_config select IDX_requested_vehicle));
 			
 			switch (KEY_mode) do
 			{
@@ -206,7 +184,7 @@ FNCT_onKeyDown =
 					R3F_LOG_CFG_objets_transportables_new = [];
 					for [{_idx = 0}, {_idx < count R3F_LOG_CFG_can_be_transported_cargo}, {_idx = _idx+1}] do
 					{
-						if (R3F_LOG_CFG_can_be_transported_cargo select _idx select 0 != _class_name) then
+						if (toLower (R3F_LOG_CFG_can_be_transported_cargo select _idx select 0) != _class_name) then
 						{
 							R3F_LOG_CFG_objets_transportables_new = R3F_LOG_CFG_objets_transportables_new + [R3F_LOG_CFG_can_be_transported_cargo select _idx];
 						};
@@ -222,7 +200,7 @@ FNCT_onKeyDown =
 					R3F_LOG_CFG_transporteurs_new = [];
 					for [{_idx = 0}, {_idx < count R3F_LOG_CFG_can_transport_cargo}, {_idx = _idx+1}] do
 					{
-						if (R3F_LOG_CFG_can_transport_cargo select _idx select 0 != _class_name) then
+						if (toLower (R3F_LOG_CFG_can_transport_cargo select _idx select 0) != _class_name) then
 						{
 							R3F_LOG_CFG_transporteurs_new = R3F_LOG_CFG_transporteurs_new + [R3F_LOG_CFG_can_transport_cargo select _idx];
 						};
@@ -260,7 +238,7 @@ while {BOOL_continue} do
 	
 	_idx_current_vehicle = IDX_requested_vehicle;
 	_class = configFile >> "CfgVehicles" >> (TAB_class_names_to_config select _idx_current_vehicle);
-	_class_name = configName _class;
+	_class_name = toLower configName _class;
 	_vehicle = _class_name createVehicle R3F_LOG_spawn_position;
 	
 	while {_idx_current_vehicle == IDX_requested_vehicle} do
@@ -291,7 +269,7 @@ while {BOOL_continue} do
 		{
 			private ["_class_name_inherit", "_options"];
 			
-			_class_name_inherit = configName (_tab_inheritance_tree select _j);
+			_class_name_inherit = toLower configName (_tab_inheritance_tree select _j);
 			
 			_options = "[";
 			

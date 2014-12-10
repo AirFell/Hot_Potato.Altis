@@ -20,12 +20,12 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 
 R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 [
-	["StaticWeapon", 5],
-	["StaticMortar", 6]
+	["staticweapon", 5],
+	["staticmortar", 6]
 ];
 
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 [
-	"ReammoBox_F",
-	"StaticWeapon"
+	"reammobox_f",
+	"staticweapon"
 ];

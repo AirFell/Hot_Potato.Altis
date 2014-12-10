@@ -14,7 +14,7 @@
 
 if (R3F_LOG_mutex_local_verrou) then
 {
-	systemChat STR_R3F_LOG_mutex_action_en_cours;
+	hintC STR_R3F_LOG_mutex_action_en_cours;
 }
 else
 {
@@ -40,8 +40,10 @@ else
 	{
 		if (isNull (_objet getVariable ["R3F_LOG_remorque", objNull])) then
 		{
-			if (count crew _objet == 0) then
+			if (count crew _objet == 0 || getNumber (configFile >> "CfgVehicles" >> (typeOf _objet) >> "isUav") == 1) then
 			{
+				[_objet, _joueur] call R3F_LOG_FNCT_definir_proprietaire_verrou;
+				
 				_objet setVariable ["R3F_LOG_est_deplace_par", _joueur, true];
 				
 				_joueur forceWalk true;
@@ -72,7 +74,9 @@ else
 						-(boundingBoxReal _objet select 0 select 2)
 					];
 					
-					_elev_cam_initial = 100;
+					_elev_cam_initial = acos ((ATLtoASL positionCameraToWorld [0, 0, 1] select 2) - (ATLtoASL positionCameraToWorld [0, 0, 0] select 2));
+					
+					_pos_rel_objet_initial set [2, 0.1 + (_joueur selectionPosition "head" select 2) + (_pos_rel_objet_initial select 1) * tan (89 min (-89 max (90-_elev_cam_initial)))];
 				}
 				else
 				{
@@ -132,21 +136,25 @@ else
 				_muzzle_courant = currentMuzzle _joueur;
 				_mode_muzzle_courant = currentWeaponMode _joueur;
 				
-				// Prise du PA si le joueur en a un
-				if (handgunWeapon _joueur != "") then
+				// Sous l'eau on n'a pas le choix de l'arme
+				if (!surfaceIsWater getPos _joueur) then
 				{
-					_restaurer_arme = false;
-					for [{_idx_muzzle = 0}, {currentWeapon _joueur != handgunWeapon _joueur}, {_idx_muzzle = _idx_muzzle+1}] do
+					// Prise du PA si le joueur en a un
+					if (handgunWeapon _joueur != "") then
 					{
-						_joueur action ["SWITCHWEAPON", _joueur, _joueur, _idx_muzzle];
+						_restaurer_arme = false;
+						for [{_idx_muzzle = 0}, {currentWeapon _joueur != handgunWeapon _joueur}, {_idx_muzzle = _idx_muzzle+1}] do
+						{
+							_joueur action ["SWITCHWEAPON", _joueur, _joueur, _idx_muzzle];
+						};
+					}
+					// Sinon pas d'arme dans les mains
+					else
+					{
+						_restaurer_arme = true;
+						_joueur action ["SWITCHWEAPON", _joueur, _joueur, 99999];
 					};
-				}
-				// Sinon pas d'arme dans les mains
-				else
-				{
-					_restaurer_arme = true;
-					_joueur action ["SWITCHWEAPON", _joueur, _joueur, 99999];
-				};
+				} else {_restaurer_arme = false;};
 				
 				sleep 0.5;
 				
@@ -158,14 +166,14 @@ else
 					
 					// Ajout des actions de gestion de l'orientation
 					_action_relacher = _joueur addAction [("<t color=""#ee0000"">" + format [STR_R3F_LOG_action_relacher_objet, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")] + "</t>"), {_this call R3F_LOG_FNCT_objet_relacher}, nil, 10, true, true];
-					_action_aligner_pente = _joueur addAction [("<t color=""#00eeff"">" + STR_R3F_LOG_action_aligner_pente + "</t>"), {R3F_LOG_deplace_mode_alignement = "pente"; R3F_LOG_deplace_force_setVector = true;}, nil, 7, false, true, "", "R3F_LOG_deplace_mode_alignement != ""pente"""];
-					_action_aligner_sol = _joueur addAction [("<t color=""#00eeff"">" + STR_R3F_LOG_action_aligner_sol + "</t>"), {R3F_LOG_deplace_mode_alignement = "sol"; R3F_LOG_deplace_force_setVector = true;}, nil, 7, false, true, "", "R3F_LOG_deplace_mode_alignement != ""sol"""];
-					_action_aligner_horizon = _joueur addAction [("<t color=""#00eeff"">" + STR_R3F_LOG_action_aligner_horizon + "</t>"), {R3F_LOG_deplace_mode_alignement = "horizon"; R3F_LOG_deplace_force_setVector = true;}, nil, 7, false, true, "", "R3F_LOG_deplace_mode_alignement != ""horizon"""];
-					_action_tourner = _joueur addAction [("<t color=""#00eeff"">" + STR_R3F_LOG_action_tourner + "</t>"), {R3F_LOG_deplace_dir_rel_objet = R3F_LOG_deplace_dir_rel_objet + 12; R3F_LOG_deplace_force_setVector = true;}, nil, 7, false, false];
-					_action_rapprocher = _joueur addAction [("<t color=""#00eeff"">" + STR_R3F_LOG_action_rapprocher + "</t>"), {R3F_LOG_deplace_distance_rel_objet = R3F_LOG_deplace_distance_rel_objet - 0.4; R3F_LOG_deplace_force_attachTo = true;}, nil, 7, false, false];
+					_action_aligner_pente = _joueur addAction [("<t color=""#00eeff"">" + STR_R3F_LOG_action_aligner_pente + "</t>"), {R3F_LOG_deplace_mode_alignement = "pente"; R3F_LOG_deplace_force_setVector = true;}, nil, 6, false, true, "", "R3F_LOG_deplace_mode_alignement != ""pente"""];
+					_action_aligner_sol = _joueur addAction [("<t color=""#00eeff"">" + STR_R3F_LOG_action_aligner_sol + "</t>"), {R3F_LOG_deplace_mode_alignement = "sol"; R3F_LOG_deplace_force_setVector = true;}, nil, 6, false, true, "", "R3F_LOG_deplace_mode_alignement != ""sol"""];
+					_action_aligner_horizon = _joueur addAction [("<t color=""#00eeff"">" + STR_R3F_LOG_action_aligner_horizon + "</t>"), {R3F_LOG_deplace_mode_alignement = "horizon"; R3F_LOG_deplace_force_setVector = true;}, nil, 6, false, true, "", "R3F_LOG_deplace_mode_alignement != ""horizon"""];
+					_action_tourner = _joueur addAction [("<t color=""#00eeff"">" + STR_R3F_LOG_action_tourner + "</t>"), {R3F_LOG_deplace_dir_rel_objet = R3F_LOG_deplace_dir_rel_objet + 12; R3F_LOG_deplace_force_setVector = true;}, nil, 6, false, false];
+					_action_rapprocher = _joueur addAction [("<t color=""#00eeff"">" + STR_R3F_LOG_action_rapprocher + "</t>"), {R3F_LOG_deplace_distance_rel_objet = R3F_LOG_deplace_distance_rel_objet - 0.4; R3F_LOG_deplace_force_attachTo = true;}, nil, 6, false, false];
 					
 					// Relâcher l'objet dès que le joueur tire. Le detach sert à rendre l'objet solide pour ne pas tirer au travers.
-					_idx_eh_fired = _joueur addEventHandler ["Fired", {detach R3F_LOG_joueur_deplace_objet; R3F_LOG_joueur_deplace_objet = objNull;}];
+					_idx_eh_fired = _joueur addEventHandler ["Fired", {if (!surfaceIsWater getPos player) then {detach R3F_LOG_joueur_deplace_objet; R3F_LOG_joueur_deplace_objet = objNull;};}];
 					
 					// Gestion des évènements KeyDown et KeyUp pour faire tourner l'objet avec les touches X/C
 					R3F_LOG_joueur_deplace_key_rotation = "";
@@ -404,7 +412,7 @@ else
 						};
 						
 						// Le joueur change d'arme, on stoppe le déplacement et on ne reprendra pas l'arme initiale
-						if (currentWeapon _joueur != "" && currentWeapon _joueur != handgunWeapon _joueur) then
+						if (currentWeapon _joueur != "" && currentWeapon _joueur != handgunWeapon _joueur && !surfaceIsWater getPos _joueur) then
 						{
 							R3F_LOG_joueur_deplace_objet = objNull;
 							_restaurer_arme = false;
@@ -445,7 +453,7 @@ else
 				R3F_LOG_joueur_deplace_objet = objNull;
 				
 				// Reprise de l'arme et restauration de son mode de tir, si nécessaire
-				if (alive _joueur && _restaurer_arme) then
+				if (alive _joueur && !surfaceIsWater getPos _joueur && _restaurer_arme) then
 				{
 					for [{_idx_muzzle = 0},
 						{currentWeapon _joueur != _arme_courante ||
@@ -458,30 +466,33 @@ else
 				};
 				
 				sleep 5; // Délai de 5 secondes pour attendre la chute/stabilisation
-				if (isNull (_objet getVariable ["R3F_LOG_est_deplace_par", objNull]) ||
-					{(!alive (_objet getVariable "R3F_LOG_est_deplace_par")) || (!isPlayer (_objet getVariable "R3F_LOG_est_deplace_par"))}
-				) then
+				if (!isNull _objet) then
 				{
-					R3F_LOG_PV_fin_deplacement_objet = _objet;
-					publicVariable "R3F_LOG_PV_fin_deplacement_objet";
-					["R3F_LOG_PV_fin_deplacement_objet", R3F_LOG_PV_fin_deplacement_objet] call R3F_LOG_FNCT_PVEH_fin_deplacement_objet;
+					if (isNull (_objet getVariable ["R3F_LOG_est_deplace_par", objNull]) ||
+						{(!alive (_objet getVariable "R3F_LOG_est_deplace_par")) || (!isPlayer (_objet getVariable "R3F_LOG_est_deplace_par"))}
+					) then
+					{
+						R3F_LOG_PV_fin_deplacement_objet = _objet;
+						publicVariable "R3F_LOG_PV_fin_deplacement_objet";
+						["R3F_LOG_PV_fin_deplacement_objet", R3F_LOG_PV_fin_deplacement_objet] call R3F_LOG_FNCT_PVEH_fin_deplacement_objet;
+					};
 				};
 			}
 			else
 			{
-				systemChat format [STR_R3F_LOG_joueur_dans_objet, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
+				hintC format [STR_R3F_LOG_joueur_dans_objet, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
 				R3F_LOG_mutex_local_verrou = false;
 			};
 		}
 		else
 		{
-			systemChat format [STR_R3F_LOG_objet_remorque_en_cours, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
+			hintC format [STR_R3F_LOG_objet_remorque_en_cours, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
 			R3F_LOG_mutex_local_verrou = false;
 		};
 	}
 	else
 	{
-		systemChat format [STR_R3F_LOG_objet_en_cours_transport, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
+		hintC format [STR_R3F_LOG_objet_en_cours_transport, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
 		R3F_LOG_mutex_local_verrou = false;
 	};
 };

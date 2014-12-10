@@ -10,7 +10,7 @@ _RandomPosE = EastRespawnArray select floor random count EastRespawnArray;
 _RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
 "respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
 */
-
+diag_log "player killed. scripts restarting.";
 waitUntil {alive player};
 _nul = []execVM "client\sideSwitch.sqf";
 _nul = []execVM "client\Arm_Bomb.sqf";

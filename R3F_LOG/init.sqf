@@ -22,8 +22,6 @@
 #ifdef R3F_LOG_enable
 	/* DEBUT import config */
 	
-	private ["_fnct_retourner_tableau"];
-	
 	// Initialise les listes vides avant que le config.sqf les concatène
 	R3F_LOG_CFG_can_tow = [];
 	R3F_LOG_CFG_can_be_towed = [];
@@ -45,48 +43,37 @@
 	// Chargement du fichier de langage
 	call compile preprocessFile format ["R3F_LOG\%1_strings_lang.sqf", R3F_LOG_CFG_language];
 	
-	/**
-	 * Fonction inversant l'ordre des éléments d'un tableau
-	 * @param le tableau à inverser
-	 * @return nouveau tableau inversé (copie)
-	 */
-	_fnct_retourner_tableau =
-	{
-		private ["_tab", "_tab_inv", "_dernier_index"];
-		
-		_tab = _this;
-		_tab_inv = [];
-		_dernier_index = count _tab - 1;
-		
-		{
-			_tab_inv set [_dernier_index - _forEachIndex, _x];
-		} forEach _tab;
-		
-		_tab_inv
-	};
-	
 	/*
 	 * On inverse l'ordre de toutes les listes de noms de classes pour donner
 	 * la priorité aux classes spécifiques sur les classes génériques
 	 */
-	R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow call _fnct_retourner_tableau;
-	R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed call _fnct_retourner_tableau;
-	R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift call _fnct_retourner_tableau;
-	R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted call _fnct_retourner_tableau;
-	R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo call _fnct_retourner_tableau;
-	R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo call _fnct_retourner_tableau;
-	R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player call _fnct_retourner_tableau;
+	reverse R3F_LOG_CFG_can_tow;
+	reverse R3F_LOG_CFG_can_be_towed;
+	reverse R3F_LOG_CFG_can_lift;
+	reverse R3F_LOG_CFG_can_be_lifted;
+	reverse R3F_LOG_CFG_can_transport_cargo;
+	reverse R3F_LOG_CFG_can_be_transported_cargo;
+	reverse R3F_LOG_CFG_can_be_moved_by_player;
+	
+	// On passe tous les noms de classes en minuscules
+	{R3F_LOG_CFG_can_tow set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_tow;
+	{R3F_LOG_CFG_can_be_towed set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_be_towed;
+	{R3F_LOG_CFG_can_lift set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_lift;
+	{R3F_LOG_CFG_can_be_lifted set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_be_lifted;
+	{R3F_LOG_CFG_can_transport_cargo select _forEachIndex set [0, toLower (_x select 0)];} forEach R3F_LOG_CFG_can_transport_cargo;
+	{R3F_LOG_CFG_can_be_transported_cargo select _forEachIndex set [0, toLower (_x select 0)];} forEach R3F_LOG_CFG_can_be_transported_cargo;
+	{R3F_LOG_CFG_can_be_moved_by_player set [_forEachIndex, toLower _x];} forEach R3F_LOG_CFG_can_be_moved_by_player;
 	
 	// On construit la liste des classes des transporteurs dans les quantités associées (pour les nearestObjects, count isKindOf, ...)
 	R3F_LOG_classes_transporteurs = [];
 	{
-		R3F_LOG_classes_transporteurs = R3F_LOG_classes_transporteurs + [_x select 0];
+		R3F_LOG_classes_transporteurs pushBack (_x select 0);
 	} forEach R3F_LOG_CFG_can_transport_cargo;
 	
 	// On construit la liste des classes des transportables dans les quantités associées (pour les nearestObjects, count isKindOf, ...)
 	R3F_LOG_classes_objets_transportables = [];
 	{
-		R3F_LOG_classes_objets_transportables = R3F_LOG_classes_objets_transportables + [_x select 0];
+		R3F_LOG_classes_objets_transportables pushBack (_x select 0);
 	} forEach R3F_LOG_CFG_can_be_transported_cargo;
 	
 	// Union des tableaux de types d'objets servant dans un isKindOf
@@ -94,9 +81,15 @@
 	{
 		if !(_x in R3F_LOG_objets_depl_heli_remorq_transp) then
 		{
-			R3F_LOG_objets_depl_heli_remorq_transp = R3F_LOG_objets_depl_heli_remorq_transp + [_x];
+			R3F_LOG_objets_depl_heli_remorq_transp pushBack _x;
 		};
 	} forEach (R3F_LOG_CFG_can_be_moved_by_player + R3F_LOG_CFG_can_be_lifted + R3F_LOG_CFG_can_be_towed + R3F_LOG_classes_objets_transportables);
+	
+	// Gestion compatibilité fichier de config 3.0 => 3.1 (définition de valeurs par défaut)
+	if (isNil "R3F_LOG_CFG_lock_objects_mode") then {R3F_LOG_CFG_lock_objects_mode = "side";};
+	if (isNil "R3F_LOG_CFG_unlock_objects_timer") then {R3F_LOG_CFG_unlock_objects_timer = 30;};
+	if (isNil "R3F_LOG_CFG_CF_sell_back_bargain_rate") then {R3F_LOG_CFG_CF_sell_back_bargain_rate = 0.75;};
+	if (isNil "R3F_LOG_CFG_CF_creation_cost_factor") then {R3F_LOG_CFG_CF_creation_cost_factor = [];};
 	
 	/* FIN import config */
 	
@@ -109,13 +102,19 @@
 		
 		// Partage du point d'attache avec tous les joueurs
 		publicVariable "R3F_LOG_PUBVAR_point_attache";
+		
+		/** Liste des objets à ne pas perdre dans un vehicule/cargo détruit */
+		R3F_LOG_liste_objets_a_proteger = [];
+		
+		/* Protège les objets présents dans R3F_LOG_liste_objets_a_proteger */
+		execVM "R3F_LOG\surveiller_objets_a_proteger.sqf";
 	};
 	
 	/**
 	 * Suite à une PVEH, exécute une commande en fonction de la localité de l'argument
 	 * @param 0 l'argument sur lequel exécuter la commande
 	 * @param 1 la commande à exécuter (chaîne de caractères)
-	 * @param 2 les éventuels paramètres de la commande (optionel)
+	 * @param 2 les éventuels paramètres de la commande (optionnel)
 	 * @note il faut passer par la fonction R3F_LOG_FNCT_exec_commande_MP
 	 */
 	R3F_LOG_FNCT_PVEH_commande_MP =
@@ -158,7 +157,7 @@
 	 * Ordonne l'exécution d'une commande quelque soit la localité de l'argument ou de l'effet
 	 * @param 0 l'argument sur lequel exécuter la commande
 	 * @param 1 la commande à exécuter (chaîne de caractères)
-	 * @param 2 les éventuels paramètres de la commande (optionel)
+	 * @param 2 les éventuels paramètres de la commande (optionnel)
 	 * @usage [_objet, "setDir", 160] call R3F_LOG_FNCT_exec_commande_MP
 	 */
 	R3F_LOG_FNCT_exec_commande_MP =
@@ -173,9 +172,22 @@
 	
 	call compile preprocessFile "R3F_LOG\fonctions_generales\lib_geometrie_3D.sqf";
 	
-	R3F_LOG_FNCT_determiner_cout_chargement = compile preprocessFile "R3F_LOG\fonctions_generales\determiner_cout_chargement.sqf";
-	R3F_LOG_FNCT_calculer_chargement_vehicule = compile preprocessFile "R3F_LOG\fonctions_generales\calculer_chargement_vehicule.sqf";
+	// Indices du tableau des fonctionnalités retourné par R3F_LOG_FNCT_determiner_fonctionnalites_logistique
+	R3F_LOG_IDX_can_be_depl_heli_remorq_transp = 0;
+	R3F_LOG_IDX_can_be_moved_by_player = 1;
+	R3F_LOG_IDX_can_lift = 2;
+	R3F_LOG_IDX_can_be_lifted = 3;
+	R3F_LOG_IDX_can_tow = 4;
+	R3F_LOG_IDX_can_be_towed = 5;
+	R3F_LOG_IDX_can_transport_cargo = 6;
+	R3F_LOG_IDX_can_transport_cargo_cout = 7;
+	R3F_LOG_IDX_can_be_transported_cargo = 8;
+	R3F_LOG_IDX_can_be_transported_cargo_cout = 9;
+	R3F_LOG_CST_zero_log = [false, false, false, false, false, false, false, 0, false, 0];
 	
+	R3F_LOG_FNCT_determiner_fonctionnalites_logistique = compile preprocessFile "R3F_LOG\fonctions_generales\determiner_fonctionnalites_logistique.sqf";
+	
+	R3F_LOG_FNCT_calculer_chargement_vehicule = compile preprocessFile "R3F_LOG\transporteur\calculer_chargement_vehicule.sqf";
 	R3F_LOG_FNCT_transporteur_charger_auto = compile preprocessFile "R3F_LOG\transporteur\charger_auto.sqf";
 	
 	// Un serveur dédié n'en a pas besoin
@@ -190,6 +202,9 @@
 		/** Objet actuellement sélectionner pour être chargé/remorqué */
 		R3F_LOG_objet_selectionne = objNull;
 		
+		/** Tableau contenant toutes les usines créées */
+		R3F_LOG_CF_liste_usines = [];
+		
 		call compile preprocessFile "R3F_LOG\fonctions_generales\lib_visualisation_objet.sqf";
 		
 		R3F_LOG_FNCT_objet_relacher = compile preprocessFile "R3F_LOG\objet_deplacable\relacher.sqf";
@@ -201,8 +216,7 @@
 		
 		R3F_LOG_FNCT_remorqueur_detacher = compile preprocessFile "R3F_LOG\remorqueur\detacher.sqf";
 		R3F_LOG_FNCT_remorqueur_remorquer_deplace = compile preprocessFile "R3F_LOG\remorqueur\remorquer_deplace.sqf";
-		R3F_LOG_FNCT_remorqueur_remorquer_selection = compile preprocessFile "R3F_LOG\remorqueur\remorquer_selection.sqf";
-		R3F_LOG_FNCT_remorqueur_selectionner_objet = compile preprocessFile "R3F_LOG\remorqueur\selectionner_objet.sqf";
+		R3F_LOG_FNCT_remorqueur_remorquer_direct = compile preprocessFile "R3F_LOG\remorqueur\remorquer_direct.sqf";
 		R3F_LOG_FNCT_remorqueur_init = compile preprocessFile "R3F_LOG\remorqueur\remorqueur_init.sqf";
 		
 		R3F_LOG_FNCT_transporteur_charger_deplace = compile preprocessFile "R3F_LOG\transporteur\charger_deplace.sqf";
@@ -216,9 +230,19 @@
 		R3F_LOG_FNCT_usine_creer_objet = compile preprocessFile "R3F_LOG\usine_creation\creer_objet.sqf";
 		R3F_LOG_FNCT_usine_ouvrir_usine = compile preprocessFile "R3F_LOG\usine_creation\ouvrir_usine.sqf";
 		R3F_LOG_FNCT_usine_init = compile preprocessFile "R3F_LOG\usine_creation\usine_init.sqf";
-		R3F_LOG_FNCT_formater_fonctionnalites_logistique = compile preprocessFile "R3F_LOG\fonctions_generales\formater_fonctionnalites_logistique.sqf";
+		R3F_LOG_FNCT_usine_revendre_deplace = compile preprocessFile "R3F_LOG\usine_creation\revendre_deplace.sqf";
+		R3F_LOG_FNCT_usine_revendre_selection = compile preprocessFile "R3F_LOG\usine_creation\revendre_selection.sqf";
+		R3F_LOG_FNCT_usine_revendre_direct = compile preprocessFile "R3F_LOG\usine_creation\revendre_direct.sqf";
+		R3F_LOG_FNCT_recuperer_liste_cfgVehicles_par_categories = compile preprocessFile "R3F_LOG\usine_creation\recuperer_liste_cfgVehicles_par_categories.sqf";
+		R3F_LOG_FNCT_determiner_cout_creation = compile preprocessFile "R3F_LOG\usine_creation\determiner_cout_creation.sqf";
 		
-		R3F_LOG_FNCT_objet_init = compile preprocessFile "R3F_LOG\objet_init.sqf";
+		R3F_LOG_FNCT_objet_init = compile preprocessFile "R3F_LOG\objet_commun\objet_init.sqf";
+		R3F_LOG_FNCT_objet_est_verrouille = compile preprocessFile "R3F_LOG\objet_commun\objet_est_verrouille.sqf";
+		R3F_LOG_FNCT_deverrouiller_objet = compile preprocessFile "R3F_LOG\objet_commun\deverrouiller_objet.sqf";
+		R3F_LOG_FNCT_definir_proprietaire_verrou = compile preprocessFile "R3F_LOG\objet_commun\definir_proprietaire_verrou.sqf";
+		
+		R3F_LOG_FNCT_formater_fonctionnalites_logistique = compile preprocessFile "R3F_LOG\fonctions_generales\formater_fonctionnalites_logistique.sqf";
+		R3F_LOG_FNCT_formater_nombre_entier_milliers = compile preprocessFile "R3F_LOG\fonctions_generales\formater_nombre_entier_milliers.sqf";
 		
 		// Liste des variables activant ou non les actions de menu
 		R3F_LOG_action_charger_deplace_valide = false;
@@ -226,19 +250,23 @@
 		R3F_LOG_action_contenu_vehicule_valide = false;
 		
 		R3F_LOG_action_remorquer_deplace_valide = false;
-		R3F_LOG_action_remorquer_selection_valide = false;
 		
 		R3F_LOG_action_heliporter_valide = false;
 		R3F_LOG_action_heliport_larguer_valide = false;
 		
 		R3F_LOG_action_deplacer_objet_valide = false;
-		R3F_LOG_action_selectionner_objet_remorque_valide = false;
+		R3F_LOG_action_remorquer_direct_valide = false;
 		R3F_LOG_action_detacher_valide = false;
 		R3F_LOG_action_selectionner_objet_charge_valide = false;
 		
 		R3F_LOG_action_ouvrir_usine_valide = false;
+		R3F_LOG_action_revendre_usine_direct_valide = false;
+		R3F_LOG_action_revendre_usine_deplace_valide = false;
+		R3F_LOG_action_revendre_usine_selection_valide = false;
 		
-		// Sur ordre (publicVariable), révéler la présence d'un objet au joueur (accélérer le retour des addActions)
+		R3F_LOG_action_deverrouiller_valide = false;
+		
+		/** Sur ordre (publicVariable), révéler la présence d'un objet au joueur (accélérer le retour des addActions) */
 		R3F_LOG_FNCT_PUBVAR_reveler_au_joueur =
 		{
 			private ["_objet"];
@@ -250,6 +278,24 @@
 			};
 		};
 		"R3F_LOG_PUBVAR_reveler_au_joueur" addPublicVariableEventHandler R3F_LOG_FNCT_PUBVAR_reveler_au_joueur;
+		
+		/** Event handler GetIn : ne pas monter dans un véhicule qui est en cours de transport */
+		R3F_LOG_FNCT_EH_GetIn =
+		{
+			if (local (_this select 2)) then
+			{
+				_this spawn
+				{
+					sleep 0.1;
+					if ((!(isNull (_this select 0 getVariable "R3F_LOG_est_deplace_par")) && (alive (_this select 0 getVariable "R3F_LOG_est_deplace_par")) && (isPlayer (_this select 0 getVariable "R3F_LOG_est_deplace_par"))) || !(isNull (_this select 0 getVariable "R3F_LOG_est_transporte_par"))) then
+					{
+						(_this select 2) action ["GetOut", _this select 0];
+						(_this select 2) action ["Eject", _this select 0];
+						if (player == _this select 2) then {hintC format [STR_R3F_LOG_objet_en_cours_transport, getText (configFile >> "CfgVehicles" >> (typeOf (_this select 0)) >> "displayName")];};
+					};
+				};
+			};
+		};
 		
 		// Actions à faire quand le joueur est apparu
 		0 spawn
@@ -269,54 +315,6 @@
 					_objet setVariable ["R3F_LOG_est_deplace_par", objNull, true];
 				};
 			}];
-		};
-		
-		/**
-		 * Initialise un nouvel objet en fonction de sa configuration logistique
-		 * @param 0 l'objet à initialiser
-		 */
-		R3F_LOG_FNCT_init_nouvel_objet =
-		{
-			private ["_objet", "_au_moins_une_categorie"];
-			
-			_objet = _this select 0;
-			_au_moins_une_categorie = false;
-			
-			// Si l'objet est un objet déplaçable/héliportable/remorquable/transportable
-			if ({_objet isKindOf _x} count R3F_LOG_objets_depl_heli_remorq_transp > 0) then
-			{
-				[_objet] call R3F_LOG_FNCT_objet_init;
-				_au_moins_une_categorie = true;
-			};
-			
-			// Si l'objet est un véhicule héliporteur
-			if ({_objet isKindOf _x} count R3F_LOG_CFG_can_lift > 0) then
-			{
-				[_objet] call R3F_LOG_FNCT_heliporteur_init;
-				_au_moins_une_categorie = true;
-			};
-			
-			// Si l'objet est un véhicule remorqueur
-			if ({_objet isKindOf _x} count R3F_LOG_CFG_can_tow > 0) then
-			{
-				[_objet] call R3F_LOG_FNCT_remorqueur_init;
-				_au_moins_une_categorie = true;
-			};
-			
-			// Si l'objet est un véhicule transporteur
-			if ({_objet isKindOf _x} count R3F_LOG_classes_transporteurs > 0) then
-			{
-				[_objet] call R3F_LOG_FNCT_transporteur_init;
-				_au_moins_une_categorie = true;
-			};
-			
-			if (_au_moins_une_categorie) then
-			{
-				if (isNil {_objet getVariable "R3F_LOG_disabled"}) then
-				{
-					_objet setVariable ["R3F_LOG_disabled", R3F_LOG_CFG_disabled_by_default, false];
-				};
-			};
 		};
 		
 		/** Variable publique passer à true pour informer le script surveiller_nouveaux_objets.sqf de la création d'un objet */

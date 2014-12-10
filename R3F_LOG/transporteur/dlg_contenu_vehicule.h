@@ -10,19 +10,25 @@
 
 #include "dlg_constantes.h"
 
+#define R3F_LOG_dlg_CV_jauge_chargement_h 0.027
+
 class R3F_LOG_dlg_contenu_vehicule
 {
 	idd = R3F_LOG_IDD_dlg_contenu_vehicule;
 	name = "R3F_LOG_dlg_contenu_vehicule";
 	movingEnable = false;
 	
-	controlsBackground[] = {R3F_LOG_dlg_CV_titre_fond};
+	controlsBackground[] =
+	{
+		R3F_LOG_dlg_CV_titre_fond,
+		R3F_LOG_dlg_CV_fond_noir
+	};
 	objects[] = {};
 	controls[] =
 	{
 		R3F_LOG_dlg_CV_titre,
-		
 		R3F_LOG_dlg_CV_capacite_vehicule,
+		R3F_LOG_dlg_CV_jauge_chargement,
 		R3F_LOG_dlg_CV_liste_contenu,
 		
 		R3F_LOG_dlg_CV_credits,
@@ -156,7 +162,7 @@ class R3F_LOG_dlg_contenu_vehicule
 		colorSelect2[] = {0,0,0,1};
 		colorSelectBackground[] = {0.95,0.95,0.95,1};
 		colorSelectBackground2[] = {1,1,1,0.5};
-		colorBackground[] = {0,0,0,0.5};
+		colorBackground[] = {0,0,0,0};
 		period = 1.2;
 		
 		class ListScrollBar
@@ -176,7 +182,7 @@ class R3F_LOG_dlg_contenu_vehicule
 	class R3F_LOG_dlg_CV_titre_fond : R3F_LOG_dlg_CV_texte
 	{
 		x = 0.26; w = 0.45;
-		y = 0.145; h = 0.07;
+		y = 0.145 - R3F_LOG_dlg_CV_jauge_chargement_h-0.005; h = 0.07;
 		colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.8])"};
 	};
 	
@@ -184,7 +190,7 @@ class R3F_LOG_dlg_contenu_vehicule
 	{
 		idc = R3F_LOG_IDC_dlg_CV_titre;
 		x = 0.26; w = 0.45;
-		y = 0.145; h = 0.04;
+		y = 0.145 - R3F_LOG_dlg_CV_jauge_chargement_h-0.005; h = 0.04;
 		sizeEx = 0.05;
 		text = "";
 	};
@@ -193,16 +199,38 @@ class R3F_LOG_dlg_contenu_vehicule
 	{
 		idc = R3F_LOG_IDC_dlg_CV_capacite_vehicule;
 		x = 0.255; w = 0.4;
-		y = 0.185; h = 0.03;
+		y = 0.185 - R3F_LOG_dlg_CV_jauge_chargement_h-0.005; h = 0.03;
 		sizeEx = 0.03;
 		text = "";
+	};
+	
+	class R3F_LOG_dlg_CV_fond_noir : R3F_LOG_dlg_CV_texte
+	{
+		x = 0.26;  w = 0.45;
+		y = 0.220 - R3F_LOG_dlg_CV_jauge_chargement_h-0.005; h = R3F_LOG_dlg_CV_jauge_chargement_h + 0.010 + 0.54 - 0.005;
+		colorBackground[] = {0,0,0,0.5};
+	};
+	
+	class R3F_LOG_dlg_CV_jauge_chargement
+	{
+		idc = R3F_LOG_IDC_dlg_CV_jauge_chargement;
+		type = CT_PROGRESS;
+		style = ST_LEFT;
+		x = 0.26 + 0.0035;  w = 0.45 - 0.007;
+		y = 0.220 - R3F_LOG_dlg_CV_jauge_chargement_h-0.005 + 0.0035; h = R3F_LOG_dlg_CV_jauge_chargement_h;
+		shadow = 2;
+		colorBar[] = {0.9,0.9,0.9,0.9};
+		colorExtBar[] = {1,1,1,1};
+		colorFrame[] = {1,1,1,1};
+		texture = "";
+		textureExt = "";
 	};
 	
 	class R3F_LOG_dlg_CV_liste_contenu : R3F_LOG_dlg_CV_liste
 	{
 		idc = R3F_LOG_IDC_dlg_CV_liste_contenu;
 		x = 0.26; w = 0.45;
-		y = 0.22; h = 0.54;
+		y = 0.22 + 0.005; h = 0.54 - 0.005;
 		onLBDblClick = "0 spawn R3F_LOG_FNCT_transporteur_decharger;";
 		onLBSelChanged = "uiNamespace setVariable [""R3F_LOG_dlg_CV_lbCurSel_data"", (_this select 0) lbData (_this select 1)];";
 	};

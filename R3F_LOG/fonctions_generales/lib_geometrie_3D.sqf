@@ -445,7 +445,7 @@ R3F_LOG_FNCT_3D_bbox_intersect_bbox_objs =
  * Détermine s'il y a une collision physique réelle (mesh) entre deux objets
  * @param 0 le premier objet pour lequel calculer l'intersection
  * @param 1 le deuxième objet pour lequel calculer l'intersection
- * @param 2 (optionel) true pour tester directement la collision de mesh sans tester les bbox, false pour d'abord tester les bbox (défaut : false)
+ * @param 2 (optionnel) true pour tester directement la collision de mesh sans tester les bbox, false pour d'abord tester les bbox (défaut : false)
  * @return true s'il y a une collision physique réelle (mesh) entre deux objets, false sinon
  * @note le calcul est basé sur les collisions PhysX, des objets non PhysX ne genère pas de collision
  * 
@@ -475,13 +475,13 @@ R3F_LOG_FNCT_3D_mesh_collision_objs =
 	
 	_pos_test = ATLtoASL (player modelToWorld [0,16,20]);// TODO remplacer par R3F_LOG_FNCT_3D_tirer_position_degagee_ciel
 	
-	_objet_test1 = (typeOf _objet1) createVehicleLocal (call R3F_LOG_FNCT_3D_tirer_position_degagee_ciel);
+	_objet_test1 = (typeOf _objet1) createVehicleLocal ([] call R3F_LOG_FNCT_3D_tirer_position_degagee_ciel);
 	_objet_test1 setVectorDirAndUp [vectorDir _objet1, vectorUp _objet1];
 	_objet_test1 allowDamage false;
 	_objet_test1 addEventHandler ["EpeContactStart", {if (!isNull (_this select 1)) then {(_this select 0) setVariable ["R3F_LOG_3D_collision", true, false];};}];
 	_objet_test1 setVariable ["R3F_LOG_3D_collision", false, false];
 	
-	_objet_test2 = (typeOf _objet2) createVehicleLocal (call R3F_LOG_FNCT_3D_tirer_position_degagee_ciel);
+	_objet_test2 = (typeOf _objet2) createVehicleLocal ([] call R3F_LOG_FNCT_3D_tirer_position_degagee_ciel);
 	_objet_test2 setVectorDirAndUp [vectorDir _objet2, vectorUp _objet2];
 	_objet_test2 allowDamage false;
 	_objet_test2 addEventHandler ["EpeContactStart", {if (!isNull (_this select 1)) then {(_this select 0) setVariable ["R3F_LOG_3D_collision", true, false];};}];
@@ -513,23 +513,26 @@ R3F_LOG_FNCT_3D_mesh_collision_objs =
 
 /**
  * Retourne une position dégagée dans le ciel
+ * @param 0 (optionnel) offset 3D du cube dans lequel chercher une position (défaut [0,0,0])
  * @return position dégagée (sphère de 50m de rayon) dans le ciel
  */
 R3F_LOG_FNCT_3D_tirer_position_degagee_ciel =
 {
-	private ["_nb_tirages", "_position_degagee"];
+	private ["_offset", "_nb_tirages", "_position_degagee"];
+	
+	_offset = if (count _this > 0) then {_this select 0} else {[0,0,0]};
 	
 	// Trouver une position dégagée (sphère de 50m de rayon) dans le ciel
 	for [
 		{
-			_position_degagee = [random 3000, random 3000, 10000 + (random 20000)];
+			_position_degagee = [random 3000, random 3000, 10000 + (random 20000)] vectorAdd _offset;
 			_nb_tirages = 1;
 		},
 		{
 			!isNull (nearestObject _position_degagee) && _nb_tirages < 25
 		},
 		{
-			_position_degagee = [random 3000, random 3000, 10000 + (random 20000)];
+			_position_degagee = [random 3000, random 3000, 10000 + (random 20000)] vectorAdd _offset;
 			_nb_tirages = _nb_tirages+1;
 		}
 	] do {};
@@ -542,8 +545,8 @@ R3F_LOG_FNCT_3D_tirer_position_degagee_ciel =
  * @param 0 le rayon de la zone dégagée à trouver au sein de la zone de recherche
  * @param 1 la position centrale autour de laquelle chercher
  * @param 2 le rayon maximal autour de la position centrale dans lequel chercher la position dégagée
- * @param 3 (optionel) nombre limite de tentatives de sélection d'une position dégagée avant abandon (défaut : 30)
- * @param 4 (optionel) true pour autoriser de retourner une position sur l'eau, false sinon (défaut : false)
+ * @param 3 (optionnel) nombre limite de tentatives de sélection d'une position dégagée avant abandon (défaut : 30)
+ * @param 4 (optionnel) true pour autoriser de retourner une position sur l'eau, false sinon (défaut : false)
  * @return position dégagée du rayon indiqué, au sein de la zone de recherche, ou un tableau vide en cas d'échec
  * @note cette fonction pallie au manque de fiabilité des commandes findEmptyPosition et isFlatEmpty concernant les collisions
  */
@@ -639,8 +642,8 @@ R3F_LOG_FNCT_3D_cursorTarget_distance_bbox =
 
 /**
  * Retourne l'objet pointé par le joueur à une distance max de la bounding box de l'objet pointé
- * @param 0 (optionel) liste d'objets à ignorer (défaut [])
- * @param 1 (optionel) distance maximale entre l'unité et la bounding box des objets (défaut : 10)
+ * @param 0 (optionnel) liste d'objets à ignorer (défaut [])
+ * @param 1 (optionnel) distance maximale entre l'unité et la bounding box des objets (défaut : 10)
  * @return l'objet pointé par le joueur ou objNull
  */
 R3F_LOG_FNCT_3D_cursorTarget_virtuel =
@@ -767,7 +770,11 @@ R3F_LOG_FNCT_3D_get_objets_genants_rayon =
 		// Filtre : volume suffisamment important
 		if (_volume > 0.08) then
 		{
-			_obj_proches set [count _obj_proches, _x];
+			// Filtre : insectes et vie ambiante
+			if !(typeOf _x in ["Snake_random_F", "ButterFly_random", "HouseFly", "HoneyBee", "Mosquito"]) then
+			{
+				_obj_proches pushBack _x;
+			};
 		};
 	} forEach (nearestObjects [_pos_centre, ["All"], _rayon]);
 	
@@ -786,10 +793,14 @@ R3F_LOG_FNCT_3D_get_objets_genants_rayon =
 			// Filtre : volume suffisamment important
 			if (_volume > 0.08) then
 			{
-				// Filtre : ignorer les segments de routes
-				if ({_x == _e} count (getPos _e nearRoads 1) == 0) then
+				// Filtre : insectes et vie ambiante
+				if !(typeOf _x in ["Snake_random_F", "ButterFly_random", "HouseFly", "HoneyBee", "Mosquito"]) then
 				{
-					_elements_terrain set [count _elements_terrain, _e];
+					// Filtre : ignorer les segments de routes
+					if ({_x == _e} count (getPos _e nearRoads 1) == 0) then
+					{
+						_elements_terrain pushBack _e;
+					};
 				};
 			};
 		};
@@ -810,7 +821,7 @@ R3F_LOG_FNCT_3D_get_bounding_box_depuis_classname =
 	_classe = _this select 0;
 	
 	// Création du véhicule local temporaire dans le ciel pour connaître la bounding box de l'objet
-	_objet_tmp = _classe createVehicleLocal (call R3F_LOG_FNCT_3D_tirer_position_degagee_ciel);
+	_objet_tmp = _classe createVehicleLocal ([] call R3F_LOG_FNCT_3D_tirer_position_degagee_ciel);
 	sleep 0.01;
 	_bbox = boundingBoxReal _objet_tmp;
 	deleteVehicle _objet_tmp;
@@ -1049,34 +1060,34 @@ addMissionEventHandler ["Draw3D",
 				
 				if !(isNull (_cursorTarget_distance select 0)) then
 				{
-					//[_cursorTarget_distance select 0] call R3F_LOG_FNCT_3D_tracer_bbox_obj;
+					[_cursorTarget_distance select 0] call R3F_LOG_FNCT_3D_tracer_bbox_obj;
 				};
 			};
 		};
 		
-		{
-			// Calcul de la bbox élargie par rapport au gabarit max d'une unité
-			_bbox_min_elargie = (boundingBoxReal _x select 0) vectorDiff [1, 1, 2];
-			_bbox_max_elargie = (boundingBoxReal _x select 1) vectorAdd [1, 1, 2];
-			
-			if ([_x worldToModel (player modelToWorld [0,0,0]), _bbox_min_elargie, _bbox_max_elargie] call R3F_LOG_FNCT_3D_pos_est_dans_bbox) then
-			{
-				//systemChat format ["JOUEUR PROCHE %1 @ %2", typeOf _x, time];
-			};
-		} forEach (nearestObjects [player, ["All"], 15] - [player]);
+		//{
+		//	// Calcul de la bbox élargie par rapport au gabarit max d'une unité
+		//	_bbox_min_elargie = (boundingBoxReal _x select 0) vectorDiff [1, 1, 2];
+		//	_bbox_max_elargie = (boundingBoxReal _x select 1) vectorAdd [1, 1, 2];
+		//	
+		//	if ([_x worldToModel (player modelToWorld [0,0,0]), _bbox_min_elargie, _bbox_max_elargie] call R3F_LOG_FNCT_3D_pos_est_dans_bbox) then
+		//	{
+		//		//systemChat format ["JOUEUR PROCHE %1 @ %2", typeOf _x, time];
+		//	};
+		//} forEach (nearestObjects [player, ["All"], 15] - [player]);
 		
 		drawIcon3D ["\A3\ui_f\data\map\vehicleicons\iconManMedic_ca.paa", [1,0,0,1], positionCameraToWorld [0, 0, 1], 0.2, 0.2, 0, "", 1, 0, "TahomaB"];
 		
-		if !(isNil "R3F_LOG_liste_objets_en_deplacement") then
-		{
-			{
-				[_x] call R3F_LOG_FNCT_3D_tracer_bbox_obj;
-			} forEach R3F_LOG_liste_objets_en_deplacement;
-		};
+		//if !(isNil "R3F_LOG_liste_objets_en_deplacement") then
+		//{
+		//	{
+		//		[_x] call R3F_LOG_FNCT_3D_tracer_bbox_obj;
+		//	} forEach R3F_LOG_liste_objets_en_deplacement;
+		//};
 		
-		{
-			[_x] call R3F_LOG_FNCT_3D_tracer_bbox_obj;
-		} forEach [[[R3F_LOG_joueur_deplace_objet]]call R3F_LOG_FNCT_3D_cursorTarget_virtuel];
+		//{
+		//	[_x] call R3F_LOG_FNCT_3D_tracer_bbox_obj;
+		//} forEach [[[R3F_LOG_joueur_deplace_objet]] call R3F_LOG_FNCT_3D_cursorTarget_virtuel];
 		
 		//{
 		//	[_x] call R3F_LOG_FNCT_3D_tracer_bbox_obj;

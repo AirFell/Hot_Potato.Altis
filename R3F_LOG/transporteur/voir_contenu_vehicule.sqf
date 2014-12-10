@@ -22,6 +22,8 @@ R3F_LOG_objet_selectionne = objNull;
 _transporteur = _this select 0;
 uiNamespace setVariable ["R3F_LOG_dlg_CV_transporteur", _transporteur];
 
+[_transporteur, player] call R3F_LOG_FNCT_definir_proprietaire_verrou;
+
 createDialog "R3F_LOG_dlg_contenu_vehicule";
 waitUntil (uiNamespace getVariable "R3F_LOG_dlg_contenu_vehicule");
 _dlg_contenu_vehicule = findDisplay R3F_LOG_IDD_dlg_contenu_vehicule;
@@ -52,6 +54,8 @@ while {!isNull _dlg_contenu_vehicule} do
 		_tab_objets = [];
 		/** Quantité associé (par l'index) aux noms de classe dans _tab_objets */
 		_tab_quantite = [];
+		/** Coût de chargement associé (par l'index) aux noms de classe dans _tab_objets */
+		_tab_cout_chargement = [];
 		
 		// Préparation de la liste du contenu et des quantités associées aux objets
 		for [{_i = 0}, {_i < count _contenu}, {_i = _i + 1}] do
@@ -61,8 +65,16 @@ while {!isNull _dlg_contenu_vehicule} do
 			
 			if !((typeOf _objet) in _tab_objets) then
 			{
-				_tab_objets = _tab_objets + [typeOf _objet];
-				_tab_quantite = _tab_quantite + [1];
+				_tab_objets pushBack (typeOf _objet);
+				_tab_quantite pushBack 1;
+				if (!isNil {_objet getVariable "R3F_LOG_fonctionnalites"}) then
+				{
+					_tab_cout_chargement pushBack (_objet getVariable "R3F_LOG_fonctionnalites" select R3F_LOG_IDX_can_be_transported_cargo_cout);
+				}
+				else
+				{
+					_tab_cout_chargement pushBack (([typeOf _objet] call R3F_LOG_FNCT_determiner_fonctionnalites_logistique) select R3F_LOG_IDX_can_be_transported_cargo_cout);
+				};
 			}
 			else
 			{
@@ -73,7 +85,9 @@ while {!isNull _dlg_contenu_vehicule} do
 		};
 		
 		lbClear _ctrl_liste;
-		(_dlg_contenu_vehicule displayCtrl R3F_LOG_IDC_dlg_CV_capacite_vehicule) ctrlSetText (format [STR_R3F_LOG_dlg_CV_capacite_vehicule, _chargement select 0, _chargement select 1]);
+		(_dlg_contenu_vehicule displayCtrl R3F_LOG_IDC_dlg_CV_capacite_vehicule) ctrlSetText (format [STR_R3F_LOG_dlg_CV_capacite_vehicule+" pl.", _chargement select 0, _chargement select 1]);
+		if (_chargement select 1 != 0) then {(_dlg_contenu_vehicule displayCtrl R3F_LOG_IDC_dlg_CV_jauge_chargement) progressSetPosition ((_chargement select 0) / (_chargement select 1));};
+		(_dlg_contenu_vehicule displayCtrl R3F_LOG_IDC_dlg_CV_jauge_chargement) ctrlShow ((_chargement select 0) != 0);
 		
 		if (count _tab_objets == 0) then
 		{
@@ -88,6 +102,7 @@ while {!isNull _dlg_contenu_vehicule} do
 				
 				_classe = _tab_objets select _i;
 				_quantite = _tab_quantite select _i;
+				_cout_chargement = _tab_cout_chargement select _i;
 				_icone = getText (configFile >> "CfgVehicles" >> _classe >> "icon");
 				
 				// Icône par défaut
@@ -122,7 +137,7 @@ while {!isNull _dlg_contenu_vehicule} do
 					_icone = _icone + ".paa";
 				};
 				
-				_index = _ctrl_liste lbAdd (getText (configFile >> "CfgVehicles" >> _classe >> "displayName") + format [" (%1x)", _quantite]);
+				_index = _ctrl_liste lbAdd (getText (configFile >> "CfgVehicles" >> _classe >> "displayName") + format [" (%1x %2pl.)", _quantite, _cout_chargement]);
 				_ctrl_liste lbSetPicture [_index, _icone];
 				_ctrl_liste lbSetData [_index, _classe];
 				

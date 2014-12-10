@@ -14,6 +14,8 @@
 #define R3F_LOG_IDC_dlg_CV_credits (R3F_LOG_ID_transporteur_START + 11)
 #define R3F_LOG_IDC_dlg_CV_btn_fermer (R3F_LOG_ID_transporteur_START + 12)
 
+#define R3F_LOG_IDC_dlg_CV_jauge_chargement (R3F_LOG_ID_transporteur_START + 13)
+
 // Control types
 #define CT_STATIC           0
 #define CT_BUTTON           1

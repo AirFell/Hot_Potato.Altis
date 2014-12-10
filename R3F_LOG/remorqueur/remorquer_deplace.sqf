@@ -10,22 +10,24 @@
 
 if (R3F_LOG_mutex_local_verrou) then
 {
-	systemChat STR_R3F_LOG_mutex_action_en_cours;
+	hintC STR_R3F_LOG_mutex_action_en_cours;
 }
 else
 {
 	R3F_LOG_mutex_local_verrou = true;
 	
-	private ["_objet", "_remorqueur"];
+	private ["_objet", "_remorqueur", "_offset_attach_y"];
 	
 	_objet = R3F_LOG_joueur_deplace_objet;
 	_remorqueur = [_objet, 5] call R3F_LOG_FNCT_3D_cursorTarget_virtuel;
 	
 	if (!isNull _remorqueur && {
-		{_remorqueur isKindOf _x} count R3F_LOG_CFG_can_tow > 0 && alive _remorqueur && isNull (_remorqueur getVariable "R3F_LOG_remorque") &&
-		(vectorMagnitude velocity _remorqueur < 6) && !(_remorqueur getVariable "R3F_LOG_disabled")
+		_remorqueur getVariable ["R3F_LOG_fonctionnalites", R3F_LOG_CST_zero_log] select R3F_LOG_IDX_can_tow &&
+		alive _remorqueur && isNull (_remorqueur getVariable "R3F_LOG_remorque") && (vectorMagnitude velocity _remorqueur < 6) && !(_remorqueur getVariable "R3F_LOG_disabled")
 	}) then
 	{
+		[_remorqueur, player] call R3F_LOG_FNCT_definir_proprietaire_verrou;
+		
 		_remorqueur setVariable ["R3F_LOG_remorque", _objet, true];
 		_objet setVariable ["R3F_LOG_est_transporte_par", _remorqueur, true];
 		
@@ -64,10 +66,14 @@ else
 		}];
 		sleep 2;
 		
+		// Quelques corrections visuelles pour des classes spécifiques
+		if (typeOf _remorqueur == "B_Truck_01_mover_F") then {_offset_attach_y = 1.0;}
+		else {_offset_attach_y = 0.2;};
+		
 		// Attacher à l'arrière du véhicule au ras du sol
 		_objet attachTo [_remorqueur, [
 			(boundingCenter _objet select 0),
-			(boundingBoxReal _remorqueur select 0 select 1) + (boundingBoxReal _objet select 0 select 1),
+			(boundingBoxReal _remorqueur select 0 select 1) + (boundingBoxReal _objet select 0 select 1) + _offset_attach_y,
 			(boundingBoxReal _remorqueur select 0 select 2) - (boundingBoxReal _objet select 0 select 2)
 		]];
 		
@@ -81,16 +87,15 @@ else
 			_azimut_canon = ((_objet weaponDirection (weapons _objet select 0)) select 0) atan2 ((_objet weaponDirection (weapons _objet select 0)) select 1);
 			
 			// Seul le D30 a le canon pointant vers le véhicule
-			/* Obsolète pour l'instant (A2)
-			if !(_objet isKindOf "D30_Base") then
+			if !(_objet isKindOf "D30_Base") then // All in Arma
 			{
 				_azimut_canon = _azimut_canon + 180;
-			};*/
+			};
 			
 			[_objet, "setDir", (getDir _objet)-_azimut_canon] call R3F_LOG_FNCT_exec_commande_MP;
 		};
 		
-		sleep 8;
+		sleep 7;
 	};
 	
 	R3F_LOG_mutex_local_verrou = false;

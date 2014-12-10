@@ -1,4 +1,26 @@
-﻿v3.0 (migration to Arma 3)
+﻿v3.1
+- Added : ability to send/sell back objects to the creation factory (fully configurable)
+- Added : the objects are locked to the side/faction/player/none (default config : side, optional unlocking countdown)
+- Added : planes and wheeled vehicles have been set as towable in default configuration
+- Added : countdown during the helicopter lift hooking process (stay hover)
+- Added : logistics configuration for the "All in Arma" addon (auto-activated only if used)
+- Added : logistics configuration update from A3 1.22 to A3 1.35
+- Added : disable the R3F's airlift when the BIS' airlift is currently in use
+- Added : tutorial mission to learn how to use logistics
+- Improved : the towing feature is allowed only if the front side of towable object is near of the rear of towing object
+- Improved : the cost of creation in the factories are configurable and more realistic (see R3F_LOG_CFG_CF_creation_cost_factor)
+- Improved : the vehicle's content interface shows the place taken by each item and a global progress bar of the cargo load
+- Improved : easier and more efficient way to protect essential objects (see USER_FUNCT\do_not_lose_it.sqf)
+- Improved : when creating/unloading a movable object, the initial height fits to the player's sight
+- Improved : when creating/unloading a non-movable object, the warning message is replaced by a confirm dialog
+- Improved : take benefits of the getHit command in the injury protection system (http://feedback.arma3.com/view.php?id=18261)
+- Improved : performance optimizations to determine the logistics capabilities of an object/vehicle
+- Fixed : AI can no longer walk through walls and other objects (http://feedback.arma3.com/view.php?id=19588)
+- Fixed : autonomous vehicles can now be loaded/moved/towed
+- Fixed : autonomous vehicles from the creation factory can now be used
+- Fixed : underwater diver can now take an object in its hands
+
+v3.0 (migration to Arma 3)
 - Removed : the [R3F] Artillery is moved to an independent addon (not released)
 - Added : new full documentation, please read it carefully before asking questions
 - Added : functions to automatically load objects in vehicles at mission start

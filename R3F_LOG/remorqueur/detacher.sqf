@@ -12,7 +12,7 @@
 
 if (R3F_LOG_mutex_local_verrou) then
 {
-	systemChat STR_R3F_LOG_mutex_action_en_cours;
+	hintC STR_R3F_LOG_mutex_action_en_cours;
 }
 else
 {
@@ -24,8 +24,10 @@ else
 	_remorqueur = _objet getVariable "R3F_LOG_est_transporte_par";
 	
 	// Ne pas permettre de décrocher un objet s'il est en fait héliporté
-	if ({_remorqueur isKindOf _x} count R3F_LOG_CFG_can_tow > 0) then
+	if (_remorqueur getVariable "R3F_LOG_fonctionnalites" select R3F_LOG_IDX_can_tow) then
 	{
+		[_objet, player] call R3F_LOG_FNCT_definir_proprietaire_verrou;
+		
 		_remorqueur setVariable ["R3F_LOG_remorque", objNull, true];
 		_objet setVariable ["R3F_LOG_est_transporte_par", objNull, true];
 		
@@ -44,7 +46,7 @@ else
 		
 		if (alive player) then
 		{
-			if ({_objet isKindOf _x} count R3F_LOG_CFG_can_be_moved_by_player > 0) then
+			if (_objet getVariable "R3F_LOG_fonctionnalites" select R3F_LOG_IDX_can_be_moved_by_player) then
 			{
 				// Si personne n'a touché à l'objet pendant le sleep 7
 				if (isNull (_remorqueur getVariable "R3F_LOG_remorque") &&
@@ -63,7 +65,7 @@ else
 	}
 	else
 	{
-		systemChat STR_R3F_LOG_action_detacher_impossible_pour_ce_vehicule;
+		hintC STR_R3F_LOG_action_detacher_impossible_pour_ce_vehicule;
 	};
 	
 	R3F_LOG_mutex_local_verrou = false;

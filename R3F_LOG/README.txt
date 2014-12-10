@@ -1,6 +1,6 @@
-[R3F] Logistics : Advanced logistics (mission script)
------------------------------------------------------
-You have the advanced logistics system for Arma 3,
+[R3F] Logistics : full logistics system (mission script)
+--------------------------------------------------------
+You have the [R3F] Logistics system for Arma 3 and its tutorial mission,
 developed by the R3F (Régiment Force de Frappe Française, team-r3f.org).
 
 The full documentation can be found in the file "EN_DOCUMENTATION.pdf" of the official release.
@@ -26,9 +26,9 @@ Feel free to give your feedback on the BIS topic : http://forums.bistudio.com/sh
 Contact : team-r3f.org
 
 
-[R3F] Logistics : Logistique avancée (script mission)
------------------------------------------------------
-Vous disposez du système de logistique avancée pour Arma 3,
+[R3F] Logistics : système logistique complet (script mission)
+-------------------------------------------------------------
+Vous disposez du système [R3F] Logistics pour Arma 3 et de sa mission tutoriel,
 mis au point par le R3F (Régiment Force de Frappe Française, team-r3f.org).
 
 La documentation complète se trouve dans le fichier "EN_DOCUMENTATION.pdf" de la livraison officielle.

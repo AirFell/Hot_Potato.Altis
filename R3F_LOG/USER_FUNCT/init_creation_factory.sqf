@@ -15,7 +15,7 @@
  * @usage nul = [my_factory, 10000] execVM "R3F_LOG\USER_FUNCT\init_creation_factory.sqf"; // 10000 credits, all sides allowed, all categories except black list in config_creation_factory.sqf
  * @usage nul = [my_factory, -1, independent] execVM "R3F_LOG\USER_FUNCT\init_creation_factory.sqf"; // Unlimited credits, allow to GUER side, all categories except black list
  * @usage nul = [my_factory, -1, nil, "MEDIUM"] execVM "R3F_LOG\USER_FUNCT\init_creation_factory.sqf"; // All sides allowed, use white list MEDIUM in config_creation_factory.sqf
- * @usage nul = [my_factory, -1, nil, ["Car", "Armored"]] execVM "R3F_LOG\USER_FUNCT\init_creation_factory.sqf"; // Allow only categorie "Car" and "Armored"
+ * @usage nul = [my_factory, -1, nil, ["Car", "Armored"]] execVM "R3F_LOG\USER_FUNCT\init_creation_factory.sqf"; // Allow only categories "Car" and "Armored"
  * @usage You can replace "my_factory" by "this" if you put the line in the initialization line in the mission editor.
  * 
  * @note the categories are the same as in the mission editor. Class names can be found in the BIS' config viewer in the config file CfgVehicleClasses.

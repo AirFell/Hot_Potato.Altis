@@ -23,7 +23,7 @@ R3F_LOG_FNCT_PVEH_nouvel_objet_en_deplacement =
 	_objet = _this select 1;
 	
 	R3F_LOG_liste_objets_en_deplacement = R3F_LOG_liste_objets_en_deplacement - [_objet];
-	R3F_LOG_liste_objets_en_deplacement set [count R3F_LOG_liste_objets_en_deplacement, _objet];
+	R3F_LOG_liste_objets_en_deplacement pushBack _objet;
 	
 	_objet allowDamage false;
 };
@@ -55,24 +55,12 @@ R3F_LOG_FNCT_PVEH_fin_deplacement_objet =
  */
 R3F_LOG_FNCT_EH_HandleDamage =
 {
-	private ["_unite", "_selection", "_blessure", "_source", "_selections", "_blessures_par_selections", "_idx_selection"];
+	private ["_unite", "_selection", "_blessure", "_source"];
 	
 	_unite = _this select 0;
 	_selection = _this select 1;
 	_blessure = _this select 2;
 	_source = _this select 3;
-	
-	_selections = _unite getVariable "R3F_LOG_selections";
-	_blessures_par_selections = _unite getVariable "R3F_LOG_blessures_par_selections";
-	_idx_selection = _selections find _selection;
-	
-	// Si sélection encore non connue, initialisation de la sélection
-	if (_idx_selection == -1) then
-	{
-		_idx_selection = count _selections;
-		_selections set [_idx_selection, _selection];
-		_blessures_par_selections set [_idx_selection, 0];
-	};
 	
 	if (
 		// Filtre sur les blessures de type choc/collision
@@ -80,23 +68,28 @@ R3F_LOG_FNCT_EH_HandleDamage =
 		&& {
 			// Si l'unité est potentiellement en collision avec un objet en cours de déplacement
 			{
-				// Calcul de collision possible unité-objet
-				[
-					_x worldToModel (_unite modelToWorld [0,0,0]), // position de l'unité dans le repère de l'objet en déplacement
-					(boundingBoxReal _x select 0) vectorDiff [12, 12, 12], // bbox min élargie (zone de sûreté)
-					(boundingBoxReal _x select 1) vectorAdd [12, 12, 12] // bbox max élargie (zone de sûreté)
-				] call R3F_LOG_FNCT_3D_pos_est_dans_bbox
+				!isNull _x &&
+				{
+					// Calcul de collision possible unité-objet
+					[
+						_x worldToModel (_unite modelToWorld [0,0,0]), // position de l'unité dans le repère de l'objet en déplacement
+						(boundingBoxReal _x select 0) vectorDiff [12, 12, 12], // bbox min élargie (zone de sûreté)
+						(boundingBoxReal _x select 1) vectorAdd [12, 12, 12] // bbox max élargie (zone de sûreté)
+					] call R3F_LOG_FNCT_3D_pos_est_dans_bbox
+				}
 			} count R3F_LOG_liste_objets_en_deplacement != 0
 		}
 	}) then
 	{
 		// Retourner la valeur de blessure précédente de l'unité
-		_blessures_par_selections select _idx_selection
-	}
-	else
-	{
-		// Mémorisation de la blessure pour la sélection, pas de valeur de retour au HandleDamage
-		_blessures_par_selections set [_idx_selection, _blessure];
+		if (_selection == "") then
+		{
+			damage _unite
+		}
+		else
+		{
+			_unite getHit _selection
+		};
 	};
 };
 
@@ -115,26 +108,8 @@ while {true} do
 			// Et qui est locale
 			if (local _x) then
 			{
-				// Initialisation de l'implémentation de la commande getHit manquante
-				_x setVariable ["R3F_LOG_selections", []];
-				_x setVariable ["R3F_LOG_blessures_par_selections", []];
-				
 				// Event handler de à chaque blessure, vérifiant si elle est due à un objet en déplacement
 				_x setVariable ["R3F_LOG_idx_EH_HandleDamage", _x addEventHandler ["HandleDamage", {_this call R3F_LOG_FNCT_EH_HandleDamage}]];
-				
-				// Remettre à zéro les sélections de blessures à chaque respawn
-				_x setVariable ["R3F_LOG_idx_EH_Killed", _x addEventHandler ["Respawn",
-				{
-					(_this select 0) setVariable ["R3F_LOG_selections", []];
-					(_this select 0) setVariable ["R3F_LOG_blessures_par_selections", []];
-				}]];
-				
-				// Remettre à zéro les sélections de blessures à chaque soin
-				_x setVariable ["R3F_LOG_idx_EH_HandleHeal", _x addEventHandler ["HandleHeal",
-				{
-					(_this select 0) setVariable ["R3F_LOG_selections", []];
-					(_this select 0) setVariable ["R3F_LOG_blessures_par_selections", []];
-				}]];
 			};
 		}
 		// Unité déjà gérée
@@ -146,16 +121,6 @@ while {true} do
 				// Suppresion des event handler de gestion des blessures
 				_x removeEventHandler ["HandleDamage", _x getVariable "R3F_LOG_idx_EH_HandleDamage"];
 				_x setVariable ["R3F_LOG_idx_EH_HandleDamage", nil];
-				
-				_x removeEventHandler ["Killed", _x getVariable "R3F_LOG_idx_EH_Killed"];
-				_x setVariable ["R3F_LOG_idx_EH_Killed", nil];
-				
-				_x removeEventHandler ["HandleHeal", _x getVariable "R3F_LOG_idx_EH_HandleHeal"];
-				_x setVariable ["R3F_LOG_idx_EH_HandleHeal", nil];
-				
-				// Destruction de l'implémentation de la commande getHit manquante
-				_x setVariable ["R3F_LOG_selections", nil];
-				_x setVariable ["R3F_LOG_blessures_par_selections", nil];
 			};
 		};
 	} forEach call {// Calcul du paramètre du forEach
@@ -178,18 +143,28 @@ while {true} do
 		
 		_objet = R3F_LOG_liste_objets_en_deplacement select _idx_objet;
 		
-		// Si l'objet n'est plus déplacé par une unité valide
-		if !(isNull (_objet getVariable ["R3F_LOG_est_deplace_par", objNull]) ||
-			{alive (_objet getVariable "R3F_LOG_est_deplace_par") && isPlayer (_objet getVariable "R3F_LOG_est_deplace_par")}
-		) then
+		if (isNull _objet) then
 		{
-			["R3F_LOG_PV_fin_deplacement_objet", _objet] call R3F_LOG_FNCT_PVEH_fin_deplacement_objet;
+			R3F_LOG_liste_objets_en_deplacement = R3F_LOG_liste_objets_en_deplacement - [objNull];
 			
 			// On recommence la validation de la liste
 			_idx_objet = 0;
 		}
-		// Si l'objet est toujours en déplacement, on poursuit le parcours de la liste
-		else {_idx_objet = _idx_objet+1;};
+		else
+		{
+			// Si l'objet n'est plus déplacé par une unité valide
+			if !(isNull (_objet getVariable ["R3F_LOG_est_deplace_par", objNull]) ||
+				{alive (_objet getVariable "R3F_LOG_est_deplace_par") && isPlayer (_objet getVariable "R3F_LOG_est_deplace_par")}
+			) then
+			{
+				["R3F_LOG_PV_fin_deplacement_objet", _objet] call R3F_LOG_FNCT_PVEH_fin_deplacement_objet;
+				
+				// On recommence la validation de la liste
+				_idx_objet = 0;
+			}
+			// Si l'objet est toujours en déplacement, on poursuit le parcours de la liste
+			else {_idx_objet = _idx_objet+1;};
+		};
 	};
 	
 	sleep 90;

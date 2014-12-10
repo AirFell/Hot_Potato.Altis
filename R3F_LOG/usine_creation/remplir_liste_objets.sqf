@@ -37,7 +37,7 @@ if (count (_usine getVariable "R3F_LOG_CF_cfgVehicles_par_categories") > 0) then
 		_config = configFile >> "CfgVehicles" >> _classe;
 		_nom = getText (_config >> "displayName");
 		_icone = getText (_config >> "icon");
-		_cout = 1 max ceil (0.01 * getNumber (_config >> "cost"));
+		_cout = [_classe] call R3F_LOG_FNCT_determiner_cout_creation;
 		
 		// Icône par défaut
 		if (_icone == "") then
@@ -71,7 +71,7 @@ if (count (_usine getVariable "R3F_LOG_CF_cfgVehicles_par_categories") > 0) then
 			_icone = _icone + ".paa";
 		};
 		
-		_index = _ctrl_liste_objets lbAdd format ["%1 (%2 cred.)", _nom, _cout];
+		_index = _ctrl_liste_objets lbAdd format ["%1 (%2 cred.)", _nom, [_cout] call R3F_LOG_FNCT_formater_nombre_entier_milliers];
 		_ctrl_liste_objets lbSetPicture [_index, _icone];
 		_ctrl_liste_objets lbSetData [_index, _classe];
 	} forEach (_usine getVariable "R3F_LOG_CF_cfgVehicles_par_categories" select _sel_categorie);
