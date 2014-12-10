@@ -1,6 +1,7 @@
 sleep 5;
 diag_log "**5** Bomb_Spawn.sqf loading...";
 
+_vehtype = "";
 _RandomPos_Bomb = Bomb_Spawn_Array select floor random count Bomb_Spawn_Array;
 _posMrk = getMarkerPos _RandomPos_Bomb;
 //_posMrk = getMarkerPos "respawn_bomb";

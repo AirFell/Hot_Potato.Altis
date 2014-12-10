@@ -37,6 +37,11 @@ _deadDelay = 30;
 					"west_base_marker" setMarkerPos getPos west_base;
 						
 					diag_log format ["Case West: Base %1 respawned", Bombed_Team];
+
+					West_Base_Array = West_Base_Array - [_RandomPos_West_Base];
+
+					diag_log format ["_RandomPos_West_Base: %1", _RandomPos_West_Base];
+					diag_log format ["Updated West_Base_Array: %1", West_Base_Array];
 				};
 				case east: {		
 //Custom Side Choosing Script~ AirFell
@@ -56,6 +61,11 @@ _deadDelay = 30;
 					"east_base_marker" setMarkerPos getPos east_base;
 						
 					diag_log format ["Case East: Base %1 respawned", Bombed_Team];
+
+					East_Base_Array = East_Base_Array - [_RandomPos_East_Base];
+
+					diag_log format ["_RandomPos_East_Base: %1", _RandomPos_East_Base];
+					diag_log format ["Updated East_Base_Array: %1", East_Base_Array];
 				};
 				case resistance: {
 //Custom Side Choosing Script~ AirFell
@@ -75,6 +85,11 @@ _deadDelay = 30;
 					"guer_base_marker" setMarkerPos getPos guer_base;
 						
 					diag_log format ["Case Guer: Base %1 respawned", Bombed_Team];
+
+					Guer_Base_Array = Guer_Base_Array - [_RandomPos_Guer_Base];
+
+					diag_log format ["_RandomPos_Guer_Base: %1", _RandomPos_Guer_Base];
+					diag_log format ["Updated Guer_Base_Array: %1", Guer_Base_Array];
 				};
 			};
 		};
