@@ -1,5 +1,8 @@
-sleep 3;
-diag_log "**3** sideswitch.sqf loading...";
+sleep 7;
+diag_log "**7** sideswitch.sqf loading...";
+
+
+The_Bomb addEventHandler ["HandleDamage", {false}];
 
 
 switch (side player) do {

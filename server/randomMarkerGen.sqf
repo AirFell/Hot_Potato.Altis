@@ -9,8 +9,8 @@ via global/public or a direct call. Not sure exactly how it works, need to read 
 
 Next TODO: Make arrays add each marker to them to be called from the respawn(Interem spawnSystem\onTrig2.sqf) script. Then: Write respawn script, build dialog.
 */
-sleep 4;
-diag_log "**4** randomMarkerGen.sqf loading...";
+sleep 3;
+diag_log "**3** randomMarkerGen.sqf loading...";
 
 //////////////////////////////////////////////////////
 //////////////Bomb Spawn Marker Maker/////////////////

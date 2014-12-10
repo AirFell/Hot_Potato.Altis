@@ -1,8 +1,22 @@
-server\Bomb_Spawn.sqf, line 7 : forgot to put in vehicle type for the device.
-*****check distance to arm bomb on respawn tower. May have an issue.
-
 attach/unattach to trucks:
 load bomb onto truck: addaction condition: player distance the_bomb < 3 && (The_Bomb distance truck1 or The_Bomb distance truck2 or The_Bomb distance Truck3)
+	-remove trucks from helicopter R3F lift objects
+	-check crew placement on addaction
+
+truck types:
+	Zamak:
+	I_Truck_02_transport_F
+
+	Tempest:
+	O_Truck_03_transport_F
+
+	HEMTT:
+	B_Truck_01_transport_F
+
+*****check distance to arm bomb on respawn tower. May have an issue.
+
+need to either disable arm script if bomb is on truck, disable truck movement if bomb is onboard,
+	or kill the bomb countdown script if bomb leaves vacinity of the base.
 
 player base respawns- SHK pos circle with blacklist around base itself.
 	-Random vehicles(truck/quad)spawn as well.
@@ -52,3 +66,6 @@ Duration of disarming animation: client\Diarm_Bomb.sqf line 9
 Length of Countdown Timer: server\Bomb_Countdown_Detonate.sqf line 9
 Range of Damage from "explosion": server\Bomb_Countdown_Detonate.sqf line 21
 Bomb respawn delay: server\BombRespawn.sqf line 9
+
+_veh = "Truck_01_base_F" createVehicle position player;
+Truck_01_base_F

@@ -3,8 +3,8 @@ File: vehRespawn.sqf
 Author: Iceman77
 Modified: AirFell
 ---------------------------------------------------------------------------------------------------- */
-sleep 7;
-diag_log "**7** BombRespawn.sqf script loaded.";
+sleep 6;
+diag_log "**6** BombRespawn.sqf script loaded.";
 
 _veh = The_Bomb;
 _deadDelay = 30;
@@ -26,7 +26,7 @@ _vehtype = typeOf _veh;
 			Bomb_Destroyed_Tracker = 0;
 			publicVariable "Bomb_Destroyed_Tracker";
 			
-			this setVariable ["R3F_LOG_disabled", false];
+			The_Bomb setVariable ["R3F_LOG_disabled", false];
 			
 			diag_log "bomb respawned.";
         };

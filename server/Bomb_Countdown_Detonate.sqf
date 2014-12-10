@@ -18,9 +18,10 @@ diag_log "Bomb_Countdown_Detonate script started.";
 //one last check to make sure the bomb wasn't disarmed during the siren countdown
 			if (Bomb_Armed_Tracker == 1) then {		
 //get objects and delete them.
-				_objectsList = nearestObjects [getPos The_Bomb, ["Static","Thing","Strategic","Object"], 75] - [The_Bomb];
+				_objectsList = nearestObjects [getPos The_Bomb, ["Static","Thing","Strategic","Object"], 75] - [The_Bomb, west_base, east_base, guer_base];
 				{
 					_x setDamage 1;
+					sleep 0.5;
 					deleteVehicle _x;
 				}forEach _objectsList;
 			
@@ -56,6 +57,17 @@ diag_log "Bomb_Countdown_Detonate script started.";
 				_number2 = random 10;
 				_bomb9 = "M_Mo_82mm_AT_LG" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1) + _number, 0];
 				sleep _number2;
+				
+				_objectsList2 = nearestObjects [getPos The_Bomb, ["Static","Thing","Strategic","Object"], 250] - [The_Bomb];
+				{
+					_x setDamage 50;
+				}forEach _objectsList2;
+				
+				_objectsList3 = nearestObjects [getPos The_Bomb, ["Helicopter"], 150] - [The_Bomb];
+				{
+					_x setHit ["mala vrtule", 0.95];
+				}forEach _objectsList3;
+				
 				_number = random 20;
 				_bomb10 = "Bo_Mk82" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1) - _number, 0];
 				deleteVehicle The_Bomb;

@@ -1,7 +1,7 @@
-sleep 5;
-diag_log "**5** Bomb_Spawn.sqf loading...";
+sleep 4;
+diag_log "**4** Bomb_Spawn.sqf loading...";
 
-_vehtype = "";
+_vehtype = "Land_Device_assembled_F";
 _RandomPos_Bomb = Bomb_Spawn_Array select floor random count Bomb_Spawn_Array;
 _posMrk = getMarkerPos _RandomPos_Bomb;
 //_posMrk = getMarkerPos "respawn_bomb";
@@ -11,6 +11,7 @@ The_Bomb setPos [_posMrk select 0, _posMrk select 1,0];
 The_Bomb setVehicleVarName "The_Bomb";
 publicVariable "The_Bomb";
 
-this setVariable ["R3F_LOG_disabled", false];
+The_Bomb setVariable ["R3F_LOG_disabled", false];
+The_Bomb addEventHandler ["HandleDamage", {false}];
 			
 diag_log "Bomb_Spawn.sqf loaded.";

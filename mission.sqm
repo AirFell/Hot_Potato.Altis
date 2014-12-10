@@ -175,10 +175,10 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=9;
+		items=10;
 		class Item0
 		{
-			position[]={14511.393,17.558254,16815.1};
+			position[]={14521.527,17.65736,16813.066};
 			azimut=220.39799;
 			id=6;
 			side="EMPTY";
@@ -218,7 +218,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={14551.721,17.784752,16874.705};
+			position[]={14593.66,17.772633,16907.762};
 			azimut=233.974;
 			id=10;
 			side="EMPTY";
@@ -228,8 +228,8 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={14557.986,17.846376,16857.652};
-			azimut=-451.883;
+			position[]={14555.689,17.774179,16873.91};
+			azimut=-393.16199;
 			id=11;
 			side="EMPTY";
 			vehicle="B_Truck_01_transport_F";
@@ -238,7 +238,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={14526.598,17.587595,16845.891};
+			position[]={14551.946,17.838175,16850.098};
 			azimut=146.30099;
 			id=12;
 			side="EMPTY";
@@ -248,8 +248,8 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={14536.658,17.722548,16836.414};
-			azimut=268.99399;
+			position[]={14518.562,17.562334,16838.25};
+			azimut=306.41599;
 			id=13;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
@@ -258,11 +258,21 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={14600.588,17.820679,16889.49};
+			position[]={14593.353,17.810675,16893.697};
 			azimut=274.62332;
 			id=14;
 			side="EMPTY";
 			vehicle="B_G_Van_01_transport_F";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", false];";
+		};
+		class Item9
+		{
+			position[]={14491.347,17.509047,16798.627};
+			azimut=84.3937;
+			id=15;
+			side="EMPTY";
+			vehicle="I_Heli_light_03_F";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
@@ -272,54 +282,54 @@ class Mission
 		items=37;
 		class Item0
 		{
-			position[]={14555.919,17.688923,16894.641};
+			position[]={14539.702,17.277212,16906.133};
 			name="respawn_west1";
 			type="Empty";
 			angle=140.99001;
 		};
 		class Item1
 		{
-			position[]={14486.115,17.433556,16825.432};
+			position[]={14481.385,17.061638,16845.711};
 			name="respawn_east1";
 			type="Empty";
 			angle=129.25406;
 		};
 		class Item2
 		{
-			position[]={14567.652,17.91,16823.365};
+			position[]={14506.843,17.275562,16872.719};
 			name="respawn_guerrila1";
 			type="Empty";
-			angle=303.68277;
+			angle=133.57762;
 		};
 		class Item3
 		{
-			position[]={14828.505,17.88134,16567.236};
+			position[]={14551.296,17.870249,16839.986};
 			name="respawn_bomb";
 			markerType="ELLIPSE";
 			type="Empty";
 			colorName="ColorYellow";
 			fillName="Border";
-			a=250;
-			b=250;
+			a=50;
+			b=50;
 			drawBorder=1;
 		};
 		class Item4
 		{
-			position[]={14634.022,17.91,16762.203};
+			position[]={14559.025,17.403576,16551.947};
 			name="west_base_respawn";
 			type="Empty";
 			angle=-47.1353;
 		};
 		class Item5
 		{
-			position[]={14613.405,17.91,16745.939};
+			position[]={14538.408,17.144184,16535.684};
 			name="east_base_respawn";
 			type="Empty";
 			angle=-47.975246;
 		};
 		class Item6
 		{
-			position[]={14624.114,17.91,16754.191};
+			position[]={14549.117,17.117428,16543.936};
 			name="guer_base_respawn";
 			type="Empty";
 			angle=-116.6115;
