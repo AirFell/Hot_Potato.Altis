@@ -1,8 +1,11 @@
-sleep 7;
+sleep 10;
 diag_log "**7** sideswitch.sqf loading...";
 
 
 The_Bomb addEventHandler ["HandleDamage", {false}];
+west_base addEventHandler ["HandleDamage", {false}];
+east_base addEventHandler ["HandleDamage", {false}];
+guer_base addEventHandler ["HandleDamage", {false}];
 
 
 switch (side player) do {

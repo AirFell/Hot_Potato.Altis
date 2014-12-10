@@ -30,6 +30,7 @@ _deadDelay = 30;
 					
 					west_base setVehicleVarName "west_base";
 					publicVariable "west_base";
+					west_base addEventHandler ["HandleDamage", {false}];
 						
 					Base_Destroyed_Tracker = 0;
 					publicVariable "Base_Destroyed_Tracker";
@@ -54,6 +55,7 @@ _deadDelay = 30;
 						
 					east_base setVehicleVarName "east_base";
 					publicVariable "east_base";
+					east_base addEventHandler ["HandleDamage", {false}];
 						
 					Base_Destroyed_Tracker = 0;
 					publicVariable "Base_Destroyed_Tracker";
@@ -78,6 +80,7 @@ _deadDelay = 30;
 						
 					guer_base setVehicleVarName "guer_base";
 					publicVariable "guer_base";
+					guer_base addEventHandler ["HandleDamage", {false}];
 					
 					Base_Destroyed_Tracker = 0;
 					publicVariable "Base_Destroyed_Tracker";
