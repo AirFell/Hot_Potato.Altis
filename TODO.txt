@@ -3,6 +3,8 @@ random base markers and sorting script
 	-map markers for bases visible to all, respawn bases only visible to teams.
 *****check distance to arm bomb on respawn tower. May have an issue.
 attach/unattach to trucks
+player base respawns- SHK pos circle with blacklist around base itself.
+	-Random vehicles(truck/quad)spawn as well.
 add bomb respawn marker array(SHK pos)
 add base respawn marker array(SHK pos)
 money system-
@@ -16,6 +18,7 @@ money system-
 base radar
 
 Polish things for later:
+how many times will a base be destroyed?(Should we make more base spawn markers?)
 create dialog for bomb interaction
 increase blast radius to take out helicopter tail rotors
 Configure R3F transport values, disallow heli towing of trucks
@@ -42,3 +45,6 @@ Duration of disarming animation: client\Diarm_Bomb.sqf line 9
 Length of Countdown Timer: server\Bomb_Countdown_Detonate.sqf line 9
 Range of Damage from "explosion": server\Bomb_Countdown_Detonate.sqf line 21
 Bomb respawn delay: server\BombRespawn.sqf line 9
+
+
+load bomb onto truck: addaction condition: player distance the_bomb < 3 && (The_Bomb distance truck1 or The_Bomb distance truck2 or The_Bomb distance Truck3)

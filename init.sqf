@@ -14,13 +14,14 @@ execVM "R3F_LOG\init.sqf";
 	diag_log "The server is Running!";
 	
 	call compile preprocessFile"server\SHK_pos\shk_pos_init.sqf";
-//	_nul = []execVM "server\randomMarkerGen.sqf";
 	_nul = []execVM "server\GlobalVars.sqf";
 	_nul = []execVM "server\Base_Spawn.sqf";
+	_nul = []execVM "server\randomMarkerGen.sqf";
+	_nul = []execVM "server\Bomb_Spawn.sqf";
+	_nul = []execVM "server\Bomb_Marker.sqf";
 	_nul = []execVM "server\BombRespawn.sqf";
 	_nul = []execVM "server\BaseRespawn.sqf";
 	_nul = []execVM "server\Bomb_Countdown_Detonate.sqf";
-	_nul = []execVM "server\Bomb_Marker.sqf";
 
 	diag_log "The server got through all its init files!";
 //	_nul = []execVM "server\missions\mission_init.sqf";
@@ -45,6 +46,7 @@ execVM "R3F_LOG\init.sqf";
 //	"mrkGreen" setMarkerAlphaLocal 0;
 //	"mrkMission" setMarkerAlphaLocal 0;
 //	"no_Mission" setMarkerAlphaLocal 0;
+	"respawn_bomb" setMarkerAlphaLocal 0;
 
 //	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
 	

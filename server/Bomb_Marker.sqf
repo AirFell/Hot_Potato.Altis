@@ -1,5 +1,6 @@
-diag_log "**4** loading bomb marker...";
-sleep 15;
+sleep 6;
+diag_log "**6** loading bomb marker...";
+
 
 bomb_marker = createMarker["bomb_marker", (getPos The_Bomb)];
 bomb_marker setMarkerColor "ColorYellow";

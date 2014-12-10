@@ -1,5 +1,6 @@
+sleep 3;
 diag_log "**3** sideswitch.sqf loading...";
-sleep 10;
+
 
 switch (side player) do {
 	case west: {
