@@ -90,7 +90,9 @@ unless someone disarms it. Just remove scoring.
 					_x setDamage 50;
 				}forEach _objectsList2;
 				
-				_objectsList3 = nearestObjects [getPos The_Bomb, ["Helicopter"], 200];
+				sleep 1;
+				
+				_objectsList3 = nearestObjects [getPos The_Bomb, ["Air"], 200];
 				{
 					_x setHitPointDamage ["HitVRotor", 1];
 				}forEach _objectsList3;
