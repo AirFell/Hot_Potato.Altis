@@ -78,7 +78,7 @@ R3F_LOG_CFG_disabled_by_default = true;
  * 
  * Voir aussi la variable de configiration R3F_LOG_CFG_unlock_objects_timer.
  */
-R3F_LOG_CFG_lock_objects_mode = "side";
+R3F_LOG_CFG_lock_objects_mode = "none";
 
 /**
  * COUNTDOWN TO UNLOCK AN OBJECT
@@ -315,5 +315,6 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
  */
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 [
+"Land_Device_assembled_F"
 	// e.g. : "MyMovableObjectClassName1", "MyMovableObjectClassName2"
 ];

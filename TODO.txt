@@ -1,11 +1,10 @@
+update sideswitch.sqf when base destroyed/respawned.
+
+heli rotor still not breaking on bomb det.
+
 attach/unattach to trucks:
-	-remove trucks from helicopter R3F lift objects
 	-check crew placement on addaction
-
-*****check distance to arm bomb on respawn tower. May have an issue.
-
-kill the bomb countdown script if bomb leaves vacinity of the base.
-	-create a while loop that checks distance
+	https://community.bistudio.com/wiki/lockCargo
 
 player base respawns- SHK pos circle with blacklist around base itself.
 	-Random vehicles(truck/quad)spawn as well.
@@ -30,8 +29,6 @@ ________________________________________________________________________________
 Polish things for later:
 how many times will a base be destroyed?(Should we make more base spawn markers?)
 create dialog for bomb interaction
-increase blast radius to take out helicopter tail rotors
-Configure R3F transport values, disallow heli towing of trucks
 
 **Should we replace the bomb addaction with a GUI arm/disarm function?
 This will make it easier to set counters and handle who can and can't manage it.

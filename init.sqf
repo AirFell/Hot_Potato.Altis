@@ -20,7 +20,6 @@ if (isDedicated) then {
 	_nul = []execVM "server\Bomb_Spawn.sqf";
 	_nul = []execVM "server\Bomb_Marker.sqf";
 	_nul = []execVM "server\BombRespawn.sqf";
-	_nul = []execVM "server\BaseRespawn.sqf";
 	_nul = []execVM "server\Bomb_Countdown_Detonate.sqf";
 
 	diag_log "The server got through all its init files!";
@@ -32,13 +31,8 @@ if (isDedicated) then {
 ///////////////////////////////////////////////////////////////
 	diag_log "The client is running!";
 
-	_nul = []execVM "client\sideswitch.sqf";
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
-	_nul = []execVM "client\Arm_Bomb.sqf";
-	_nul = []execVM "client\Disarm_Bomb.sqf";
-//	_nul = []execVM "onPlayerKilled.sqf";
-	_nul = []execVM "client\Load_Bomb.sqf";
 	
 //	playerCredits = 0;
 	
@@ -53,11 +47,3 @@ if (isDedicated) then {
 	
 	diag_log "The client got through all its init files!";
 };
-
-
-player addAction [
-	"Show Score",
-	{
-		hint format["West:%1 East:%2 Guer:%3", West_Score, East_Score, Guer_Score];
-	},
-	nil, 1, True, True, "", ""];

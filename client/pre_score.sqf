@@ -11,24 +11,30 @@ switch (side player) do {
 	case west: {
 		if (_distance1 < _distance2) then {
 		Bombed_Team = east;
+		publicVariable "Bombed_Team";
 		} else {
 		Bombed_Team = resistance;
+		publicVariable "Bombed_Team";
 		};
 	};
 		
 	case east: {
 		if (_distance1 < _distance2) then {
 		Bombed_Team = west;
+		publicVariable "Bombed_Team";
 		} else {
 		Bombed_Team = resistance;
+		publicVariable "Bombed_Team";
 		};
 	};
 	
 	case resistance: {
 		if (_distance1 < _distance2) then {
 		Bombed_Team = west;
+		publicVariable "Bombed_Team";
 		} else {
 		Bombed_Team = east;
+		publicVariable "Bombed_Team";
 		};
 	};
 };

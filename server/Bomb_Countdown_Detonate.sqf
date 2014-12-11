@@ -1,6 +1,5 @@
 diag_log "Bomb_Countdown_Detonate script started.";
 
-if (isDedicated) then {
     While {True} Do {
         sleep 5;
         if (Bomb_Armed_Tracker == 1) then {
@@ -19,6 +18,29 @@ if (isDedicated) then {
 add a distance check between the bomb and the base. If bomb left the base during the countdown, it still explodes
 unless someone disarms it. Just remove scoring.
 */
+			switch (Bombed_Team) do {
+				case west: {
+					if ((west_base distance The_Bomb) >= 251) then {
+						bombdistanceCheck = 1;
+					} else {
+						bombdistanceCheck = 0;
+					};
+				};
+				case east: {
+					if ((east_base distance The_Bomb) >= 251) then {
+						bombdistanceCheck = 1;
+					} else {
+						bombdistanceCheck = 0;
+					};
+				};
+				case resistance: {
+					if ((guer_base distance The_Bomb) >= 251) then {
+						bombdistanceCheck = 1;
+					} else {
+						bombdistanceCheck = 0;
+					};
+				};
+			};
 	
 //one last check to make sure the bomb wasn't disarmed during the siren countdown
 			if (Bomb_Armed_Tracker == 1) then {		
@@ -68,33 +90,35 @@ unless someone disarms it. Just remove scoring.
 					_x setDamage 50;
 				}forEach _objectsList2;
 				
-				_objectsList3 = nearestObjects [getPos The_Bomb, ["Helicopter"], 150] - [The_Bomb];
+				_objectsList3 = nearestObjects [getPos The_Bomb, ["Helicopter"], 200];
 				{
-					_x setHit ["mala vrtule", 0.95];
+					_x setHitPointDamage ["HitVRotor", 1];
 				}forEach _objectsList3;
 				
 				_number = random 20;
 				_bomb10 = "Bo_Mk82" createVehicle [(getPos The_Bomb select 0) + _number,(getPos The_Bomb select 1) - _number, 0];
 				deleteVehicle The_Bomb;
-				sleep 30;
-						
-				_distanceCheck = 0;
-						
-				diag_log "Objects damaged.";
 				
-				Base_Destroyed_Tracker = 1;
-				publicVariable "Base_Destroyed_Tracker";
-				
-				Bomb_Destroyed_Tracker = 1;
-				publicVariable "Bomb_Destroyed_Tracker";
-						
-				Bomb_Armed_Tracker = 0;
-				publicVariable "Bomb_Armed_Tracker";
-				
-				[]execVm "server\score.sqf";
+				if (bombdistanceCheck == 1) then {
+					Bomb_Destroyed_Tracker = 1;
+					publicVariable "Bomb_Destroyed_Tracker";
+					Bomb_Armed_Tracker = 0;
+					publicVariable "Bomb_Armed_Tracker";
+					diag_log "Objects damaged.";
+				} else {
+					Base_Destroyed_Tracker = 1;
+					publicVariable "Base_Destroyed_Tracker";
+					Bomb_Destroyed_Tracker = 1;
+					publicVariable "Bomb_Destroyed_Tracker";
+					Bomb_Armed_Tracker = 0;
+					publicVariable "Bomb_Armed_Tracker";
+					[]execVm "server\score.sqf";
+					[]execVm "server\BaseRespawn.sqf";
+					diag_log "Objects damaged.";
+				};
+				bombdistanceCheck = 0;
 			};
         };
     };
-};
 
 diag_log "Bomb_Countdown_detonate script ended. ***THIS IS BAD***";

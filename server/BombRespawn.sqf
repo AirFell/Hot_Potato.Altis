@@ -10,7 +10,6 @@ _veh = The_Bomb;
 _deadDelay = 30;
 _vehtype = typeOf _veh; 
 
-if (isDedicated) then {
     While {True} Do {
         sleep 5;
            if (Bomb_Destroyed_Tracker == 1) then {
@@ -26,11 +25,10 @@ if (isDedicated) then {
 			Bomb_Destroyed_Tracker = 0;
 			publicVariable "Bomb_Destroyed_Tracker";
 			
-			The_Bomb setVariable ["R3F_LOG_disabled", false];
+			The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 			
 			diag_log "bomb respawned.";
         };
     };
-};
 
 diag_log "BombRespawn script Ended. ***THIS IS BAD***";

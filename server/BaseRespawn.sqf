@@ -6,13 +6,8 @@ Modified: AirFell
 
 diag_log "BaseRespawn.sqf loaded.";
 
-
-if (isDedicated) then {
-_deadDelay = 30;
+_deadDelay = 15;
 	
-	while {True} do {
-		sleep 5;
-		
 		if (Base_Destroyed_Tracker == 1) then {
 			sleep _deadDelay;
 			
@@ -20,7 +15,11 @@ _deadDelay = 30;
 			
 			switch (Bombed_Team) do {
 				case west: {
-//Custom Side Choosing Script~ AirFell
+				
+					west_base setVehicleVarName "";
+					publicVariable "west_base";
+					sleep 15;
+					
 					_RandomPos_West_Base = West_Base_Array select floor random count West_Base_Array;
 					_posMrk = getMarkerPos _RandomPos_West_Base;
 //					_posMrk = getMarkerPos "west_base_respawn";
@@ -44,8 +43,12 @@ _deadDelay = 30;
 					diag_log format ["_RandomPos_West_Base: %1", _RandomPos_West_Base];
 					diag_log format ["Updated West_Base_Array: %1", West_Base_Array];
 				};
-				case east: {		
-//Custom Side Choosing Script~ AirFell
+				case east: {
+				
+					east_base setVehicleVarName "";
+					publicVariable "east_base";
+					sleep 15;
+					
 					_RandomPos_East_Base = East_Base_Array select floor random count East_Base_Array;
 					_posMrk = getMarkerPos _RandomPos_East_Base;
 //					_posMrk = getMarkerPos "east_base_respawn";
@@ -70,7 +73,11 @@ _deadDelay = 30;
 					diag_log format ["Updated East_Base_Array: %1", East_Base_Array];
 				};
 				case resistance: {
-//Custom Side Choosing Script~ AirFell
+				
+					guer_base setVehicleVarName "";
+					publicVariable "guer_base";
+					sleep 15;
+					
 					_RandomPos_Guer_Base = Guer_Base_Array select floor random count Guer_Base_Array;
 					_posMrk = getMarkerPos _RandomPos_Guer_Base;
 //					_posMrk = getMarkerPos "guer_base_respawn";
@@ -96,7 +103,5 @@ _deadDelay = 30;
 				};
 			};
 		};
-	};
-};
 
-diag_log "BaseRespawn script Ended. ***THIS IS BAD***";
+diag_log "BaseRespawn script Ended.";

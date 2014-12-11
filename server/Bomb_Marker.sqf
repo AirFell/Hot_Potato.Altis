@@ -17,6 +17,7 @@ while {True} do {
 	} else {
 		if (Bomb_Armed_Tracker == 1) then {
 			bomb_marker setMarkerColor "ColorOrange";
+			"bomb_marker" setMarkerPos getPos The_Bomb;
 		} else {
 			bomb_marker setMarkerColor "ColorYellow";
 			"bomb_marker" setMarkerPos getPos The_Bomb;
