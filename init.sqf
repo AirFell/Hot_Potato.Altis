@@ -6,6 +6,7 @@
 enableSaving [false, false];
 
 execVM "R3F_LOG\init.sqf";
+[] execVM "client\hud\playerHud.sqf";
 
 if (isDedicated) then {
 ///////////////////////////////////////////////////////////////
