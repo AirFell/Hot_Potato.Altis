@@ -283,23 +283,23 @@ class Mission
 		class Item0
 		{
 			position[]={14478.417,25.046923,6184.8511};
-			name="respawn_west1";
+			name="respawn_west";
 			type="Empty";
-			angle=273.46985;
+			angle=273.47;
 		};
 		class Item1
 		{
 			position[]={14467.998,25.191998,6178.3306};
-			name="respawn_east1";
+			name="respawn_east";
 			type="Empty";
-			angle=750.55731;
+			angle=750.55701;
 		};
 		class Item2
 		{
 			position[]={14466.851,25.026127,6189.9097};
-			name="respawn_guerrila1";
+			name="respawn_guerrila";
 			type="Empty";
-			angle=133.57762;
+			angle=133.578;
 		};
 		class Item3
 		{

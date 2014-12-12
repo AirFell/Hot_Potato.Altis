@@ -13,10 +13,10 @@ _RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
 diag_log "player killed. scripts restarting.";
 waitUntil {alive player};
 _nul = []execVM "client\sideSwitch.sqf";
+_nul = []execVM "client\Random_Spawn_Pos.sqf";
 _nul = []execVM "client\Arm_Bomb.sqf";
 _nul = []execVM "client\Disarm_Bomb.sqf";
 _nul = []execVM "client\Load_Bomb.sqf";
-_nul = []execVM "cleint\Random_Spawn_Pos.sqf";
 
 The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 The_Bomb addEventHandler ["HandleDamage", {false}];

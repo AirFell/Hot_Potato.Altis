@@ -33,6 +33,7 @@ if (isDedicated) then {
 
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
+	_nul = []execVM "client\Random_Spawn_Pos.sqf";
 	_nul = [] execVM "client\hud\playerHud.sqf";
 	
 	playerCredits = 0;
