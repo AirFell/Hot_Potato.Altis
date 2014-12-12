@@ -63,9 +63,11 @@ while {true} do
 	
 
     // Icons in bottom right
+	/*
 	East_Score = 1;
 	West_Score = 1;
 	Guer_Score = 1;
+	*/
     _str = format ["<br/>%1 <img size='1' image='client\icons\running_man.paa'/>", 100 - round((getFatigue player) * 100)];
     _str = format["<br/>%1<br/><t color='%2'>%3</t> <img size='1' image='client\icons\health.paa'/>", _str, _healthTextColor, _health];
 	_str = format["<br/>%1<br/>%2 <img size='1' image='client\icons\money.paa'/>", _str,  East_Score];

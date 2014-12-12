@@ -94,7 +94,7 @@ unless someone disarms it. Just remove scoring.
 				
 				_objectsList3 = nearestObjects [getPos The_Bomb, ["Air"], 200];
 				{
-					_x setHitPointDamage ["HitVRotor", 1];
+					_x setdamage 0.77;
 				}forEach _objectsList3;
 				
 				_number = random 20;
