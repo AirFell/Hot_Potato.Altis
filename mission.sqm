@@ -67,7 +67,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={15354.78,17.974001,17054.359};
+					position[]={14503.411,9.0294676,5852.5952};
 					azimut=-400.20541;
 					id=0;
 					side="WEST";
@@ -86,7 +86,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={15357.878,18.117966,17137.57};
+					position[]={14497.006,10.434207,5852.8013};
 					azimut=-213.84399;
 					id=1;
 					side="WEST";
@@ -105,7 +105,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={13952.371,16.243376,15860.722};
+					position[]={14397.118,22.274452,6197.0669};
 					azimut=-401.46201;
 					id=2;
 					side="EAST";
@@ -124,7 +124,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14251.343,12.511523,17056.922};
+					position[]={14503.632,17.33226,6191.2778};
 					azimut=298.57101;
 					id=3;
 					side="GUER";
@@ -143,7 +143,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={13950.928,16.560057,15939.308};
+					position[]={14390.725,19.695059,6196.8042};
 					azimut=-137.96899;
 					id=4;
 					side="EAST";
@@ -162,7 +162,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14158.192,13.710043,17041.424};
+					position[]={14503.739,18.588491,6197.1738};
 					id=5;
 					side="GUER";
 					vehicle="I_soldier_F";
@@ -178,7 +178,7 @@ class Mission
 		items=10;
 		class Item0
 		{
-			position[]={14521.527,17.65736,16813.066};
+			position[]={14637.612,17.91,16635.063};
 			azimut=220.39799;
 			id=6;
 			side="EMPTY";
@@ -188,7 +188,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={14070.262,17.902197,15887.925};
+			position[]={13949.653,15.681655,15892.452};
 			azimut=345.55899;
 			id=7;
 			side="EMPTY";
@@ -198,7 +198,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={15236.865,17.122353,17074.111};
+			position[]={15354.457,18.048323,17095.227};
 			azimut=345.24799;
 			id=8;
 			side="EMPTY";
@@ -208,7 +208,7 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={14196.977,13.49641,16929};
+			position[]={14209.037,12.483987,17045.158};
 			azimut=347.509;
 			id=9;
 			side="EMPTY";
@@ -218,7 +218,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={14593.66,17.772633,16907.762};
+			position[]={14984.126,17.90764,16597.01};
 			azimut=233.974;
 			id=10;
 			side="EMPTY";
@@ -228,7 +228,7 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={14555.689,17.774179,16873.91};
+			position[]={14873.791,17.799513,16637.078};
 			azimut=-393.16199;
 			id=11;
 			side="EMPTY";
@@ -238,7 +238,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={14551.946,17.838175,16850.098};
+			position[]={14734.363,17.896614,16371.902};
 			azimut=146.30099;
 			id=12;
 			side="EMPTY";
@@ -248,7 +248,7 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={14518.562,17.562334,16838.25};
+			position[]={14927.119,17.694815,16776.4};
 			azimut=306.41599;
 			id=13;
 			side="EMPTY";
@@ -258,7 +258,7 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={14593.353,17.810675,16893.697};
+			position[]={14965.728,17.91,16421.535};
 			azimut=274.62332;
 			id=14;
 			side="EMPTY";
@@ -268,7 +268,7 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={14491.347,17.509047,16798.627};
+			position[]={14697.888,17.91,16570.842};
 			azimut=84.3937;
 			id=15;
 			side="EMPTY";
@@ -279,240 +279,285 @@ class Mission
 	};
 	class Markers
 	{
-		items=37;
+		items=40;
 		class Item0
 		{
-			position[]={14539.702,17.277212,16906.133};
+			position[]={14478.417,25.046923,6184.8511};
 			name="respawn_west1";
 			type="Empty";
-			angle=140.99001;
+			angle=273.46985;
 		};
 		class Item1
 		{
-			position[]={14481.385,17.061638,16845.711};
+			position[]={14467.998,25.191998,6178.3306};
 			name="respawn_east1";
 			type="Empty";
-			angle=129.25406;
+			angle=750.55731;
 		};
 		class Item2
 		{
-			position[]={14506.843,17.275562,16872.719};
+			position[]={14466.851,25.026127,6189.9097};
 			name="respawn_guerrila1";
 			type="Empty";
 			angle=133.57762;
 		};
 		class Item3
 		{
-			position[]={14551.296,17.870249,16839.986};
+			position[]={14834.068,17.888758,16576.834};
 			name="respawn_bomb";
 			markerType="ELLIPSE";
 			type="Empty";
 			colorName="ColorYellow";
 			fillName="Border";
-			a=50;
-			b=50;
+			a=250;
+			b=250;
 			drawBorder=1;
 		};
 		class Item4
-		{
-			position[]={14559.025,17.403576,16551.947};
-			name="west_base_respawn";
-			type="Empty";
-			angle=-47.1353;
-		};
-		class Item5
-		{
-			position[]={14538.408,17.144184,16535.684};
-			name="east_base_respawn";
-			type="Empty";
-			angle=-47.975246;
-		};
-		class Item6
-		{
-			position[]={14549.117,17.117428,16543.936};
-			name="guer_base_respawn";
-			type="Empty";
-			angle=-116.6115;
-		};
-		class Item7
 		{
 			position[]={14000.209,21.128519,16096.132};
 			name="east_base_random_1";
 			type="Empty";
 		};
-		class Item8
+		class Item5
 		{
 			position[]={14000.86,17.851164,15995.803};
 			name="east_base_random_2";
 			type="Empty";
 		};
-		class Item9
+		class Item6
 		{
 			position[]={14000.211,16.227236,15896.776};
 			name="east_base_random_3";
 			type="Empty";
 		};
-		class Item10
+		class Item7
 		{
 			position[]={14000.212,17.765373,15796.441};
 			name="east_base_random_4";
 			type="Empty";
 		};
-		class Item11
+		class Item8
 		{
 			position[]={14000.208,15.887692,15696.114};
 			name="east_base_random_5";
 			type="Empty";
 		};
-		class Item12
+		class Item9
 		{
 			position[]={13899.941,21.012867,16096.137};
 			name="east_base_random_6";
 			type="Empty";
 		};
-		class Item13
+		class Item10
 		{
 			position[]={13899.942,19.513945,15996.454};
 			name="east_base_random_7";
 			type="Empty";
 		};
-		class Item14
+		class Item11
 		{
 			position[]={13899.942,16.079351,15896.775};
 			name="east_base_random_8";
 			type="Empty";
 		};
-		class Item15
+		class Item12
 		{
 			position[]={13899.941,12.994097,15700.571};
 			name="east_base_random_10";
 			type="Empty";
 		};
-		class Item16
+		class Item13
 		{
 			position[]={15299.819,17.947763,17296.207};
 			name="west_base_random_1";
 			type="Empty";
 		};
-		class Item17
+		class Item14
 		{
 			position[]={15299.817,17.641783,17196.527};
 			name="west_base_random_2";
 			type="Empty";
 		};
-		class Item18
+		class Item15
 		{
 			position[]={15300.47,17.445082,17097.498};
 			name="west_base_random_3";
 			type="Empty";
 		};
-		class Item19
+		class Item16
 		{
 			position[]={15299.818,17.908308,16996.516};
 			name="west_base_random_4";
 			type="Empty";
 		};
-		class Item20
+		class Item17
 		{
 			position[]={15299.819,17.91,16895.541};
 			name="west_base_random_5";
 			type="Empty";
 		};
-		class Item21
+		class Item18
 		{
 			position[]={15400.089,15.661929,17295.559};
 			name="west_base_random_6";
 			type="Empty";
 		};
-		class Item22
+		class Item19
 		{
 			position[]={15400.087,18.175817,17197.186};
 			name="west_base_random_7";
 			type="Empty";
 		};
-		class Item23
+		class Item20
 		{
 			position[]={15400.089,18.700684,17096.197};
 			name="west_base_random_8";
 			type="Empty";
 		};
-		class Item24
+		class Item21
 		{
 			position[]={15400.09,18.561636,16994.563};
 			name="west_base_random_9";
 			type="Empty";
 		};
-		class Item25
+		class Item22
 		{
 			position[]={15399.441,18.735268,16895.535};
 			name="west_base_random_10";
 			type="Empty";
 		};
-		class Item26
+		class Item23
 		{
 			position[]={14000.534,16.843924,17093.623};
 			name="guer_base_random_1";
 			type="Empty";
 		};
-		class Item27
+		class Item24
 		{
 			position[]={14100.694,16.312447,17091.057};
 			name="guer_base_random_2";
 			type="Empty";
 		};
-		class Item28
+		class Item25
 		{
 			position[]={14200.852,15.444034,17091.057};
 			name="guer_base_random_3";
 			type="Empty";
 		};
-		class Item29
+		class Item26
 		{
 			position[]={14300.374,12.704093,17092.342};
 			name="guer_base_random_4";
 			type="Empty";
 		};
-		class Item30
+		class Item27
 		{
 			position[]={14399.892,13.454067,17092.342};
 			name="guer_base_random_5";
 			type="Empty";
 		};
-		class Item31
+		class Item28
 		{
 			position[]={14002.94,13.558721,16988.721};
 			name="guer_base_random_6";
 			type="Empty";
 		};
-		class Item32
+		class Item29
 		{
 			position[]={14101.333,13.375816,16992.762};
 			name="guer_base_random_7";
 			type="Empty";
 		};
-		class Item33
+		class Item30
 		{
 			position[]={14200.211,11.956885,16992.119};
 			name="guer_base_random_8";
 			type="Empty";
 		};
-		class Item34
+		class Item31
 		{
 			position[]={14299.729,12.051384,16992.119};
 			name="guer_base_random_9";
 			type="Empty";
 		};
-		class Item35
+		class Item32
 		{
 			position[]={14401.173,12.601508,16992.76};
 			name="guer_base_random_10";
 			type="Empty";
 		};
-		class Item36
+		class Item33
 		{
 			position[]={13900.941,15.169328,15798.33};
 			name="east_base_random_9";
 			type="Empty";
+		};
+		class Item34
+		{
+			position[]={25000.555,-0.018915713,1961.0093};
+			name="mrkBlue";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="SolidBorder";
+			a=600;
+			b=600;
+			drawBorder=1;
+		};
+		class Item35
+		{
+			position[]={24996.684,0.123189,1984.2788};
+			name="mrknoBlue";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlack";
+			a=300;
+			b=300;
+		};
+		class Item36
+		{
+			position[]={27015.99,0.29148263,1955.0497};
+			name="mrkRed";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="SolidBorder";
+			a=600;
+			b=600;
+			drawBorder=1;
+		};
+		class Item37
+		{
+			position[]={27012.119,0.15876119,1978.3192};
+			name="mrknoRed";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlack";
+			a=300;
+			b=300;
+		};
+		class Item38
+		{
+			position[]={29008.053,-0.18850039,1982.2726};
+			name="mrkGreen";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorGUER";
+			fillName="SolidBorder";
+			a=600;
+			b=600;
+			drawBorder=1;
+		};
+		class Item39
+		{
+			position[]={29004.182,-0.21909788,2005.542};
+			name="mrknoGreen";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlack";
+			a=300;
+			b=300;
 		};
 	};
 };

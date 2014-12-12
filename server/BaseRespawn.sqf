@@ -35,6 +35,9 @@ _deadDelay = 15;
 					publicVariable "Base_Destroyed_Tracker";
 					
 					"west_base_marker" setMarkerPos getPos west_base;
+					sleep 1;
+					"mrkBlue" setMarkerPos getMarkerPos "west_base_marker";
+					"mrknoBlue" setMarkerPos getMarkerPos "west_base_marker";
 						
 					diag_log format ["Case West: Base %1 respawned", Bombed_Team];
 
@@ -64,6 +67,9 @@ _deadDelay = 15;
 					publicVariable "Base_Destroyed_Tracker";
 					
 					"east_base_marker" setMarkerPos getPos east_base;
+					sleep 1;
+					"mrkRed" setMarkerPos getMarkerPos "east_base_marker";
+					"mrknoRed" setMarkerPos getMarkerPos "east_base_marker";
 						
 					diag_log format ["Case East: Base %1 respawned", Bombed_Team];
 
@@ -93,6 +99,9 @@ _deadDelay = 15;
 					publicVariable "Base_Destroyed_Tracker";
 					
 					"guer_base_marker" setMarkerPos getPos guer_base;
+					sleep 1;
+					"mrkGreen" setMarkerPos getMarkerPos "guer_base_marker";
+					"mrknoGreen" setMarkerPos getMarkerPos "guer_base_marker";
 						
 					diag_log format ["Case Guer: Base %1 respawned", Bombed_Team];
 

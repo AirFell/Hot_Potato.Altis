@@ -29,14 +29,13 @@ fnc_createMarkerBomb = {
 };
 
 for "_i" from 0 to 50 do {
-    _p = ["respawn_bomb",0,[], 100] call SHK_pos;
+    _p = ["respawn_bomb",0,["mrkBlue", "mrkRed", "mrkGreen"], 100] call SHK_pos;
     [_p,"ColorBlack"] call fnc_createMarkerBomb;
 	Bomb_Spawn_Array = Bomb_Spawn_Array + [format["marker_Bomb_respawn%1", _markerLoopCounterBomb]];
 	_markerLoopCounterBomb = _markerLoopCounterBomb + 1;
 };
 
-diag_log "randomMarkerGen.sqf loaded.";
-/*
+
 //////////////////////////////////////////////////////
 //////////////West Respawn Function/Loop//////////////
 //////////////////////////////////////////////////////
@@ -54,7 +53,7 @@ fnc_createMarkerWest = {
 };
 
 for "_i" from 0 to 50 do {
-	_p = ["mrkBlue",0,[], 100] call SHK_pos;
+	_p = ["mrkBlue",0,["mrknoBlue"], 100] call SHK_pos;
 	[_p,"ColorBlack"] call fnc_createMarkerWest;
 	westRespawnArray = westRespawnArray + [format["marker_west%1", _markerLoopCounterWest]];
 	_markerLoopCounterWest = _markerLoopCounterWest + 1;
@@ -79,7 +78,7 @@ fnc_createMarkerEast = {
 };
 
 for "_i" from 0 to 50 do {
-    _p = ["mrkRed",0,[], 100] call SHK_pos;
+    _p = ["mrkRed",0,["mrknoRed"], 100] call SHK_pos;
     [_p,"ColorBlack"] call fnc_createMarkerEast;
 	eastRespawnArray = eastRespawnArray + [format["marker_east%1", _markerLoopCounterEast]];
 	_markerLoopCounterEast = _markerLoopCounterEast + 1;
@@ -104,7 +103,7 @@ fnc_createMarkerGuer = {
 };
 
 for "_i" from 0 to 50 do {
-    _p = ["mrkGreen",0,[], 100] call SHK_pos;
+    _p = ["mrkGreen",0,["mrknoGreen"], 100] call SHK_pos;
     [_p,"ColorBlack"] call fnc_createMarkerGuer;
 	guerRespawnArray = guerRespawnArray + [format["marker_guerrila%1", _markerLoopCounterGuer]];
 	_markerLoopCounterGuer = _markerLoopCounterGuer + 1;
@@ -112,6 +111,7 @@ for "_i" from 0 to 50 do {
 
 publicVariable "GuerRespawnArray";
 
+/*
 //////////////////////////////////////////////////////
 //////////////Mission Mark Function/Loop//////////////
 //////////////////////////////////////////////////////
@@ -135,3 +135,5 @@ for "_i" from 0 to 50 do {
 	_markerLoopCounterMission = _markerLoopCounterMission + 1;
 };
 */
+
+diag_log "randomMarkerGen.sqf loaded.";

@@ -16,6 +16,7 @@ _nul = []execVM "client\sideSwitch.sqf";
 _nul = []execVM "client\Arm_Bomb.sqf";
 _nul = []execVM "client\Disarm_Bomb.sqf";
 _nul = []execVM "client\Load_Bomb.sqf";
+_nul = []execVM "cleint\Random_Spawn_Pos.sqf";
 
 The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 The_Bomb addEventHandler ["HandleDamage", {false}];
@@ -23,9 +24,12 @@ west_base addEventHandler ["HandleDamage", {false}];
 east_base addEventHandler ["HandleDamage", {false}];
 guer_base addEventHandler ["HandleDamage", {false}];
 
+
+/*
 player addAction [
 	"Show Score",
 	{
 		hint format["West:%1 East:%2 Guer:%3", West_Score, East_Score, Guer_Score];
 	},
 	nil, 1, True, True, "", ""];
+*/

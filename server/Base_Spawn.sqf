@@ -4,7 +4,10 @@ diag_log "**2** Base_Spawn.sqf loading...";
 
 _vehtype = "Land_Cargo_Tower_V1_No1_F";
 
-//Spawn West Base//
+
+/////////////////////////
+/////Spawn West Base/////
+/////////////////////////
 _RandomPos_West_Base = West_Base_Array select floor random count West_Base_Array;
 _posMrk = getMarkerPos _RandomPos_West_Base;
 //_posMrk = getMarkerPos "west_base_respawn";
@@ -21,13 +24,20 @@ west_base_marker setMarkerColor "ColorBLUFOR";
 west_base_marker setMarkerShape "Icon";
 west_base_marker setMarkerType "b_hq";
 
+"mrkBlue" setMarkerPos getMarkerPos "west_base_marker";
+"mrknoBlue" setMarkerPos getMarkerPos "west_base_marker";
+
 West_Base_Array = West_Base_Array - [_RandomPos_West_Base];
+
+
 
 diag_log format ["_RandomPos_West_Base: %1", _RandomPos_West_Base];
 diag_log format ["Updated West_Base_Array: %1", West_Base_Array];
-					
-
-//Spawn East Base//					
+		
+		
+/////////////////////////
+/////Spawn East Base/////
+///////////////////	/////			
 _RandomPos_East_Base = East_Base_Array select floor random count East_Base_Array;
 _posMrk = getMarkerPos _RandomPos_East_Base;
 //_posMrk = getMarkerPos "east_base_respawn";
@@ -44,13 +54,18 @@ east_base_marker setMarkerColor "ColorOPFOR";
 east_base_marker setMarkerShape "Icon";
 east_base_marker setMarkerType "o_hq";
 
+"mrkRed" setMarkerPos getMarkerPos "east_base_marker";
+"mrknoRed" setMarkerPos getMarkerPos "east_base_marker";
+
 East_Base_Array = East_Base_Array - [_RandomPos_East_Base];
 
 diag_log format ["_RandomPos_East_Base: %1", _RandomPos_East_Base];
 diag_log format ["Updated East_Base_Array: %1", East_Base_Array];
 					
 
-//Spawn Guer Base//
+/////////////////////////
+/////Spawn Guer Base/////
+///////////////////	/////	
 _RandomPos_Guer_Base = Guer_Base_Array select floor random count Guer_Base_Array;
 _posMrk = getMarkerPos _RandomPos_Guer_Base;
 //_posMrk = getMarkerPos "guer_base_respawn";
@@ -66,6 +81,9 @@ guer_base_marker = createMarker["guer_base_marker", (getPos guer_base)];
 guer_base_marker setMarkerColor "ColorIndependent";
 guer_base_marker setMarkerShape "Icon";
 guer_base_marker setMarkerType "n_hq";
+
+"mrkGreen" setMarkerPos getMarkerPos "guer_base_marker";
+"mrknoGreen" setMarkerPos getMarkerPos "guer_base_marker";
 
 Guer_Base_Array = Guer_Base_Array - [_RandomPos_Guer_Base];
 
