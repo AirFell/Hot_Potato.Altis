@@ -1,4 +1,3 @@
-sleep 4;
 diag_log "**4** Bomb_Spawn.sqf loading...";
 
 _vehtype = "Land_Device_assembled_F";
@@ -13,5 +12,7 @@ publicVariable "The_Bomb";
 
 The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 The_Bomb addEventHandler ["HandleDamage", {false}];
-			
+
+
+_nul = []execVM "server\Bomb_Marker.sqf";
 diag_log "Bomb_Spawn.sqf loaded.";

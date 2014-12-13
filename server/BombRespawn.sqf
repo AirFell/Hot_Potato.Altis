@@ -3,15 +3,12 @@ File: vehRespawn.sqf
 Author: Iceman77
 Modified: AirFell
 ---------------------------------------------------------------------------------------------------- */
-sleep 6;
 diag_log "**6** BombRespawn.sqf script loaded.";
-
-_veh = The_Bomb;
-_deadDelay = 30;
-_vehtype = typeOf _veh; 
+_nul = []execVM "server\Bomb_Countdown_Detonate.sqf";
 
     While {True} Do {
         sleep 5;
+		_vehtype = "Land_Device_assembled_F";
            if (Bomb_Destroyed_Tracker == 1) then {
 		   _RandomPos_Bomb = Bomb_Spawn_Array select floor random count Bomb_Spawn_Array;
 			_posMrk = getMarkerPos _RandomPos_Bomb;

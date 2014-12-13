@@ -1,4 +1,3 @@
-sleep 2;
 diag_log "**2** Base_Spawn.sqf loading...";
 
 
@@ -90,4 +89,5 @@ Guer_Base_Array = Guer_Base_Array - [_RandomPos_Guer_Base];
 diag_log format ["_RandomPos_Guer_Base: %1", _RandomPos_Guer_Base];
 diag_log format ["Updated Guer_Base_Array: %1", Guer_Base_Array];
 
+_nul = []execVM "server\randomMarkerGen.sqf";
 diag_log "Base_Spawn.sqf loaded.";

@@ -4,7 +4,7 @@
 respawn = 3;
 respawnDelay = 15;
 respawnDialog = 3;
-respawnOnStart = 1;
+respawnOnStart = 0;
 
 
 //adding loadout template next

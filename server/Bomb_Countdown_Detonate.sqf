@@ -1,4 +1,6 @@
-diag_log "Bomb_Countdown_Detonate script started.";
+diag_log "**7** Bomb_Countdown_Detonate.sqf loaded.";
+Server_Load_Complete = 1;
+diag_log "*****SERVER HAS LOADED ALL FILES*****";
 
     While {True} Do {
         sleep 5;

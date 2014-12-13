@@ -1,4 +1,3 @@
-sleep 5;
 diag_log "**5** loading bomb marker...";
 
 
@@ -6,8 +5,9 @@ bomb_marker = createMarker["bomb_marker", (getPos The_Bomb)];
 bomb_marker setMarkerColor "ColorYellow";
 bomb_marker setMarkerShape "Icon";
 bomb_marker setMarkerType "KIA";
-sleep 5;
 
+
+_nul = []execVM "server\BombRespawn.sqf";
 diag_log "bomb marker loaded.";
 
 while {True} do {
@@ -23,5 +23,4 @@ while {True} do {
 			"bomb_marker" setMarkerPos getPos The_Bomb;
 		};
 	};
-	
 };
