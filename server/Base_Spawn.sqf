@@ -91,3 +91,7 @@ diag_log format ["Updated Guer_Base_Array: %1", Guer_Base_Array];
 
 _nul = []execVM "server\randomMarkerGen.sqf";
 diag_log "Base_Spawn.sqf loaded.";
+
+["BaseOption1", 0, getPos west_base] execVM "server\compositions\createBase.sqf";
+["BaseOption1", 0, getPos east_base] execVM "server\compositions\createBase.sqf";
+["BaseOption1", 0, getPos guer_base] execVM "server\compositions\createBase.sqf";
