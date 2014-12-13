@@ -5,12 +5,9 @@ Modified: AirFell
 ---------------------------------------------------------------------------------------------------- */
 
 diag_log "BaseRespawn.sqf loaded.";
-
-_deadDelay = 15;
 	
 		if (Base_Destroyed_Tracker == 1) then {
-			sleep _deadDelay;
-			
+		
 			_vehtype = "Land_Cargo_Tower_V1_No1_F";
 			
 			switch (Bombed_Team) do {
@@ -38,6 +35,12 @@ _deadDelay = 15;
 					sleep 1;
 					"mrkBlue" setMarkerPos getMarkerPos "west_base_marker";
 					"mrknoBlue" setMarkerPos getMarkerPos "west_base_marker";
+					
+					westRespawnArray = [];
+					eastRespawnArray = [];
+					guerRespawnArray = [];
+					
+					_nul = []execVM "server\BaseRespawn.sqf";
 						
 					diag_log format ["Case West: Base %1 respawned", Bombed_Team];
 
@@ -70,6 +73,12 @@ _deadDelay = 15;
 					sleep 1;
 					"mrkRed" setMarkerPos getMarkerPos "east_base_marker";
 					"mrknoRed" setMarkerPos getMarkerPos "east_base_marker";
+					
+					westRespawnArray = [];
+					eastRespawnArray = [];
+					guerRespawnArray = [];
+					
+					_nul = []execVM "server\BaseRespawn.sqf";
 						
 					diag_log format ["Case East: Base %1 respawned", Bombed_Team];
 
@@ -102,6 +111,12 @@ _deadDelay = 15;
 					sleep 1;
 					"mrkGreen" setMarkerPos getMarkerPos "guer_base_marker";
 					"mrknoGreen" setMarkerPos getMarkerPos "guer_base_marker";
+					
+					westRespawnArray = [];
+					eastRespawnArray = [];
+					guerRespawnArray = [];
+					
+					_nul = []execVM "server\BaseRespawn.sqf";
 						
 					diag_log format ["Case Guer: Base %1 respawned", Bombed_Team];
 

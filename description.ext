@@ -2,7 +2,7 @@
 #include "R3F_LOG\desc_include.h"
 
 respawn = 3;
-respawnDelay = 15;
+respawnDelay = 5;
 respawnDialog = 3;
 respawnOnStart = 0;
 

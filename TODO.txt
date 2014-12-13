@@ -1,13 +1,19 @@
-update sideswitch.sqf when base destroyed/respawned.
-
-heli rotor still not breaking on bomb det.
-
-attach/unattach to trucks:
-	-check crew placement on addaction
+-check crew placement on attach bomb addaction
 	https://community.bistudio.com/wiki/lockCargo
 
 player base respawns- SHK pos circle with blacklist around base itself.
 	-Random vehicles(truck/quad)spawn as well.
+
+base radar
+	-if enemy is within range, change color of marker.
+	-hide radar marker from enemy teams.
+
+R3F config for specific vehicles
+	-what helis can pick up what vehicles.
+	-add vehicles that can hold items ect...
+
+end mission
+	-event handler. No clue on how this works.
 
 design base prefabs
 
