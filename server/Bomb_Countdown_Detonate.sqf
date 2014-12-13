@@ -1,5 +1,6 @@
 diag_log "**7** Bomb_Countdown_Detonate.sqf loaded.";
 Server_Load_Complete = 1;
+publicVariable "Server_Load_Complete";
 diag_log "*****SERVER HAS LOADED ALL FILES*****";
 
     While {True} Do {

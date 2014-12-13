@@ -136,4 +136,7 @@ for "_i" from 0 to 50 do {
 */
 
 _nul = []execVM "server\Bomb_Spawn.sqf";
+Marker_Load_Complete = 1;
+publicVariable "Marker_Load_Complete";
+
 diag_log "randomMarkerGen.sqf loaded.";

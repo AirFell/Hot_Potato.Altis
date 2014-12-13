@@ -1,6 +1,5 @@
-//Commented out for quicker testing
+diag_log "Finding random spawn position.";
 
-/*
 _RandomPosW = westRespawnArray select floor random count westRespawnArray;
 "respawn_west" setMarkerPosLocal getMarkerPos _RandomPosW;
 
@@ -9,11 +8,12 @@ _RandomPosE = EastRespawnArray select floor random count EastRespawnArray;
 
 _RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
 "respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
-*/
+
 diag_log "player killed. scripts restarting.";
+
 waitUntil {alive player};
+
 _nul = []execVM "client\sideSwitch.sqf";
-_nul = []execVM "client\Random_Spawn_Pos.sqf";
 _nul = []execVM "client\Arm_Bomb.sqf";
 _nul = []execVM "client\Disarm_Bomb.sqf";
 _nul = []execVM "client\Load_Bomb.sqf";
@@ -26,10 +26,11 @@ guer_base addEventHandler ["HandleDamage", {false}];
 
 
 /*
+
+//USE FOR TEST ADDACTIONS
 player addAction [
-	"Show Score",
+	"TEST ADDACTION",
 	{
-		hint format["West:%1 East:%2 Guer:%3", West_Score, East_Score, Guer_Score];
 	},
 	nil, 1, True, True, "", ""];
 */

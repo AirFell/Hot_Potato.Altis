@@ -501,19 +501,21 @@ class Mission
 			type="Empty";
 			colorName="ColorWEST";
 			fillName="SolidBorder";
-			a=600;
-			b=600;
+			a=500;
+			b=500;
 			drawBorder=1;
 		};
 		class Item35
 		{
-			position[]={24996.684,0.123189,1984.2788};
+			position[]={25004.436,-3.0504307e-005,1976.5189};
 			name="mrknoBlue";
 			markerType="ELLIPSE";
 			type="Empty";
-			colorName="ColorBlack";
-			a=300;
-			b=300;
+			colorName="ColorWEST";
+			fillName="SolidBorder";
+			a=250;
+			b=250;
+			drawBorder=1;
 		};
 		class Item36
 		{
@@ -523,19 +525,21 @@ class Mission
 			type="Empty";
 			colorName="ColorEAST";
 			fillName="SolidBorder";
-			a=600;
-			b=600;
+			a=500;
+			b=500;
 			drawBorder=1;
 		};
 		class Item37
 		{
-			position[]={27012.119,0.15876119,1978.3192};
+			position[]={27015.998,-0.00078090816,1962.8026};
 			name="mrknoRed";
 			markerType="ELLIPSE";
 			type="Empty";
-			colorName="ColorBlack";
-			a=300;
-			b=300;
+			colorName="ColorEAST";
+			fillName="SolidBorder";
+			a=250;
+			b=250;
+			drawBorder=1;
 		};
 		class Item38
 		{
@@ -545,19 +549,21 @@ class Mission
 			type="Empty";
 			colorName="ColorGUER";
 			fillName="SolidBorder";
-			a=600;
-			b=600;
+			a=500;
+			b=500;
 			drawBorder=1;
 		};
 		class Item39
 		{
-			position[]={29004.182,-0.21909788,2005.542};
+			position[]={29004.18,-8.3199935e-005,1990.0275};
 			name="mrknoGreen";
 			markerType="ELLIPSE";
 			type="Empty";
-			colorName="ColorBlack";
-			a=300;
-			b=300;
+			colorName="ColorGUER";
+			fillName="SolidBorder";
+			a=250;
+			b=250;
+			drawBorder=1;
 		};
 	};
 };
