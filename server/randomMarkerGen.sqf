@@ -11,6 +11,9 @@ Next TODO: Make arrays add each marker to them to be called from the respawn(Int
 */
 diag_log "**3** randomMarkerGen.sqf loading...";
 
+Marker_Load_Complete = 0;
+publicVariable "Marker_Load_Complete";
+
 //////////////////////////////////////////////////////
 //////////////Bomb Spawn Marker Maker/////////////////
 //////////////////////////////////////////////////////
@@ -23,7 +26,7 @@ fnc_createMarkerBomb = {
   _m = createMarker [format["marker_Bomb_respawn%1", _markerLoopCounterBomb],_pos];
   _m setmarkerColor (_this select 1);
   _m setMarkerShape "Icon";
-  _m setMarkerType "empty";
+  _m setMarkerType "mil_dot_noShadow";
   //format["%1", _m] setMarkerText format["Bomb_Spawn%1", _markerLoopCounterBomb];
 };
 
@@ -47,7 +50,7 @@ fnc_createMarkerWest = {
   _m = createMarker [format["marker_west%1", _markerLoopCounterWest],_pos];
   _m setmarkerColor (_this select 1);
   _m setMarkerShape "Icon";
-  _m setMarkerType "empty";
+  _m setMarkerType "mil_dot_noShadow";
   //format["%1", _m] setMarkerText format["west%1", _markerLoopCounterWest];
 };
 
@@ -72,7 +75,7 @@ fnc_createMarkerEast = {
   _m = createMarker [format["marker_east%1", _markerLoopCounterEast],_pos];
   _m setmarkerColor (_this select 1);
   _m setMarkerShape "Icon";
-  _m setMarkerType "empty";
+  _m setMarkerType "mil_dot_noShadow";
   //format["%1", _m] setMarkerText format["east%1", _markerLoopCounterEast];
 };
 
@@ -97,7 +100,7 @@ fnc_createMarkerGuer = {
   _m = createMarker [format["marker_guerrila%1", _markerLoopCounterGuer],_pos];
   _m setmarkerColor (_this select 1);
   _m setMarkerShape "Icon";
-  _m setMarkerType "empty";
+  _m setMarkerType "mil_dot_noShadow";
   //format["%1", _m] setMarkerText format["Indep%1", _markerLoopCounterGuer];
 };
 
@@ -134,8 +137,6 @@ for "_i" from 0 to 50 do {
 	_markerLoopCounterMission = _markerLoopCounterMission + 1;
 };
 */
-
-_nul = []execVM "server\Bomb_Spawn.sqf";
 Marker_Load_Complete = 1;
 publicVariable "Marker_Load_Complete";
 

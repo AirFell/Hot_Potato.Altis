@@ -1,6 +1,4 @@
-sleep 15;
 diag_log "**8** Load_Bomb.sqf loading...";
-
 ready_to_load_bomb = 0;
 
 player addaction [

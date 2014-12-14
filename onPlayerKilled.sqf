@@ -13,16 +13,18 @@ diag_log "player killed. scripts restarting.";
 
 waitUntil {alive player};
 
-_nul = []execVM "client\sideSwitch.sqf";
 _nul = []execVM "client\Arm_Bomb.sqf";
 _nul = []execVM "client\Disarm_Bomb.sqf";
 _nul = []execVM "client\Load_Bomb.sqf";
+//wtf with these? ^^
 
 The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 The_Bomb addEventHandler ["HandleDamage", {false}];
 west_base addEventHandler ["HandleDamage", {false}];
 east_base addEventHandler ["HandleDamage", {false}];
 guer_base addEventHandler ["HandleDamage", {false}];
+
+
 
 
 /*

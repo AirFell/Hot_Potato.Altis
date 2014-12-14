@@ -1,3 +1,4 @@
+waitUntil {Marker_Load_Complete == 1};
 diag_log "**4** Bomb_Spawn.sqf loading...";
 
 _vehtype = "Land_Device_assembled_F";

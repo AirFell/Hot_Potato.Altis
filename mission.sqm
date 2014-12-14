@@ -17,7 +17,8 @@ class Mission
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_Truck",
 		"A3_Characters_F_OPFOR",
-		"A3_Characters_F_INDEP"
+		"A3_Characters_F_INDEP",
+		"A3_Soft_F_Quadbike"
 	};
 	addOnsAuto[]=
 	{
@@ -33,6 +34,8 @@ class Mission
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_Gamma_Offroad",
 		"a3_soft_f_offroad_01",
+		"A3_Soft_F_Quadbike",
+		"A3_Air_F_Heli_Light_01",
 		"a3_map_altis"
 	};
 	randomSeed=2922631;
@@ -173,7 +176,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=12;
+		items=54;
 		class Item0
 		{
 			position[]={13949.653,15.681655,15892.452};
@@ -236,7 +239,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={8481.0967,88.546074,25258.152};
+			position[]={23740.793,5.3899999,16302.946};
 			azimut=181.76199;
 			id=12;
 			side="EMPTY";
@@ -246,7 +249,7 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={8490.7441,88.313843,25255.553};
+			position[]={23747.695,5.3913379,16303.306};
 			azimut=181.76199;
 			id=13;
 			side="EMPTY";
@@ -256,7 +259,7 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={8498.5361,88.802505,25252.396};
+			position[]={23755.066,5.3965774,16302.681};
 			azimut=181.76199;
 			id=14;
 			side="EMPTY";
@@ -266,7 +269,7 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={8506.6982,88.580338,25249.055};
+			position[]={23762.383,5.3899999,16303.356};
 			azimut=181.76199;
 			id=15;
 			side="EMPTY";
@@ -276,7 +279,7 @@ class Mission
 		};
 		class Item10
 		{
-			position[]={8512.6348,88.28215,25246.828};
+			position[]={23770.643,5.3918457,16303.239};
 			azimut=181.76199;
 			id=16;
 			side="EMPTY";
@@ -286,13 +289,433 @@ class Mission
 		};
 		class Item11
 		{
-			position[]={8472.5625,88.605103,25259.266};
+			position[]={23733.949,5.3852663,16303.001};
 			azimut=181.76199;
 			id=17;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
 			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
+		};
+		class Item12
+		{
+			position[]={23735.797,5.23,16204.355};
+			azimut=181.76199;
+			id=18;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item13
+		{
+			position[]={23743.186,5.23,16203.926};
+			azimut=181.76199;
+			id=19;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item14
+		{
+			position[]={23749.525,5.23,16203.719};
+			azimut=181.76199;
+			id=20;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item15
+		{
+			position[]={23755.859,5.23,16204.139};
+			azimut=181.76199;
+			id=21;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item16
+		{
+			position[]={23760.926,5.23,16203.928};
+			azimut=181.76199;
+			id=22;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item17
+		{
+			position[]={23768.107,5.23,16203.502};
+			azimut=181.76199;
+			id=23;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item18
+		{
+			position[]={23741.744,5.23,16104.429};
+			azimut=181.76199;
+			id=24;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item19
+		{
+			position[]={23770.678,5.23,16104.005};
+			azimut=181.76199;
+			id=25;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item20
+		{
+			position[]={23748.293,5.23,16104.005};
+			azimut=181.76199;
+			id=26;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item21
+		{
+			position[]={23756.32,5.23,16104.218};
+			azimut=181.76199;
+			id=27;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item22
+		{
+			position[]={23763.289,5.23,16104.218};
+			azimut=181.76199;
+			id=28;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item23
+		{
+			position[]={23777.436,5.23,16104.427};
+			azimut=181.76199;
+			id=29;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item24
+		{
+			position[]={23785.041,5.23,16105.911};
+			azimut=181.76199;
+			id=30;
+			side="EMPTY";
+			vehicle="I_Truck_02_transport_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item25
+		{
+			position[]={23792.217,5.23,16105.911};
+			azimut=181.76199;
+			id=31;
+			side="EMPTY";
+			vehicle="I_Truck_02_covered_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item26
+		{
+			position[]={23722.107,5.23,16103.163};
+			azimut=181.76199;
+			id=32;
+			side="EMPTY";
+			vehicle="I_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item27
+		{
+			position[]={23729.076,5.23,16103.163};
+			azimut=181.76199;
+			id=33;
+			side="EMPTY";
+			vehicle="I_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item28
+		{
+			position[]={23701.623,5.23,16103.8};
+			azimut=181.76199;
+			id=34;
+			side="EMPTY";
+			vehicle="I_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item29
+		{
+			position[]={23708.592,5.23,16103.796};
+			azimut=181.76199;
+			id=35;
+			side="EMPTY";
+			vehicle="I_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item30
+		{
+			position[]={23735.201,5.23,16103.376};
+			azimut=181.76199;
+			id=36;
+			side="EMPTY";
+			vehicle="I_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item31
+		{
+			position[]={23715.771,5.23,16103.798};
+			azimut=181.76199;
+			id=37;
+			side="EMPTY";
+			vehicle="I_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item32
+		{
+			position[]={23799.193,5.23,16105.911};
+			azimut=181.76199;
+			id=38;
+			side="EMPTY";
+			vehicle="I_Truck_02_covered_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
+		};
+		class Item33
+		{
+			position[]={23702.006,5.23,16203.297};
+			azimut=181.76199;
+			id=39;
+			side="EMPTY";
+			vehicle="O_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item34
+		{
+			position[]={23707.285,5.23,16202.873};
+			azimut=181.76199;
+			id=40;
+			side="EMPTY";
+			vehicle="O_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item35
+		{
+			position[]={23712.99,5.23,16203.295};
+			azimut=181.76199;
+			id=41;
+			side="EMPTY";
+			vehicle="O_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item36
+		{
+			position[]={23718.9,5.23,16202.879};
+			azimut=181.76199;
+			id=42;
+			side="EMPTY";
+			vehicle="O_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item37
+		{
+			position[]={23724.182,5.23,16203.297};
+			azimut=181.76199;
+			id=43;
+			side="EMPTY";
+			vehicle="O_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item38
+		{
+			position[]={23729.885,5.23,16203.932};
+			azimut=181.76199;
+			id=44;
+			side="EMPTY";
+			vehicle="O_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item39
+		{
+			position[]={23776.346,5.23,16205.834};
+			azimut=181.76199;
+			id=45;
+			side="EMPTY";
+			vehicle="O_Truck_03_transport_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item40
+		{
+			position[]={23784.793,5.23,16206.041};
+			azimut=181.76199;
+			id=46;
+			side="EMPTY";
+			vehicle="O_Truck_03_covered_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item41
+		{
+			position[]={23793.029,5.23,16205.832};
+			azimut=181.76199;
+			id=47;
+			side="EMPTY";
+			vehicle="O_Truck_03_covered_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item42
+		{
+			position[]={23701.426,5.3170314,16302.579};
+			azimut=181.76199;
+			id=48;
+			side="EMPTY";
+			vehicle="B_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
+		};
+		class Item43
+		{
+			position[]={23706.072,5.3297048,16302.368};
+			azimut=181.76199;
+			id=49;
+			side="EMPTY";
+			vehicle="B_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
+		};
+		class Item44
+		{
+			position[]={23711.352,5.3435011,16302.579};
+			azimut=181.76199;
+			id=50;
+			side="EMPTY";
+			vehicle="B_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
+		};
+		class Item45
+		{
+			position[]={23716.844,5.3556838,16302.583};
+			azimut=181.76199;
+			id=51;
+			side="EMPTY";
+			vehicle="B_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
+		};
+		class Item46
+		{
+			position[]={23722.334,5.3630075,16302.579};
+			azimut=181.76199;
+			id=52;
+			side="EMPTY";
+			vehicle="B_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
+		};
+		class Item47
+		{
+			position[]={23727.613,5.3736377,16302.794};
+			azimut=181.76199;
+			id=53;
+			side="EMPTY";
+			vehicle="B_Quadbike_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
+		};
+		class Item48
+		{
+			position[]={23778.09,5.4000001,16305.329};
+			azimut=181.76199;
+			id=54;
+			side="EMPTY";
+			vehicle="B_Truck_01_transport_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
+		};
+		class Item49
+		{
+			position[]={23784.848,5.4008789,16305.329};
+			azimut=181.76199;
+			id=55;
+			side="EMPTY";
+			vehicle="B_Truck_01_covered_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
+		};
+		class Item50
+		{
+			position[]={23791.395,5.4021606,16305.54};
+			azimut=181.76199;
+			id=56;
+			side="EMPTY";
+			vehicle="B_Truck_01_covered_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
+		};
+		class Item51
+		{
+			position[]={23800.898,5.3821731,16303.005};
+			azimut=181.76199;
+			id=57;
+			side="EMPTY";
+			vehicle="B_Heli_Light_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
+		};
+		class Item52
+		{
+			position[]={23802.742,5.23,16204.564};
+			azimut=181.76199;
+			id=58;
+			side="EMPTY";
+			vehicle="B_Heli_Light_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
+		};
+		class Item53
+		{
+			position[]={23807.01,5.23,16105.063};
+			azimut=181.76199;
+			id=59;
+			side="EMPTY";
+			vehicle="B_Heli_Light_01_F";
+			skill=0.60000002;
+			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
 		};
 	};
 	class Markers

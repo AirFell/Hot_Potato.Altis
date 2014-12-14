@@ -3,6 +3,11 @@ diag_log "**1** GlobalVars.sqf loading...";
 Error_pos = [10808.3,10582.9];
 publicVariable "Error_pos";
 
+Server_Load_Complete = 0;
+publicVariable "Server_Load_Complete";
+Marker_Load_Complete = 0;
+publicVariable "Marker_Load_Complete";
+
 ////////////////////////////////////
 ///////Bomb Tracker PV's////////////
 ////////////////////////////////////

@@ -4,8 +4,6 @@
 //[R3F] Logistics 3.0 by R3F Projects
 
 enableSaving [false, false];
-Server_Load_Complete = 0;
-Marker_Load_Complete = 0;
 
 execVM "R3F_LOG\init.sqf";
 if (isDedicated) then {
@@ -26,30 +24,53 @@ if (isDedicated) then {
 ///////////////////////////////////////////////////////////////
 ///////////////////////Client-side stuff///////////////////////
 ///////////////////////////////////////////////////////////////
-
-	waitUntil {Server_Load_Complete == 1 && Marker_Load_Complete == 1};
+	_loading = 0;
+	while {_loading == 0} do {
+		if (Server_Load_Complete == 1 && Marker_Load_Complete == 1) then {
+			_loading = 1;
+		} else {
+			_loading = 0;
+		};
+		sleep 1;
+	};
+	waitUntil {_loading == 1};
+	
 	diag_log "The client is running!";
+		
+	diag_log "Finding random spawn position.";
+
+	_RandomPosW = westRespawnArray select floor random count westRespawnArray;
+	"respawn_west" setMarkerPosLocal getMarkerPos _RandomPosW;
+
+	_RandomPosE = EastRespawnArray select floor random count EastRespawnArray;
+	"respawn_east" setMarkerPosLocal getMarkerPos _RandomPosE;
+
+	_RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
+	"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
 	
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
 	_nul = []execVM "client\hud\playerHud.sqf";
 	_nul = []execVM "client\sideSwitch.sqf";
-	
+
 	forceRespawn player;
 	
 	playerCredits = 0;
-	
-	"mrkBlue" setMarkerAlphaLocal 0;
-	"mrkRed" setMarkerAlphaLocal 0;
-	"mrkGreen" setMarkerAlphaLocal 0;
-	"mrknoBlue" setMarkerAlphaLocal 0;
-	"mrknoRed" setMarkerAlphaLocal 0;
-	"mrknoGreen" setMarkerAlphaLocal 0;
-//	"mrkMission" setMarkerAlphaLocal 0;
-//	"no_Mission" setMarkerAlphaLocal 0;
-	"respawn_bomb" setMarkerAlphaLocal 0;
+
+/*
+	"mrkBlue" setMarkerAlpha 0;
+	"mrkRed" setMarkerAlpha 0;
+	"mrkGreen" setMarkerAlpha 0;
+	"mrknoBlue" setMarkerAlpha 0;
+	"mrknoRed" setMarkerAlpha 0;
+	"mrknoGreen" setMarkerAlpha 0;
+//	"mrkMission" setMarkerAlpha 0;
+//	"no_Mission" setMarkerAlpha 0;
+	"respawn_bomb" setMarkerAlpha 0;
 
 //	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
+*/
+
 	
 	diag_log "The client got through all its init files!";
 };

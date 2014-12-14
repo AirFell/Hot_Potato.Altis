@@ -22,22 +22,22 @@ _veh = _this select 0;
 _abandonDelay = (_this select 1) * 60;
 _deadDelay = (_this select 2) * 60;
 _dir = getDir _veh; 
-_temp_pos = westRespawnArray select floor random count westRespawnArray;
+_temp_pos = guerRespawnArray select floor random count guerRespawnArray;
 _pos = getMarkerPos _temp_pos;
 _vehtype = typeOf _veh;
-_check_pos = getMarkerPos "west_base_marker";
+_check_pos = getMarkerPos "guer_base_marker";
 
 if (isDedicated) then {
     While {True} Do {
         sleep 1;
-		if ((_check_pos distance getMarkerPos "west_base_marker") > 10) then {
+		if ((_check_pos distance getMarkerPos "guer_base_marker") > 10) then {
 			sleep 10;
-			_check_pos = getMarkerPos "west_base_marker";
+			_check_pos = getMarkerPos "guer_base_marker";
 			_temp_pos = "";
 			_pos = [];
-			_temp_pos = westRespawnArray select floor random count westRespawnArray;
+			_temp_pos = guerRespawnArray select floor random count guerRespawnArray;
 			_pos = getMarkerPos _temp_pos;
-			diag_log "_________________West Vehicle Respawn markers updated after base reset.";
+			diag_log "_________________Guer Vehicle Respawn markers updated after base reset.";
 		} else {
 			if ((alive _veh) && {canMove _veh} && {{alive _x} count crew _veh == 0}) then {
 				_abandoned = true;
@@ -52,16 +52,16 @@ if (isDedicated) then {
 					sleep 1;
 					
 					//Custom Side Choosing Script~ AirFell
-					_RandomPosW = westRespawnArray select floor random count westRespawnArray;
-					_posMrk = getMarkerPos _RandomPosW;
+					_RandomPosG = guerRespawnArray select floor random count guerRespawnArray;
+					_posMrk = getMarkerPos _RandomPosG;
 					
 					_veh = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					_veh setDir _dir;
 					_veh setPos [_posMrk select 0, _posMrk select 1,0];
 					_pos = getPos _veh;
-//					"respawn_veh_west" setMarkerPos getPos _veh;
+//					"respawn_veh_guer" setMarkerPos getPos _veh;
 					_veh setVariable ["R3F_LOG_disabled", false, true];
-					diag_log "_____________________Vehicle West respawned after being abandoned.";
+					diag_log "_____________________Vehicle Guer respawned after being abandoned.";
 				};
 			};
 
@@ -78,16 +78,16 @@ if (isDedicated) then {
 					sleep 1;
 					
 					//Custom Side Choosing Script~ AirFell
-					_RandomPosW = westRespawnArray select floor random count westRespawnArray;
-					_posMrk = getMarkerPos _RandomPosW;
+					_RandomPosG = guerRespawnArray select floor random count guerRespawnArray;
+					_posMrk = getMarkerPos _RandomPosG;
 					
 					_veh = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					_veh setDir _dir;
 					_veh setPos [_posMrk select 0, _posMrk select 1,0];
 					_pos = getPos _veh;
-//					"respawn_veh_west" setMarkerPos getPos _veh;
+//					"respawn_veh_guer" setMarkerPos getPos _veh;
 					_veh setVariable ["R3F_LOG_disabled", false, true];
-					diag_log "_____________________Vehicle West respawned after being destroyed.";
+					diag_log "_____________________Vehicle Guer respawned after being destroyed.";
 				};
 			};
 		};

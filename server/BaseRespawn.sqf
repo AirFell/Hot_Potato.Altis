@@ -15,7 +15,7 @@ diag_log "BaseRespawn.sqf loaded.";
 				
 					west_base setVehicleVarName "";
 					publicVariable "west_base";
-					sleep 15;
+					sleep 5;
 					
 					_RandomPos_West_Base = West_Base_Array select floor random count West_Base_Array;
 					_posMrk = getMarkerPos _RandomPos_West_Base;
@@ -28,19 +28,21 @@ diag_log "BaseRespawn.sqf loaded.";
 					publicVariable "west_base";
 					west_base addEventHandler ["HandleDamage", {false}];
 						
-					Base_Destroyed_Tracker = 0;
-					publicVariable "Base_Destroyed_Tracker";
 					
 					"west_base_marker" setMarkerPos getPos west_base;
-					sleep 1;
 					"mrkBlue" setMarkerPos getMarkerPos "west_base_marker";
 					"mrknoBlue" setMarkerPos getMarkerPos "west_base_marker";
 					
+					{
+						deleteMarker _x;
+					} foreach westRespawnArray;
 					westRespawnArray = [];
-					eastRespawnArray = [];
-					guerRespawnArray = [];
+					publicVariable "westRespawnArray";
 					
-					_nul = []execVM "server\BaseRespawn.sqf";
+					_nul = []execVM "server\randomMarkerGen.sqf";
+					
+					Base_Destroyed_Tracker = 0;
+					publicVariable "Base_Destroyed_Tracker";
 						
 					diag_log format ["Case West: Base %1 respawned", Bombed_Team];
 
@@ -65,20 +67,22 @@ diag_log "BaseRespawn.sqf loaded.";
 					east_base setVehicleVarName "east_base";
 					publicVariable "east_base";
 					east_base addEventHandler ["HandleDamage", {false}];
-						
-					Base_Destroyed_Tracker = 0;
-					publicVariable "Base_Destroyed_Tracker";
 					
 					"east_base_marker" setMarkerPos getPos east_base;
 					sleep 1;
 					"mrkRed" setMarkerPos getMarkerPos "east_base_marker";
 					"mrknoRed" setMarkerPos getMarkerPos "east_base_marker";
 					
-					westRespawnArray = [];
+					{
+						deleteMarker _x;
+					} foreach eastRespawnArray;
 					eastRespawnArray = [];
-					guerRespawnArray = [];
+					publicVariable "eastRespawnArray";
 					
-					_nul = []execVM "server\BaseRespawn.sqf";
+					_nul = []execVM "server\randomMarkerGen.sqf";
+						
+					Base_Destroyed_Tracker = 0;
+					publicVariable "Base_Destroyed_Tracker";
 						
 					diag_log format ["Case East: Base %1 respawned", Bombed_Team];
 
@@ -104,19 +108,21 @@ diag_log "BaseRespawn.sqf loaded.";
 					publicVariable "guer_base";
 					guer_base addEventHandler ["HandleDamage", {false}];
 					
-					Base_Destroyed_Tracker = 0;
-					publicVariable "Base_Destroyed_Tracker";
-					
 					"guer_base_marker" setMarkerPos getPos guer_base;
 					sleep 1;
 					"mrkGreen" setMarkerPos getMarkerPos "guer_base_marker";
 					"mrknoGreen" setMarkerPos getMarkerPos "guer_base_marker";
 					
-					westRespawnArray = [];
-					eastRespawnArray = [];
+					{
+						deleteMarker _x;
+					} foreach guerRespawnArray;
 					guerRespawnArray = [];
+					publicVariable "guerRespawnArray";
 					
-					_nul = []execVM "server\BaseRespawn.sqf";
+					_nul = []execVM "server\randomMarkerGen.sqf";
+						
+					Base_Destroyed_Tracker = 0;
+					publicVariable "Base_Destroyed_Tracker";
 						
 					diag_log format ["Case Guer: Base %1 respawned", Bombed_Team];
 
