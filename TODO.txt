@@ -29,6 +29,7 @@ check crew placement on attach bomb addaction
 R3F config for specific vehicles
 	-what helis can pick up what vehicles.
 	-add vehicles that can hold items ect...
+Chance functions to complilefinal. Holy shit thats going to be hard.
 
 **Should we replace the bomb addaction with a GUI arm/disarm function?
 This will make it easier to set counters and handle who can and can't manage it.

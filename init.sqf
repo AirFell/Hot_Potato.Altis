@@ -15,6 +15,9 @@ if (isDedicated) then {
 	
 	call compile preprocessFile"server\SHK_pos\shk_pos_init.sqf";
 	
+	Marker_Load_Complete = 0;
+	publicVariable "Marker_Load_Complete";
+	
 	_nul = []execVM "server\GlobalVars.sqf";
 
 	diag_log "The server got through all its init files!";
@@ -26,20 +29,12 @@ if (isDedicated) then {
 ///////////////////////Client-side stuff///////////////////////
 ///////////////////////////////////////////////////////////////
 
-	sleep 10;
-
 	diag_log "client entering loading loop.";
 	_loading = 0;
 	while {_loading == 0} do {
 		diag_log "loading loop started, or looping.";
 		if (Server_Load_Complete == 1) then {
-		 diag_log "Message Received: Server Load complete."
-		};
-		if (Marker_Load_Complete == 1) then {
-		 diag_log "Message Received: Marker Load complete."
-		};
-		if (Server_Load_Complete == 1 && Marker_Load_Complete == 1) then {
-			diag_log "loading loop hit completed if's.";
+			diag_log "loading loop hit";
 			_loading = 1;
 		} else {
 			_loading = 0;
@@ -61,6 +56,7 @@ if (isDedicated) then {
 	_RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
 	"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
 	
+	_nul = []execVM "client\kill_credits.sqf";
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
 	_nul = []execVM "client\hud\playerHud.sqf";
@@ -71,7 +67,7 @@ if (isDedicated) then {
 	
 	playerCredits = 0;
 
-/*
+
 	"mrkBlue" setMarkerAlpha 0;
 	"mrkRed" setMarkerAlpha 0;
 	"mrkGreen" setMarkerAlpha 0;
@@ -83,7 +79,7 @@ if (isDedicated) then {
 	"respawn_bomb" setMarkerAlpha 0;
 
 //	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
-*/
+
 
 	
 	diag_log "The client got through all its init files!";

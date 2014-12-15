@@ -65,7 +65,7 @@ while {true} do
     // Icons in bottom right
     _str = format ["<br/>%1 <img size='1' image='client\icons\running_man.paa'/>", 100 - round((getFatigue player) * 100)];
     _str = format["<br/>%1<br/><t color='%2'>%3</t> <img size='1' image='client\icons\health.paa'/>", _str, _healthTextColor, _health];
-	_str = format["<br/>%1<br/>%2 <img size='1' image='client\icons\money.paa'/>", _str,  East_Score];
+	_str = format["<br/>%1<br/>%2 <img size='1' image='client\icons\money.paa'/>", _str,  playerCredits];
 	_str1 = format["<t size='1'> <img size='1' image='client\icons\west.paa'/> %1 <img size='1' image='client\icons\east.paa'/> %2 <img size='1' image='client\icons\guer.paa'/> %3</t>", West_Score, East_Score, Guer_Score];
 
 	_score ctrlSetStructuredText parseText _str1;
