@@ -1,27 +1,10 @@
--check crew placement on attach bomb addaction
-	https://community.bistudio.com/wiki/lockCargo
-
-player base respawns- SHK pos circle with blacklist around base itself.
-	-Random vehicles(truck/quad)spawn as well.
-
-base radar
-	-if enemy is within range, change color of marker.
-	-hide radar marker from enemy teams.
-
-R3F config for specific vehicles
-	-what helis can pick up what vehicles.
-	-add vehicles that can hold items ect...
-
-end mission
-	-event handler. No clue on how this works.
-
-design base prefabs
+-base object spawn & respawn:
+	respawn needs to be set up.
+	unique ID's need to be added to: Infostands(4?), vehicle spawn points (3 vehicle bays, 2 heli pads), resource deposit marker
 
 base logistics- vehicle factory, barracks, base parts factory, resource deposit, ect...
 
-resource missions
-
-money system-
+money system/scoring system- event handlers of some sort?
 	points for arming bomb
 	points for disarming bomb
 	points for surviving bomb detonation if you armed it
@@ -29,12 +12,23 @@ money system-
 	points for killing enemy players
 	points for destroying enemy vehicles
 
+resource missions
+
 base radar
+	-if enemy is within range, change color of marker.
+	-hide radar marker from enemy teams.
 
 _____________________________________________________________________________________
 Polish things for later:
 how many times will a base be destroyed?(Should we make more base spawn markers?)
 create dialog for bomb interaction
+pretty up closing end-mission things.
+	-Idea: stop player movement and then force everyone into a camera that spawns near the last destroyed tower, then "endMission"
+check crew placement on attach bomb addaction
+	https://community.bistudio.com/wiki/lockCargo
+R3F config for specific vehicles
+	-what helis can pick up what vehicles.
+	-add vehicles that can hold items ect...
 
 **Should we replace the bomb addaction with a GUI arm/disarm function?
 This will make it easier to set counters and handle who can and can't manage it.
