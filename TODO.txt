@@ -61,3 +61,5 @@ Bomb respawn delay: server\BombRespawn.sqf line 9
 
 _veh = "Truck_01_base_F" createVehicle position player;
 Truck_01_base_F
+
+testing.S
