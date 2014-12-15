@@ -26,15 +26,13 @@ publicVariable "Bomb_Armed_Tracker";
 /////////////Team Scores////////////
 ////////////////////////////////////
 
-//current scores temporary.
-
-West_Score = 1;
+West_Score = 0;
 publicVariable "West_Score";
 
-East_Score = 1;
+East_Score = 0;
 publicVariable "East_Score";
 
-Guer_Score = 1;
+Guer_Score = 0;
 publicVariable "Guer_Score";
 
 ////////////////////////////////////
@@ -56,4 +54,5 @@ Guer_Base_Array = ["guer_base_random_1", "guer_base_random_2", "guer_base_random
 Bomb_Spawn_Array = [];
 
 _nul = []execVM "server\Base_Spawn.sqf";
+_nul = []execVM "server\server_mission_end.sqf";
 diag_log "GlobalVars.sqf loaded.";

@@ -51,6 +51,7 @@ if (isDedicated) then {
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
 	_nul = []execVM "client\hud\playerHud.sqf";
+	_nul = []execVM "client\client_mission_end.sqf";
 	_nul = []execVM "client\sideSwitch.sqf";
 
 	forceRespawn player;

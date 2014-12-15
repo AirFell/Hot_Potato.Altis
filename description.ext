@@ -48,3 +48,34 @@ class RscTitles
 {
  	#include "client\hud\dialog\HPhud.hpp"
 };
+
+class CfgDebriefing
+{  
+	class end1
+	{
+		title = "Blue Team Wins!";
+		subtitle = "Words here";
+		description = "Blue Team was able to defeat the opposing forces.";
+		pictureBackground = "";
+		picture = "KIA";
+		pictureColor[] = {0,0,1,1};
+	};
+		class end2
+	{
+		title = "Red Team Wins!";
+		subtitle = "Words here";
+		description = "Red Team was able to defeat the opposing forces.";
+		pictureBackground = "";
+		picture = "KIA";
+		pictureColor[] = {1,0,0,1};
+	};
+		class end3
+	{
+		title = "Green Team Wins!";
+		subtitle = "Words here";
+		description = "Green Team was able to defeat the opposing forces.";
+		pictureBackground = "";
+		picture = "KIA";
+		pictureColor[] = {0,1,0,1};
+	};
+};
