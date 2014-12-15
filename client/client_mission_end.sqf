@@ -4,7 +4,7 @@ _end_mission_loop = 0;
 	
 while {_end_mission_loop == 0} do {
 	sleep 5;
-	if (West_points == 5) then {
+	if (West_Score == 5) then {
 		if ((side player) == west) then {
 			["end1", true] call BIS_fnc_endMission;
 			_end_mission_loop = 1;
@@ -15,7 +15,7 @@ while {_end_mission_loop == 0} do {
 			diag_log "Mission has ended.";
 		};
 	} else {
-		if (East_points == 5) then {
+		if (East_Score == 5) then {
 			if ((side player) == east) then {
 				["end2", true] call BIS_fnc_endMission;
 				_end_mission_loop = 1;
@@ -26,7 +26,7 @@ while {_end_mission_loop == 0} do {
 				diag_log "Mission has ended.";
 			};
 		} else {
-			if (Guer_points == 5) then {
+			if (Guer_Score == 5) then {
 				if ((side player) == resistance) then {
 					["end3", true] call BIS_fnc_endMission;
 					_end_mission_loop = 1;

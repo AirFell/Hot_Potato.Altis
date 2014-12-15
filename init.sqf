@@ -6,6 +6,7 @@
 enableSaving [false, false];
 
 execVM "R3F_LOG\init.sqf";
+
 if (isDedicated) then {
 ///////////////////////////////////////////////////////////////
 ///////////////////////Server-side stuff///////////////////////
@@ -24,9 +25,21 @@ if (isDedicated) then {
 ///////////////////////////////////////////////////////////////
 ///////////////////////Client-side stuff///////////////////////
 ///////////////////////////////////////////////////////////////
+
+	sleep 10;
+
+	diag_log "client entering loading loop.";
 	_loading = 0;
 	while {_loading == 0} do {
+		diag_log "loading loop started, or looping.";
+		if (Server_Load_Complete == 1) then {
+		 diag_log "Message Received: Server Load complete."
+		};
+		if (Marker_Load_Complete == 1) then {
+		 diag_log "Message Received: Marker Load complete."
+		};
 		if (Server_Load_Complete == 1 && Marker_Load_Complete == 1) then {
+			diag_log "loading loop hit completed if's.";
 			_loading = 1;
 		} else {
 			_loading = 0;
