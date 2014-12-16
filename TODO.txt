@@ -1,6 +1,12 @@
 -base object spawn & respawn:
 	respawn needs to be set up.
-	unique ID's need to be added to: Infostands(4?), vehicle spawn points (3 vehicle bays, 2 heli pads), resource deposit marker
+	unique ID's need to be added to:
+Infostands (x): "Land_InfoStand_V2_F"
+vehicle spawn points-
+	3 vehicle bays: !NEED OBJECT!
+	2 heli pads: "Land_Flush_Light_yellow_F"
+resource deposit marker: "Land_JumpTarget_F"
+*********Refern to AAW Scripts****************
 
 base logistics- vehicle factory, barracks, base parts factory, resource deposit, ect...
 
@@ -14,6 +20,9 @@ money system/scoring system- event handlers of some sort?
 	points for destroying enemy vehicles
 
 resource missions
+
+add money-only vehicle stores. This should add balance for those without bases/access
+to high end stuff. Should these be static or spawn in random places every mission?
 
 base radar
 	-if enemy is within range, change color of marker.

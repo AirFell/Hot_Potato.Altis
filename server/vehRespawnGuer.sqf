@@ -30,7 +30,7 @@ _check_pos = getMarkerPos "guer_base_marker";
 if (isDedicated) then {
     While {True} Do {
         sleep 1;
-		if ((_check_pos distance getMarkerPos "guer_base_marker") > 10) then {
+		if ((_check_pos distance getMarkerPos "guer_base_marker") > 30) then {
 			sleep 10;
 			_check_pos = getMarkerPos "guer_base_marker";
 			_temp_pos = "";
@@ -53,7 +53,7 @@ if (isDedicated) then {
 					
 					//Custom Side Choosing Script~ AirFell
 					_RandomPosG = guerRespawnArray select floor random count guerRespawnArray;
-					_posMrk = getMarkerPos _RandomPosG;
+					_posMrk = _RandomPosG findEmptyPosition [0, 30, str(_vehtype)];
 					
 					_veh = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					_veh setDir _dir;
@@ -79,7 +79,7 @@ if (isDedicated) then {
 					
 					//Custom Side Choosing Script~ AirFell
 					_RandomPosG = guerRespawnArray select floor random count guerRespawnArray;
-					_posMrk = getMarkerPos _RandomPosG;
+					_posMrk = _RandomPosG findEmptyPosition [0, 30, str(_vehtype)];
 					
 					_veh = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					_veh setDir _dir;
