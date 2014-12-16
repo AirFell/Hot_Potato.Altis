@@ -9,7 +9,8 @@ money system/scoring system- event handlers of some sort?
 	points for disarming bomb
 	points for surviving bomb detonation if you armed it
 	points for depositing resources
-	points for killing enemy players
+	points for killing enemy players*-kind of done. Needs testing
+	points for wounding enemy players when friendly finishes them off
 	points for destroying enemy vehicles
 
 resource missions
@@ -29,7 +30,8 @@ check crew placement on attach bomb addaction
 R3F config for specific vehicles
 	-what helis can pick up what vehicles.
 	-add vehicles that can hold items ect...
-Chance functions to complilefinal. Holy shit thats going to be hard.
+Change functions to complilefinal. Holy shit thats going to be hard.
+Set objectives to tasks? BIS_fnc_setTask -no clue on this stuff. Not much documentation on the surface.
 
 **Should we replace the bomb addaction with a GUI arm/disarm function?
 This will make it easier to set counters and handle who can and can't manage it.
