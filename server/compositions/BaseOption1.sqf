@@ -23,18 +23,26 @@ _objs =
 ["Land_Flush_Light_yellow_F",[31.0078,-30.4922,0],0,"",0,{}],
 ["Land_runway_edgelight_blue_F",[25.5137,-35.7813,0],0,"",0,{}],
 ["Land_runway_edgelight_blue_F",[36.2148,-25.2324,0],0,"",0,{}],
-["Land_Shed_Big_F",[34.9941,27.4434,0],0,"",0,{}],
+["Land_Shed_Big_F",[34.9941,17.4434,0],0,"",0,{}],
 ["Land_WaterTank_F",[-28.1055,37.123,-6.4373e-006],359.999,"",0,{}],
 ["Land_ReservoirTower_F",[-35.041,32.3965,4.76837e-007],0,"",0,{}],
 ["Land_runway_edgelight_blue_F",[36.1738,-35.8223,0],0,"",0,{}],
-["Land_LampHalogen_F",[-41.6855,-44.1816,0],135,"",0,{}],
-["Land_LampHalogen_F",[-41.7363,44.5664,0],225,"",0,{}],
-["Land_Cargo_Patrol_V1_F",[-44.0195,-45.2148,0],0,"",0,{}],
-["Land_Cargo_Patrol_V1_F",[-42.8613,46.8652,0],90,"",0,{}],
-["Land_LampHalogen_F",[46.8398,-44.2109,0],45,"",0,{}],
-["Land_LampHalogen_F",[47.1523,44.7969,0],315,"",0,{}],
-["Land_Cargo_Patrol_V1_F",[47.9219,-46.4629,0],270,"",0,{}],
-["Land_Cargo_Patrol_V1_F",[49.4551,45.8398,0],180,"",0,{}]
+
+// Bottom Left
+["Land_LampHalogen_F",[-45,-45,0],135,"",0,{}],
+["Land_Cargo_Patrol_V1_F",[-50,-50,0],0,"",0,{}],
+
+// Top Left
+["Land_LampHalogen_F",[-45,45,0],225,"",0,{}],
+["Land_Cargo_Patrol_V1_F",[-50,50,0],90,"",0,{}],
+
+//Bottom Right
+["Land_LampHalogen_F",[45,-45,0],45,"",0,{}],
+["Land_Cargo_Patrol_V1_F",[50,-50,0],270,"",0,{}],
+
+//Top Right
+["Land_LampHalogen_F",[45,45,0],315,"",0,{}],
+["Land_Cargo_Patrol_V1_F",[50,50,0],180,"",0,{}]
 ];
 
 _objs

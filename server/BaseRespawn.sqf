@@ -50,6 +50,8 @@ diag_log "BaseRespawn.sqf loaded.";
 
 					diag_log format ["_RandomPos_West_Base: %1", _RandomPos_West_Base];
 					diag_log format ["Updated West_Base_Array: %1", West_Base_Array];
+					
+					["BaseOption1", 0, getPos west_base] execVM "server\compositions\createBase.sqf";
 				};
 				case east: {
 				
@@ -90,6 +92,8 @@ diag_log "BaseRespawn.sqf loaded.";
 
 					diag_log format ["_RandomPos_East_Base: %1", _RandomPos_East_Base];
 					diag_log format ["Updated East_Base_Array: %1", East_Base_Array];
+					
+					["BaseOption1", 0, getPos east_base] execVM "server\compositions\createBase.sqf";
 				};
 				case resistance: {
 				
@@ -130,6 +134,8 @@ diag_log "BaseRespawn.sqf loaded.";
 
 					diag_log format ["_RandomPos_Guer_Base: %1", _RandomPos_Guer_Base];
 					diag_log format ["Updated Guer_Base_Array: %1", Guer_Base_Array];
+					
+					["BaseOption1", 0, getPos guer_base] execVM "server\compositions\createBase.sqf";
 				};
 			};
 		};

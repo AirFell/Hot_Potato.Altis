@@ -32,6 +32,8 @@ West_Base_Array = West_Base_Array - [_RandomPos_West_Base];
 
 diag_log format ["_RandomPos_West_Base: %1", _RandomPos_West_Base];
 diag_log format ["Updated West_Base_Array: %1", West_Base_Array];
+
+["BaseOption1", 0, getPos west_base] execVM "server\compositions\createBase.sqf";
 		
 		
 /////////////////////////
@@ -60,6 +62,8 @@ East_Base_Array = East_Base_Array - [_RandomPos_East_Base];
 
 diag_log format ["_RandomPos_East_Base: %1", _RandomPos_East_Base];
 diag_log format ["Updated East_Base_Array: %1", East_Base_Array];
+
+["BaseOption1", 0, getPos east_base] execVM "server\compositions\createBase.sqf";
 					
 
 /////////////////////////
@@ -89,9 +93,9 @@ Guer_Base_Array = Guer_Base_Array - [_RandomPos_Guer_Base];
 diag_log format ["_RandomPos_Guer_Base: %1", _RandomPos_Guer_Base];
 diag_log format ["Updated Guer_Base_Array: %1", Guer_Base_Array];
 
+
+["BaseOption1", 0, getPos guer_base] execVM "server\compositions\createBase.sqf";
+
 _nul = []execVM "server\randomMarkerGen.sqf";
 _nul = []execVM "server\Bomb_Spawn.sqf";
 diag_log "Base_Spawn.sqf loaded.";
-["BaseOption1", 0, getPos west_base] execVM "server\compositions\createBase.sqf";
-["BaseOption1", 0, getPos east_base] execVM "server\compositions\createBase.sqf";
-["BaseOption1", 0, getPos guer_base] execVM "server\compositions\createBase.sqf";

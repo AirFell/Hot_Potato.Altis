@@ -4,7 +4,6 @@ class Mission
 	addOns[]=
 	{
 		"a3_map_altis",
-		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
 		"A3_Soft_F_Gamma_Offroad",
 		"a3_soft_f_offroad_01",
@@ -16,17 +15,13 @@ class Mission
 		"A3_Soft_F_EPC_Truck_03",
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_Truck",
-		"A3_Characters_F_OPFOR",
-		"A3_Characters_F_INDEP",
 		"A3_Soft_F_Quadbike",
 		"A3_Data_F_Curator_Characters"
 	};
 	addOnsAuto[]=
 	{
-		"A3_Characters_F_BLUFOR",
+		"A3_Data_F_Curator_Characters",
 		"a3_characters_f",
-		"A3_Characters_F_OPFOR",
-		"A3_Characters_F_INDEP",
 		"A3_Air_F_Heli_Light_02",
 		"A3_Air_F_Beta_Heli_Transport_01",
 		"A3_Air_F_EPB_Heli_Light_03",
@@ -69,11 +64,11 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14474.528,25.216391,6173.665};
-					azimut=-400.20541;
+					position[]={23750.26,3.1900001,18232.822};
+					azimut=-400.20499;
 					id=0;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -88,11 +83,11 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14468.123,25.500662,6173.8711};
+					position[]={23743.855,3.1900001,18233.029};
 					azimut=-213.84399;
 					id=1;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -107,11 +102,11 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14475.111,24.87743,6196.1001};
+					position[]={23752.779,3.1900001,18254.764};
 					azimut=-401.46201;
 					id=2;
 					side="EAST";
-					vehicle="O_Soldier_F";
+					vehicle="o_soldier_unarmed_f";
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
@@ -126,11 +121,11 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14481.69,25.045231,6182};
+					position[]={23757.422,3.1900001,18241.158};
 					azimut=298.57101;
 					id=3;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="i_soldier_unarmed_f";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -145,11 +140,11 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14468.718,24.854033,6195.8374};
+					position[]={23744.449,3.1900001,18254.994};
 					azimut=-137.96899;
 					id=4;
 					side="EAST";
-					vehicle="O_Soldier_F";
+					vehicle="o_soldier_unarmed_f";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -164,10 +159,10 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14481.798,25.022278,6187.896};
+					position[]={23757.527,3.1900001,18247.053};
 					id=5;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="i_soldier_unarmed_f";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -177,7 +172,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=54;
+		items=55;
 		class Item0
 		{
 			position[]={23752.377,3.1900001,17646.701};
@@ -718,34 +713,44 @@ class Mission
 			skill=0.60000002;
 			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
 		};
+		class Item54
+		{
+			position[]={23793.824,3.1900001,18244.086};
+			azimut=-400.20499;
+			id=60;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_armed_F";
+			leader=1;
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
 		items=40;
 		class Item0
 		{
-			position[]={14478.417,25.046923,6184.8511};
+			position[]={23754.148,3.1900001,18244.01};
 			name="respawn_west";
 			type="Empty";
 			angle=273.47;
 		};
 		class Item1
 		{
-			position[]={14467.998,25.191998,6178.3306};
+			position[]={23743.73,3.1900001,18237.486};
 			name="respawn_east";
 			type="Empty";
 			angle=750.55701;
 		};
 		class Item2
 		{
-			position[]={14466.851,25.026127,6189.9097};
+			position[]={23742.582,3.1900001,18249.068};
 			name="respawn_guerrila";
 			type="Empty";
 			angle=133.578;
 		};
 		class Item3
 		{
-			position[]={23749.582,3.1900001,18250.701};
+			position[]={23751.246,3.1900001,18250.701};
 			name="respawn_bomb";
 			markerType="ELLIPSE";
 			type="Empty";
