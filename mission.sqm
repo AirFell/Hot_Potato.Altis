@@ -726,7 +726,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=40;
+		items=41;
 		class Item0
 		{
 			position[]={23754.148,3.1900001,18244.01};
@@ -1009,6 +1009,18 @@ class Mission
 			type="Empty";
 			colorName="ColorGUER";
 			fillName="SolidBorder";
+			a=250;
+			b=250;
+			drawBorder=1;
+		};
+		class Item40
+		{
+			position[]={24066.77,3.1900001,18240.473};
+			name="mrkMission";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlack";
+			fillName="Border";
 			a=250;
 			b=250;
 			drawBorder=1;

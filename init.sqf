@@ -76,8 +76,7 @@ if (isDedicated) then {
 	"mrknoBlue" setMarkerAlpha 0;
 	"mrknoRed" setMarkerAlpha 0;
 	"mrknoGreen" setMarkerAlpha 0;
-//	"mrkMission" setMarkerAlpha 0;
-//	"no_Mission" setMarkerAlpha 0;
+	"mrkMission" setMarkerAlpha 0;
 	"respawn_bomb" setMarkerAlpha 0;
 
 //	call compile preprocessFileLineNumbers "client\baseConfig.sqf";

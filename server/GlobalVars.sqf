@@ -21,6 +21,7 @@ publicVariable "Bomb_Destroyed_Tracker";
 Bomb_Armed_Tracker = 0;
 publicVariable "Bomb_Armed_Tracker";
 
+MissionCounter = 0;
 
 ////////////////////////////////////
 /////////////Team Scores////////////
@@ -34,6 +35,19 @@ publicVariable "East_Score";
 
 Guer_Score = 0;
 publicVariable "Guer_Score";
+
+////////////////////////////////////
+/////////////Base Resources/////////
+////////////////////////////////////
+
+west_base_resources = 0;
+publicVariable "west_base_resources";
+
+east_base_resources = 0;
+publicVariable "east_base_resources";
+
+guer_base_resources = 0;
+publicVariable "guer_base_resources";
 
 ////////////////////////////////////
 ////////////pre-score///////////////
@@ -53,6 +67,9 @@ East_Base_Array = ["east_base_random_1", "east_base_random_2", "east_base_random
 Guer_Base_Array = ["guer_base_random_1", "guer_base_random_2", "guer_base_random_3", "guer_base_random_4", "guer_base_random_5", "guer_base_random_6", "guer_base_random_7", "guer_base_random_8", "guer_base_random_9", "guer_base_random_10"];
 Bomb_Spawn_Array = [];
 
+//////////////////////////////////////
+////////////End of Script/////////////
+//////////////////////////////////////
 _nul = []execVM "server\Base_Spawn.sqf";
 _nul = []execVM "server\server_mission_end.sqf";
 diag_log "GlobalVars.sqf loaded.";

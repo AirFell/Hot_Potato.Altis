@@ -110,30 +110,10 @@ for "_i" from 0 to 50 do {
 
 publicVariable "GuerRespawnArray";
 
-/*
 //////////////////////////////////////////////////////
-//////////////Mission Mark Function/Loop//////////////
+//////////////End file load///////////////////////////
 //////////////////////////////////////////////////////
-_markerLoopCounterMission = 1;
-MissionMarkerArray = [];
 
-fnc_createMarkerMission = {
-  private ["_pos","_m"];
-  _pos = _this select 0;
-  _m = createMarker [format["marker_Mission%1", _markerLoopCounterMission],_pos];
-  _m setmarkerColor (_this select 1);
-  _m setMarkerShape "Icon";
-  _m setMarkerType "empty";
-  //format["%1", _m] setMarkerText format["Mission%1", _markerLoopCounterMission];
-};
-
-for "_i" from 0 to 50 do {
-    _p = ["mrkMission",0,["no_mission","mrkBlue","mrkRed","mrkGreen"], 100] call SHK_pos;
-    [_p,"ColorBlack"] call fnc_createMarkerMission;
-	MissionMarkerArray = MissionMarkerArray + [format["marker_Mission%1", _markerLoopCounterMission]];
-	_markerLoopCounterMission = _markerLoopCounterMission + 1;
-};
-*/
 Marker_Load_Complete = 1;
 publicVariable "Marker_Load_Complete";
 

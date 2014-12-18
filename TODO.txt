@@ -1,8 +1,8 @@
-base update:
-	-addactions via sideswitch(need new sqf)
-	-resource missions
-	-resource deposit
-	-vehicle store
+vehicle store
+weapon/gear store
+fortifications
+
+current base resources added to HUD
 
 add some side-neutral cash-only shops.
 
@@ -10,7 +10,6 @@ money system/scoring system- event handlers of some sort?
 	points for arming bomb
 	points for disarming bomb
 	points for surviving bomb detonation if you armed it
-	points for depositing resources
 	points for killing enemy players*-kind of done. Needs testing
 	points for wounding enemy players when friendly finishes them off
 	points for destroying enemy vehicles

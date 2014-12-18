@@ -35,6 +35,8 @@ diag_log "BaseRespawn.sqf loaded.";
 					publicVariable "west_veh_shop_spawn4";
 					west_veh_shop_spawn5 setVehicleVarName "";
 					publicVariable "west_veh_shop_spawn5";
+					west_base_resources = 0;
+					publicVariable "west_base_resources";
 					sleep 5;
 					
 					_RandomPos_West_Base = West_Base_Array select floor random count West_Base_Array;
@@ -98,6 +100,8 @@ diag_log "BaseRespawn.sqf loaded.";
 					publicVariable "east_veh_shop_spawn4";
 					east_veh_shop_spawn5 setVehicleVarName "";
 					publicVariable "east_veh_shop_spawn5";
+					east_base_resources = 0;
+					publicVariable "east_base_resources";
 					sleep 5;
 					
 					_RandomPos_East_Base = East_Base_Array select floor random count East_Base_Array;
@@ -161,6 +165,8 @@ diag_log "BaseRespawn.sqf loaded.";
 					publicVariable "guer_veh_shop_spawn4";
 					guer_veh_shop_spawn5 setVehicleVarName "";
 					publicVariable "guer_veh_shop_spawn5";
+					guer_base_resources = 0;
+					publicVariable "guer_base_resources";
 					sleep 5;
 					
 					_RandomPos_Guer_Base = Guer_Base_Array select floor random count Guer_Base_Array;
