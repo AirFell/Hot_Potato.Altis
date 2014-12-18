@@ -26,7 +26,7 @@ player addAction [
 	_payOut = 0;
 	_addResources = 0;
 	},
-	nil, 1, True, True, "", "(player distance east_resc_depot_mrkr) < 3"
+	nil, 1, True, True, "", "(player distance east_resc_depot_ctrl) < 3"
 ];
 ////////////////////////////////////////
 ////////////Infantry Store//////////////

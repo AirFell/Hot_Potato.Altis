@@ -53,7 +53,8 @@ if (isDedicated) then {
 					
 					//Custom Side Choosing Script~ AirFell
 					_RandomPosE = eastRespawnArray select floor random count eastRespawnArray;
-					_posMrk = _RandomPosE findEmptyPosition [0, 50, "B_Heli_Light_01_armed_F"];
+					_tem_posMrk = getMarkerPos _RandomPosE;
+					_posMrk = _tem_posMrk findEmptyPosition [0, 50, "B_Heli_Light_01_armed_F"];
 					
 					_veh = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					_veh setDir _dir;
@@ -79,7 +80,8 @@ if (isDedicated) then {
 					
 					//Custom Side Choosing Script~ AirFell
 					_RandomPosE = eastRespawnArray select floor random count eastRespawnArray;
-					_posMrk = _RandomPosE findEmptyPosition [0, 50, "B_Heli_Light_01_armed_F"];
+					_tem_posMrk = getMarkerPos _RandomPosE;
+					_posMrk = _tem_posMrk findEmptyPosition [0, 50, "B_Heli_Light_01_armed_F"];
 					
 					_veh = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					_veh setDir _dir;

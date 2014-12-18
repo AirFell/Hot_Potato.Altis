@@ -235,7 +235,21 @@ R3F_LOG_CFG_string_condition_allow_creation_factory_on_this_client = "false";
  */
 R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 [
-	// e.g. : "MyTowingVehicleClassName1", "MyTowingVehicleClassName2"
+"B_Truck_01_transport_F",
+"B_Truck_01_covered_F",
+"O_Truck_03_transport_F",
+"O_Truck_03_covered_F",
+"I_Truck_02_covered_F",
+"I_Truck_02_transport_F",
+"B_MRAP_01_F",
+"B_MRAP_01_gmg_F",
+"B_MRAP_01_hmg_F",
+"O_MRAP_02_F",
+"O_MRAP_02_hmg_F",
+"O_MRAP_02_gmg_F",
+"I_MRAP_03_F",
+"I_MRAP_03_hmg_F",
+"I_MRAP_03_gmg_F"
 ];
 
 /**
@@ -244,7 +258,36 @@ R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
  */
 R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
 [
-	// e.g. : "MyTowableObjectClassName1", "MyTowableObjectClassName2"
+"B_MRAP_01_F",
+"B_MRAP_01_gmg_F",
+"B_MRAP_01_hmg_F",
+"B_G_Offroad_01_F",
+"B_G_Offroad_01_armed_F",
+"B_Quadbike_01_F",
+"B_G_Quadbike_01_F",
+"B_G_Van_01_transport_F",
+"O_MRAP_02_F",
+"O_MRAP_02_hmg_F",
+"O_MRAP_02_gmg_F",
+"O_G_Offroad_01_F",
+"O_G_Offroad_01_armed_F",
+"O_Quadbike_01_F",
+"O_G_Quadbike_01_F",
+"O_G_Van_01_transport_F",
+"I_G_Offroad_01_F",
+"I_G_Offroad_01_armed_F",
+"I_Quadbike_01_F",
+"I_G_Quadbike_01_F",
+"I_MRAP_03_F",
+"I_MRAP_03_hmg_F",
+"I_MRAP_03_gmg_F",
+"I_G_Van_01_transport_F",
+"C_Offroad_01_F",
+"C_Quadbike_01_F",
+"C_Hatchback_01_F",
+"C_Hatchback_01_sport_F",
+"C_SUV_01_F",
+"C_Van_01_transport_F"
 ];
 
 
@@ -256,7 +299,17 @@ R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
  */
 R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift +
 [
-	// e.g. : "MyLifterVehicleClassName1", "MyLifterVehicleClassName2"
+"B_Heli_Transport_01_F",
+"B_Heli_Transport_01_camo_F",
+"O_Heli_Light_02_F",
+"O_Heli_Light_02_unarmed_F",
+"I_Heli_Transport_02_F",
+"I_Heli_light_03_F",
+"I_Heli_light_03_unarmed_F",
+"O_Heli_Transport_04_bench_F",
+"O_Heli_Transport_04_covered_F",
+"B_Heli_Transport_03_unarmed_F",
+"B_Heli_Transport_03_F"
 ];
 
 /**
@@ -265,7 +318,36 @@ R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift +
  */
 R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted +
 [
-	// e.g. : "MyLiftableObjectClassName1", "MyLiftableObjectClassName2"
+"B_MRAP_01_F",
+"B_MRAP_01_gmg_F",
+"B_MRAP_01_hmg_F",
+"B_G_Offroad_01_F",
+"B_G_Offroad_01_armed_F",
+"B_Quadbike_01_F",
+"B_G_Quadbike_01_F",
+"B_G_Van_01_transport_F",
+"O_MRAP_02_F",
+"O_MRAP_02_hmg_F",
+"O_MRAP_02_gmg_F",
+"O_G_Offroad_01_F",
+"O_G_Offroad_01_armed_F",
+"O_Quadbike_01_F",
+"O_G_Quadbike_01_F",
+"O_G_Van_01_transport_F",
+"I_G_Offroad_01_F",
+"I_G_Offroad_01_armed_F",
+"I_Quadbike_01_F",
+"I_G_Quadbike_01_F",
+"I_MRAP_03_F",
+"I_MRAP_03_hmg_F",
+"I_MRAP_03_gmg_F",
+"I_G_Van_01_transport_F",
+"C_Offroad_01_F",
+"C_Quadbike_01_F",
+"C_Hatchback_01_F",
+"C_Hatchback_01_sport_F",
+"C_SUV_01_F",
+"C_Van_01_transport_F"
 ];
 
 
@@ -315,6 +397,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
  */
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 [
+"Land_MetalBarrel_F",
 "Land_Device_assembled_F"
 	// e.g. : "MyMovableObjectClassName1", "MyMovableObjectClassName2"
 ];
