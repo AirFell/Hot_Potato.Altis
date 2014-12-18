@@ -53,7 +53,7 @@ if (isDedicated) then {
 					
 					//Custom Side Choosing Script~ AirFell
 					_RandomPosW = westRespawnArray select floor random count westRespawnArray;
-					_posMrk = _RandomPosW findEmptyPosition [0, 30, str(_vehtype)];
+					_posMrk = _RandomPosW findEmptyPosition [0, 50, "B_Heli_Light_01_armed_F"];
 					
 					_veh = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					_veh setDir _dir;
@@ -79,7 +79,7 @@ if (isDedicated) then {
 					
 					//Custom Side Choosing Script~ AirFell
 					_RandomPosW = westRespawnArray select floor random count westRespawnArray;
-					_posMrk = _RandomPosW findEmptyPosition [0, 30, str(_vehtype)];
+					_posMrk = _RandomPosW findEmptyPosition [0, 50, "B_Heli_Light_01_armed_F"];
 					
 					_veh = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					_veh setDir _dir;

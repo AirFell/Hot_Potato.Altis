@@ -7,7 +7,7 @@ enableSaving [false, false];
 
 execVM "R3F_LOG\init.sqf";
 
-//if (isDedicated) then {
+if (isDedicated) then {
 ///////////////////////////////////////////////////////////////
 ///////////////////////Server-side stuff///////////////////////
 ///////////////////////////////////////////////////////////////
@@ -17,13 +17,15 @@ execVM "R3F_LOG\init.sqf";
 	
 	Marker_Load_Complete = 0;
 	publicVariable "Marker_Load_Complete";
+	Server_Load_Complete = 0;
+	publicVariable "Server_Load_Complete";
 	
 	_nul = []execVM "server\GlobalVars.sqf";
 
 	diag_log "The server got through all its init files!";
 	
 //	_nul = []execVM "server\missions\mission_init.sqf";
-//} else {
+} else {
 
 ///////////////////////////////////////////////////////////////
 ///////////////////////Client-side stuff///////////////////////
@@ -63,7 +65,7 @@ execVM "R3F_LOG\init.sqf";
 	_nul = []execVM "client\client_mission_end.sqf";
 	_nul = []execVM "client\sideSwitch.sqf";
 
-//	forceRespawn player;
+	forceRespawn player;
 	
 	playerCredits = 0;
 
@@ -83,4 +85,4 @@ execVM "R3F_LOG\init.sqf";
 
 	
 	diag_log "The client got through all its init files!";
-//};
+};

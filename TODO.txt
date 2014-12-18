@@ -1,8 +1,8 @@
-copy-pasta base_obj scripts for each side, spawn & respawn.
-
 addactions for each unique ID- sideswitch execvm
 
 base logistics- vehicle factory, barracks, base parts factory, resource deposit, ect...
+
+add some side-neutral cash-only shops.
 
 money system/scoring system- event handlers of some sort?
 	points for arming bomb
