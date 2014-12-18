@@ -1,4 +1,4 @@
-diag_log "**7** sideswitch.sqf initialized.";
+diag_log "**7** base_update.sqf initialized.";
 
 while {True} do {
 	_startMissionCounter = 1;

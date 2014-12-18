@@ -13,6 +13,7 @@ diag_log "player killed. scripts restarting.";
 
 waitUntil {alive player};
 
+_nul = []execVM "client\side_switch.sqf";
 _nul = []execVM "client\user_addactions\Arm_Bomb.sqf";
 _nul = []execVM "client\user_addactions\Disarm_Bomb.sqf";
 _nul = []execVM "client\user_addactions\Load_Bomb.sqf";

@@ -1,6 +1,8 @@
-addactions for each unique ID- sideswitch execvm
-
-base logistics- vehicle factory, barracks, base parts factory, resource deposit, ect...
+base update:
+	-addactions via sideswitch(need new sqf)
+	-resource missions
+	-resource deposit
+	-vehicle store
 
 add some side-neutral cash-only shops.
 
@@ -12,11 +14,6 @@ money system/scoring system- event handlers of some sort?
 	points for killing enemy players*-kind of done. Needs testing
 	points for wounding enemy players when friendly finishes them off
 	points for destroying enemy vehicles
-
-resource missions
-
-add money-only vehicle stores. This should add balance for those without bases/access
-to high end stuff. Should these be static or spawn in random places every mission?
 
 base radar
 	-if enemy is within range, change color of marker.
