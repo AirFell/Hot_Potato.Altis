@@ -1,12 +1,6 @@
--base object spawn & respawn:
-	respawn needs to be set up.
-	unique ID's need to be added to:
-Infostands (x): "Land_InfoStand_V2_F"
-vehicle spawn points-
-	3 vehicle bays: !NEED OBJECT!
-	2 heli pads: "Land_Flush_Light_yellow_F"
-resource deposit marker: "Land_JumpTarget_F"
-*********Refern to AAW Scripts****************
+copy-pasta base_obj scripts for each side, spawn & respawn.
+
+addactions for each unique ID- sideswitch execvm
 
 base logistics- vehicle factory, barracks, base parts factory, resource deposit, ect...
 

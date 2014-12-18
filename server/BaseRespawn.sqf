@@ -12,9 +12,29 @@ diag_log "BaseRespawn.sqf loaded.";
 			
 			switch (Bombed_Team) do {
 				case west: {
-				
+
 					west_base setVehicleVarName "";
 					publicVariable "west_base";
+					west_veh_shop setVehicleVarName "";
+					publicVariable "west_veh_shop";
+					west_inf_shop setVehicleVarName "";
+					publicVariable "west_inf_shop";
+					west_fort_shop setVehicleVarName "";
+					publicVariable "west_fort_shop";
+					west_resc_depot_ctrl setVehicleVarName "";
+					publicVariable "west_resc_depot_ctrl";
+					west_resc_depot_mrkr setVehicleVarName "";
+					publicVariable "west_resc_depot_mrkr";
+					west_veh_shop_spawn1 setVehicleVarName "";
+					publicVariable "west_veh_shop_spawn1";
+					west_veh_shop_spawn2 setVehicleVarName "";
+					publicVariable "west_veh_shop_spawn2";
+					west_veh_shop_spawn3 setVehicleVarName "";
+					publicVariable "west_veh_shop_spawn3";
+					west_veh_shop_spawn4 setVehicleVarName "";
+					publicVariable "west_veh_shop_spawn4";
+					west_veh_shop_spawn5 setVehicleVarName "";
+					publicVariable "west_veh_shop_spawn5";
 					sleep 5;
 					
 					_RandomPos_West_Base = West_Base_Array select floor random count West_Base_Array;
@@ -52,12 +72,33 @@ diag_log "BaseRespawn.sqf loaded.";
 					diag_log format ["Updated West_Base_Array: %1", West_Base_Array];
 					
 					["BaseOption1", 0, getPos west_base] execVM "server\compositions\createBase.sqf";
+					_nul = execVM "server\compositions\west_base_objects.sqf";
 				};
 				case east: {
 				
 					east_base setVehicleVarName "";
 					publicVariable "east_base";
-					sleep 15;
+					east_veh_shop setVehicleVarName "";
+					publicVariable "east_veh_shop";
+					east_inf_shop setVehicleVarName "";
+					publicVariable "east_inf_shop";
+					east_fort_shop setVehicleVarName "";
+					publicVariable "east_fort_shop";
+					east_resc_depot_ctrl setVehicleVarName "";
+					publicVariable "east_resc_depot_ctrl";
+					east_resc_depot_mrkr setVehicleVarName "";
+					publicVariable "east_resc_depot_mrkr";
+					east_veh_shop_spawn1 setVehicleVarName "";
+					publicVariable "east_veh_shop_spawn1";
+					east_veh_shop_spawn2 setVehicleVarName "";
+					publicVariable "east_veh_shop_spawn2";
+					east_veh_shop_spawn3 setVehicleVarName "";
+					publicVariable "east_veh_shop_spawn3";
+					east_veh_shop_spawn4 setVehicleVarName "";
+					publicVariable "east_veh_shop_spawn4";
+					east_veh_shop_spawn5 setVehicleVarName "";
+					publicVariable "east_veh_shop_spawn5";
+					sleep 5;
 					
 					_RandomPos_East_Base = East_Base_Array select floor random count East_Base_Array;
 					_posMrk = getMarkerPos _RandomPos_East_Base;
@@ -94,12 +135,33 @@ diag_log "BaseRespawn.sqf loaded.";
 					diag_log format ["Updated East_Base_Array: %1", East_Base_Array];
 					
 					["BaseOption1", 0, getPos east_base] execVM "server\compositions\createBase.sqf";
+					_nul = execVM "server\compositions\east_base_objects.sqf";
 				};
 				case resistance: {
 				
 					guer_base setVehicleVarName "";
 					publicVariable "guer_base";
-					sleep 15;
+					guer_veh_shop setVehicleVarName "";
+					publicVariable "guer_veh_shop";
+					guer_inf_shop setVehicleVarName "";
+					publicVariable "guer_inf_shop";
+					guer_fort_shop setVehicleVarName "";
+					publicVariable "guer_fort_shop";
+					guer_resc_depot_ctrl setVehicleVarName "";
+					publicVariable "guer_resc_depot_ctrl";
+					guer_resc_depot_mrkr setVehicleVarName "";
+					publicVariable "guer_resc_depot_mrkr";
+					guer_veh_shop_spawn1 setVehicleVarName "";
+					publicVariable "guer_veh_shop_spawn1";
+					guer_veh_shop_spawn2 setVehicleVarName "";
+					publicVariable "guer_veh_shop_spawn2";
+					guer_veh_shop_spawn3 setVehicleVarName "";
+					publicVariable "guer_veh_shop_spawn3";
+					guer_veh_shop_spawn4 setVehicleVarName "";
+					publicVariable "guer_veh_shop_spawn4";
+					guer_veh_shop_spawn5 setVehicleVarName "";
+					publicVariable "guer_veh_shop_spawn5";
+					sleep 5;
 					
 					_RandomPos_Guer_Base = Guer_Base_Array select floor random count Guer_Base_Array;
 					_posMrk = getMarkerPos _RandomPos_Guer_Base;
@@ -136,6 +198,7 @@ diag_log "BaseRespawn.sqf loaded.";
 					diag_log format ["Updated Guer_Base_Array: %1", Guer_Base_Array];
 					
 					["BaseOption1", 0, getPos guer_base] execVM "server\compositions\createBase.sqf";
+					_nul = execVM "server\compositions\guer_base_objects.sqf";
 				};
 			};
 		};
