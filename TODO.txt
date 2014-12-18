@@ -1,6 +1,6 @@
-vehicle store
-weapon/gear store
-fortifications
+vehicle store- need to make a list of vehicles for store.
+weapon/gear store- need to make a list of guns/attachments/uniforms
+fortifications- need to make a list of fortifications
 
 current base resources added to HUD
 
@@ -27,8 +27,8 @@ pretty up closing end-mission things.
 check crew placement on attach bomb addaction
 	https://community.bistudio.com/wiki/lockCargo
 R3F config for specific vehicles
-	-what helis can pick up what vehicles.
-	-add vehicles that can hold items ect...
+	-how much cargo can each vehicle hold?
+	-what can be put in as cargo, how much space does it take?
 Change functions to complilefinal. Holy shit thats going to be hard.
 Set objectives to tasks? BIS_fnc_setTask -no clue on this stuff. Not much documentation on the surface.
 
