@@ -44,10 +44,13 @@ unless someone disarms it. Just remove scoring.
 					};
 				};
 			};
-	
+			if (disarming_bomb == 1) then {
+				waitUntil {disarming_bomb == 0};
+			};
 //one last check to make sure the bomb wasn't disarmed during the siren countdown
-			if (Bomb_Armed_Tracker == 1) then {		
+			if (Bomb_Armed_Tracker == 1 && disarming_bomb == 0) then {		
 //get objects and delete them.
+				_bomb_boom = "HelicopterExploBig" createVehicle [(getPos The_Bomb select 0),( getPos The_Bomb select 1), 0];
 				_objectsList = nearestObjects [getPos The_Bomb, ["Static","Thing","Strategic","Object"], 75] - [The_Bomb, west_base, east_base, guer_base];
 				{
 					_x setDamage 1;

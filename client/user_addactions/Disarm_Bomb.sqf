@@ -1,5 +1,6 @@
 diag_log "disarm_bomb script started.";
 disarming_bomb = 0;
+publicVariable "disarming_bomb";
 
 player addaction [
 	"Disarm Bomb",{
@@ -14,7 +15,8 @@ player addaction [
 				diag_log "Arming animation started.";
 				player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 				
-				disarming_bomb = disarming_bomb + 1;
+				disarming_bomb = 1;
+				publicVariable "disarming_bomb";
 				
 				while {_lockDuration > 1} do {
 					if (alive player) then {// If the player dies, end loop.
@@ -39,6 +41,8 @@ player addaction [
 							sleep 1;
 							2 cutText ["", "PLAIN DOWN", 1];
 							_disarmingComplete = 0;
+							disarming_bomb = 0;
+							publicVariable "disarming_bomb";
 							hint "You must be closer to the bomb!";
 						};
 					} else {
@@ -46,6 +50,8 @@ player addaction [
 						sleep 1;
 						2 cutText ["", "PLAIN DOWN", 1];
 						_disarmingComplete = 0;
+						disarming_bomb = 0;
+						publicVariable "disarming_bomb";
 						diag_log "Player died while disarming the bomb.";
 					};
 				};
@@ -65,6 +71,7 @@ player addaction [
 					The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 					
 					disarming_bomb = 0;
+					publicVariable "disarming_bomb";
 					
 					hint "Bomb Disarmed!";
 				} else {
