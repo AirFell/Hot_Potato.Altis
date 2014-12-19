@@ -1,3 +1,8 @@
+double-check R3F heli towing-https://community.bistudio.com/wiki/enableRopeAttach
+check player-scoring?? - no clue wtf the problem is.
+fix crate spawn- _pos array not correct.
+make base spawn point move with bases- make it move to a new pos in the base_respawn script
+
 vehicle store- need to make a list of vehicles for store.
 weapon/gear store- need to make a list of guns/attachments/uniforms
 fortifications- need to make a list of fortifications
