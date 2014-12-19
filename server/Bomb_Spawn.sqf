@@ -11,7 +11,7 @@ The_Bomb setPos [_posMrk select 0, _posMrk select 1,0];
 The_Bomb setVehicleVarName "The_Bomb";
 publicVariable "The_Bomb";
 
-The_Bomb setVariable ["R3F_LOG_disabled", false, true];
+//The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 The_Bomb addEventHandler ["HandleDamage", {false}];
 
 
