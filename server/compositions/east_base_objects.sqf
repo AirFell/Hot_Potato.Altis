@@ -34,10 +34,6 @@ _objectName addEventHandler ["HandleDamage", {false}];
 */
 
 _pos = getPos east_base;
-_mkr_pos = [(_pos select 0) - 30, (_pos select 1) - 30, 2.5];
-
-//In-Base Respawn marker
-respawn_east2 = createMarker["respawn_east2", _mkr_pos];
 
 //Vehicle Shop
 east_veh_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
