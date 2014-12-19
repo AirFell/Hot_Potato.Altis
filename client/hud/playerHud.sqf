@@ -16,6 +16,7 @@ private ["_lastHealthReading", "_activityIconOrigPos", "_activityTextboxOrigPos"
 _lastHealthReading = 100; // Used to flash the health reading when it changes
 
 
+
 while {true} do
 {
     private ["_ui","_vitals","_hudVehicle","_health","_tempString","_yOffset","_vehicle"];
@@ -28,6 +29,21 @@ while {true} do
     _hudActivityIcon = _ui displayCtrl hud_activity_icon_idc;
     _hudActivityTextbox = _ui displayCtrl hud_activity_textbox_idc;
 
+	//find players' base resources
+	switch (side player) do {
+		case west: {
+			_base_resources = west_base_resources;
+		};
+		
+		case east: {
+			_base_resources = east_base_resources;
+		};
+	
+		case resistance: {
+			_base_resources = guer_base_resources;
+		};
+	};
+	
     //Calculate Health 0 - 100
     _health = (1 - damage player) * 100;
 	
