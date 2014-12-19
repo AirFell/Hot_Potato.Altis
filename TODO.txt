@@ -1,6 +1,3 @@
-check player-scoring?? - no clue wtf the problem is.
-fix crate spawn- _pos array not correct.
-
 vehicle store- need to make a list of vehicles for store.
 weapon/gear store- need to make a list of guns/attachments/uniforms
 fortifications- need to make a list of fortifications
@@ -10,10 +7,7 @@ current base resources added to HUD
 add some side-neutral cash-only shops.
 
 money system/scoring system- event handlers of some sort?
-	points for arming bomb
-	points for disarming bomb
 	points for surviving bomb detonation if you armed it
-	points for killing enemy players*-kind of done. Needs testing
 	points for wounding enemy players when friendly finishes them off
 	points for destroying enemy vehicles
 

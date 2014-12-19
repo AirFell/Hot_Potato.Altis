@@ -1,7 +1,7 @@
 while {true} do {
-	sleep 30;
-	{diag_log format ["AllUnits: %1", _x]} forEach allUnits;
-	{_x removeEventHandler ["Killed", 0]} forEach allUnits;
+	sleep 60;
+	{diag_log format ["playableUnits: %1", _x]} forEach playableUnits;
+	{_x removeEventHandler ["Killed", 0]} forEach playableUnits;
 	{0 = _x addEventHandler ["killed", {
 		_victim = _this select 0;
 		_killer = _this select 1;
@@ -19,5 +19,5 @@ while {true} do {
 			};
 			diag_log format["!!! %1 teamkilled %2 !!!", _killer, _victim];
 		};
-	}];} forEach allUnits;
+	}];} forEach playableUnits;
 };

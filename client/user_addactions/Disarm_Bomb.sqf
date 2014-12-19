@@ -72,7 +72,7 @@ player addaction [
 					
 					disarming_bomb = 0;
 					publicVariable "disarming_bomb";
-					
+					playerCredits = playerCredits + 250;
 					hint "Bomb Disarmed!";
 				} else {
 					sleep 2;
