@@ -176,22 +176,20 @@ class Mission
 		class Item0
 		{
 			position[]={23750.785,3.1900001,17408.131};
-			azimut=275.05493;
+			azimut=275.05499;
 			id=6;
 			side="EMPTY";
 			vehicle="O_Heli_Light_02_F";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item1
 		{
 			position[]={23746.357,3.1900001,19098.281};
-			azimut=246.76581;
+			azimut=246.76601;
 			id=7;
 			side="EMPTY";
 			vehicle="B_Heli_Transport_01_F";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item2
 		{
@@ -201,7 +199,6 @@ class Mission
 			side="EMPTY";
 			vehicle="I_Heli_light_03_unarmed_F";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item3
 		{
@@ -211,7 +208,6 @@ class Mission
 			side="EMPTY";
 			vehicle="B_Truck_01_transport_F";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item4
 		{
@@ -221,17 +217,15 @@ class Mission
 			side="EMPTY";
 			vehicle="O_Truck_03_transport_F";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item5
 		{
 			position[]={23494.465,3.1900001,18248.484};
-			azimut=348.78302;
+			azimut=348.78299;
 			id=11;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", false];";
 		};
 		class Item6
 		{
