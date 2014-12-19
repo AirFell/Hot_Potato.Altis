@@ -33,7 +33,7 @@ player addAction [
 ////////////////////////////////////////
 player addAction [
 	"Weapon/Gear Store", {
-		hint "You have accessed this control";
+		createVehicle ["Box_NATO_Wps_F",(getPos player) - 10, [], 0, "NONE"];
 	},
 	nil, 1, True, True, "", "(player distance west_inf_shop) < 3"
 ];

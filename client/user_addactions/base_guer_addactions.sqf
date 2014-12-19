@@ -33,7 +33,7 @@ player addAction [
 ////////////////////////////////////////
 player addAction [
 	"Vehicle Store", {
-		hint "You have accessed this control";
+		createVehicle ["Box_IND_Wps_F",(getPos player) - 10, [], 0, "NONE"];
 	},
 	nil, 1, True, True, "", "(player distance guer_veh_shop) < 3"
 ];

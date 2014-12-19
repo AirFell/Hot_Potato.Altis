@@ -398,6 +398,52 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 [
 "Land_MetalBarrel_F",
-"Land_Device_assembled_F"
-	// e.g. : "MyMovableObjectClassName1", "MyMovableObjectClassName2"
+"Land_Device_assembled_F",
+
+//basic weapons
+"Box_NATO_Wps_F",
+"Box_East_Wps_F",
+"Box_IND_Wps_F",
+
+//special weapons
+"Box_NATO_WpsSpecial_F",
+"Box_East_WpsSpecial_F",
+"Box_IND_WpsSpecial_F",
+
+//supply box
+"B_supplyCrate_F",
+"O_supplyCrate_F",
+"I_supplyCrate_F",
+
+//support
+"Box_NATO_Support_F",
+"Box_East_Support_F",
+"Box_IND_Support_F",
+
+//explosives
+"Box_NATO_AmmoOrd_F",
+"Box_East_AmmoOrd_F",
+"Box_IND_AmmoOrd_F",
+
+//basic ammo
+"Box_NATO_Ammo_F",
+"Box_East_Ammo_F",
+"Box_IND_Ammo_F",
+
+//Base Fortifications
+"Land_HBarrier_1_F",
+"Land_HBarrier_3_F",
+"Land_HBarrier_5_F",
+"Land_HBarrierBig_F",
+"Land_HBarrierTower_F",
+"Land_HBarrierWall_corner_F",
+"Land_HBarrierWall_corridor_F",
+"Land_HBarrierWall4_F",
+"Land_HBarrierWall6_F",
+"Land_BagFence_Short_F",
+"Land_BagFence_Round_F",
+"Land_BagFence_Long_F",
+"Land_BagFence_Corner_F",
+"Land_BagBunker_Small_F",
+"Land_BagBunker_Large_F"
 ];

@@ -175,8 +175,8 @@ class Mission
 		items=55;
 		class Item0
 		{
-			position[]={23752.377,3.1900001,17646.701};
-			azimut=345.55899;
+			position[]={23750.785,3.1900001,17408.131};
+			azimut=275.05493;
 			id=6;
 			side="EMPTY";
 			vehicle="O_Heli_Light_02_F";
@@ -185,8 +185,8 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={23755.896,3.1900001,18856.533};
-			azimut=345.24799;
+			position[]={23746.357,3.1900001,19098.281};
+			azimut=246.76581;
 			id=7;
 			side="EMPTY";
 			vehicle="B_Heli_Transport_01_F";
@@ -195,7 +195,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={23148.125,3.1900001,18241.662};
+			position[]={22912.881,3.1900001,18236.891};
 			azimut=347.509;
 			id=8;
 			side="EMPTY";
@@ -205,7 +205,7 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={23753.443,3.1900001,18550.545};
+			position[]={23753.443,3.1900001,18509.195};
 			azimut=-393.16199;
 			id=9;
 			side="EMPTY";
@@ -215,7 +215,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={23745.145,3.1900001,17954.355};
+			position[]={23745.145,3.1900001,17998.889};
 			azimut=146.30099;
 			id=10;
 			side="EMPTY";
@@ -225,8 +225,8 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={23454.727,3.1900001,18248.484};
-			azimut=306.41599;
+			position[]={23494.465,3.1900001,18248.484};
+			azimut=348.78302;
 			id=11;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
