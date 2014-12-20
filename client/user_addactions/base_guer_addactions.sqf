@@ -33,7 +33,7 @@ player addAction [
 ////////////////////////////////////////
 player addAction [
 	"Vehicle Store", {
-		createVehicle ["Box_IND_Wps_F",(getPos player) - 10, [], 0, "NONE"];
+		createVehicle ["Box_IND_Wps_F", [((getPos player select 0) - 2),((getPos player select 1) - 2), 0], [], 0, "NONE"];
 	},
 	nil, 1, True, True, "", "(player distance guer_veh_shop) < 3"
 ];

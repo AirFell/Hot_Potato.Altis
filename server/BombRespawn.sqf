@@ -22,7 +22,7 @@ _nul = []execVM "server\Bomb_Countdown_Detonate.sqf";
 			Bomb_Destroyed_Tracker = 0;
 			publicVariable "Bomb_Destroyed_Tracker";
 			
-			The_Bomb setVariable ["R3F_LOG_disabled", false, true];
+//			The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 			
 			diag_log "bomb respawned.";
         };

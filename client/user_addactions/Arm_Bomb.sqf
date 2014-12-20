@@ -75,6 +75,13 @@ player addaction [
 					
 					[]execVM "client\pre_score.sqf"
 					
+					waitUntil {Bomb_Armed_Tracker == 0};
+					if (Base_Destroyed_Tracker == 1) then {
+						playerCredits = playerCredits + 500;
+					} else {
+						hint "The bomb was unsuccessful.";
+					};
+					
 				} else {
 					sleep 2;
 					hint "Arming Incomplete.";

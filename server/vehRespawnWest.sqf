@@ -61,7 +61,7 @@ if (isDedicated) then {
 					_veh setPos [_posMrk select 0, _posMrk select 1,0];
 					_pos = getPos _veh;
 //					"respawn_veh_west" setMarkerPos getPos _veh;
-					_veh setVariable ["R3F_LOG_disabled", false, true];
+//					_veh setVariable ["R3F_LOG_disabled", false, true];
 					diag_log "_____________________Vehicle West respawned after being abandoned.";
 				};
 			};
@@ -88,7 +88,7 @@ if (isDedicated) then {
 					_veh setPos [_posMrk select 0, _posMrk select 1,0];
 					_pos = getPos _veh;
 //					"respawn_veh_west" setMarkerPos getPos _veh;
-					_veh setVariable ["R3F_LOG_disabled", false, true];
+//					_veh setVariable ["R3F_LOG_disabled", false, true];
 					diag_log "_____________________Vehicle West respawned after being destroyed.";
 				};
 			};

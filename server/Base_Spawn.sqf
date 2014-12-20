@@ -28,7 +28,10 @@ west_base_marker setMarkerType "b_hq";
 
 West_Base_Array = West_Base_Array - [_RandomPos_West_Base];
 
-
+//In-Base Respawn marker
+_pos = getPos west_base;
+_mkr_pos = [(_pos select 0) - 30, (_pos select 1) - 30, 2.5];
+respawn_west2 = createMarker["respawn_west2", _mkr_pos];
 
 diag_log format ["_RandomPos_West_Base: %1", _RandomPos_West_Base];
 diag_log format ["Updated West_Base_Array: %1", West_Base_Array];
@@ -64,6 +67,11 @@ East_Base_Array = East_Base_Array - [_RandomPos_East_Base];
 diag_log format ["_RandomPos_East_Base: %1", _RandomPos_East_Base];
 diag_log format ["Updated East_Base_Array: %1", East_Base_Array];
 
+//In-Base Respawn marker
+_pos = getPos east_base;
+_mkr_pos = [(_pos select 0) - 30, (_pos select 1) - 30, 2.5];
+respawn_east2 = createMarker["respawn_east2", _mkr_pos];
+
 ["BaseOption1", 0, getPos east_base] execVM "server\compositions\createBase.sqf";
 _nul = execVM "server\compositions\east_base_objects.sqf";
 					
@@ -95,6 +103,10 @@ Guer_Base_Array = Guer_Base_Array - [_RandomPos_Guer_Base];
 diag_log format ["_RandomPos_Guer_Base: %1", _RandomPos_Guer_Base];
 diag_log format ["Updated Guer_Base_Array: %1", Guer_Base_Array];
 
+//In-Base Respawn marker
+_pos = getPos guer_base;
+_mkr_pos = [(_pos select 0) - 30, (_pos select 1) - 30, 2.5];
+respawn_guerrila2 = createMarker["respawn_guerrila2", _mkr_pos];
 
 ["BaseOption1", 0, getPos guer_base] execVM "server\compositions\createBase.sqf";
 _nul = execVM "server\compositions\guer_base_objects.sqf";
