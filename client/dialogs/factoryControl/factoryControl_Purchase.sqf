@@ -13,7 +13,25 @@ _fundsText = _Dialog displayCtrl FUNDSTEXT;
 _vehList = _Dialog displayCtrl VEHICLELIST;
 
 _credits = playerCredits;
-_resources = W_TWR1_Resources;
+_base_resources = "";
+_airClassType = "";
+_tankClassType = "";
+_playerSide = str(playerSide);
+if(_playerSide == "WEST") then {
+	_airClassType = "B_Helipilot_F";
+	_tankClassType = "B_crew_F";
+	_base_resources = west_base_resources;
+	};
+if(_playerSide == "EAST") then {
+	_airClassType = "O_Helipilot_F";
+	_tankClassType = "O_crew_F";
+	_base_resources = east_base_resources;
+	};
+if(_playerSide == "GUER") then {
+	_airClassType = "I_Helipilot_F";
+	_tankClassType = "I_crew_F";
+	_base_resources = guer_base_resources;
+	};
 
 
 
@@ -28,28 +46,13 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		_resourceCost = _x select 2;
 		_creditCost = _x select 3;
 		if(_creditCost > _credits) exitWith {hintsilent "You do not have enough Credits"};
-		if(_resourceCost > _resources) exitWith {hintsilent "You do not have enough Resources"};
+		if(_resourceCost > _base_resources) exitWith {hintsilent "You do not have enough Resources"};
 		if(_resourceCost < 1) exitWith {hintsilent "You cant buy this silly."};
 		_ObjectsInArea0 = [(getPos west_veh_shop_spawn1) select 0, (getPos west_veh_shop_spawn1) select 1] nearObjects 3;
 		_ObjectsInArea1 = [(getPos west_veh_shop_spawn2) select 0, (getPos west_veh_shop_spawn2) select 1] nearObjects 3;
 		_ObjectsInArea2 = [(getPos west_veh_shop_spawn3) select 0, (getPos west_veh_shop_spawn3) select 1] nearObjects 3;
 		_ObjectsInArea3 = [(getPos west_veh_shop_spawn4) select 0, (getPos west_veh_shop_spawn4) select 1] nearObjects 3;
 		_ObjectsInArea4 = [(getPos west_veh_shop_spawn5) select 0, (getPos west_veh_shop_spawn5) select 1] nearObjects 3;
-		_airClassType = "";
-		_tankClassType = "";
-		_playerSide = str(playerSide);
-		if(_playerSide == "WEST") then {
-		_airClassType = "B_Helipilot_F";
-		_tankClassType = "B_crew_F";
-		};
-		if(_playerSide == "EAST") then {
-		_airClassType = "O_Helipilot_F";
-		_tankClassType = "O_crew_F";
-		};
-		if(_playerSide == "GUER") then {
-		_airClassType = "I_Helipilot_F";
-		_tankClassType = "I_crew_F";
-		};
 		if (((_x select 1) isKindOf "Tank")&&(typeOf player != _tankClassType)) exitWith {hint "You aren't the required class to operate this vehicle"};
 		if (((_x select 1) isKindOf "Air")&&(typeOf player != _airClassType)) exitWith {hint "You aren't the required class to operate this vehicle"};
 		
@@ -61,9 +64,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			clearWeaponCargoGlobal _spawnVehicle;
 			sleep 0.5;
 			player moveInDriver _spawnVehicle;
-			W_TWR1_Resources = W_TWR1_Resources - _resourceCost;
+			west_base_resources = _base_resources - _resourceCost;
 			playerCredits = playerCredits - _creditCost;
-			_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _resources, _credits];
+			_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
 			hintsilent "Vehicle purchase successful";	
 		} else {
 			if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea1 <= 1)) then {
@@ -74,9 +77,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 				clearWeaponCargoGlobal _spawnVehicle;
 				sleep 0.5;
 				player moveInDriver _spawnVehicle;
-				W_TWR1_Resources = W_TWR1_Resources - _resourceCost;
+				west_base_resources = _base_resources - _resourceCost;
 				playerCredits = playerCredits - _creditCost;
-				_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _resources, _credits];
+				_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
 				hintsilent "Vehicle purchase successful";
 			} else {
 				if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea2 <= 1)) then {
@@ -87,9 +90,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 					clearWeaponCargoGlobal _spawnVehicle;
 					sleep 0.5;
 					player moveInDriver _spawnVehicle;
-					W_TWR1_Resources = W_TWR1_Resources - _resourceCost;
+					west_base_resources = _base_resources - _resourceCost;
 					playerCredits = playerCredits - _creditCost;
-					_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _resources, _credits];
+					_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
 					hintsilent "Vehicle purchase successful";
 				} else {
 					if (((_x select 1) isKindOf "Air")&&(count _ObjectsInArea3 <= 2)) then {
@@ -100,9 +103,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 						clearWeaponCargoGlobal _spawnVehicle;
 						sleep 0.5;
 						player moveInDriver _spawnVehicle;
-						W_TWR1_Resources = W_TWR1_Resources - _resourceCost;
+						west_base_resources = _base_resources - _resourceCost;
 						playerCredits = playerCredits - _creditCost;
-						_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _resources, _credits];
+						_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
 						hintsilent "Vehicle purchase successful";
 					} else {
 						if (((_x select 1) isKindOf "Air")&&(count _ObjectsInArea4 <= 2)) then {
@@ -113,9 +116,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 							clearWeaponCargoGlobal _spawnVehicle;
 							sleep 0.5;
 							player moveInDriver _spawnVehicle;
-							W_TWR1_Resources = W_TWR1_Resources - _resourceCost;
+							west_base_resources = _base_resources - _resourceCost;
 							playerCredits = playerCredits - _creditCost;
-							_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _resources, _credits];
+							_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
 							hintsilent "Vehicle purchase successful";	
 						} else {
 							hint "There is another object or player blocking the spawn point!";
@@ -138,13 +141,13 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		_resourceCost = _x select 2;
 		_creditCost = _x select 3;
 		if(_creditCost > _credits) exitWith {hintsilent "You do not have enough Credits"};
-		if(_resourceCost > _resources) exitWith {hintsilent "You do not have enough Resources"};
+		if(_resourceCost > _base_resources) exitWith {hintsilent "You do not have enough Resources"};
 		if(_resourceCost < 1) exitWith {hintsilent "You cant buy this silly."};
 		hintsilent "Vehicle purchase successful";
 		closeDialog 0;
-		W_TWR1_Resources = W_TWR1_Resources - _resourceCost;
+		_base_resources = _base_resources - _resourceCost;
 		playerCredits = playerCredits - _creditCost;
-		_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _resources, _credits];
+		_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
 		_ObjectsInArea1 = [(getPos west_veh_shop_spawn1) select 0, (getPos west_veh_shop_spawn1) select 1] nearObjects 2;
 		_ObjectsInArea2 = [(getPos west_veh_shop_spawn2) select 0, (getPos west_veh_shop_spawn2) select 1] nearObjects 2;
 		_ObjectsInArea3 = [(getPos west_veh_shop_spawn3) select 0, (getPos west_veh_shop_spawn3) select 1] nearObjects 2;

@@ -30,19 +30,18 @@ while {true} do
     _hudActivityTextbox = _ui displayCtrl hud_activity_textbox_idc;
 
 	//find players' base resources
-	switch (side player) do {
-		case west: {
+		_base_resources = "";
+		_playerSide = str(playerSide);
+		if(_playerSide == "WEST") then {
 			_base_resources = west_base_resources;
 		};
-		
-		case east: {
+		if(_playerSide == "EAST") then {
 			_base_resources = east_base_resources;
 		};
-	
-		case resistance: {
+		if(_playerSide == "GUER") then {
 			_base_resources = guer_base_resources;
 		};
-	};
+	 
 	
     //Calculate Health 0 - 100
     _health = (1 - damage player) * 100;
@@ -82,6 +81,7 @@ while {true} do
     _str = format ["<br/>%1 <img size='1' image='client\icons\running_man.paa'/>", 100 - round((getFatigue player) * 100)];
     _str = format["<br/>%1<br/><t color='%2'>%3</t> <img size='1' image='client\icons\health.paa'/>", _str, _healthTextColor, _health];
 	_str = format["<br/>%1<br/>%2 <img size='1' image='client\icons\money.paa'/>", _str,  playerCredits];
+	_str = format["<br/>%1<br/>%2 <img size='1' image='client\icons\money.paa'/>", _str,  _base_resources];
 	_str1 = format["<t size='1'> <img size='1' image='client\icons\west.paa'/> %1 <img size='1' image='client\icons\east.paa'/> %2 <img size='1' image='client\icons\guer.paa'/> %3</t>", West_Score, East_Score, Guer_Score];
 
 	_score ctrlSetStructuredText parseText _str1;
