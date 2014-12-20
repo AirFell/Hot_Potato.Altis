@@ -73,7 +73,7 @@ player addaction [
 					
 					hint "Bomb armed!";
 					
-					[]execVM "client\pre_score.sqf"
+					[]execVM "client\pre_score.sqf";
 					
 					waitUntil {Bomb_Armed_Tracker == 0};
 					if (Base_Destroyed_Tracker == 1) then {
