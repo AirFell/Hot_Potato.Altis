@@ -16,12 +16,14 @@ class Mission
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_Truck",
 		"A3_Soft_F_Quadbike",
-		"A3_Data_F_Curator_Characters"
+		"A3_Data_F_Curator_Characters",
+		"A3_Characters_F_BLUFOR"
 	};
 	addOnsAuto[]=
 	{
-		"A3_Data_F_Curator_Characters",
+		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
+		"A3_Data_F_Curator_Characters",
 		"A3_Air_F_Heli_Light_02",
 		"A3_Air_F_Beta_Heli_Transport_01",
 		"A3_Air_F_EPB_Heli_Light_03",
@@ -68,7 +70,7 @@ class Mission
 					azimut=-400.20499;
 					id=0;
 					side="WEST";
-					vehicle="b_soldier_unarmed_f";
+					vehicle="B_Helipilot_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -87,7 +89,7 @@ class Mission
 					azimut=-213.84399;
 					id=1;
 					side="WEST";
-					vehicle="b_soldier_unarmed_f";
+					vehicle="B_Helipilot_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;

@@ -61,7 +61,7 @@ if (isDedicated) then {
 	_nul = []execVM "client\kill_credits.sqf";
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
-	_nul = []execVM "client\hud\playerHud.sqf";
+	_nul = []execVM "client\dialogs\playerHud.sqf";
 	_nul = []execVM "client\client_mission_end.sqf";
 	_nul = []execVM "client\base_update.sqf";
 
@@ -82,6 +82,7 @@ if (isDedicated) then {
 //	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
 
 
+	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
 	
 	diag_log "The client got through all its init files!";
 };

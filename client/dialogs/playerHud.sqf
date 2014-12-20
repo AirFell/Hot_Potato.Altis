@@ -118,7 +118,7 @@ while {true} do
 
         if (isStreamFriendlyUIEnabled) then
         {
-        	_tempString = format ["Altis at War<br/>by<br/>KcBattlegrounds<br/>[StreamFriendly:ON]<br/>"];
+        	_tempString = format ["Hot Potato<br/>by<br/>Airfell & Sanguine<br/>[StreamFriendly:ON]<br/>"];
 			_yOffset = _yOffset + 0.20;
         	_hudVehicle ctrlSetStructuredText parseText _tempString;
         }

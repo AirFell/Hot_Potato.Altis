@@ -41,11 +41,11 @@ player addAction [
 ////////////Vehicle Store///////////////
 ////////////////////////////////////////
 player addAction [
-	"Vehicle Store", {
-		hint "You have accessed this control";
-	},
+	"Vehicle Store", 
+		"client\dialogs\factoryControl\factoryControl_Load.sqf", 
 	nil, 1, True, True, "", "(player distance west_veh_shop) < 3"
 ];
+
 ////////////////////////////////////////
 ////////////Fortifications//////////////
 ////////////////////////////////////////

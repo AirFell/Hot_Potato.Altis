@@ -1,4 +1,5 @@
-#include "client\common.hpp"
+#include "client\defines.hpp"
+#include "client\dialogs\factoryControl\factoryControl.hpp"
 #include "R3F_LOG\desc_include.h"
 
 respawn = 3;
@@ -46,7 +47,7 @@ wreckRemovalMaxTime = 600;
 
 class RscTitles
 {
- 	#include "client\hud\dialog\HPhud.hpp"
+ 	#include "client\dialogs\hud\HPhud.hpp"
 };
 
 class CfgDebriefing
