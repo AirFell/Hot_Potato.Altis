@@ -2,7 +2,6 @@ vehicle store- needs to have dialog updated, fix list of objects
 weapon/gear store- need to make a list of guns/attachments/uniforms
 fortifications- need to make a list of fortifications
 
-
 add some side-neutral cash-only shops.
 
 money system/scoring system- event handlers of some sort?
@@ -12,8 +11,6 @@ money system/scoring system- event handlers of some sort?
 base radar
 	-if enemy is within range, change color of marker.
 	-hide radar marker from enemy teams.
-
-base generates its own resources every X minutes.
 
 _____________________________________________________________________________________
 Polish things for later:
