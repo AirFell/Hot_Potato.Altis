@@ -112,7 +112,7 @@ class factoryControl_Dialog
 		idc = VEHICLELIST;
 		onLBSelChanged = "[] execVM 'client\dialogs\factoryControl\factoryControl_Price.sqf'";
 		x = 0.419407 * safezoneW + safezoneX;
-		y = 0.29599185 * safezoneH + safezoneY;
+		y = 0.25518985 * safezoneH + safezoneY;
 		w = 0.24178 * safezoneW;
 		h = 0.30401815 * safezoneH;
 	};
@@ -125,51 +125,6 @@ class factoryControl_Dialog
 		w = 0.267965 * safezoneW;
 		h = 0.0544024 * safezoneH;
 		sizeEx = 0.5;
-	};
-	class BaseControl_Progress2: RscStructuredText
-	{
-		idc = PROGRESS2;
-		text = "Tier 1"; //--- ToDo: Localize;
-		//onLoad = "(_this select 0) call compile preprocessFileLineNumers ""client\dialogs\baseControl\baseControl_Hides.sqf""";
-		x = 0.483881 * safezoneW + safezoneX;
-		y = 0.25518985 * safezoneH + safezoneY;
-		w = 0.0523858 * safezoneW;
-		h = 0.0196006 * safezoneH;
-		sizeEx = .75 * GUI_GRID_H;
-	};
-	class BaseControl_Progress1: RscStructuredText
-	{
-		idc = PROGRESS1;
-		text = "Built"; //--- ToDo: Localize;
-		//onLoad = "(_this select 0) call compile preprocessFileLineNumers ""client\dialogs\baseControl\baseControl_Hides.sqf""";
-		x = 0.424308 * safezoneW + safezoneX;
-		y = 0.25518985 * safezoneH + safezoneY;
-		w = 0.0523858 * safezoneW;
-		h = 0.0196006 * safezoneH;
-		sizeEx = .75 * GUI_GRID_H;
-	};
-
-	class BaseControl_Progress3: RscStructuredText
-	{
-		idc = PROGRESS3;
-		text = "Tier 2"; //--- ToDo: Localize;
-		//onLoad = "(_this select 0) call compile preprocessFileLineNumers ""client\dialogs\baseControl\baseControl_Hides.sqf""";
-		x = 0.544641 * safezoneW + safezoneX;
-		y = 0.25518985 * safezoneH + safezoneY;
-		w = 0.0523858 * safezoneW;
-		h = 0.0196006 * safezoneH;
-		sizeEx = .75 * GUI_GRID_H;
-	};
-	class BaseControl_Progress4: RscStructuredText
-	{
-		idc = PROGRESS4;
-		text = "Tier 3"; //--- ToDo: Localize;
-		//onLoad = "(_this select 0) call compile preprocessFileLineNumers ""client\dialogs\baseControl\baseControl_Hides.sqf""";
-		x = 0.605748 * safezoneW + safezoneX;
-		y = 0.25518985 * safezoneH + safezoneY;
-		w = 0.0523858 * safezoneW;
-		h = 0.0196006 * safezoneH;
-		sizeEx = .75 * GUI_GRID_H;
 	};
 	class BaseControl_CancelButton: RscButton
 	{

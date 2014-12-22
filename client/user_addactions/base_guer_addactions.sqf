@@ -32,10 +32,10 @@ player addAction [
 ////////////Vehicle Store///////////////
 ////////////////////////////////////////
 player addAction [
-	"Vehicle Store", {
-		createVehicle ["Box_IND_Wps_F", [((getPos player select 0) - 2),((getPos player select 1) - 2), 0], [], 0, "NONE"];
-	},
+	"Vehicle Store", 
+		"client\dialogs\factoryControl\factoryControl_Load.sqf", 
 	nil, 1, True, True, "", "(player distance guer_veh_shop) < 3"
+];
 ];
 ////////////////////////////////////////
 ////////////Fortifications//////////////
