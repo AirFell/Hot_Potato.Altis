@@ -36,7 +36,6 @@ publicVariable "East_Score";
 Guer_Score = 0;
 publicVariable "Guer_Score";
 
-_nul = []execVM "server\resource_time.sqf";
 
 ////////////////////////////////////
 /////////////Base Resources/////////
@@ -50,6 +49,8 @@ publicVariable "east_base_resources";
 
 guer_base_resources = 0;
 publicVariable "guer_base_resources";
+
+_nul = []execVM "server\resource_time.sqf";
 
 ////////////////////////////////////
 ////////////pre-score///////////////
