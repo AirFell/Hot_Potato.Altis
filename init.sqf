@@ -20,7 +20,8 @@ if (isDedicated) then {
 	publicVariable "month";
 	day = floor(random 28) + 1;
 	publicVariable "day";
-	hour = floor (random 25);
+	_hours = [7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+	hour = _hours select floor random count _array;
 	publicVariable "hour";
 	serverTimeSet = 1;
 	publicVariable "serverTimeSet";
