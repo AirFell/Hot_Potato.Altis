@@ -1,6 +1,5 @@
 while {true} do {
 	sleep 60;
-	{diag_log format ["playableUnits: %1", _x]} forEach playableUnits;
 	{_x removeEventHandler ["Killed", 0]} forEach playableUnits;
 	{0 = _x addEventHandler ["killed", {
 		_victim = _this select 0;

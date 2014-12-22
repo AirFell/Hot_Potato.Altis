@@ -36,6 +36,8 @@ publicVariable "East_Score";
 Guer_Score = 0;
 publicVariable "Guer_Score";
 
+_nul = []execVM "server\resource_time.sqf";
+
 ////////////////////////////////////
 /////////////Base Resources/////////
 ////////////////////////////////////

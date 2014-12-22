@@ -1,19 +1,19 @@
-vehicle store- need to make a list of vehicles for store.
+vehicle store- needs to have dialog updated, fix list of objects
 weapon/gear store- need to make a list of guns/attachments/uniforms
 fortifications- need to make a list of fortifications
 
-current base resources added to HUD
 
 add some side-neutral cash-only shops.
 
 money system/scoring system- event handlers of some sort?
-	points for surviving bomb detonation if you armed it
 	points for wounding enemy players when friendly finishes them off
 	points for destroying enemy vehicles
 
 base radar
 	-if enemy is within range, change color of marker.
 	-hide radar marker from enemy teams.
+
+base generates its own resources every X minutes.
 
 _____________________________________________________________________________________
 Polish things for later:

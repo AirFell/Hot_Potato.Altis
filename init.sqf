@@ -58,6 +58,8 @@ if (isDedicated) then {
 	waitUntil {_loading == 1};
 	
 	diag_log "The client is running!";
+	
+	playerCredits = 0;
 		
 	diag_log "Finding random spawn position.";
 
@@ -71,6 +73,7 @@ if (isDedicated) then {
 	"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
 	
 	_nul = []execVM "client\kill_credits.sqf";
+	_nul = []execVM "client\credit_time.sqf";
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
 	_nul = []execVM "client\dialogs\playerHud.sqf";
@@ -79,7 +82,6 @@ if (isDedicated) then {
 
 	forceRespawn player;
 	
-	playerCredits = 0;
 
 
 	"mrkBlue" setMarkerAlpha 0;
