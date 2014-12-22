@@ -5,6 +5,9 @@
 
 enableSaving [false, false];
 
+	serverTimeSet = 0;
+execVM "real_weather.sqf";
+
 execVM "R3F_LOG\init.sqf";
 
 if (isDedicated) then {
@@ -12,6 +15,15 @@ if (isDedicated) then {
 ///////////////////////Server-side stuff///////////////////////
 ///////////////////////////////////////////////////////////////
 	diag_log "The server is Running!";
+	
+	month = floor(random 12) + 1;
+	publicVariable "month";
+	day = floor(random 28) + 1;
+	publicVariable "day";
+	hour = floor (random 25);
+	publicVariable "hour";
+	serverTimeSet = 1;
+	publicVariable "serverTimeSet";
 	
 	call compile preprocessFile"server\SHK_pos\shk_pos_init.sqf";
 	

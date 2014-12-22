@@ -40,13 +40,17 @@ class Mission
 	class Intel
 	{
 		resistanceWest=0;
-		startWeather=0.29999998;
+		startWeather=0.84999996;
 		startWind=0.099999994;
 		startWaves=0.099999994;
-		forecastWeather=0.29999998;
+		forecastWeather=0.84999996;
 		forecastWind=0.099999994;
 		forecastWaves=0.099999994;
 		forecastLightnings=0.099999994;
+		rainForced=1;
+		lightningsForced=1;
+		wavesForced=1;
+		windForced=1;
 		year=2014;
 		month=12;
 		day=9;
