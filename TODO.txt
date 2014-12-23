@@ -1,10 +1,16 @@
-draw3d infostands
-objective marker in-game on the bomb
-see what medics actually do
+draw3d infostands:
+https://community.bistudio.com/wiki/addMissionEventHandler
+https://community.bistudio.com/wiki/drawIcon3D
+
+prevent infostands from moving:
+https://community.bistudio.com/wiki/enableSimulationGlobal
+
+objective marker in-game on the bomb:
+https://www.youtube.com/watch?v=S4XbsPubk5o
 
 vehicle store- needs to have dialog updated, fix list of objects
+
 weapon/gear store- need to make a list of guns/attachments/uniforms
-fortifications- need to make a list of fortifications
 
 add some side-neutral cash-only shops.
 
@@ -23,8 +29,6 @@ spawn a bomb truck at each base
 remove little bird
 
 add static guns to fortification list
-
-prevent infostands from being movable
 
 _____________________________________________________________________________________
 Polish things for later:
