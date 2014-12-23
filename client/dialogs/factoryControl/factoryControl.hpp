@@ -50,7 +50,7 @@ class factoryControl_Dialog
 	class BaseControl_MenuTitleText: RscStructuredTextLeft
 	{
 		idc = -1;
-		text = "Factory Control"; //--- ToDo: Localize;
+		text = "Vehicle Menu"; //--- ToDo: Localize;
 		x = 0.280384 * safezoneW + safezoneX;
 		y = 0.21 * safezoneH + safezoneY;
 		w = 0.155146 * safezoneW;

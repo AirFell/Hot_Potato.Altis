@@ -16,9 +16,9 @@ _vehlist lbSetCurSel -1;
 
 _vehArray = switch (_switch) do 
 {
-	case 0: { call lightArray_Tier1 +call lightArray_Tier2 +call lightArray_Tier3 };
-	case 1: { call heavyArray_Tier2 +call heavyArray_Tier3};
-	case 2: { call airArray_Tier1 +call airArray_Tier2 +call airArray_Tier3};
+	case 0: { call vehicleArray_Light };
+	case 1: { call vehicleArray_Heavy };
+	case 2: { call vehicleArray_Air };
 	case 3: { hint "Im not implemented cause im lazy!"};
 	default { [] };
 };

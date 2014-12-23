@@ -94,8 +94,6 @@ if (isDedicated) then {
 	"mrkMission" setMarkerAlpha 0;
 	"respawn_bomb" setMarkerAlpha 0;
 
-//	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
-
 
 	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
 	

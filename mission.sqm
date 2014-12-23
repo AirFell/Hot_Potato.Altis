@@ -21,9 +21,9 @@ class Mission
 	};
 	addOnsAuto[]=
 	{
-		"A3_Characters_F_BLUFOR",
-		"a3_characters_f",
 		"A3_Data_F_Curator_Characters",
+		"a3_characters_f",
+		"A3_Characters_F_BLUFOR",
 		"A3_Air_F_Heli_Light_02",
 		"A3_Air_F_Beta_Heli_Transport_01",
 		"A3_Air_F_EPB_Heli_Light_03",
@@ -70,11 +70,11 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23750.26,3.1900001,18232.822};
+					position[]={23718.164,3.1900001,18205.422};
 					azimut=-400.20499;
 					id=0;
 					side="WEST";
-					vehicle="B_Helipilot_F";
+					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -89,12 +89,12 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23743.855,3.1900001,18233.029};
+					position[]={23699.346,3.1900001,18208.656};
 					azimut=-213.84399;
 					id=1;
 					side="WEST";
 					vehicle="B_Helipilot_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -108,12 +108,11 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23752.779,3.1900001,18254.764};
+					position[]={23744.605,3.1900001,18301.848};
 					azimut=-401.46201;
 					id=2;
 					side="EAST";
 					vehicle="o_soldier_unarmed_f";
-					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -146,7 +145,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23744.449,3.1900001,18254.994};
+					position[]={23737.637,3.1900001,18300.867};
 					azimut=-137.96899;
 					id=4;
 					side="EAST";
