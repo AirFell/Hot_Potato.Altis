@@ -15,7 +15,7 @@ respawnTemplatesGuer[] = {"MenuPosition"};
 
 
 //this needs to be @ 1 when live. 0 for testing.
-disabledAI = 1;
+disabledAI = 0;
 aiKills = 1;
 
 

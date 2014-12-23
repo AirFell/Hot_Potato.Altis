@@ -1,3 +1,6 @@
+diag_log format ["%1 has been killed by %2", _this select 0, _this select 1];
+
+/*
 _victim = _this select 0;
 _killer = _this select 1;
 _victim_Side = side _victim;
@@ -14,7 +17,7 @@ if (_killer == player && _victim_Side == _killer_side) then {
 	};
 	diag_log format["!!! %1 teamkilled %2 !!!", _killer, _victim];
 };
-
+*/
 
 /*
 0 = player addMPEventHandler ["mpkilled", {

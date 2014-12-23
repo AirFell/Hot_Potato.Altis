@@ -37,6 +37,7 @@ if (isDedicated) then {
 	Server_Load_Complete = 0;
 	publicVariable "Server_Load_Complete";
 	
+	_nul = []execVM "server\killed_eh.sqf";
 	_nul = []execVM "server\GlobalVars.sqf";
 
 	diag_log "The server got through all its init files!";
@@ -48,7 +49,6 @@ if (isDedicated) then {
 ///////////////////////Client-side stuff///////////////////////
 ///////////////////////////////////////////////////////////////
 
-	client_respawn_counter = 0;
 	diag_log "client entering loading loop.";
 	_loading = 0;
 	while {_loading == 0} do {
@@ -65,7 +65,7 @@ if (isDedicated) then {
 	
 	diag_log "The client is running!";
 	
-	playerCredits = 0;
+	playerCredits = 500;
 		
 	diag_log "Finding random spawn position.";
 
@@ -78,7 +78,6 @@ if (isDedicated) then {
 	_RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
 	"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
 	
-	_nul = []execVM "client\killed_eh.sqf";
 	_nul = []execVM "client\credit_time.sqf";
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";

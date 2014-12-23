@@ -1,6 +1,7 @@
+/*
 waituntil {client_respawn_counter == 1};
 {_x addEventHandler ["killed", {hint format ["%1 has been killed by %2", _this select 0, _this select 1];}];} forEach allunits;
-
+*/
 /*
 while {true} do {
 	sleep 29;
@@ -10,4 +11,11 @@ while {true} do {
 };
 */
 
-//0 = this addEventHandler ["killed", {hint format ["%1 has been killed by %2", _this select 0, _this select 1];}];
+{
+	_x addMPEventHandler ["mpkilled", {
+			if (player == (_this select 1)) then {
+				_null = [_this select 0, _this select 1]execVM "client\kill_credits.sqf";
+			};
+		}
+	];
+} foreach allunits;

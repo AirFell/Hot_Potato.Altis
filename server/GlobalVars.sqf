@@ -41,13 +41,13 @@ publicVariable "Guer_Score";
 /////////////Base Resources/////////
 ////////////////////////////////////
 
-west_base_resources = 0;
+west_base_resources = 500;
 publicVariable "west_base_resources";
 
-east_base_resources = 0;
+east_base_resources = 500;
 publicVariable "east_base_resources";
 
-guer_base_resources = 0;
+guer_base_resources = 500;
 publicVariable "guer_base_resources";
 
 _nul = []execVM "server\resource_time.sqf";
