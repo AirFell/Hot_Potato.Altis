@@ -48,6 +48,7 @@ if (isDedicated) then {
 ///////////////////////Client-side stuff///////////////////////
 ///////////////////////////////////////////////////////////////
 
+	client_respawn_counter = 0;
 	diag_log "client entering loading loop.";
 	_loading = 0;
 	while {_loading == 0} do {
@@ -77,7 +78,7 @@ if (isDedicated) then {
 	_RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
 	"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
 	
-//	_nul = []execVM "client\killed_eh.sqf";
+	_nul = []execVM "client\killed_eh.sqf";
 	_nul = []execVM "client\credit_time.sqf";
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
@@ -87,6 +88,7 @@ if (isDedicated) then {
 
 	forceRespawn player;
 	
+	client_respawn_counter = 1;
 
 
 	"mrkBlue" setMarkerAlpha 0;

@@ -1,6 +1,6 @@
-/*
-{0 = this addEventHandler ["killed", {hint "you have killed something.";}];} forEach allunits;
-*/
+waituntil {client_respawn_counter == 1};
+{_x addEventHandler ["killed", {hint format ["%1 has been killed by %2", _this select 0, _this select 1];}];} forEach allunits;
+
 /*
 while {true} do {
 	sleep 29;
