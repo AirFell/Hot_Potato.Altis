@@ -54,7 +54,8 @@ if (isDedicated) then {
 					//Custom Side Choosing Script~ AirFell
 					_RandomPosG = guerRespawnArray select floor random count guerRespawnArray;
 					_tem_posMrk = getMarkerPos _RandomPosG;
-					_posMrk = _tem_posMrk findEmptyPosition [0, 50, "B_Heli_Light_01_armed_F"];
+					_posMrk = [_tem_posMrk, 0, 100, 25, 0, 10, 0] call BIS_fnc_findSafePos;
+//					_posMrk = _tem_posMrk findEmptyPosition [0, 50, "B_Heli_Light_01_armed_F"];
 					
 					_veh = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					_veh setDir _dir;
@@ -81,7 +82,8 @@ if (isDedicated) then {
 					//Custom Side Choosing Script~ AirFell
 					_RandomPosG = guerRespawnArray select floor random count guerRespawnArray;
 					_tem_posMrk = getMarkerPos _RandomPosG;
-					_posMrk = _tem_posMrk findEmptyPosition [0, 50, "B_Heli_Light_01_armed_F"];
+					_posMrk = [_tem_posMrk, 0, 100, 25, 0, 10, 0] call BIS_fnc_findSafePos;
+//					_posMrk = _tem_posMrk findEmptyPosition [0, 50, "B_Heli_Light_01_armed_F"];
 					
 					_veh = createVehicle [_vehtype, _posMrk, [], 0, "CAN_COLLIDE"];
 					_veh setDir _dir;

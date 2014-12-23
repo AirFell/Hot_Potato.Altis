@@ -29,13 +29,21 @@ player addAction [
 	nil, 1, True, True, "", "(player distance guer_resc_depot_ctrl) < 3"
 ];
 ////////////////////////////////////////
+////////////Infantry Store//////////////
+////////////////////////////////////////
+player addAction [
+	"Weapon/Gear Store", {
+		createVehicle ["Box_East_Wps_F", [((getPos player select 0) - 2),((getPos player select 1) - 2), 0], [], 0, "NONE"];
+	},
+	nil, 1, True, True, "", "(player distance guer_inf_shop) < 3"
+];
+////////////////////////////////////////
 ////////////Vehicle Store///////////////
 ////////////////////////////////////////
 player addAction [
 	"Vehicle Store", 
 		"client\dialogs\factoryControl\factoryControl_Load.sqf", 
 	nil, 1, True, True, "", "(player distance guer_veh_shop) < 3"
-];
 ];
 ////////////////////////////////////////
 ////////////Fortifications//////////////

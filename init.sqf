@@ -2,10 +2,11 @@
 //SHK Random Position Generator by Shuko, Modified by Airfell
 //"Where's Barry?!?" script by Axek, edited for use in this mission by AirFell
 //[R3F] Logistics 3.0 by R3F Projects
+//Real Weather - dynamic weather for MP games by Code34 ~slight edit by AirFell to randomize mission time on server start.
 
 enableSaving [false, false];
 
-	serverTimeSet = 0;
+serverTimeSet = 0;
 execVM "real_weather.sqf";
 
 execVM "R3F_LOG\init.sqf";
@@ -20,8 +21,8 @@ if (isDedicated) then {
 	publicVariable "month";
 	day = floor(random 28) + 1;
 	publicVariable "day";
-	_hours = [7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-	hour = _hours select floor random count _array;
+	_hours = [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
+	hour = _hours select floor random count _hours;
 	publicVariable "hour";
 	serverTimeSet = 1;
 	publicVariable "serverTimeSet";

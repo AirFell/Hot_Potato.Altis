@@ -1,3 +1,8 @@
+give in and ask about eventhandler problems in forums.
+draw3d infostands
+objective marker in-game on the bomb
+see what medics actually do
+
 vehicle store- needs to have dialog updated, fix list of objects
 weapon/gear store- need to make a list of guns/attachments/uniforms
 fortifications- need to make a list of fortifications

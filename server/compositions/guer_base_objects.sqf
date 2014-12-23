@@ -43,6 +43,7 @@ guer_veh_shop setDir 90;
 guer_veh_shop setVehicleVarName "guer_veh_shop";
 publicVariable "guer_veh_shop";
 guer_veh_shop addEventHandler ["HandleDamage", {false}];
+guer_veh_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Vehicle Spawns: Ground
 
@@ -53,6 +54,7 @@ guer_veh_shop_spawn1 setPos [(_pos select 0) + 35, (_pos select 1) + 20, 0];
 guer_veh_shop_spawn1 setVehicleVarName "guer_veh_shop_spawn1";
 publicVariable "guer_veh_shop_spawn1";
 guer_veh_shop_spawn1 addEventHandler ["HandleDamage", {false}];
+guer_veh_shop_spawn1 setVariable ["R3F_LOG_disabled", true,true];
 
 //spawn2
 guer_veh_shop_spawn2 = createVehicle ["Land_Flush_Light_green_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -61,6 +63,7 @@ guer_veh_shop_spawn2 setPos [(_pos select 0) + 35, (_pos select 1) + 27.5, 0];
 guer_veh_shop_spawn2 setVehicleVarName "guer_veh_shop_spawn2";
 publicVariable "guer_veh_shop_spawn2";
 guer_veh_shop_spawn2 addEventHandler ["HandleDamage", {false}];
+guer_veh_shop_spawn2 setVariable ["R3F_LOG_disabled", true,true];
 
 //spawn3
 guer_veh_shop_spawn3 = createVehicle ["Land_Flush_Light_green_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -69,6 +72,7 @@ guer_veh_shop_spawn3 setPos [(_pos select 0) + 35, (_pos select 1) + 35.5, 0];
 guer_veh_shop_spawn3 setVehicleVarName "guer_veh_shop_spawn3";
 publicVariable "guer_veh_shop_spawn3";
 guer_veh_shop_spawn3 addEventHandler ["HandleDamage", {false}];
+guer_veh_shop_spawn3 setVariable ["R3F_LOG_disabled", true,true];
 
 //Vehicle Spawns: Helis
 
@@ -79,6 +83,7 @@ guer_veh_shop_spawn4 setPos [(_pos select 0) + 30, (_pos select 1) - 8, 0];
 guer_veh_shop_spawn4 setVehicleVarName "guer_veh_shop_spawn4";
 publicVariable "guer_veh_shop_spawn4";
 guer_veh_shop_spawn4 addEventHandler ["HandleDamage", {false}];
+guer_veh_shop_spawn4 setVariable ["R3F_LOG_disabled", true,true];
 
 //spawn5
 guer_veh_shop_spawn5 = createVehicle ["Land_Flush_Light_yellow_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -87,6 +92,7 @@ guer_veh_shop_spawn5 setPos [(_pos select 0) + 30, (_pos select 1) - 30, 0];
 guer_veh_shop_spawn5 setVehicleVarName "guer_veh_shop_spawn5";
 publicVariable "guer_veh_shop_spawn5";
 guer_veh_shop_spawn5 addEventHandler ["HandleDamage", {false}];
+guer_veh_shop_spawn5 setVariable ["R3F_LOG_disabled", true,true];
 
 //Infantry Shop
 guer_inf_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -96,6 +102,7 @@ guer_inf_shop setDir -90;
 guer_inf_shop setVehicleVarName "guer_inf_shop";
 publicVariable "guer_inf_shop";
 guer_inf_shop addEventHandler ["HandleDamage", {false}];
+guer_inf_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Fortification Store
 guer_fort_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -105,6 +112,7 @@ guer_fort_shop setDir 90;
 guer_fort_shop setVehicleVarName "guer_fort_shop";
 publicVariable "guer_fort_shop";
 guer_fort_shop addEventHandler ["HandleDamage", {false}];
+guer_fort_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Control
 guer_resc_depot_ctrl = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -114,6 +122,7 @@ guer_resc_depot_ctrl setDir 0;
 guer_resc_depot_ctrl setVehicleVarName "guer_resc_depot_ctrl";
 publicVariable "guer_resc_depot_ctrl";
 guer_resc_depot_ctrl addEventHandler ["HandleDamage", {false}];
+guer_resc_depot_ctrl setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Point
 guer_resc_depot_mrkr = createVehicle ["Land_JumpTarget_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -123,3 +132,4 @@ guer_resc_depot_mrkr setDir 0;
 guer_resc_depot_mrkr setVehicleVarName "guer_resc_depot_mrkr";
 publicVariable "guer_resc_depot_mrkr";
 guer_resc_depot_mrkr addEventHandler ["HandleDamage", {false}];
+guer_resc_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];

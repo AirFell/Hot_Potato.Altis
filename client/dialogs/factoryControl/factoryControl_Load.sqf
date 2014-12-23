@@ -1,11 +1,6 @@
 #include "factoryControl_Defines.hpp";
 disableSerialization;
 
-playerCredits = 350;// delete meeeee 
-west_base_resources = 350;// delete meeeee
-east_base_resources = 350;// delete meeeee
-guer_base_resources = 350;// delete meeeee
-
 _base_resources = "";
 		_playerSide = str(playerSide);
 		if(_playerSide == "WEST") then {
