@@ -1,4 +1,3 @@
-give in and ask about eventhandler problems in forums.
 draw3d infostands
 objective marker in-game on the bomb
 see what medics actually do

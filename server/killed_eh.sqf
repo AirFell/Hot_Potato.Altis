@@ -10,12 +10,13 @@ while {true} do {
 	{0 = _x addEventHandler ["killed", {_null = _this execVM "client\kill_credits.sqf";}];} forEach allunits;
 };
 */
-
-{
-	_x addMPEventHandler ["mpkilled", {
-			if (player == (_this select 1)) then {
-				_null = [_this select 0, _this select 1]execVM "client\kill_credits.sqf";
-			};
-		}
-	];
-} foreach allunits;
+while {True} do {
+	sleep 29.5;
+	{_x removeAllMPEventHandlers "mpkilled";} foreach allunits;
+	sleep 0.5;
+	{_x addMPEventHandler ["mpkilled", {
+		if (player == (_this select 1)) then {
+			_null = [_this select 0, _this select 1]execVM "client\kill_credits.sqf";
+		};
+	}];} foreach allunits;
+};
