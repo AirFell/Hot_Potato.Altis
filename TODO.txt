@@ -17,6 +17,14 @@ base radar
 	-if enemy is within range, change color of marker.
 	-hide radar marker from enemy teams.
 
+repair points
+
+spawn a bomb truck at each base
+
+remove little bird
+
+add static guns to fortification list
+
 _____________________________________________________________________________________
 Polish things for later:
 how many times will a base be destroyed?(Should we make more base spawn markers?)
