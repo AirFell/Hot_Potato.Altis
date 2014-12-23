@@ -19,11 +19,14 @@ if (isDedicated) then {
 	
 	month = floor(random 12) + 1;
 	publicVariable "month";
+	diag_log format["Month is %1", month];
 	day = floor(random 28) + 1;
 	publicVariable "day";
-	_hours = [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
+	diag_log format["Day is %1", day];
+	_hours = [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
 	hour = _hours select floor random count _hours;
 	publicVariable "hour";
+	diag_log format["Hour is %1", hour];
 	serverTimeSet = 1;
 	publicVariable "serverTimeSet";
 	
@@ -74,7 +77,7 @@ if (isDedicated) then {
 	_RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
 	"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
 	
-	_nul = []execVM "client\kill_credits.sqf";
+//	_nul = []execVM "client\killed_eh.sqf";
 	_nul = []execVM "client\credit_time.sqf";
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
