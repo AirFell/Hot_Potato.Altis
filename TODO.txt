@@ -25,6 +25,8 @@ remove little bird
 
 add static guns to fortification list
 
+prevent infostands from being movable
+
 _____________________________________________________________________________________
 Polish things for later:
 how many times will a base be destroyed?(Should we make more base spawn markers?)
