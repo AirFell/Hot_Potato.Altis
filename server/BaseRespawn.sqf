@@ -49,6 +49,7 @@ diag_log "BaseRespawn.sqf loaded.";
 					west_base setVehicleVarName "west_base";
 					publicVariable "west_base";
 					west_base addEventHandler ["HandleDamage", {false}];
+					west_base setVariable ["R3F_LOG_disabled", true, true];
 						
 					
 					"west_base_marker" setMarkerPos getPos west_base;
@@ -118,6 +119,7 @@ diag_log "BaseRespawn.sqf loaded.";
 					east_base setVehicleVarName "east_base";
 					publicVariable "east_base";
 					east_base addEventHandler ["HandleDamage", {false}];
+					east_base setVariable ["R3F_LOG_disabled", true, true];
 					
 					"east_base_marker" setMarkerPos getPos east_base;
 					sleep 1;
@@ -187,6 +189,7 @@ diag_log "BaseRespawn.sqf loaded.";
 					guer_base setVehicleVarName "guer_base";
 					publicVariable "guer_base";
 					guer_base addEventHandler ["HandleDamage", {false}];
+					guer_base setVariable ["R3F_LOG_disabled", true, true];
 					
 					"guer_base_marker" setMarkerPos getPos guer_base;
 					sleep 1;

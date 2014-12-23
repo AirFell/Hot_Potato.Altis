@@ -43,6 +43,7 @@ east_veh_shop setDir 90;
 east_veh_shop setVehicleVarName "east_veh_shop";
 publicVariable "east_veh_shop";
 east_veh_shop addEventHandler ["HandleDamage", {false}];
+east_veh_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Vehicle Spawns: Ground
 
@@ -53,6 +54,7 @@ east_veh_shop_spawn1 setPos [(_pos select 0) + 35, (_pos select 1) + 20, 0];
 east_veh_shop_spawn1 setVehicleVarName "east_veh_shop_spawn1";
 publicVariable "east_veh_shop_spawn1";
 east_veh_shop_spawn1 addEventHandler ["HandleDamage", {false}];
+east_veh_shop_spawn1 setVariable ["R3F_LOG_disabled", true,true];
 
 //spawn2
 east_veh_shop_spawn2 = createVehicle ["Land_Flush_Light_green_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -61,6 +63,7 @@ east_veh_shop_spawn2 setPos [(_pos select 0) + 35, (_pos select 1) + 27.5, 0];
 east_veh_shop_spawn2 setVehicleVarName "east_veh_shop_spawn2";
 publicVariable "east_veh_shop_spawn2";
 east_veh_shop_spawn2 addEventHandler ["HandleDamage", {false}];
+east_veh_shop_spawn2 setVariable ["R3F_LOG_disabled", true,true];
 
 //spawn3
 east_veh_shop_spawn3 = createVehicle ["Land_Flush_Light_green_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -69,6 +72,7 @@ east_veh_shop_spawn3 setPos [(_pos select 0) + 35, (_pos select 1) + 35.5, 0];
 east_veh_shop_spawn3 setVehicleVarName "east_veh_shop_spawn3";
 publicVariable "east_veh_shop_spawn3";
 east_veh_shop_spawn3 addEventHandler ["HandleDamage", {false}];
+east_veh_shop_spawn3 setVariable ["R3F_LOG_disabled", true,true];
 
 //Vehicle Spawns: Helis
 
@@ -79,6 +83,7 @@ east_veh_shop_spawn4 setPos [(_pos select 0) + 30, (_pos select 1) - 8, 0];
 east_veh_shop_spawn4 setVehicleVarName "east_veh_shop_spawn4";
 publicVariable "east_veh_shop_spawn4";
 east_veh_shop_spawn4 addEventHandler ["HandleDamage", {false}];
+east_veh_shop_spawn4 setVariable ["R3F_LOG_disabled", true,true];
 
 //spawn5
 east_veh_shop_spawn5 = createVehicle ["Land_Flush_Light_yellow_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -87,6 +92,7 @@ east_veh_shop_spawn5 setPos [(_pos select 0) + 30, (_pos select 1) - 30, 0];
 east_veh_shop_spawn5 setVehicleVarName "east_veh_shop_spawn5";
 publicVariable "east_veh_shop_spawn5";
 east_veh_shop_spawn5 addEventHandler ["HandleDamage", {false}];
+east_veh_shop_spawn5 setVariable ["R3F_LOG_disabled", true,true];
 
 //Infantry Shop
 east_inf_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -96,6 +102,7 @@ east_inf_shop setDir -90;
 east_inf_shop setVehicleVarName "east_inf_shop";
 publicVariable "east_inf_shop";
 east_inf_shop addEventHandler ["HandleDamage", {false}];
+east_inf_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Fortification Store
 east_fort_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -105,6 +112,7 @@ east_fort_shop setDir 90;
 east_fort_shop setVehicleVarName "east_fort_shop";
 publicVariable "east_fort_shop";
 east_fort_shop addEventHandler ["HandleDamage", {false}];
+east_fort_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Control
 east_resc_depot_ctrl = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -114,6 +122,7 @@ east_resc_depot_ctrl setDir 0;
 east_resc_depot_ctrl setVehicleVarName "east_resc_depot_ctrl";
 publicVariable "east_resc_depot_ctrl";
 east_resc_depot_ctrl addEventHandler ["HandleDamage", {false}];
+east_resc_depot_ctrl setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Point
 east_resc_depot_mrkr = createVehicle ["Land_JumpTarget_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -123,3 +132,4 @@ east_resc_depot_mrkr setDir 0;
 east_resc_depot_mrkr setVehicleVarName "east_resc_depot_mrkr";
 publicVariable "east_resc_depot_mrkr";
 east_resc_depot_mrkr addEventHandler ["HandleDamage", {false}];
+east_resc_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];

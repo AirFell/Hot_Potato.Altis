@@ -17,6 +17,7 @@ west_base setPos [_posMrk select 0, _posMrk select 1,0];
 west_base setVehicleVarName "west_base";
 publicVariable "west_base";
 west_base addEventHandler ["HandleDamage", {false}];
+west_base setVariable ["R3F_LOG_disabled", true, true];
 
 west_base_marker = createMarker["west_base_marker", (getPos west_base)];
 west_base_marker setMarkerColor "ColorBLUFOR";
@@ -53,6 +54,7 @@ east_base setPos [_posMrk select 0, _posMrk select 1,0];
 east_base setVehicleVarName "east_base";
 publicVariable "east_base";
 east_base addEventHandler ["HandleDamage", {false}];
+east_base setVariable ["R3F_LOG_disabled", true, true];
 
 east_base_marker = createMarker["east_base_marker", (getPos east_base)];
 east_base_marker setMarkerColor "ColorOPFOR";
@@ -89,6 +91,7 @@ guer_base setPos [_posMrk select 0, _posMrk select 1,0];
 guer_base setVehicleVarName "guer_base";
 publicVariable "guer_base";
 guer_base addEventHandler ["HandleDamage", {false}];
+guer_base setVariable ["R3F_LOG_disabled", true, true];
 
 guer_base_marker = createMarker["guer_base_marker", (getPos guer_base)];
 guer_base_marker setMarkerColor "ColorIndependent";
