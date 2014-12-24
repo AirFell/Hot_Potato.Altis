@@ -1,13 +1,13 @@
-#include "factoryControl_Defines.hpp"
+#include "autoZone_Defines.hpp"
 
-class factoryControl_Dialog
+class autoZone_Dialog
 {
-	idd= FACTORYCONTROL;
+	idd= AUTOZONE;
 	movingenable=true;
 	
 	class controls 
 	{
-		class BaseControl_MainBGBOX: BOX
+		class autoZone_MainBGBOX: BOX
 	{
 		idc = -1;
 		x = 0.275384 * safezoneW + safezoneX;
@@ -15,7 +15,7 @@ class factoryControl_Dialog
 		w = 0.433111 * safezoneW;
 		h = 0.520022 * safezoneH;
 	};
-		class BaseControl_MainBG: RscFrame
+		class autoZone_MainBG: RscFrame
 	{
 		idc = -1;
 		x = 0.280384 * safezoneW + safezoneX;
@@ -23,7 +23,7 @@ class factoryControl_Dialog
 		w = 0.423111 * safezoneW;
 		h = 0.510022 * safezoneH;
 	};
-		class BaseControl_MenuTitle: MenuTitle
+		class autoZone_MenuTitle: MenuTitle
 	{
 		idc = -1;
 		x = 0.280384 * safezoneW + safezoneX;
@@ -31,7 +31,7 @@ class factoryControl_Dialog
 		w = 0.423111 * safezoneW;
 		h = 0.03400115 * safezoneH;
 	};
-	class BaseControl_Footer: Footer
+	class autoZone_Footer: Footer
 	{
 		idc = -1;
 		x = 0.280384 * safezoneW + safezoneX;
@@ -39,7 +39,7 @@ class factoryControl_Dialog
 		w = 0.423111 * safezoneW;
 		h = 0.068021 * safezoneH;
 	};
-	class BaseControl_SideBar: Sidebar
+	class autoZone_SideBar: Sidebar
 	{
 		idc = -1;
 		x = 0.280384 * safezoneW + safezoneX;
@@ -47,17 +47,17 @@ class factoryControl_Dialog
 		w = 0.0987262 * safezoneW;
 		h = 0.40801815 * safezoneH;
 	};
-	class BaseControl_MenuTitleText: RscStructuredTextLeft
+	class autoZone_MenuTitleText: RscStructuredTextLeft
 	{
 		idc = -1;
-		text = "Vehicle Menu"; //--- ToDo: Localize;
+		text = "Auto Zone"; //--- ToDo: Localize;
 		x = 0.280384 * safezoneW + safezoneX;
 		y = 0.21 * safezoneH + safezoneY;
 		w = 0.155146 * safezoneW;
 		h = 0.0544024 * safezoneH;
 		sizeEx = 1 * GUI_GRID_H;
 	};
-	class BaseControl_FundsText: RscStructuredText
+	class autoZone_FundsText: RscStructuredText
 	{
 		idc = FUNDSTEXT;
 		text = "Resources"; //--- ToDo: Localize;
@@ -67,56 +67,56 @@ class factoryControl_Dialog
 		h = 0.0544024 * safezoneH;
 		sizeEx = 0.5;
 	};
-	class BaseControl_LightButton: RscButton
+	class autoZone_LightButton: RscButton
 	{
 		idc = LIGHTBUTTON;
 		text = "Light"; //--- ToDo: Localize;
-		onButtonClick = "[0] execVM 'client\dialogs\factoryControl\factoryControl_Populate.sqf'";
+		onButtonClick = "[0] execVM 'client\dialogs\autoZone\autoZone_Populate.sqf'";
 		x = 0.279404 * safezoneW + safezoneX;
 		y = 0.25518985 * safezoneH + safezoneY;
 		w = 0.1 * safezoneW;
 		h = 0.047602 * safezoneH;
 	};
-	class BaseControl_HeavyButton: RscButton
+	class autoZone_HeavyButton: RscButton
 	{
 		idc = HEAVYBUTTON;
 		text = "Heavy"; //--- ToDo: Localize;
-		onButtonClick = "[1] execVM 'client\dialogs\factoryControl\factoryControl_Populate.sqf'";
+		onButtonClick = "[1] execVM 'client\dialogs\autoZone\autoZone_Populate.sqf'";
 		x = 0.279404 * safezoneW + safezoneX;
 		y = 0.32319285 * safezoneH + safezoneY;
 		w = 0.1 * safezoneW;
 		h = 0.047602 * safezoneH;
 	};
-	class BaseControl_AirButton: RscButton
+	class autoZone_AirButton: RscButton
 	{
 		idc = AIRBUTTON;
 		text = "Air"; //--- ToDo: Localize;
-		onButtonClick = "[2] execVM 'client\dialogs\factoryControl\factoryControl_Populate.sqf'";
+		onButtonClick = "[2] execVM 'client\dialogs\autoZone\autoZone_Populate.sqf'";
 		x = 0.279404 * safezoneW + safezoneX;
 		y = 0.39215785 * safezoneH + safezoneY;
 		w = 0.1 * safezoneW;
 		h = 0.047602 * safezoneH;
 	};
-		class BaseControl_SeaButton: RscButton
+		class autoZone_SeaButton: RscButton
 	{
 		idc = SEABUTTON;
 		text = "Sea"; //--- ToDo: Localize;
-		onButtonClick = "[3] execVM 'client\dialogs\factoryControl\factoryControl_Populate.sqf'";
+		onButtonClick = "[3] execVM 'client\dialogs\autoZone\autoZone_Populate.sqf'";
 		x = 0.279404 * safezoneW + safezoneX;
 		y = 0.46112285 * safezoneH + safezoneY;
 		w = 0.1 * safezoneW;
 		h = 0.047602 * safezoneH;
 	};
-	class BaseControl_VehicleText: RscListBox
+	class autoZone_VehicleText: RscListBox
 	{
 		idc = VEHICLELIST;
-		onLBSelChanged = "[] execVM 'client\dialogs\factoryControl\factoryControl_Price.sqf'";
+		onLBSelChanged = "[] execVM 'client\dialogs\autoZone\autoZone_Price.sqf'";
 		x = 0.419407 * safezoneW + safezoneX;
 		y = 0.25518985 * safezoneH + safezoneY;
 		w = 0.24178 * safezoneW;
 		h = 0.30401815 * safezoneH;
 	};
-	class BaseControl_CostText: RscStructuredTextLeft
+	class autoZone_CostText: RscStructuredTextLeft
 	{
 		idc = COSTTEXT;
 		text = "Resources"; //--- ToDo: Localize;
@@ -126,7 +126,7 @@ class factoryControl_Dialog
 		h = 0.0544024 * safezoneH;
 		sizeEx = 0.5;
 	};
-	class BaseControl_CancelButton: RscButton
+	class autoZone_CancelButton: RscButton
 	{
 		idc = CANCELBUTTON;
 		text = "Cancel"; //--- ToDo: Localize;
@@ -137,11 +137,11 @@ class factoryControl_Dialog
 		w = 0.0955931 * safezoneW;
 		h = 0.0340016 * safezoneH;
 	};
-	class BaseControl_PurchaseButton: RscButton
+	class autoZone_PurchaseButton: RscButton
 	{
 		idc = PURCHASEBUTTON;
 		text = "Purchase"; //--- ToDo: Localize;
-		onButtonClick = "[] execVM 'client\dialogs\factoryControl\factoryControl_Purchase.sqf'";
+		onButtonClick = "[] execVM 'client\dialogs\autoZone\autoZone_Purchase.sqf'";
 		//onLoad = "(_this select 0) []execVM ""client\dialogs\baseControl\baseControl_Hides.sqf""";
 		x = 0.550445 * safezoneW + safezoneX;
 		y = 0.666981 * safezoneH + safezoneY;

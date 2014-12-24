@@ -1,14 +1,16 @@
-/*********************************************************#
-# @@ScriptName: baseConfig.sqf
-# @@Author: Sanguine
-# @@Create Date: 2013-09-16 20:40:58
-#*********************************************************/
+/*********************************************************
+ *********************************************************
+ScriptName: baseConfig.sqf
+Author: Sanguine
+Create Date: 2013-09-16 20:40:58
+*********************************************************
+*********************************************************/
 
 // This tracks which bases infostand the player is interacting with
 //currentBase = "";
 
 // Array Parameters
-// Text name, classname, Resource cost, Credit Cost
+// Text name, class name, Resource cost, Credit Cost
 
 
 
@@ -16,7 +18,7 @@
 //default array layout
 nameofArray = compileFinal str
 [
-    ["", "", 25,25],
+   // ["Text name", "class name", Resource cost, Credit Cost],
 	["", "", 25,25],
 	["", "", 25,25],
 	["", "", 25,25]
@@ -26,7 +28,11 @@ nameofArray = compileFinal str
 //VEHICLE ARRAYS
 vehicleArray_Light = compileFinal str
 [
-	["//--------------Light Vehicles---------------//", "", 0,0],
+ // ["Text name", "class name", Resource cost, Credit Cost],
+//delete
+ 	["Nato", "Box_NATO_Wps_F", 25,25],
+	["East", "Box_East_Wps_F", 25,25],
+//me ^	
     ["Quadbike","B_Quadbike_01_F", 25,25],
 	["Offroad Armed","B_G_Offroad_01_armed_F", 50,50],
 	["Ifrit","O_MRAP_02_F", 75,75],
@@ -41,7 +47,6 @@ vehicleArray_Light = compileFinal str
 ];
 vehicleArray_Heavy = compileFinal str
 [
-	["//---------------Heavy Vehicles--------------//", "", 0,0],
     ["AMV-7 Marshall","B_APC_Wheeled_01_cannon_F", 50,50],
 	["AFV-4 Gorgon","I_APC_Wheeled_03_cannon_F", 75,75],
 	["MSE-3 Marid","O_APC_Wheeled_02_rcws_F", 100,100],
@@ -53,7 +58,6 @@ vehicleArray_Heavy = compileFinal str
 ];
 vehicleArray_Air = compileFinal str
 [
-	["//---------------Air Vehicles--------------//", "", 0,0],
     ["MH-9 Hummingbird","B_Heli_Light_01_F", 25,25],
 	["Po-30 Orca Unarmed","O_Heli_Light_02_unarmed_F", 50,50],
 	["CH-49 Mohawk","I_Heli_Transport_02_F", 75,75],
@@ -63,16 +67,14 @@ vehicleArray_Air = compileFinal str
 	["Po-30 Orca","O_Heli_Light_02_F", 175,175],
 	["WY-55 Hellcat","I_Heli_light_03_F", 200,200],
 	["AH-99 Blackfoot","B_Heli_Attack_01_F", 225,225],
-	["A-164 Wipeout","B_Plane_CAS_01_F", 250,250],
-	["Mi-48 Kajman","O_Heli_Attack_02_F", 275,275],
-	["To-199 Neophron","O_Plane_CAS_02_F", 300,300],
-	["A-143 Buzzard (CAS)","I_Plane_Fighter_03_CAS_F", 325,325],
-	["A-143 Buzzard (AA)","I_Plane_Fighter_03_AA_F", 350,350]
+	["Mi-48 Kajman","O_Heli_Attack_02_F", 275,275]
 ];
 
 allFactoryVehicles = (call vehicleArray_Light + call vehicleArray_Heavy + call vehicleArray_Air);
 
+/////////////////////////////////////////////
 //---------------Cratesss------------------//
+/////////////////////////////////////////////
 
 crateArray_Basic = compileFinal str
 [
@@ -119,7 +121,9 @@ crateArray_Ammo = compileFinal str
 
 allCrateArrays = (call crateArray_Basic + call crateArray_Explosives + call crateArray_Special + call crateArray_Supplies + call crateArray_Support);
 
+////////////////////////////////////////////////////////////
 //--------------------Fortifications----------------------//
+////////////////////////////////////////////////////////////
 
 fortificationArray = compileFinal str
 [

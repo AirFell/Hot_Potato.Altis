@@ -1,5 +1,5 @@
 #include "client\defines.hpp"
-#include "client\dialogs\factoryControl\factoryControl.hpp"
+#include "client\dialogs\autoZone\autoZone.hpp"
 #include "R3F_LOG\desc_include.h"
 
 respawn = 3;

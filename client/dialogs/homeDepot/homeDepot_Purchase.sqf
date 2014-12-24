@@ -52,7 +52,7 @@ if(_playerSide == "WEST") then {
 				player moveInDriver _spawnVehicle;
 				west_base_resources = _base_resources - _resourceCost;
 				playerCredits = playerCredits - _creditCost;
-				_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+				_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 				hintsilent "Vehicle purchase successful";	
 			} else {
 				if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea1 <= 1)) then {
@@ -65,7 +65,7 @@ if(_playerSide == "WEST") then {
 					player moveInDriver _spawnVehicle;
 					west_base_resources = _base_resources - _resourceCost;
 					playerCredits = playerCredits - _creditCost;
-					_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+					_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 					hintsilent "Vehicle purchase successful";
 				} else {
 					if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea2 <= 1)) then {
@@ -78,7 +78,7 @@ if(_playerSide == "WEST") then {
 						player moveInDriver _spawnVehicle;
 						west_base_resources = _base_resources - _resourceCost;
 						playerCredits = playerCredits - _creditCost;
-						_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+						_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 						hintsilent "Vehicle purchase successful";
 					} else {
 						if (((_x select 1) isKindOf "Air")&&(count _ObjectsInArea3 <= 2)) then {
@@ -91,7 +91,7 @@ if(_playerSide == "WEST") then {
 							player moveInDriver _spawnVehicle;
 							west_base_resources = _base_resources - _resourceCost;
 							playerCredits = playerCredits - _creditCost;
-							_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+							_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 							hintsilent "Vehicle purchase successful";
 						} else {
 							if (((_x select 1) isKindOf "Air")&&(count _ObjectsInArea4 <= 2)) then {
@@ -104,7 +104,7 @@ if(_playerSide == "WEST") then {
 								player moveInDriver _spawnVehicle;
 								west_base_resources = _base_resources - _resourceCost;
 								playerCredits = playerCredits - _creditCost;
-								_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+								_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 								hintsilent "Vehicle purchase successful";	
 							} else {
 								hint "There is another object or player blocking the spawn point!";
@@ -151,7 +151,7 @@ if(_playerSide == "EAST") then {
 				player moveInDriver _spawnVehicle;
 				east_base_resources = _base_resources - _resourceCost;
 				playerCredits = playerCredits - _creditCost;
-				_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+				_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 				hintsilent "Vehicle purchase successful";	
 			} else {
 				if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea1 <= 1)) then {
@@ -164,7 +164,7 @@ if(_playerSide == "EAST") then {
 					player moveInDriver _spawnVehicle;
 					east_base_resources = _base_resources - _resourceCost;
 					playerCredits = playerCredits - _creditCost;
-					_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+					_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 					hintsilent "Vehicle purchase successful";
 				} else {
 					if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea2 <= 1)) then {
@@ -177,7 +177,7 @@ if(_playerSide == "EAST") then {
 						player moveInDriver _spawnVehicle;
 						east_base_resources = _base_resources - _resourceCost;
 						playerCredits = playerCredits - _creditCost;
-						_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+						_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 						hintsilent "Vehicle purchase successful";
 					} else {
 						if (((_x select 1) isKindOf "Air")&&(count _ObjectsInArea3 <= 2)) then {
@@ -190,7 +190,7 @@ if(_playerSide == "EAST") then {
 							player moveInDriver _spawnVehicle;
 							east_base_resources = _base_resources - _resourceCost;
 							playerCredits = playerCredits - _creditCost;
-							_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+							_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 							hintsilent "Vehicle purchase successful";
 						} else {
 							if (((_x select 1) isKindOf "Air")&&(count _ObjectsInArea4 <= 2)) then {
@@ -203,7 +203,7 @@ if(_playerSide == "EAST") then {
 								player moveInDriver _spawnVehicle;
 								east_base_resources = _base_resources - _resourceCost;
 								playerCredits = playerCredits - _creditCost;
-								_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+								_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 								hintsilent "Vehicle purchase successful";	
 							} else {
 								hint "There is another object or player blocking the spawn point!";
@@ -251,7 +251,7 @@ if(_playerSide == "GUER") then {
 				player moveInDriver _spawnVehicle;
 				guer_base_resources = _base_resources - _resourceCost;
 				playerCredits = playerCredits - _creditCost;
-				_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+				_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 				hintsilent "Vehicle purchase successful";	
 			} else {
 				if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea1 <= 1)) then {
@@ -264,7 +264,7 @@ if(_playerSide == "GUER") then {
 					player moveInDriver _spawnVehicle;
 					guer_base_resources = _base_resources - _resourceCost;
 					playerCredits = playerCredits - _creditCost;
-					_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+					_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 					hintsilent "Vehicle purchase successful";
 				} else {
 					if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea2 <= 1)) then {
@@ -277,7 +277,7 @@ if(_playerSide == "GUER") then {
 						player moveInDriver _spawnVehicle;
 						guer_base_resources = _base_resources - _resourceCost;
 						playerCredits = playerCredits - _creditCost;
-						_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+						_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 						hintsilent "Vehicle purchase successful";
 					} else {
 						if (((_x select 1) isKindOf "Air")&&(count _ObjectsInArea3 <= 2)) then {
@@ -290,7 +290,7 @@ if(_playerSide == "GUER") then {
 							player moveInDriver _spawnVehicle;
 							guer_base_resources = _base_resources - _resourceCost;
 							playerCredits = playerCredits - _creditCost;
-							_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+							_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 							hintsilent "Vehicle purchase successful";
 						} else {
 							if (((_x select 1) isKindOf "Air")&&(count _ObjectsInArea4 <= 2)) then {
@@ -303,7 +303,7 @@ if(_playerSide == "GUER") then {
 								player moveInDriver _spawnVehicle;
 								guer_base_resources = _base_resources - _resourceCost;
 								playerCredits = playerCredits - _creditCost;
-								_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+								_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 								hintsilent "Vehicle purchase successful";	
 							} else {
 								hint "There is another object or player blocking the spawn point!";
@@ -333,7 +333,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		closeDialog 0;
 		_base_resources = _base_resources - _resourceCost;
 		playerCredits = playerCredits - _creditCost;
-		_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _base_resources, _credits];
+		_fundsText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _base_resources, _credits];
 		_ObjectsInArea1 = [(getPos west_veh_shop_spawn1) select 0, (getPos west_veh_shop_spawn1) select 1] nearObjects 2;
 		_ObjectsInArea2 = [(getPos west_veh_shop_spawn2) select 0, (getPos west_veh_shop_spawn2) select 1] nearObjects 2;
 		_ObjectsInArea3 = [(getPos west_veh_shop_spawn3) select 0, (getPos west_veh_shop_spawn3) select 1] nearObjects 2;

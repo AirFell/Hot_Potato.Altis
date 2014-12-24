@@ -38,11 +38,11 @@ player addAction [
 	nil, 1, True, True, "", "(player distance guer_inf_shop) < 3"
 ];
 ////////////////////////////////////////
-////////////Vehicle Store///////////////
+////////////Auto Zone///////////////
 ////////////////////////////////////////
 player addAction [
-	"Vehicle Store", 
-		"client\dialogs\factoryControl\factoryControl_Load.sqf", 
+	"Auto Zone", 
+		"client\dialogs\autoZone\autoZone_Load.sqf", 
 	nil, 1, True, True, "", "(player distance guer_veh_shop) < 3"
 ];
 ////////////////////////////////////////

@@ -1,12 +1,12 @@
 
 
-#include "factoryControl_Defines.hpp";
+#include "autoZone_Defines.hpp";
 disableSerialization;
 private ["_switch", "_dialog", "_vehlisttext", "_vehlist", "_vehArray", "_vehClass", "_vehPicture", "_vehlistIndex"];
 _switch = _this select 0;
 
 // Grab access to the controls
-_dialog = findDisplay FACTORYCONTROL;
+_dialog = findDisplay AUTOZONE;
 //_vehlisttext = _dialog displayCtrl vehshop_veh_TEXT;
 _vehlist = _dialog displayCtrl VEHICLELIST;
 

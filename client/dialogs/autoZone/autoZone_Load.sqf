@@ -1,4 +1,4 @@
-#include "factoryControl_Defines.hpp";
+#include "autoZone_Defines.hpp";
 disableSerialization;
 
 _base_resources = "";
@@ -13,9 +13,9 @@ _base_resources = "";
 			_base_resources = guer_base_resources;
 		};
 
-_factoryDiag = createdialog "factoryControl_Dialog";
+_factoryDiag = createdialog "autoZone_Dialog";
 
-_Dialog = findDisplay FACTORYCONTROL;
+_Dialog = findDisplay AUTOZONE;
 _fundsText = _Dialog displayCtrl FUNDSTEXT;
 _cost = _Dialog displayCtrl COSTTEXT;
 
@@ -32,8 +32,8 @@ if (playerCredits < 1)then{
 	_credits = 0;
 };
 
-_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Resources: %1 Credits: %2</t>", _resources, _credits];
-_cost ctrlSetStructuredText parseText format["<t size='0.75'>Resource Cost: %1 Credit Cost: %2</t>", _resourceCost, _creditCost];
+_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Credits: %2 Resources: %1</t>", _resources, _credits];
+_cost ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: %2 Resource Cost: %1</t>", _resourceCost, _creditCost];
 
 
 
