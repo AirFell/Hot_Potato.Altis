@@ -1,7 +1,3 @@
-draw3d infostands:
-https://community.bistudio.com/wiki/addMissionEventHandler
-https://community.bistudio.com/wiki/drawIcon3D
-
 prevent infostands from moving:
 https://community.bistudio.com/wiki/enableSimulationGlobal
 

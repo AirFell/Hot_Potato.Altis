@@ -84,7 +84,18 @@ if (isDedicated) then {
 	_nul = []execVM "client\dialogs\playerHud.sqf";
 	_nul = []execVM "client\client_mission_end.sqf";
 	_nul = []execVM "client\base_update.sqf";
-
+	_nul = switch (side player) do {
+		case west: {
+			_nul = []execVM "client\user_addactions\helper_west.sqf";
+		};
+		case east: {
+			_nul = []execVM "client\user_addactions\helper_east.sqf";
+		};
+		case resistance: {
+			_nul = []execVM "client\user_addactions\helper_guer.sqf";
+		};
+	};
+	
 	forceRespawn player;
 	
 	client_respawn_counter = 1;
