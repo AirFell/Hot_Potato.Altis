@@ -14,6 +14,7 @@ diag_log "player killed. scripts restarting.";
 waitUntil {alive player};
 
 playerCredits = playerCredits * 0.25;
+playerCredits = round playerCredits;
 
 _nul = []execVM "client\side_switch.sqf";
 _nul = []execVM "client\user_addactions\Arm_Bomb.sqf";

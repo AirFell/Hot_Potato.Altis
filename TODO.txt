@@ -8,6 +8,13 @@ https://community.bistudio.com/wiki/enableSimulationGlobal
 objective marker in-game on the bomb:
 https://www.youtube.com/watch?v=S4XbsPubk5o
 
+base radar-
+every x seconds build a list of allunits near the base marker, test side, if
+not side of the marker then change marker color. Possibly make a PV and a
+listener to move the respawn marker to the random array from the base.
+
+Change base radar to move single respawn point instead of create/delete
+
 vehicle store- needs to have dialog updated, fix list of objects
 
 weapon/gear store- need to make a list of guns/attachments/uniforms
@@ -29,6 +36,8 @@ spawn a bomb truck at each base
 remove little bird
 
 add static guns to fortification list
+
+tutorial dialog on addaction for explaining the game
 
 _____________________________________________________________________________________
 Polish things for later:
