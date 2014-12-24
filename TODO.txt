@@ -79,4 +79,44 @@ Bomb respawn delay: server\BombRespawn.sqf line 9
 _veh = "Truck_01_base_F" createVehicle position player;
 Truck_01_base_F
 
-testing.S
+average price per barrel last 15 years: 65
+
+240gallons of gas per 3,000 lb's of car.
+1 barrel of oil = 30 gallons of gas(combining diesel and regular)
+
+so about 9barrels per car.
+80gal/1k lbs
+
+Car: 3000lb
+Truck: 6000lb
+Semi:38,000lb
+HMVW:5,500
+Small Heli: 8,000lb
+Med Heli: 11,500lb
+Large Heli: 15,000
+____________________________________________
+
+1 lb of vehicle costs 0.08 gallons
+
+1 barrel = $50
+1 barrel = 30 gallons
+1 gallon = 1.666666666666667
+
+Basic Car = 3,000 lb's/240 gallons/8 barrels/$400(plus tax/construction costs/balance reasons?)
+Truck =
+
+
+car = $250/100 resources
+truck/armored unarmed/armed truck = $500/250 resources
+hmg armored truck = $750/500 resources
+gmg armored truck = $1000/750 resources
+
+light armor = $2500/1000 resources
+heavy armor = $5000/1500 resources
+tank = $10,000/1750
+
+light heli = $1500/500
+med. unarmed heli = $3000/750
+large heli = $5000/1000
+med armed heli = $7500/1500
+attack heli = $12,500/2000
