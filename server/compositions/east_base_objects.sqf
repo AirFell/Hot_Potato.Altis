@@ -43,6 +43,7 @@ east_veh_shop setDir 90;
 east_veh_shop setVehicleVarName "east_veh_shop";
 publicVariable "east_veh_shop";
 east_veh_shop addEventHandler ["HandleDamage", {false}];
+east_veh_shop enableSimulationGlobal false;
 east_veh_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Vehicle Spawns: Ground
@@ -102,6 +103,7 @@ east_inf_shop setDir -90;
 east_inf_shop setVehicleVarName "east_inf_shop";
 publicVariable "east_inf_shop";
 east_inf_shop addEventHandler ["HandleDamage", {false}];
+east_inf_shop enableSimulationGlobal false;
 east_inf_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Fortification Store
@@ -112,6 +114,7 @@ east_fort_shop setDir 90;
 east_fort_shop setVehicleVarName "east_fort_shop";
 publicVariable "east_fort_shop";
 east_fort_shop addEventHandler ["HandleDamage", {false}];
+east_fort_shop enableSimulationGlobal false;
 east_fort_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Control
@@ -122,6 +125,7 @@ east_resc_depot_ctrl setDir 0;
 east_resc_depot_ctrl setVehicleVarName "east_resc_depot_ctrl";
 publicVariable "east_resc_depot_ctrl";
 east_resc_depot_ctrl addEventHandler ["HandleDamage", {false}];
+east_resc_depot_ctrl enableSimulationGlobal false;
 east_resc_depot_ctrl setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Point

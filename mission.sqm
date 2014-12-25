@@ -17,12 +17,14 @@ class Mission
 		"A3_Soft_F_Truck",
 		"A3_Soft_F_Quadbike",
 		"A3_Data_F_Curator_Characters",
-		"A3_Characters_F_BLUFOR"
+		"A3_Characters_F_BLUFOR",
+		"A3_Modules_F_Intel"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Data_F_Curator_Characters",
 		"a3_characters_f",
+		"A3_Modules_F_Intel",
 		"A3_Soft_F_Gamma_Offroad",
 		"a3_soft_f_offroad_01",
 		"A3_Soft_F_TruckHeavy",
@@ -57,7 +59,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=6;
+		items=10;
 		class Item0
 		{
 			side="WEST";
@@ -171,6 +173,250 @@ class Mission
 				};
 			};
 		};
+		class Item6
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23699.883,3.1900001,18400.979};
+					class args
+					{
+						items=5;
+						class Item0
+						{
+							value="3";
+							parentCls="ModuleCreateDiaryRecord_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="";
+							parentCls="ModuleCreateDiaryRecord_F";
+							typeName="Subject";
+						};
+						class Item2
+						{
+							value="Mission";
+							parentCls="ModuleCreateDiaryRecord_F";
+							typeName="PresetTitle";
+						};
+						class Item3
+						{
+							value="";
+							parentCls="ModuleCreateDiaryRecord_F";
+							typeName="Title";
+						};
+						class Item4
+						{
+							value="Welcome to Operation: Hot Potato.  <br/>    <br/>  Your mission is to deliver <marker name = 'bomb_marker'>the bomb</marker> to an enemy base, arm it, and defend it while it counts down before exploding, destroying the enemy base.  <br/>    <br/>  Meanwhile, you need cash and your team needs resources to purchase vehicles and weapons. Some cash and resources will come with time, however resource-based missions will spawn across the map as the game progresses.";
+							parentCls="ModuleCreateDiaryRecord_F";
+							typeName="Description";
+						};
+					};
+					id=6;
+					side="LOGIC";
+					vehicle="ModuleCreateDiaryRecord_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item7
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23601.49,3.1900001,18101.521};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="4";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="B_tsk1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="ID";
+						};
+						class Item2
+						{
+							value="Detonate the Bomb five times.";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Title";
+						};
+						class Item3
+						{
+							value="Your goal is to deliver the bomb to five enemy bases.";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Description";
+						};
+						class Item4
+						{
+							value="bomb_marker";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Marker";
+						};
+						class Item5
+						{
+							value="0";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Destination";
+						};
+						class Item6
+						{
+							value="ASSIGNED";
+							parentCls="ModuleTaskCreate_F";
+							typeName="State";
+						};
+					};
+					id=7;
+					side="LOGIC";
+					vehicle="ModuleTaskCreate_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item8
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23700.406,3.1900001,18100.432};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="5";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="O_tsk1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="ID";
+						};
+						class Item2
+						{
+							value="Detonate the Bomb five times.";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Title";
+						};
+						class Item3
+						{
+							value="Your goal is to deliver the bomb to five enemy bases.";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Description";
+						};
+						class Item4
+						{
+							value="bomb_marker";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Marker";
+						};
+						class Item5
+						{
+							value="0";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Destination";
+						};
+						class Item6
+						{
+							value="ASSIGNED";
+							parentCls="ModuleTaskCreate_F";
+							typeName="State";
+						};
+					};
+					id=8;
+					side="LOGIC";
+					vehicle="ModuleTaskCreate_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item9
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23801.496,3.1900001,18099.348};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="6";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="I_tsk1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="ID";
+						};
+						class Item2
+						{
+							value="Detonate the Bomb five times.";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Title";
+						};
+						class Item3
+						{
+							value="Your goal is to deliver the bomb to five enemy bases.";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Description";
+						};
+						class Item4
+						{
+							value="bomb_marker";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Marker";
+						};
+						class Item5
+						{
+							value="0";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Destination";
+						};
+						class Item6
+						{
+							value="ASSIGNED";
+							parentCls="ModuleTaskCreate_F";
+							typeName="State";
+						};
+					};
+					id=9;
+					side="LOGIC";
+					vehicle="ModuleTaskCreate_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
@@ -179,7 +425,7 @@ class Mission
 		{
 			position[]={23740.793,5.3899999,16302.946};
 			azimut=181.76199;
-			id=6;
+			id=10;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -189,7 +435,7 @@ class Mission
 		{
 			position[]={23747.695,5.3913379,16303.306};
 			azimut=181.76199;
-			id=7;
+			id=11;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -199,7 +445,7 @@ class Mission
 		{
 			position[]={23755.066,5.3965774,16302.681};
 			azimut=181.76199;
-			id=8;
+			id=12;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -209,7 +455,7 @@ class Mission
 		{
 			position[]={23762.383,5.3899999,16303.356};
 			azimut=181.76199;
-			id=9;
+			id=13;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -219,7 +465,7 @@ class Mission
 		{
 			position[]={23770.643,5.3918457,16303.239};
 			azimut=181.76199;
-			id=10;
+			id=14;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -229,7 +475,7 @@ class Mission
 		{
 			position[]={23733.949,5.3852663,16303.001};
 			azimut=181.76199;
-			id=11;
+			id=15;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -239,7 +485,7 @@ class Mission
 		{
 			position[]={23735.797,5.23,16204.355};
 			azimut=181.76199;
-			id=12;
+			id=16;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -249,7 +495,7 @@ class Mission
 		{
 			position[]={23743.186,5.23,16203.926};
 			azimut=181.76199;
-			id=13;
+			id=17;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -259,7 +505,7 @@ class Mission
 		{
 			position[]={23749.525,5.23,16203.719};
 			azimut=181.76199;
-			id=14;
+			id=18;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -269,7 +515,7 @@ class Mission
 		{
 			position[]={23755.859,5.23,16204.139};
 			azimut=181.76199;
-			id=15;
+			id=19;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -279,7 +525,7 @@ class Mission
 		{
 			position[]={23760.926,5.23,16203.928};
 			azimut=181.76199;
-			id=16;
+			id=20;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -289,7 +535,7 @@ class Mission
 		{
 			position[]={23768.107,5.23,16203.502};
 			azimut=181.76199;
-			id=17;
+			id=21;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -299,7 +545,7 @@ class Mission
 		{
 			position[]={23741.744,5.23,16104.429};
 			azimut=181.76199;
-			id=18;
+			id=22;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -309,7 +555,7 @@ class Mission
 		{
 			position[]={23770.678,5.23,16104.005};
 			azimut=181.76199;
-			id=19;
+			id=23;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -319,7 +565,7 @@ class Mission
 		{
 			position[]={23748.293,5.23,16104.005};
 			azimut=181.76199;
-			id=20;
+			id=24;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -329,7 +575,7 @@ class Mission
 		{
 			position[]={23756.32,5.23,16104.218};
 			azimut=181.76199;
-			id=21;
+			id=25;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -339,7 +585,7 @@ class Mission
 		{
 			position[]={23763.289,5.23,16104.218};
 			azimut=181.76199;
-			id=22;
+			id=26;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -349,7 +595,7 @@ class Mission
 		{
 			position[]={23777.436,5.23,16104.427};
 			azimut=181.76199;
-			id=23;
+			id=27;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
@@ -359,7 +605,7 @@ class Mission
 		{
 			position[]={23785.041,5.23,16105.911};
 			azimut=181.76199;
-			id=24;
+			id=28;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
 			skill=0.60000002;
@@ -369,7 +615,7 @@ class Mission
 		{
 			position[]={23792.217,5.23,16105.911};
 			azimut=181.76199;
-			id=25;
+			id=29;
 			side="EMPTY";
 			vehicle="I_Truck_02_covered_F";
 			skill=0.60000002;
@@ -379,7 +625,7 @@ class Mission
 		{
 			position[]={23722.107,5.23,16103.163};
 			azimut=181.76199;
-			id=26;
+			id=30;
 			side="EMPTY";
 			vehicle="I_Quadbike_01_F";
 			skill=0.60000002;
@@ -389,7 +635,7 @@ class Mission
 		{
 			position[]={23729.076,5.23,16103.163};
 			azimut=181.76199;
-			id=27;
+			id=31;
 			side="EMPTY";
 			vehicle="I_Quadbike_01_F";
 			skill=0.60000002;
@@ -399,7 +645,7 @@ class Mission
 		{
 			position[]={23701.623,5.23,16103.8};
 			azimut=181.76199;
-			id=28;
+			id=32;
 			side="EMPTY";
 			vehicle="I_Quadbike_01_F";
 			skill=0.60000002;
@@ -409,7 +655,7 @@ class Mission
 		{
 			position[]={23708.592,5.23,16103.796};
 			azimut=181.76199;
-			id=29;
+			id=33;
 			side="EMPTY";
 			vehicle="I_Quadbike_01_F";
 			skill=0.60000002;
@@ -419,7 +665,7 @@ class Mission
 		{
 			position[]={23735.201,5.23,16103.376};
 			azimut=181.76199;
-			id=30;
+			id=34;
 			side="EMPTY";
 			vehicle="I_Quadbike_01_F";
 			skill=0.60000002;
@@ -429,7 +675,7 @@ class Mission
 		{
 			position[]={23715.771,5.23,16103.798};
 			azimut=181.76199;
-			id=31;
+			id=35;
 			side="EMPTY";
 			vehicle="I_Quadbike_01_F";
 			skill=0.60000002;
@@ -439,7 +685,7 @@ class Mission
 		{
 			position[]={23799.193,5.23,16105.911};
 			azimut=181.76199;
-			id=32;
+			id=36;
 			side="EMPTY";
 			vehicle="I_Truck_02_covered_F";
 			skill=0.60000002;
@@ -449,7 +695,7 @@ class Mission
 		{
 			position[]={23702.006,5.23,16203.297};
 			azimut=181.76199;
-			id=33;
+			id=37;
 			side="EMPTY";
 			vehicle="O_Quadbike_01_F";
 			skill=0.60000002;
@@ -459,7 +705,7 @@ class Mission
 		{
 			position[]={23707.285,5.23,16202.873};
 			azimut=181.76199;
-			id=34;
+			id=38;
 			side="EMPTY";
 			vehicle="O_Quadbike_01_F";
 			skill=0.60000002;
@@ -469,7 +715,7 @@ class Mission
 		{
 			position[]={23712.99,5.23,16203.295};
 			azimut=181.76199;
-			id=35;
+			id=39;
 			side="EMPTY";
 			vehicle="O_Quadbike_01_F";
 			skill=0.60000002;
@@ -479,7 +725,7 @@ class Mission
 		{
 			position[]={23718.9,5.23,16202.879};
 			azimut=181.76199;
-			id=36;
+			id=40;
 			side="EMPTY";
 			vehicle="O_Quadbike_01_F";
 			skill=0.60000002;
@@ -489,7 +735,7 @@ class Mission
 		{
 			position[]={23724.182,5.23,16203.297};
 			azimut=181.76199;
-			id=37;
+			id=41;
 			side="EMPTY";
 			vehicle="O_Quadbike_01_F";
 			skill=0.60000002;
@@ -499,7 +745,7 @@ class Mission
 		{
 			position[]={23729.885,5.23,16203.932};
 			azimut=181.76199;
-			id=38;
+			id=42;
 			side="EMPTY";
 			vehicle="O_Quadbike_01_F";
 			skill=0.60000002;
@@ -509,7 +755,7 @@ class Mission
 		{
 			position[]={23776.346,5.23,16205.834};
 			azimut=181.76199;
-			id=39;
+			id=43;
 			side="EMPTY";
 			vehicle="O_Truck_03_transport_F";
 			skill=0.60000002;
@@ -519,7 +765,7 @@ class Mission
 		{
 			position[]={23784.793,5.23,16206.041};
 			azimut=181.76199;
-			id=40;
+			id=44;
 			side="EMPTY";
 			vehicle="O_Truck_03_covered_F";
 			skill=0.60000002;
@@ -529,7 +775,7 @@ class Mission
 		{
 			position[]={23793.029,5.23,16205.832};
 			azimut=181.76199;
-			id=41;
+			id=45;
 			side="EMPTY";
 			vehicle="O_Truck_03_covered_F";
 			skill=0.60000002;
@@ -539,7 +785,7 @@ class Mission
 		{
 			position[]={23701.426,5.3170314,16302.579};
 			azimut=181.76199;
-			id=42;
+			id=46;
 			side="EMPTY";
 			vehicle="B_Quadbike_01_F";
 			skill=0.60000002;
@@ -549,7 +795,7 @@ class Mission
 		{
 			position[]={23706.072,5.3297048,16302.368};
 			azimut=181.76199;
-			id=43;
+			id=47;
 			side="EMPTY";
 			vehicle="B_Quadbike_01_F";
 			skill=0.60000002;
@@ -559,7 +805,7 @@ class Mission
 		{
 			position[]={23711.352,5.3435011,16302.579};
 			azimut=181.76199;
-			id=44;
+			id=48;
 			side="EMPTY";
 			vehicle="B_Quadbike_01_F";
 			skill=0.60000002;
@@ -569,7 +815,7 @@ class Mission
 		{
 			position[]={23716.844,5.3556838,16302.583};
 			azimut=181.76199;
-			id=45;
+			id=49;
 			side="EMPTY";
 			vehicle="B_Quadbike_01_F";
 			skill=0.60000002;
@@ -579,7 +825,7 @@ class Mission
 		{
 			position[]={23722.334,5.3630075,16302.579};
 			azimut=181.76199;
-			id=46;
+			id=50;
 			side="EMPTY";
 			vehicle="B_Quadbike_01_F";
 			skill=0.60000002;
@@ -589,7 +835,7 @@ class Mission
 		{
 			position[]={23727.613,5.3736377,16302.794};
 			azimut=181.76199;
-			id=47;
+			id=51;
 			side="EMPTY";
 			vehicle="B_Quadbike_01_F";
 			skill=0.60000002;
@@ -599,7 +845,7 @@ class Mission
 		{
 			position[]={23778.09,5.4000001,16305.329};
 			azimut=181.76199;
-			id=48;
+			id=52;
 			side="EMPTY";
 			vehicle="B_Truck_01_transport_F";
 			skill=0.60000002;
@@ -609,7 +855,7 @@ class Mission
 		{
 			position[]={23784.848,5.4008789,16305.329};
 			azimut=181.76199;
-			id=49;
+			id=53;
 			side="EMPTY";
 			vehicle="B_Truck_01_covered_F";
 			skill=0.60000002;
@@ -619,7 +865,7 @@ class Mission
 		{
 			position[]={23791.395,5.4021606,16305.54};
 			azimut=181.76199;
-			id=50;
+			id=54;
 			side="EMPTY";
 			vehicle="B_Truck_01_covered_F";
 			skill=0.60000002;
@@ -629,7 +875,7 @@ class Mission
 		{
 			position[]={23800.898,5.3821731,16303.005};
 			azimut=181.76199;
-			id=51;
+			id=55;
 			side="EMPTY";
 			vehicle="B_Heli_Light_01_F";
 			skill=0.60000002;
@@ -639,7 +885,7 @@ class Mission
 		{
 			position[]={23802.742,5.23,16204.564};
 			azimut=181.76199;
-			id=52;
+			id=56;
 			side="EMPTY";
 			vehicle="B_Heli_Light_01_F";
 			skill=0.60000002;
@@ -649,7 +895,7 @@ class Mission
 		{
 			position[]={23807.01,5.23,16105.063};
 			azimut=181.76199;
-			id=53;
+			id=57;
 			side="EMPTY";
 			vehicle="B_Heli_Light_01_F";
 			skill=0.60000002;

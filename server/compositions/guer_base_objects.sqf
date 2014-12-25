@@ -43,6 +43,7 @@ guer_veh_shop setDir 90;
 guer_veh_shop setVehicleVarName "guer_veh_shop";
 publicVariable "guer_veh_shop";
 guer_veh_shop addEventHandler ["HandleDamage", {false}];
+guer_veh_shop enableSimulationGlobal false;
 guer_veh_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Vehicle Spawns: Ground
@@ -102,6 +103,7 @@ guer_inf_shop setDir -90;
 guer_inf_shop setVehicleVarName "guer_inf_shop";
 publicVariable "guer_inf_shop";
 guer_inf_shop addEventHandler ["HandleDamage", {false}];
+guer_inf_shop enableSimulationGlobal false;
 guer_inf_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Fortification Store
@@ -112,6 +114,7 @@ guer_fort_shop setDir 90;
 guer_fort_shop setVehicleVarName "guer_fort_shop";
 publicVariable "guer_fort_shop";
 guer_fort_shop addEventHandler ["HandleDamage", {false}];
+guer_fort_shop enableSimulationGlobal false;
 guer_fort_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Control
@@ -122,6 +125,7 @@ guer_resc_depot_ctrl setDir 0;
 guer_resc_depot_ctrl setVehicleVarName "guer_resc_depot_ctrl";
 publicVariable "guer_resc_depot_ctrl";
 guer_resc_depot_ctrl addEventHandler ["HandleDamage", {false}];
+guer_resc_depot_ctrl enableSimulationGlobal false;
 guer_resc_depot_ctrl setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Point

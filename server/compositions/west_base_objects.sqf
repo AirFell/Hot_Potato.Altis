@@ -43,6 +43,7 @@ west_veh_shop setDir 90;
 west_veh_shop setVehicleVarName "west_veh_shop";
 publicVariable "west_veh_shop";
 west_veh_shop addEventHandler ["HandleDamage", {false}];
+west_veh_shop enableSimulationGlobal false;
 west_veh_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Vehicle Spawns: Ground
@@ -102,6 +103,7 @@ west_inf_shop setDir -90;
 west_inf_shop setVehicleVarName "west_inf_shop";
 publicVariable "west_inf_shop";
 west_inf_shop addEventHandler ["HandleDamage", {false}];
+west_inf_shop enableSimulationGlobal false;
 west_inf_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Fortification Store
@@ -112,6 +114,7 @@ west_fort_shop setDir 90;
 west_fort_shop setVehicleVarName "west_fort_shop";
 publicVariable "west_fort_shop";
 west_fort_shop addEventHandler ["HandleDamage", {false}];
+west_fort_shop enableSimulationGlobal false;
 west_fort_shop setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Control
@@ -122,6 +125,7 @@ west_resc_depot_ctrl setDir 0;
 west_resc_depot_ctrl setVehicleVarName "west_resc_depot_ctrl";
 publicVariable "west_resc_depot_ctrl";
 west_resc_depot_ctrl addEventHandler ["HandleDamage", {false}];
+west_resc_depot_ctrl enableSimulationGlobal false;
 west_resc_depot_ctrl setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Point

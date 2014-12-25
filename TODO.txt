@@ -1,9 +1,3 @@
-prevent infostands from moving:
-https://community.bistudio.com/wiki/enableSimulationGlobal
-
-objective marker in-game on the bomb:
-https://www.youtube.com/watch?v=S4XbsPubk5o
-
 base radar-
 every x seconds build a list of allunits near the base marker, test side, if
 not side of the marker then change marker color. Possibly make a PV and a
@@ -21,10 +15,6 @@ money system/scoring system- event handlers of some sort?
 	points for wounding enemy players when friendly finishes them off
 	points for destroying enemy vehicles
 
-base radar
-	-if enemy is within range, change color of marker.
-	-hide radar marker from enemy teams.
-
 repair points
 
 spawn a bomb truck at each base
@@ -34,6 +24,8 @@ remove little bird
 add static guns to fortification list
 
 tutorial dialog on addaction for explaining the game
+
+add colors and priorities to addactions
 
 _____________________________________________________________________________________
 Polish things for later:
