@@ -1,12 +1,15 @@
 east_enemy_detected = 0;
 
 while {True} do {
+	_list = [];
+	sleep 1;
+	_list = (getPos east_base) nearEntities ["Man", 250];
 	{
 		if (_x distance east_base < 250 && side _x != east) then {
 			east_enemy_detected = 1;
 			publicVariable "east_enemy_detected";
 			
-			_RandomPosE = EastRespawnArray select floor random count EastRespawnArray;
+			_RandomPosE = eastRespawnArray select floor random count eastRespawnArray;
 			"respawn_east" setMarkerPos getMarkerPos _RandomPosE;
 
 		} else {
@@ -19,6 +22,6 @@ while {True} do {
 				"respawn_east" setMarkerPos _mkr_pos;
 			};
 		};
-	} foreach allunits;
-	sleep 15;
+	} foreach _list;
+	sleep 14;
 };

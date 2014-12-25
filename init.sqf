@@ -81,13 +81,27 @@ if (isDedicated) then {
 	"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
 */
 
-	_nul = []execVM "client\side_switch.sqf";
+//	_nul = []execVM "client\side_switch.sqf";
 	_nul = []execVM "client\credit_time.sqf";
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
 	_nul = []execVM "client\dialogs\playerHud.sqf";
 	_nul = []execVM "client\client_mission_end.sqf";
 	_nul = []execVM "client\base_update.sqf";
+		_nul = switch (side player) do {
+		case west: {
+			_nul = []execVM "client\user_addactions\helper_west.sqf";
+			_nul = []execVM "client\radar_listener_west.sqf";
+		};
+		case east: {
+			_nul = []execVM "client\user_addactions\helper_east.sqf";
+			_nul = []execVM "client\radar_listener_east.sqf";
+		};
+		case resistance: {
+			_nul = []execVM "client\user_addactions\helper_guer.sqf";
+			_nul = []execVM "client\radar_listener_guer.sqf";
+		};
+	};
 	
 	forceRespawn player;
 	

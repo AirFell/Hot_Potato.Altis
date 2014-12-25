@@ -4,19 +4,19 @@
 #include "R3F_LOG\desc_include.h"
 
 respawn = 3;
-respawnDelay = 5;
+respawnDelay = 15;
 respawnDialog = 0;
 respawnOnStart = 0;
 
 
 //adding loadout template next
-respawnTemplatesWest[] = {"MenuPosition"};
-respawnTemplatesEast[] = {"MenuPosition"};
-respawnTemplatesGuer[] = {"MenuPosition"};
+//respawnTemplatesWest[] = {"MenuPosition"};
+//respawnTemplatesEast[] = {"MenuPosition"};
+//respawnTemplatesGuer[] = {"MenuPosition"};
 
 
 //this needs to be @ 1 when live. 0 for testing.
-disabledAI = 0;
+disabledAI = 1;
 aiKills = 1;
 
 

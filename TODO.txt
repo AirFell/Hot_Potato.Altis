@@ -1,9 +1,12 @@
-base radar-
-every x seconds build a list of allunits near the base marker, test side, if
-not side of the marker then change marker color. Possibly make a PV and a
-listener to move the respawn marker to the random array from the base.
+repair points on base
 
-Change base radar to move single respawn point instead of create/delete
+spawn a bomb truck at each base
+
+remove little bird
+
+R3F config for specific vehicles
+	-how much cargo can each vehicle hold?
+	-what can be put in as cargo, how much space does it take?
 
 vehicle store- needs to have dialog updated, fix list of objects
 
@@ -14,12 +17,6 @@ add some side-neutral cash-only shops.
 money system/scoring system- event handlers of some sort?
 	points for wounding enemy players when friendly finishes them off
 	points for destroying enemy vehicles
-
-repair points
-
-spawn a bomb truck at each base
-
-remove little bird
 
 add static guns to fortification list
 
@@ -37,11 +34,8 @@ pretty up closing end-mission things.
 	-Idea: stop player movement and then force everyone into a camera that spawns near the last destroyed tower, then "endMission"
 check crew placement on attach bomb addaction
 	https://community.bistudio.com/wiki/lockCargo
-R3F config for specific vehicles
-	-how much cargo can each vehicle hold?
-	-what can be put in as cargo, how much space does it take?
+
 Change functions to complilefinal. Holy shit thats going to be hard.
-Set objectives to tasks? BIS_fnc_setTask -no clue on this stuff. Not much documentation on the surface.
 
 **Should we replace the bomb addaction with a GUI arm/disarm function?
 This will make it easier to set counters and handle who can and can't manage it.
