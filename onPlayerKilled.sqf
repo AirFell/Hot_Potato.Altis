@@ -1,13 +1,16 @@
 diag_log "Finding random spawn position.";
 
-_RandomPosW = westRespawnArray select floor random count westRespawnArray;
-"respawn_west" setMarkerPosLocal getMarkerPos _RandomPosW;
+/*
+//This is commented out to test the new spawn marker system. !!!!!Also exists in init.sqf!!!!!
+	_RandomPosW = westRespawnArray select floor random count westRespawnArray;
+	"respawn_west" setMarkerPosLocal getMarkerPos _RandomPosW;
 
-_RandomPosE = EastRespawnArray select floor random count EastRespawnArray;
-"respawn_east" setMarkerPosLocal getMarkerPos _RandomPosE;
+	_RandomPosE = EastRespawnArray select floor random count EastRespawnArray;
+	"respawn_east" setMarkerPosLocal getMarkerPos _RandomPosE;
 
-_RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
-"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
+	_RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
+	"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
+*/
 
 diag_log "player killed. scripts restarting.";
 
@@ -16,7 +19,7 @@ waitUntil {alive player};
 playerCredits = playerCredits * 0.25;
 playerCredits = round playerCredits;
 
-_nul = []execVM "client\side_switch.sqf";
+_nul = []execVM "client\dead_side_switch.sqf";
 _nul = []execVM "client\user_addactions\Arm_Bomb.sqf";
 _nul = []execVM "client\user_addactions\Disarm_Bomb.sqf";
 _nul = []execVM "client\user_addactions\Load_Bomb.sqf";

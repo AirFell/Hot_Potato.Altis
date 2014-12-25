@@ -69,6 +69,8 @@ if (isDedicated) then {
 		
 	diag_log "Finding random spawn position.";
 
+/*
+//This is commented out to test the new spawn marker system. !!!!!Also exists in onPlayerKilled.sqf!!!!!
 	_RandomPosW = westRespawnArray select floor random count westRespawnArray;
 	"respawn_west" setMarkerPosLocal getMarkerPos _RandomPosW;
 
@@ -77,39 +79,22 @@ if (isDedicated) then {
 
 	_RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
 	"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
-	
+*/
+
+	_nul = []execVM "client\side_switch.sqf";
 	_nul = []execVM "client\credit_time.sqf";
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
 	_nul = []execVM "client\dialogs\playerHud.sqf";
 	_nul = []execVM "client\client_mission_end.sqf";
 	_nul = []execVM "client\base_update.sqf";
-	_nul = switch (side player) do {
-		case west: {
-			_nul = []execVM "client\user_addactions\helper_west.sqf";
-		};
-		case east: {
-			_nul = []execVM "client\user_addactions\helper_east.sqf";
-		};
-		case resistance: {
-			_nul = []execVM "client\user_addactions\helper_guer.sqf";
-		};
-	};
 	
 	forceRespawn player;
 	
 	client_respawn_counter = 1;
 
-
-	"mrkBlue" setMarkerAlpha 0;
-	"mrkRed" setMarkerAlpha 0;
-	"mrkGreen" setMarkerAlpha 0;
-//	"mrknoBlue" setMarkerAlpha 0;
-	"mrknoRed" setMarkerAlpha 0;
-	"mrknoGreen" setMarkerAlpha 0;
 	"mrkMission" setMarkerAlpha 0;
 	"respawn_bomb" setMarkerAlpha 0;
-
 
 	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
 	
