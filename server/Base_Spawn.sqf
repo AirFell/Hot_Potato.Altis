@@ -39,7 +39,7 @@ diag_log format ["Updated West_Base_Array: %1", West_Base_Array];
 
 ["BaseOption1", 0, getPos west_base] execVM "server\compositions\createBase.sqf";
 _nul = execVM "server\compositions\west_base_objects.sqf";
-		
+_nul = execVM "server\base_radar_west.sqf";
 		
 /////////////////////////
 /////Spawn East Base/////

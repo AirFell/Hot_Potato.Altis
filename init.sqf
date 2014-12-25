@@ -104,7 +104,7 @@ if (isDedicated) then {
 	"mrkBlue" setMarkerAlpha 0;
 	"mrkRed" setMarkerAlpha 0;
 	"mrkGreen" setMarkerAlpha 0;
-	"mrknoBlue" setMarkerAlpha 0;
+//	"mrknoBlue" setMarkerAlpha 0;
 	"mrknoRed" setMarkerAlpha 0;
 	"mrknoGreen" setMarkerAlpha 0;
 	"mrkMission" setMarkerAlpha 0;

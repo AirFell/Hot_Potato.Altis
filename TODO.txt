@@ -27,6 +27,8 @@ tutorial dialog on addaction for explaining the game
 
 add colors and priorities to addactions
 
+clear fortification objects from vehicle spawn areas so people can't trap people
+
 _____________________________________________________________________________________
 Polish things for later:
 how many times will a base be destroyed?(Should we make more base spawn markers?)
