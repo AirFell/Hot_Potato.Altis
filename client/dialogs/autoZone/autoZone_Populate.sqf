@@ -7,7 +7,6 @@ _switch = _this select 0;
 
 // Grab access to the controls
 _dialog = findDisplay AUTOZONE;
-//_vehlisttext = _dialog displayCtrl vehshop_veh_TEXT;
 _vehlist = _dialog displayCtrl VEHICLELIST;
 
 

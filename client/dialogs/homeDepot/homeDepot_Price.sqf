@@ -31,4 +31,4 @@ _vehText  ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Re
 		_creditCost = _x select 3;
 		_vehText ctrlSetStructuredText parseText format["<t size='0.75'> Credits: %2 Resources: %1 </t>", _resourceCost, _creditCost];
 	};
-} forEach allFactoryVehicles;
+} forEach allFortificationArrays;

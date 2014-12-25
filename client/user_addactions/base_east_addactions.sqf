@@ -50,8 +50,7 @@ player addAction [
 ////////////Fortifications//////////////
 ////////////////////////////////////////
 player addAction [
-	"Fortification Store", {
-		hint "You have accessed this control";
-	},
+	"Home Depot", 
+		"client\dialogs\homeDepot\homeDepot_Load.sqf", 
 	nil, 1, True, True, "", "(player distance east_fort_shop) < 3"
 ];

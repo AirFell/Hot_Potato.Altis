@@ -12,8 +12,8 @@ _base_resources = "";
 		if(_playerSide == "GUER") then {
 			_base_resources = guer_base_resources;
 		};
-
-_factoryDiag = createdialog "homeDepot_Dialog";
+		
+_depotDiag = createdialog "homeDepot_Dialog";
 
 _Dialog = findDisplay HOMEDEPOT;
 _fundsText = _Dialog displayCtrl FUNDSTEXT;
@@ -34,13 +34,13 @@ _vehlist lbSetCurSel -1;
 		
 		if (2>1) then
 		{
-			_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+			//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
 			_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
-			_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+			//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
 			_vehlist lbSetData [_vehlistIndex, _vehClass];
 		};
 	};
-} forEach fortificationArray;
+} forEach allFortificationArrays;
 
 _resourceCost = 0;
 _creditCost = 0;

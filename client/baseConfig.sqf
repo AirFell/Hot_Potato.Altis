@@ -144,4 +144,4 @@ fortificationArray = compileFinal str
 	["BagBunker Small", "Land_BagBunker_Small_F", 25,25],
 	["BagBunker Large", "Land_BagBunker_Large_F", 25,25]
 ];
-
+allFortificationArrays = (call fortificationArray);

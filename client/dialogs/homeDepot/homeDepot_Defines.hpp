@@ -1,5 +1,5 @@
 //--- homeDepot_Dialog
-#define HOMEDEPOT 9000
+#define HOMEDEPOT      9000
 #define FUNDSTEXT      9001	
 #define PURCHASEBUTTON 9010
 #define CANCELBUTTON   9011
