@@ -54,3 +54,19 @@ player addAction [
 		"client\dialogs\homeDepot\homeDepot_Load.sqf", 
 	nil, 1, True, True, "", "(player distance west_fort_shop) < 3"
 ];
+
+////////////////////////////////////////
+////////////Vehicle Repair//////////////
+////////////////////////////////////////
+
+player addAction [
+	"Repair & Rearm Vehicle", {
+		_veh = (vehicle player);
+		hint format ["Please wait %1 seconds for repair and rearm.",10];
+		sleep 10;
+		_veh setFuel 1;
+		_veh setDamage 0;
+		_veh setVehicleAmmo 1;
+	}, 
+	nil, 1, True, True, "", "(vehicle player != player && (player distance west_veh_shop_spawn1 < 10 || player distance west_veh_shop_spawn2 < 10 || player distance west_veh_shop_spawn3 < 10 || player distance west_veh_shop_spawn4 < 10 || player distance west_veh_shop_spawn5 < 10)) < 3"
+];
