@@ -57,9 +57,9 @@ player addAction [
 ////////////////////////////////////////
 ////////////Vehicle Repair//////////////
 ////////////////////////////////////////
-
+/*
 player addAction [
-	"Repair & Rearm Vehicle", {
+	"Repair and Rearm Vehicle", {
 		_veh = (vehicle player);
 		hint format ["Please wait %1 seconds for repair and rearm.",10];
 		sleep 10;
@@ -67,5 +67,6 @@ player addAction [
 		_veh setDamage 0;
 		_veh setVehicleAmmo 1;
 	}, 
-	nil, 1, True, True, "", "(vehicle player != player && (player distance guer_veh_shop_spawn1 < 10 || player distance guer_veh_shop_spawn2 < 10 || player distance guer_veh_shop_spawn3 < 10 || player distance guer_veh_shop_spawn4 < 10 || player distance guer_veh_shop_spawn5 < 10)) < 3"
+	nil, 1, True, True, "", "(vehicle player != player && ((player distance guer_veh_shop_spawn1) < 10 || (player distance guer_veh_shop_spawn2) < 10 || (player distance guer_veh_shop_spawn3) < 10 || (player distance guer_veh_shop_spawn4) < 10 || (player distance guer_veh_shop_spawn5) < 10)) < 3"
 ];
+*/
