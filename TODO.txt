@@ -4,10 +4,6 @@ spawn a bomb truck at each base
 
 remove little bird
 
-R3F config for specific vehicles
-	-how much cargo can each vehicle hold?
-	-what can be put in as cargo, how much space does it take?
-
 vehicle store- needs to have dialog updated, fix list of objects
 
 weapon/gear store- need to make a list of guns/attachments/uniforms

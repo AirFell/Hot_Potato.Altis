@@ -1,0 +1,143 @@
+//////////////////////////////
+//////////Vehicles////////////
+//////////////////////////////
+
+//////////////////////////////
+//////Cars and Trucks/////////
+//////////////////////////////
+
+/////Light Stuff/////
+"B_G_Quadbike_01_F" Quad Bike
+"B_G_Offroad_01_F" Offroad Pickup
+"B_G_Offroad_01_armed_F" Offroad Pickup Armed
+"B_Truck_01_transport_F" HEMTT Transport (Bomb Delivery)
+"B_Truck_01_covered_F" HEMTT Transport Covered
+"O_Truck_03_transport_F" Tempest Transport (Bomb Delivery)
+"O_Truck_03_covered_F" Tempest Transport Covered
+"I_Truck_02_covered_F" Zamak Transport (Bomb Delivery)
+"I_Truck_02_transport_F" Zamak Transport Covered
+
+/////Heavy Stuff/////
+"B_MRAP_01_F" Hunter
+"B_MRAP_01_gmg_F" Hunter GMG
+"B_MRAP_01_hmg_F" Hunter HMG
+"O_MRAP_02_F" Ifrit
+"O_MRAP_02_hmg_F" Ifrit HMG
+"O_MRAP_02_gmg_F" Ifrit GMG
+"I_MRAP_03_F" Strider
+"I_MRAP_03_hmg_F" Strider HMG
+"I_MRAP_03_gmg_F" Strider GMG
+
+
+/////////////////////////
+//////////Armor//////////
+/////////////////////////
+
+/////Light stuff/////
+"B_APC_Tracked_01_rcws_F" IFV-6c Panther
+"O_APC_Tracked_02_cannon_F" BTR-K Kamysh
+"I_APC_tracked_03_cannon_F" FV-720 Mora
+
+/////Mid stuff/////
+"B_APC_Wheeled_01_cannon_F" AMV-7 Marshall
+"O_APC_Wheeled_02_rcws_F" MSE-3 Marid
+"I_APC_Wheeled_03_cannon_F" AFV-4 Gorgon
+
+/////AA stuff/////
+"B_APC_Tracked_01_AA_F" IFV-6a Cheetah
+"O_APC_Tracked_02_AA_F" ZSU-39 Tigris
+
+/////Heavy Stuff/////
+"B_MBT_01_TUSK_F" M2A4 Slammer UP
+"O_MBT_02_cannon_F" T-100 Varsuk
+"I_MBT_03_cannon_F" MBT-52 Kuma
+
+//////////////////////////
+////////////Helis/////////
+//////////////////////////
+
+/////Light/////
+"B_Heli_Light_01_F" MH-9 Hummingbird
+"O_Heli_Light_02_unarmed_F" PO-30 Orca(unarmed)
+"I_Heli_light_03_unarmed_F" WY-55 Hellcat(unarmed)
+"I_Heli_Transport_02_F" CH-49 Mohawk
+"O_Heli_Transport_04_bench_F" Mi-290 Taru (Bench)
+"O_Heli_Transport_04_covered_F" Mi-290 Taru (Transport)
+"B_Heli_Transport_03_unarmed_F" CH-67 Huron (unarmed)
+
+/////Mid/////
+"B_Heli_Transport_01_F" UH-80 Ghost Hawk
+"B_Heli_Transport_03_F" CH-67 Huron
+"B_Heli_Light_01_armed_F" AH-9 Pawnee
+"I_Heli_light_03_F" WY-55 Hellcat
+"O_Heli_Light_02_F" PO-30 Orca
+
+/////Heavy/////
+"B_Heli_Attack_01_F" AH-99 Blackfoot
+"O_Heli_Attack_02_F" Mi-48 Kajman
+
+_________________________________________________________
+//////////////////////////
+//////Infantry Store//////
+//////////////////////////
+
+////////////////////////
+/////Weapon Crates//////
+////////////////////////
+
+//////////////////////////////
+//Uniforms/Character Classes//
+//////////////////////////////
+
+/////Functional/////
+WEST:
+??"B_medic_F"?? -honestly not sure if we need this
+"B_engineer_F" Engineer
+"B_Helipilot_F" Helicopter Pilot
+"B_crew_F" Tank Driver
+"B_sniper_F" Ghillie Suit
+"B_recon_F" Special Forces
+"B_officer_F" Officer
+"B_G_Soldier_AR_F" PMC 1
+"B_G_Soldier_exp_F" PMC 2
+
+EAST:
+??"O_medic_F"?? -honestly not sure if we need this
+"O_engineer_F" Engineer
+"O_helipilot_F" Helicopter Pilot
+"O_crew_F" Tank Driver
+"O_sniper_F" Ghillie Suit
+"O_soldierU_F" Special Forces
+"O_officer_F" Officer
+"O_G_Soldier_F" Mercinary 1
+"O_G_Soldier_lite_F" Mercinary 2
+
+GUER:
+??"I_medic_F"?? -honestly not sure if we need this
+"I_engineer_F" Engineer
+"I_helipilot_F" Helicopter Pilot
+"I_crew_F" Tank Driver
+"I_Sniper_F" Ghillie Suit
+"I_Soldier_lite_F" Special Forces
+"I_officer_F" Officer
+"I_G_Soldier_SL_F" Partisan 1
+"I_G_Soldier_TL_F" Partisan 2
+
+////////////////////
+////////Gear////////
+////////////////////
+https://community.bistudio.com/wiki/Arma_3_CfgWeapons_Items
+
+
+_________________________________________________________
+///////////////////////////
+///////Fortifications//////
+///////////////////////////
+
+////////////////////////////
+//////////Base Parts////////
+////////////////////////////
+
+////////////////////////////
+///////Static Weapons///////
+////////////////////////////
