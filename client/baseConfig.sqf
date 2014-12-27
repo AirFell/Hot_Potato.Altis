@@ -28,11 +28,6 @@ nameofArray = compileFinal str
 //VEHICLE ARRAYS
 vehicleArray_Light = compileFinal str
 [
- // ["Text name", "class name", Resource cost, Credit Cost],
-//delete
- 	["Nato", "Box_NATO_Wps_F", 25,25],
-	["East", "Box_East_Wps_F", 25,25],
-//me ^	
     ["Quadbike","B_Quadbike_01_F", 25,25],
 	["Offroad Armed","B_G_Offroad_01_armed_F", 50,50],
 	["Ifrit","O_MRAP_02_F", 75,75],

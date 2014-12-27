@@ -8,6 +8,7 @@ _playerSide = str(playerSide);
 _size = 1;
 _price = 0;
 _ObjectsInArea = [];
+_base_resources = "";
 
 _dialog = findDisplay HOMEDEPOT;
 _itemlist = _dialog displayCtrl VEHICLELIST;
@@ -18,6 +19,7 @@ closeDialog 0;
 
 //Buy
 if(_playerSide == "WEST") then {
+	_base_resources = west_base_resources;
 	for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	{
 		_selectedItem = lbCurSel _itemlist;
@@ -26,14 +28,16 @@ if(_playerSide == "WEST") then {
 			sleep 1;
 			_ObjectsInArea = [(getPos west_resc_depot_mrkr) select 0, (getPos west_resc_depot_mrkr) select 1] nearObjects 2;
 			if(count _ObjectsInArea <= 20) then {
-				_price = _x select 2;
-				if(_price > (playerCredits)) exitWith {hintsilent "You do not have enough money"};
+			_resourceCost = _x select 2;
+			_creditCost = _x select 3;
+			if(_creditCost > _credits) exitWith {hintsilent "You do not have enough Credits"};
+			if(_resourceCost > _base_resources) exitWith {hintsilent "You do not have enough Resources"};
 				_spawn = createVehicle [(_x select 1),getPos west_resc_depot_mrkr,[], 0,"CAN_COLLIDE"];
 				_spawn setDir (getDir west_resc_depot_mrkr) + 180;
 					clearMagazineCargoGlobal _spawn;
 					clearWeaponCargoGlobal _spawn;
 				
-				west_base_resources = west_base_resources - _resourceCost;
+				west_base_resources = _base_resources - _resourceCost;
 				playerCredits = playerCredits - _creditCost;
 				hintsilent "you bought your thing look to the left";
 			} else {
@@ -43,6 +47,7 @@ if(_playerSide == "WEST") then {
 	};
 };
 if(_playerSide == "EAST") then {
+	_base_resources = east_base_resources;
 	for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	{
 		_selectedItem = lbCurSel _itemlist;
@@ -51,8 +56,10 @@ if(_playerSide == "EAST") then {
 			sleep 1;
 			_ObjectsInArea = [(getPos east_resc_depot_mrkr) select 0, (getPos east_resc_depot_mrkr) select 1] nearObjects 2;
 			if(count _ObjectsInArea <= 20) then {
-				_price = _x select 2;
-				if(_price > (playerCredits)) exitWith {hintsilent "You do not have enough money"};
+			_resourceCost = _x select 2;
+			_creditCost = _x select 3;
+			if(_creditCost > _credits) exitWith {hintsilent "You do not have enough Credits"};
+			if(_resourceCost > _base_resources) exitWith {hintsilent "You do not have enough Resources"};
 				_spawn = createVehicle [(_x select 1),getPos east_resc_depot_mrkr,[], 0,"CAN_COLLIDE"];
 				_spawn setDir (getDir east_resc_depot_mrkr) + 180;
 					clearMagazineCargoGlobal _spawn;
@@ -67,6 +74,7 @@ if(_playerSide == "EAST") then {
 	};
 };
 if(_playerSide == "GUER") then {
+	_base_resources = guer_base_resources;
 	for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	{
 		_selectedItem = lbCurSel _itemlist;
@@ -75,8 +83,10 @@ if(_playerSide == "GUER") then {
 			sleep 1;
 			_ObjectsInArea = [(getPos guer_resc_depot_mrkr) select 0, (getPos guer_resc_depot_mrkr) select 1] nearObjects 2;
 			if(count _ObjectsInArea <= 20) then {
-				_price = _x select 2;
-				if(_price > (playerCredits)) exitWith {hintsilent "You do not have enough money"};
+			_resourceCost = _x select 2;
+			_creditCost = _x select 3;
+			if(_creditCost > _credits) exitWith {hintsilent "You do not have enough Credits"};
+			if(_resourceCost > _base_resources) exitWith {hintsilent "You do not have enough Resources"};
 				_spawn = createVehicle [(_x select 1),getPos guer_resc_depot_mrkr,[], 0,"CAN_COLLIDE"];
 				_spawn setDir (getDir guer_resc_depot_mrkr) + 180;
 					clearMagazineCargoGlobal _spawn;
