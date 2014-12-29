@@ -84,6 +84,93 @@ _________________________________________________________
 ////////////////////////
 /////Weapon Crates//////
 ////////////////////////
+//basic ammo- all basic ammo, some nades, 1 missile.
+"Box_NATO_Ammo_F"
+"Box_East_Ammo_F"
+"Box_IND_Ammo_F"
+
+//basic weapons- basic faction assault rifles, pistols
+"Box_NATO_Wps_F"
+"Box_East_Wps_F"
+"Box_IND_Wps_F"
+
+//supply box- basic weapons, lots of ammo, rocket launcher & rockets, nades, backpacks
+"B_supplyCrate_F"
+"O_supplyCrate_F"
+"I_supplyCrate_F"
+
+//support- gear- medkit, tool kit, binocs, rangefinders, silencers
+"Box_NATO_Support_F"
+"Box_East_Support_F"
+"Box_IND_Support_F"
+
+//special weapons- sniper/marksman rifles, scopes, ammo
+"Box_NATO_WpsSpecial_F"
+"Box_East_WpsSpecial_F"
+"Box_IND_WpsSpecial_F"
+
+//explosives- ground based bombs
+"Box_NATO_AmmoOrd_F"
+"Box_East_AmmoOrd_F"
+"Box_IND_AmmoOrd_F"
+
+//Launchers
+"Box_NATO_WpsLaunch_F"
+"Box_East_WpsLaunch_F"
+"Box_IND_WpsLaunch_F"
+
+//Everything
+"B_CargoNet_01_ammo_F"
+"O_CargoNet_01_ammo_F"
+"I_CargoNet_01_ammo_F"
+
+//Custom Backpack Crate:
+"B_AssaultPack_blk"
+"B_AssaultPack_cbr"
+"B_AssaultPack_dgtl"
+"B_Carryall_cbr"
+"B_Carryall_oli"
+"B_Carryall_oucamo"
+"B_FieldPack_blk"
+"B_FieldPack_khk"
+"B_FieldPack_ocamo"
+"B_Kitbag_cbr"
+"B_Kitbag_rgr"
+"B_Kitbag_mcamo"
+"B_TacticalPack_blk"
+"B_TacticalPack_oli"
+"B_TacticalPack_ocamo"
+
+Backpack Script: Ammo Crate it should go in: "Box_FIA_Support_F"
+/*
+clearMagazineCargo this;
+clearItemCargo this;
+clearWeaponCargo this;
+clearBackpackCargo this;
+this addItemCargo ["G_Balaclava_blk",2]; 
+this addItemCargo ["G_Balaclava_combat",2]; 
+this addItemCargo ["G_Balaclava_lowprofile",2];
+this addItemCargo ["G_Bandanna_blk",2];
+this addItemCargo ["G_Bandanna_oli",2];
+this addItemCargo ["G_Bandanna_sport",2];
+this addBackpackCargo ["B_AssaultPack_blk",2];
+this addBackpackCargo ["B_AssaultPack_cbr",2];
+this addBackpackCargo ["B_AssaultPack_dgtl",2];
+this addBackpackCargo ["B_Carryall_cbr",2];
+this addBackpackCargo ["B_Carryall_oli",2];
+this addBackpackCargo ["B_Carryall_oucamo",2];
+this addBackpackCargo ["B_FieldPack_blk",2];
+this addBackpackCargo ["B_FieldPack_khk",2];
+this addBackpackCargo ["B_FieldPack_ocamo",2];
+this addBackpackCargo ["B_Kitbag_cbr",2];
+this addBackpackCargo ["B_Kitbag_rgr",2];
+this addBackpackCargo ["B_Kitbag_mcamo",2];
+this addBackpackCargo ["B_TacticalPack_blk",2];
+this addBackpackCargo ["B_TacticalPack_oli",2];
+this addBackpackCargo ["B_TacticalPack_ocamo",2];
+*/
+
+
 
 //////////////////////////////
 //Uniforms/Character Classes//
@@ -123,21 +210,34 @@ GUER:
 "I_G_Soldier_SL_F" Partisan 1
 "I_G_Soldier_TL_F" Partisan 2
 
-////////////////////
-////////Gear////////
-////////////////////
-https://community.bistudio.com/wiki/Arma_3_CfgWeapons_Items
-
 
 _________________________________________________________
 ///////////////////////////
 ///////Fortifications//////
 ///////////////////////////
 
-////////////////////////////
 //////////Base Parts////////
-////////////////////////////
+"Land_HBarrier_1_F"
+"Land_HBarrier_3_F"
+"Land_HBarrier_5_F"
+"Land_HBarrierBig_F"
+"Land_HBarrierTower_F"
+"Land_HBarrierWall_corner_F"
+"Land_HBarrierWall_corridor_F"
+"Land_HBarrierWall4_F"
+"Land_HBarrierWall6_F"
+"Land_BagFence_Short_F"
+"Land_BagFence_Round_F"
+"Land_BagFence_Long_F"
+"Land_BagFence_Corner_F"
+"Land_BagBunker_Small_F"
+"Land_BagBunker_Large_F"
 
-////////////////////////////
+
 ///////Static Weapons///////
-////////////////////////////
+"B_HMG_01_F" Static HMG Short
+"B_HMG_01_high_F" Static HMG Tall
+"B_GMG_01_F" Static GMG Short
+"B_GMG_01_high_F" Static GMG Tall
+"B_static_AA_F" Static AA
+"B_static_AT_F" Static AT

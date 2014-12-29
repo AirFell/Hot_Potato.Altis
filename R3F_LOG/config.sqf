@@ -401,35 +401,49 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 "Land_MetalBarrel_F",
 "Land_Device_assembled_F",
 
-//basic weapons
+//basic ammo- all basic ammo, some nades, 1 missile.
+"Box_NATO_Ammo_F",
+"Box_East_Ammo_F",
+"Box_IND_Ammo_F",
+
+//basic weapons- basic faction assault rifles, pistols
 "Box_NATO_Wps_F",
 "Box_East_Wps_F",
 "Box_IND_Wps_F",
 
-//special weapons
-"Box_NATO_WpsSpecial_F",
-"Box_East_WpsSpecial_F",
-"Box_IND_WpsSpecial_F",
-
-//supply box
+//supply box- basic weapons, lots of ammo, rocket launcher & rockets, nades, backpacks
 "B_supplyCrate_F",
 "O_supplyCrate_F",
 "I_supplyCrate_F",
 
-//support
+//support- gear- medkit, tool kit, binocs, rangefinders, silencers
 "Box_NATO_Support_F",
 "Box_East_Support_F",
 "Box_IND_Support_F",
 
-//explosives
+//special weapons- sniper/marksman rifles, scopes, ammo
+"Box_NATO_WpsSpecial_F",
+"Box_East_WpsSpecial_F",
+"Box_IND_WpsSpecial_F",
+
+//explosives- ground based bombs
 "Box_NATO_AmmoOrd_F",
 "Box_East_AmmoOrd_F",
 "Box_IND_AmmoOrd_F",
 
-//basic ammo
-"Box_NATO_Ammo_F",
-"Box_East_Ammo_F",
-"Box_IND_Ammo_F",
+//Launchers
+"Box_NATO_WpsLaunch_F",
+"Box_East_WpsLaunch_F",
+"Box_IND_WpsLaunch_F",
+
+//Everything
+"B_CargoNet_01_ammo_F",
+"O_CargoNet_01_ammo_F",
+"I_CargoNet_01_ammo_F",
+
+//custom backpack box:
+"Box_FIA_Support_F",
+
 
 //Base Fortifications
 "Land_HBarrier_1_F",
@@ -446,5 +460,14 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 "Land_BagFence_Long_F",
 "Land_BagFence_Corner_F",
 "Land_BagBunker_Small_F",
-"Land_BagBunker_Large_F"
+"Land_BagBunker_Large_F",
+
+//Static weapons
+"B_HMG_01_F",
+"B_HMG_01_high_F",
+"B_GMG_01_F",
+"B_GMG_01_high_F",
+"B_static_AA_F",
+"B_static_AT_F"
+
 ];

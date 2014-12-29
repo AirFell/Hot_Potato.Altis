@@ -1,3 +1,9 @@
+work out basic price points- credits/resources
+
+set up a place for crates and fortifications to spawn at.
+
+finish off base dialogs.
+
 repair points on base
 
 spawn a bomb truck at each base
@@ -57,6 +63,8 @@ Range of Damage from "explosion": server\Bomb_Countdown_Detonate.sqf line 21
 Bomb respawn delay: server\BombRespawn.sqf line 9
 
 _veh = "Truck_01_base_F" createVehicle position player;
+
+
 Truck_01_base_F
 
 average price per barrel last 15 years: 65
