@@ -85,7 +85,6 @@ if (isDedicated) then {
 	_nul = []execVM "client\credit_time.sqf";
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
-	_nul = []execVM "client\dialogs\playerHud.sqf";
 	_nul = []execVM "client\client_mission_end.sqf";
 	_nul = []execVM "client\base_update.sqf";
 		_nul = switch (side player) do {
@@ -111,6 +110,8 @@ if (isDedicated) then {
 	"respawn_bomb" setMarkerAlpha 0;
 
 	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
-	
 	diag_log "The client got through all its init files!";
+	sleep 14;
+	_nul = []execVM "client\dialogs\playerHud.sqf";	
+	
 };

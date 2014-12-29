@@ -26,9 +26,9 @@ class HPHud {
 			idc = hud_vehicle_idc;
 			type = CT_STRUCTURED_TEXT;
 			size = 0.040;
-			x = safeZoneX + (safeZoneW * (1 - (0.42 / SafeZoneW)));
+			x = safeZoneX + (safeZoneW * (1 - (0.43 / SafeZoneW)));
 			y = safeZoneY + (safeZoneH * (1 - (0.33 / SafeZoneH)));
-			w = 0.4; h = 0.65;
+			w = 0.5; h = 0.65;
 			colorText[] = {1,1,1,1};
 			lineSpacing = 3;
 			colorBackground[] = {0,0,0,0};
@@ -45,7 +45,7 @@ class HPHud {
 			size = 0.040;
 			x = safeZoneX + (safeZoneW * (1 - (0.16 / SafeZoneW)));
 			y = safeZoneY + (safeZoneH * (1 - (0.34 / SafeZoneH)));
-			w = 0.14; h = 0.40;
+			w = 0.15; h = 0.40;
 			colorText[] = {1,1,1,1};
 			lineSpacing = 3;
 			colorBackground[] = {0,0,0,0};
