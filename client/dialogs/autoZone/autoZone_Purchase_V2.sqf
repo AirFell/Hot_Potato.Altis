@@ -1,12 +1,9 @@
 #include "autoZone_Defines.hpp";
 disableSerialization;
 
-
-_playerMoney = playerCredits;
 _size = 0;
 _price = 0;
 _ObjectsInArea = [];
-
 
 _Dialog = findDisplay AUTOZONE;
 _fundsText = _Dialog displayCtrl FUNDSTEXT;
