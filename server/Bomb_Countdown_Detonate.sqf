@@ -118,6 +118,10 @@ unless someone disarms it. Just remove scoring.
 					publicVariable "Base_Destroyed_Tracker";
 					Bomb_Destroyed_Tracker = 1;
 					publicVariable "Bomb_Destroyed_Tracker";
+					
+					HUD_Bomb_Status = "Bomb Status: DETONATED. Bomb Resetting.";
+					publicVariable "HUD_Bomb_Status";
+					
 					Bomb_Armed_Tracker = 0;
 					publicVariable "Bomb_Armed_Tracker";
 					[]execVm "server\score.sqf";

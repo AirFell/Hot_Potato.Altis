@@ -71,6 +71,9 @@ player addaction [
 					The_Bomb setVariable ["R3F_LOG_disabled", true, true];
 					arming_bomb = 0;
 					
+					HUD_Bomb_Status = "Bomb Status: ARMED, detonation imminent.";
+					publicVariable "HUD_Bomb_Status";
+					
 					hint "Bomb armed!";
 					
 					[]execVM "client\pre_score.sqf";

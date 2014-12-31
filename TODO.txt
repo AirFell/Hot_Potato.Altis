@@ -1,4 +1,4 @@
-work out basic price points- credits/resources
+add countdown timer scripts.
 
 set up a place for crates and fortifications to spawn at.
 
@@ -10,17 +10,11 @@ spawn a bomb truck at each base
 
 remove little bird
 
-vehicle store- needs to have dialog updated, fix list of objects
-
-weapon/gear store- need to make a list of guns/attachments/uniforms
-
 add some side-neutral cash-only shops.
 
 money system/scoring system- event handlers of some sort?
 	points for wounding enemy players when friendly finishes them off
 	points for destroying enemy vehicles
-
-add static guns to fortification list
 
 tutorial dialog on addaction for explaining the game
 

@@ -57,8 +57,12 @@ player addaction [
 				};
 						
 				if (_disarmingComplete == 1) then {
+				
 					Bomb_Armed_Tracker = 0;
 					publicVariable "Bomb_Armed_Tracker";
+					
+					HUD_Bomb_Status = "Bomb Status: DISARMED, detonation delayed.";
+					publicVariable "HUD_Bomb_Status";
 					
 					Armed_Team = "";
 					publicVariable "Armed_Team";
@@ -84,5 +88,5 @@ player addaction [
 				hint "You can't disarm the bomb from inside a vehicle.";
 			};
 	},
-	nil, 1, True, True, "", "(vehicle player) == player && disarming_bomb == 0 && Bomb_Armed_Tracker == 1 && (player distance The_Bomb) < 4 && (player distance FriendlyBase) < 500"
+	nil, 1, True, True, "", "(vehicle player) == player && disarming_bomb == 0 && Bomb_Armed_Tracker == 1 && (player distance The_Bomb) < 4 && ((player distance EnemyBase1) > 101 or (player distance EnemyBase2) > 101)"
 ];

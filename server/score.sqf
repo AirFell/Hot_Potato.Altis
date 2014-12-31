@@ -17,6 +17,9 @@ if (Bomb_Destroyed_Tracker == 1 && Bomb_Armed_Tracker == 0) then {
 			publicVariable "Guer_Score";
 			diag_log format["Guer_Score: %1", Guer_Score];
 		};
+		default {
+			diag_log "!!!!!Score.sqf default block: Either something went wrong with scoring, or the bomb timer ran down.";
+		};
 	};
 	switch (Bombed_Team) do {
 		case west: {

@@ -10,6 +10,7 @@ _nul = []execVM "server\Bomb_Countdown_Detonate.sqf";
         sleep 5;
 		_vehtype = "Land_Device_assembled_F";
            if (Bomb_Destroyed_Tracker == 1) then {
+		   sleep 120;
 		   _RandomPos_Bomb = Bomb_Spawn_Array select floor random count Bomb_Spawn_Array;
 			_posMrk = getMarkerPos _RandomPos_Bomb;
 //			_posMrk = getMarkerPos "respawn_bomb";
@@ -25,6 +26,8 @@ _nul = []execVM "server\Bomb_Countdown_Detonate.sqf";
 //			The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 			
 			diag_log "bomb respawned.";
+			
+			_nul = []execVM "server\Bomb_auto_timer.sqf";
         };
     };
 

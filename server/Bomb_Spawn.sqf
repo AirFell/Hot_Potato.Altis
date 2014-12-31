@@ -16,4 +16,5 @@ The_Bomb addEventHandler ["HandleDamage", {false}];
 
 
 _nul = []execVM "server\Bomb_Marker.sqf";
+_nul = []execVM "server\Bomb_auto_timer.sqf";
 diag_log "Bomb_Spawn.sqf loaded.";

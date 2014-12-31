@@ -138,6 +138,9 @@ _nul = execVM "server\Base_Radar\base_radar_guer.sqf";
 /////End of Load Stuff/////
 ///////////////////////////
 
+Base_Array = [west_base, east_base, guer_base];
+//publicVariable "Base_Array";
+
 _nul = []execVM "server\randomMarkerGen.sqf";
 _nul = []execVM "server\missions\mission_marker_gen.sqf";
 _nul = []execVM "server\Bomb_Spawn.sqf";
