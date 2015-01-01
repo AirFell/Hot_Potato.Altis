@@ -62,7 +62,7 @@ class HPHud {
 			size = 0.040;
 			x = safeZoneX + (safeZoneW * 0.43);
 			y = safeZoneY + (safeZoneH * 0.011);
-			w = 0.50; h = 0.22;
+			w = 0.25; h = 0.22;
 			colorText[] = {1,1,1,1};
 			lineSpacing = 3;
 			colorBackground[] = {0,0,0,0};

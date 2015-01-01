@@ -105,6 +105,7 @@ if (isDedicated) then {
 	forceRespawn player;
 	
 	client_respawn_counter = 1;
+	HUD_Bomb_Status = "";
 
 	"mrkMission" setMarkerAlpha 0;
 	"respawn_bomb" setMarkerAlpha 0;

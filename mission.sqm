@@ -22,8 +22,9 @@ class Mission
 	};
 	addOnsAuto[]=
 	{
-		"A3_Data_F_Curator_Characters",
+		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
+		"A3_Data_F_Curator_Characters",
 		"A3_Modules_F_Intel",
 		"A3_Soft_F_Gamma_Offroad",
 		"a3_soft_f_offroad_01",
@@ -72,7 +73,7 @@ class Mission
 					azimut=-400.20499;
 					id=0;
 					side="WEST";
-					vehicle="b_soldier_unarmed_f";
+					vehicle="B_Helipilot_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -91,7 +92,7 @@ class Mission
 					azimut=-213.84399;
 					id=1;
 					side="WEST";
-					vehicle="b_soldier_unarmed_f";
+					vehicle="B_crew_F";
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
