@@ -84,7 +84,7 @@ while {true} do
 	_str = format["<br/>%1<br/>%2 <img size='1' image='client\icons\money.paa'/>", _str,  playerCredits];
 	_str = format["<br/>%1<br/>%2 <img size='1' image='client\icons\resource.paa'/>", _str,  _base_resources];
 	_str1 = format["<t size='1'> <img size='1' image='client\icons\west.paa'/> %1 <img size='1' image='client\icons\east.paa'/> %2 <img size='1' image='client\icons\guer.paa'/> %3</t>", West_Score, East_Score, Guer_Score];
-	_str1 = format["<br/><t size='1'> <img size='1' image='client\icons\bomb.paa'/> %1</t>", _bomb_status];
+	//_str1 = format["<br/><t size='1'> <img size='1' image='client\icons\bomb.paa'/> %1</t>", _bomb_status];
 	
 	_score ctrlSetStructuredText parseText _str1;
 	_score ctrlCommit 0;
