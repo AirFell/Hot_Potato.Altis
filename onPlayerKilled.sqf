@@ -34,12 +34,12 @@ guer_base addEventHandler ["HandleDamage", {false}];
 
 
 
-/*
+
 
 //USE FOR TEST ADDACTIONS
 player addAction [
 	"TEST ADDACTION",
 	{
+		hint HUD_Bomb_Status;
 	},
 	nil, 1, True, True, "", ""];
-*/

@@ -108,7 +108,7 @@ for "_i" from 0 to 50 do {
 	_markerLoopCounterGuer = _markerLoopCounterGuer + 1;
 };
 
-publicVariable "GuerRespawnArray";
+publicVariable "guerRespawnArray";
 
 //////////////////////////////////////////////////////
 //////////////End file load///////////////////////////

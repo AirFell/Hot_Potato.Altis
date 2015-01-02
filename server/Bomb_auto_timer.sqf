@@ -16,9 +16,9 @@ for [{_autocount = 30}, {_autocount > 0}, {_autocount = _autocount - 1}] do {
 					_closest = objNull;
 					_closestdist = 100000;
 					{
-					  if (_x distance _pos < _closestdist) then {
+					  if (_x distance The_Bomb < _closestdist) then {
 						_closest = _x;
-						_closestdist = _x distance _pos;
+						_closestdist = _x distance The_Bomb;
 					  };
 					} forEach [west_base, east_base, guer_base];
 					Bombed_Team = switch _closest do {
@@ -29,7 +29,7 @@ for [{_autocount = 30}, {_autocount > 0}, {_autocount = _autocount - 1}] do {
 					publicVariable "Bombed_team";
 					waitUntil {Bomb_Armed_Tracker == 0};
 					if (Bomb_Destroyed_Tracker == 1) then {
-						diag_log "Bomb_auto_timer.sqf found the bomb to be destroyed."
+						diag_log "Bomb_auto_timer.sqf found the bomb to be destroyed.";
 						_autocount = 0;
 					} else {
 						diag_log "Bomb_auto_timer.sqf found the bomb to be disarmed.";
@@ -50,7 +50,7 @@ for [{_autocount = 30}, {_autocount > 0}, {_autocount = _autocount - 1}] do {
 		} else {
 			waitUntil {Bomb_Armed_Tracker == 0};
 			if (Bomb_Destroyed_Tracker == 1) then {
-				diag_log "Bomb_auto_timer.sqf found the bomb to be destroyed."
+				diag_log "Bomb_auto_timer.sqf found the bomb to be destroyed.";
 				_autocount = 0;
 			} else {
 				diag_log "Bomb_auto_timer.sqf found the bomb to be disarmed.";
@@ -64,7 +64,7 @@ for [{_autocount = 30}, {_autocount > 0}, {_autocount = _autocount - 1}] do {
 			};
 		};
 	} else {
-		diag_log "Bomb_auto_timer.sqf found the bomb to be destroyed."
+		diag_log "Bomb_auto_timer.sqf found the bomb to be destroyed.";
 		_autocount = 0;
 	};
 };

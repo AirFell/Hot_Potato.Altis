@@ -23,7 +23,7 @@ if (isDedicated) then {
 	day = floor(random 28) + 1;
 	publicVariable "day";
 	diag_log format["Day is %1", day];
-	_hours = [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+	_hours = [6,7,8,9,10,11,12,13,14,15,16,17,18];
 	hour = _hours select floor random count _hours;
 	publicVariable "hour";
 	diag_log format["Hour is %1", hour];
@@ -82,6 +82,7 @@ if (isDedicated) then {
 */
 
 //	_nul = []execVM "client\side_switch.sqf";
+	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
 	_nul = []execVM "client\credit_time.sqf";
 	_nul = []execVM "client\player_markers.sqf";
 	_nul = []execVM "client\taginit.sqf";
@@ -109,8 +110,7 @@ if (isDedicated) then {
 
 	"mrkMission" setMarkerAlpha 0;
 	"respawn_bomb" setMarkerAlpha 0;
-
-	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
+	
 	diag_log "The client got through all its init files!";
 	sleep 14;
 	_nul = []execVM "client\dialogs\playerHud.sqf";	
