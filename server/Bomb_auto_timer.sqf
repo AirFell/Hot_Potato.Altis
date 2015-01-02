@@ -1,7 +1,7 @@
 diag_log "Bomb_auto_timer.sqf script started.";
 
 //_autocount = X is the time it takes to count down.
-for [{_autocount = 3}, {_autocount > 0}, {_autocount = _autocount - 1}] do {
+for [{_autocount = 5}, {_autocount > 0}, {_autocount = _autocount - 1}] do {
 	_d_check = 0;
 	if (Bomb_Destroyed_Tracker == 0) then {
 		if (Bomb_Armed_Tracker == 0) then {

@@ -106,6 +106,15 @@ west_inf_shop addEventHandler ["HandleDamage", {false}];
 west_inf_shop enableSimulationGlobal false;
 west_inf_shop setVariable ["R3F_LOG_disabled", true,true];
 
+//Fort Deposit Point
+west_inf_depot_mrkr = createVehicle ["Land_ClutterCutter_large_F", _pos, [], 0, "CAN_COLLIDE"];
+west_inf_depot_mrkr setPos [(_pos select 0) - 20, (_pos select 1) -19, 0];
+						
+west_inf_depot_mrkr setVehicleVarName "west_inf_depot_mrkr";
+publicVariable "west_inf_depot_mrkr";
+west_inf_depot_mrkr addEventHandler ["HandleDamage", {false}];
+west_inf_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
+
 //Fortification Store
 west_fort_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
 west_fort_shop setPos [(_pos select 0) - 8, (_pos select 1) + 3.5, 0];
@@ -116,6 +125,15 @@ publicVariable "west_fort_shop";
 west_fort_shop addEventHandler ["HandleDamage", {false}];
 west_fort_shop enableSimulationGlobal false;
 west_fort_shop setVariable ["R3F_LOG_disabled", true,true];
+
+//Fort Deposit Point
+west_fort_depot_mrkr = createVehicle ["Land_ClutterCutter_large_F", _pos, [], 0, "CAN_COLLIDE"];
+west_fort_depot_mrkr setPos [(_pos select 0) - 12, (_pos select 1) + 7.5, 0];
+						
+west_fort_depot_mrkr setVehicleVarName "west_fort_depot_mrkr";
+publicVariable "west_fort_depot_mrkr";
+west_fort_depot_mrkr addEventHandler ["HandleDamage", {false}];
+west_fort_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Control
 west_resc_depot_ctrl = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];

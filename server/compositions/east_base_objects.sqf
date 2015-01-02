@@ -35,6 +35,9 @@ _objectName addEventHandler ["HandleDamage", {false}];
 
 _pos = getPos east_base;
 
+
+//_________________________________VEHICLES_____________________________________________
+
 //Vehicle Shop
 east_veh_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
 east_veh_shop setPos [(_pos select 0) + 30, (_pos select 1) + 10, 0];
@@ -95,6 +98,9 @@ publicVariable "east_veh_shop_spawn5";
 east_veh_shop_spawn5 addEventHandler ["HandleDamage", {false}];
 east_veh_shop_spawn5 setVariable ["R3F_LOG_disabled", true,true];
 
+
+//_________________________________INFANTRY_____________________________________________
+
 //Infantry Shop
 east_inf_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
 east_inf_shop setPos [(_pos select 0) - 23, (_pos select 1) - 22, 0];
@@ -106,6 +112,18 @@ east_inf_shop addEventHandler ["HandleDamage", {false}];
 east_inf_shop enableSimulationGlobal false;
 east_inf_shop setVariable ["R3F_LOG_disabled", true,true];
 
+//Fort Deposit Point
+east_inf_depot_mrkr = createVehicle ["Land_ClutterCutter_large_F", _pos, [], 0, "CAN_COLLIDE"];
+east_inf_depot_mrkr setPos [(_pos select 0) - 20, (_pos select 1) -19, 0];
+						
+east_inf_depot_mrkr setVehicleVarName "east_inf_depot_mrkr";
+publicVariable "east_inf_depot_mrkr";
+east_inf_depot_mrkr addEventHandler ["HandleDamage", {false}];
+east_inf_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
+
+
+//_________________________________FORTIFICATIONS_____________________________________________
+
 //Fortification Store
 east_fort_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
 east_fort_shop setPos [(_pos select 0) - 8, (_pos select 1) + 3.5, 0];
@@ -116,6 +134,17 @@ publicVariable "east_fort_shop";
 east_fort_shop addEventHandler ["HandleDamage", {false}];
 east_fort_shop enableSimulationGlobal false;
 east_fort_shop setVariable ["R3F_LOG_disabled", true,true];
+
+//Fort Deposit Point
+east_fort_depot_mrkr = createVehicle ["Land_ClutterCutter_large_F", _pos, [], 0, "CAN_COLLIDE"];
+east_fort_depot_mrkr setPos [(_pos select 0) - 12, (_pos select 1) + 7.5, 0];
+						
+east_fort_depot_mrkr setVehicleVarName "east_fort_depot_mrkr";
+publicVariable "east_fort_depot_mrkr";
+east_fort_depot_mrkr addEventHandler ["HandleDamage", {false}];
+east_fort_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
+
+//_________________________________RESOURCES_____________________________________________
 
 //Resource Deposit Control
 east_resc_depot_ctrl = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];

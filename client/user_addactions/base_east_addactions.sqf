@@ -33,7 +33,7 @@ player addAction [
 ////////////////////////////////////////
 player addAction [
 	"Weapon/Gear Store", {
-		createVehicle ["Box_East_Wps_F", [((getPos player select 0) - 2),((getPos player select 1) - 2), 0], [], 0, "NONE"];
+		createVehicle ["Box_East_Wps_F", (getPos east_inf_depot_mrkr), [], 0, "NONE"];
 	},
 	nil, 1, True, True, "", "(player distance east_inf_shop) < 3"
 ];

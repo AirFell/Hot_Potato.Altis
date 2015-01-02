@@ -106,6 +106,15 @@ guer_inf_shop addEventHandler ["HandleDamage", {false}];
 guer_inf_shop enableSimulationGlobal false;
 guer_inf_shop setVariable ["R3F_LOG_disabled", true,true];
 
+//Fort Deposit Point
+guer_inf_depot_mrkr = createVehicle ["Land_ClutterCutter_large_F", _pos, [], 0, "CAN_COLLIDE"];
+guer_inf_depot_mrkr setPos [(_pos select 0) - 20, (_pos select 1) -19, 0];
+						
+guer_inf_depot_mrkr setVehicleVarName "guer_inf_depot_mrkr";
+publicVariable "guer_inf_depot_mrkr";
+guer_inf_depot_mrkr addEventHandler ["HandleDamage", {false}];
+guer_inf_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
+
 //Fortification Store
 guer_fort_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
 guer_fort_shop setPos [(_pos select 0) - 8, (_pos select 1) + 3.5, 0];
@@ -116,6 +125,15 @@ publicVariable "guer_fort_shop";
 guer_fort_shop addEventHandler ["HandleDamage", {false}];
 guer_fort_shop enableSimulationGlobal false;
 guer_fort_shop setVariable ["R3F_LOG_disabled", true,true];
+
+//Fort Deposit Point
+guer_fort_depot_mrkr = createVehicle ["Land_ClutterCutter_large_F", _pos, [], 0, "CAN_COLLIDE"];
+guer_fort_depot_mrkr setPos [(_pos select 0) - 12, (_pos select 1) + 7.5, 0];
+						
+guer_fort_depot_mrkr setVehicleVarName "guer_fort_depot_mrkr";
+publicVariable "guer_fort_depot_mrkr";
+guer_fort_depot_mrkr addEventHandler ["HandleDamage", {false}];
+guer_fort_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
 
 //Resource Deposit Control
 guer_resc_depot_ctrl = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];

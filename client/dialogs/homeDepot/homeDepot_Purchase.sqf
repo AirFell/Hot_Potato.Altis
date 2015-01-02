@@ -58,8 +58,8 @@ _complete_purchase = {
 _spawn_object = {
 	_name = _this select 1;
  
-				_spawn = createVehicle [(_x select 1),getPos west_resc_depot_mrkr,[], 0,"CAN_COLLIDE"];
-				_spawn setDir (getDir west_resc_depot_mrkr) + 180;
+				_spawn = createVehicle [(_x select 1),getPos west_fort_depot_mrkr,[], 0,"CAN_COLLIDE"];
+				_spawn setDir (getDir west_fort_depot_mrkr) + 180;
 					clearMagazineCargoGlobal _spawn;
 					clearWeaponCargoGlobal _spawn;
 	
@@ -170,7 +170,7 @@ _selectedItem = lbCurSel _itemlist;
 _itemText = _itemlist lbText _selectedItem;
 {if(_itemText == _x select 0) then{
 	sleep 1;
-	_ObjectsInArea = [(getPos west_resc_depot_mrkr) select 0, (getPos west_resc_depot_mrkr) select 1] nearObjects 2;
+	_ObjectsInArea = [(getPos west_fort_depot_mrkr) select 0, (getPos west_fort_depot_mrkr) select 1] nearObjects 2;
 	
 	// Ignore bugs and feathers
 	_ignore = [];
@@ -182,7 +182,7 @@ _itemText = _itemlist lbText _selectedItem;
 	} forEach _ObjectsInArea;
 	
 	_ObjectsInArea = _ObjectsInArea - _ignore;
-	_ObjectsInArea = _ObjectsInArea + ( [(getPos west_resc_depot_mrkr) select 0, (getPos west_resc_depot_mrkr) select 1] nearObjects ['Car', 10] );
+	_ObjectsInArea = _ObjectsInArea + ( [(getPos west_fort_depot_mrkr) select 0, (getPos west_fort_depot_mrkr) select 1] nearObjects ['Car', 10] );
 	
 	if(count _ObjectsInArea <= 1) then {
 		if ( [ _x ] call _complete_purchase ) then {

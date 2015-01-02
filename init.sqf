@@ -49,7 +49,7 @@ if (isDedicated) then {
 ///////////////////////Client-side stuff///////////////////////
 ///////////////////////////////////////////////////////////////
 	
-	titleCut ["", "BLACK FADED", 999];
+	titleCut ["Mission Loading. Please Wait.", "BLACK FADED", 999];
 
 	diag_log "client entering loading loop.";
 	_loading = 0;
@@ -105,8 +105,6 @@ if (isDedicated) then {
 		};
 	};
 	
-	titlecut [" ","BLACK IN",5];
-	
 	forceRespawn player;
 	
 	client_respawn_counter = 1;
@@ -117,6 +115,9 @@ if (isDedicated) then {
 	
 	diag_log "The client got through all its init files!";
 	sleep 14;
-	_nul = []execVM "client\dialogs\playerHud.sqf";	
+	
+	titlecut [" ","BLACK IN",5];
+	
+	_nul = []execVM "client\dialogs\playerHud.sqf";
 	
 };
