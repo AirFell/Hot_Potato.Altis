@@ -111,6 +111,10 @@ unless someone disarms it. Just remove scoring.
 					Bomb_Destroyed_Tracker = 1;
 					publicVariable "Bomb_Destroyed_Tracker";
 					Bomb_Armed_Tracker = 0;
+					
+					HUD_Bomb_Status = "Bomb Status: DETONATED";
+					publicVariable "HUD_Bomb_Status";
+					
 					publicVariable "Bomb_Armed_Tracker";
 					diag_log "Objects damaged.";
 				} else {
@@ -119,7 +123,7 @@ unless someone disarms it. Just remove scoring.
 					Bomb_Destroyed_Tracker = 1;
 					publicVariable "Bomb_Destroyed_Tracker";
 					
-					HUD_Bomb_Status = "Bomb Status: DETONATED. Bomb Resetting.";
+					HUD_Bomb_Status = "Bomb Status: DETONATED";
 					publicVariable "HUD_Bomb_Status";
 					
 					Bomb_Armed_Tracker = 0;

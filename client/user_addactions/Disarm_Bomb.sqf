@@ -61,7 +61,7 @@ player addaction [
 					Bomb_Armed_Tracker = 0;
 					publicVariable "Bomb_Armed_Tracker";
 					
-					HUD_Bomb_Status = "Bomb Status: DISARMED, detonation delayed.";
+					HUD_Bomb_Status = "Bomb Status: DISARMED";
 					publicVariable "HUD_Bomb_Status";
 					
 					Armed_Team = "";

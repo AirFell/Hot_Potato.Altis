@@ -22,7 +22,6 @@ player addaction [
 				diag_log "Arming animation started.";
 				player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 				
-				The_Bomb setVariable ["R3F_LOG_disabled", true, true];
 				arming_bomb = 1;
 				
 				while {_lockDuration > 1} do {
@@ -48,7 +47,6 @@ player addaction [
 							sleep 1;
 							2 cutText ["", "PLAIN DOWN", 1];
 							
-							The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 							arming_bomb = 0;
 							_armingComplete = 0;
 							hint "You must be closer to the bomb!";
@@ -58,7 +56,6 @@ player addaction [
 						sleep 1;
 						2 cutText ["", "PLAIN DOWN", 1];
 						
-						The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 						arming_bomb = 0;
 						_armingComplete = 0;
 						diag_log "Player died while arming the bomb.";
@@ -68,10 +65,9 @@ player addaction [
 				if (_armingComplete == 1) then {
 					Bomb_Armed_Tracker = 1;
 					publicVariable "Bomb_Armed_Tracker";
-					The_Bomb setVariable ["R3F_LOG_disabled", true, true];
 					arming_bomb = 0;
 					
-					HUD_Bomb_Status = "Bomb Status: ARMED, detonation imminent.";
+					HUD_Bomb_Status = "Bomb Status: ARMED";
 					publicVariable "HUD_Bomb_Status";
 					
 					hint "Bomb armed!";

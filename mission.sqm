@@ -32,7 +32,6 @@ class Mission
 		"A3_Soft_F_Quadbike",
 		"A3_Soft_F_EPC_Truck_03",
 		"A3_Soft_F_HEMTT",
-		"A3_Air_F_Heli_Light_01",
 		"a3_map_altis"
 	};
 	randomSeed=2922631;
@@ -421,7 +420,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=48;
+		items=45;
 		class Item0
 		{
 			position[]={23740.793,5.3899999,16302.946};
@@ -871,36 +870,6 @@ class Mission
 			vehicle="B_Truck_01_covered_F";
 			skill=0.60000002;
 			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
-		};
-		class Item45
-		{
-			position[]={23800.898,5.3821731,16303.005};
-			azimut=181.76199;
-			id=55;
-			side="EMPTY";
-			vehicle="B_Heli_Light_01_F";
-			skill=0.60000002;
-			init="_nul = [this, 2, 1] execVM ""server\vehRespawnWest.sqf"";";
-		};
-		class Item46
-		{
-			position[]={23802.742,5.23,16204.564};
-			azimut=181.76199;
-			id=56;
-			side="EMPTY";
-			vehicle="B_Heli_Light_01_F";
-			skill=0.60000002;
-			init="_nul = [this, 2, 1] execVM ""server\vehRespawnEast.sqf"";";
-		};
-		class Item47
-		{
-			position[]={23807.01,5.23,16105.063};
-			azimut=181.76199;
-			id=57;
-			side="EMPTY";
-			vehicle="B_Heli_Light_01_F";
-			skill=0.60000002;
-			init="_nul = [this, 2, 1] execVM ""server\vehRespawnGuer.sqf"";";
 		};
 	};
 	class Markers

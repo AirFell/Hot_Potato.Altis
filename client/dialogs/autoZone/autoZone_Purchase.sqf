@@ -45,7 +45,7 @@ if(_playerSide == "WEST") then {
 			if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea0 <= 1)) then {
 				closeDialog 0;
 				_spawnVehicle = createVehicle [(_x select 1),[getPos west_veh_shop_spawn1 select 0, getPos west_veh_shop_spawn1 select 1, 0],[], 0,"CAN_COLLIDE"];
-				_spawnVehicle setDir (getDir west_veh_shop_spawn1) + 90;
+				_spawnVehicle setDir (getDir west_veh_shop_spawn1) + 270;
 				clearMagazineCargoGlobal _spawnVehicle;
 				clearWeaponCargoGlobal _spawnVehicle;
 				sleep 0.5;
@@ -58,7 +58,7 @@ if(_playerSide == "WEST") then {
 				if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea1 <= 1)) then {
 					closeDialog 0;
 					_spawnVehicle = createVehicle [(_x select 1),[getPos west_veh_shop_spawn2 select 0, getPos west_veh_shop_spawn2 select 1, 0],[], 0,"CAN_COLLIDE"];
-					_spawnVehicle setDir (getDir west_veh_shop_spawn2) + 90;
+					_spawnVehicle setDir (getDir west_veh_shop_spawn2) + 270;
 					clearMagazineCargoGlobal _spawnVehicle;
 					clearWeaponCargoGlobal _spawnVehicle;
 					sleep 0.5;
@@ -71,7 +71,7 @@ if(_playerSide == "WEST") then {
 					if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea2 <= 1)) then {
 						closeDialog 0;
 						_spawnVehicle = createVehicle [(_x select 1),[getPos west_veh_shop_spawn3 select 0, getPos west_veh_shop_spawn3 select 1, 0],[], 0,"CAN_COLLIDE"];
-						_spawnVehicle setDir (getDir west_veh_shop_spawn3) + 90;
+						_spawnVehicle setDir (getDir west_veh_shop_spawn3) + 270;
 						clearMagazineCargoGlobal _spawnVehicle;
 						clearWeaponCargoGlobal _spawnVehicle;
 						sleep 0.5;
@@ -84,7 +84,7 @@ if(_playerSide == "WEST") then {
 						if (((_x select 1) isKindOf "Air")&&(count _ObjectsInArea3 <= 2)) then {
 							closeDialog 0;
 							_spawnVehicle = createVehicle [(_x select 1),[getPos west_veh_shop_spawn4 select 0, getPos west_veh_shop_spawn4 select 1, 0],[], 0,"CAN_COLLIDE"];
-							_spawnVehicle setDir (getDir west_veh_shop_spawn4) + 90;
+							_spawnVehicle setDir (getDir west_veh_shop_spawn4) + 270;
 							clearMagazineCargoGlobal _spawnVehicle;
 							clearWeaponCargoGlobal _spawnVehicle;
 							sleep 0.5;
@@ -97,7 +97,7 @@ if(_playerSide == "WEST") then {
 							if (((_x select 1) isKindOf "Air")&&(count _ObjectsInArea4 <= 2)) then {
 								closeDialog 0;
 								_spawnVehicle = createVehicle [(_x select 1),[getPos west_veh_shop_spawn5 select 0, getPos west_veh_shop_spawn5 select 1, 0],[], 0,"CAN_COLLIDE"];
-								_spawnVehicle setDir (getDir west_veh_shop_spawn5) + 90;
+								_spawnVehicle setDir (getDir west_veh_shop_spawn5) + 270;
 								clearMagazineCargoGlobal _spawnVehicle;
 								clearWeaponCargoGlobal _spawnVehicle;
 								sleep 0.5;

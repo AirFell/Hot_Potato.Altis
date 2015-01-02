@@ -28,8 +28,16 @@ nameofArray = compileFinal str
 //VEHICLE ARRAYS
 vehicleArray_Light = compileFinal str
 [
-    ["Quadbike","B_Quadbike_01_F", 25,25],
-	["Offroad Armed","B_G_Offroad_01_armed_F", 50,50],
+//empty template ["","", 0,0],
+    ["Quadbike","B_Quadbike_01_F", 50,125],
+	["Offroad Pickup","B_G_Offroad_01_F", 200,100],
+	["Offroad Armed","B_G_Offroad_01_armed_F", 200,400],
+	["HEMTT Bomb Delivery","B_Truck_01_transport_F", 25,25],
+	["HEMTT Transport Covered","B_Truck_01_covered_F", 25,25],
+	["Tempest Bomb Delivery","O_Truck_03_transport_F", 25,25],
+	["Tempest Transport Covered","O_Truck_03_covered_F", 25,25],
+	["Zamak Bomb Delivery","I_Truck_02_covered_F", 25,25],
+	["Zamak Transport Covered","I_Truck_02_transport_F", 25,25],
 	["Ifrit","O_MRAP_02_F", 75,75],
 	["Strider","I_MRAP_03_F", 100,100],
 	["Hunter","B_MRAP_01_F", 125,125],
@@ -57,8 +65,12 @@ vehicleArray_Air = compileFinal str
 	["Po-30 Orca Unarmed","O_Heli_Light_02_unarmed_F", 50,50],
 	["CH-49 Mohawk","I_Heli_Transport_02_F", 75,75],
 	["WY-55 Hellcat Unarmed","I_Heli_light_03_unarmed_F", 100,100],
+	["Mi-290 Taru Bench","O_Heli_Transport_04_bench_F", 0,0],
+	["Mi-290 Taru Covered","O_Heli_Transport_04_covered_F", 0,0],
+	["CH-67 Huron Unarmed","B_Heli_Transport_03_unarmed_F", 0,0],
 	["AH-9 Pawnee","B_Heli_Light_01_armed_F", 125,125],
 	["UH-80 Ghost Hawk","B_Heli_Transport_01_camo_F", 150,150],
+	["CH-67 Huron","B_Heli_Transport_03_F", 0,0],
 	["Po-30 Orca","O_Heli_Light_02_F", 175,175],
 	["WY-55 Hellcat","I_Heli_light_03_F", 200,200],
 	["AH-99 Blackfoot","B_Heli_Attack_01_F", 225,225],
@@ -71,26 +83,19 @@ allFactoryVehicles = (call vehicleArray_Light + call vehicleArray_Heavy + call v
 //---------------Cratesss------------------//
 /////////////////////////////////////////////
 
+crateArray_Ammo = compileFinal str
+[
+    ["//---Ammo---//", "", 0,0],
+	["Ammo A", "Box_NATO_Ammo_F", 25,25],
+	["Ammo B", "Box_East_Ammo_F", 25,25],
+	["Ammo C", "Box_IND_Ammo_F", 25,25]
+];
 crateArray_Basic = compileFinal str
 [
     ["//---Basic Weapons---//", "", 0,0],
 	["Nato", "Box_NATO_Wps_F", 25,25],
 	["East", "Box_East_Wps_F", 25,25],
 	["Independent", "Box_IND_Wps_F", 25,25]
-];
-crateArray_Special = compileFinal str
-[
-	["//---Special Weapons---//", "", 0,0],
-    ["Nato", "Box_NATO_WpsSpecial_F", 25,25],
-	["East", "Box_East_WpsSpecial_F", 25,25],
-	["Independent", "Box_IND_WpsSpecial_F", 25,25]
-];
-crateArray_Supplies = compileFinal str
-[
-    ["//---Supplies---//", "", 0,0],
-	["Supplies A", "B_supplyCrate_F", 25,25],
-	["Supplies B", "O_supplyCrate_F", 25,25],
-	["Supplies C", "I_supplyCrate_F", 25,25]
 ];
 crateArray_Support = compileFinal str
 [
@@ -99,6 +104,20 @@ crateArray_Support = compileFinal str
 	["Support B", "Box_East_Support_F", 25,25],
 	["Support C", "Box_IND_Support_F", 25,25]
 ];
+crateArray_Supplies = compileFinal str
+[
+    ["//---Supplies---//", "", 0,0],
+	["Supplies A", "B_supplyCrate_F", 25,25],
+	["Supplies B", "O_supplyCrate_F", 25,25],
+	["Supplies C", "I_supplyCrate_F", 25,25]
+];
+crateArray_Special = compileFinal str
+[
+	["//---Special Weapons---//", "", 0,0],
+    ["Nato", "Box_NATO_WpsSpecial_F", 25,25],
+	["East", "Box_East_WpsSpecial_F", 25,25],
+	["Independent", "Box_IND_WpsSpecial_F", 25,25]
+];
 crateArray_Explosives = compileFinal str
 [
     ["//---Explosives---//", "", 0,0],
@@ -106,15 +125,22 @@ crateArray_Explosives = compileFinal str
 	["Explosives B", "Box_East_AmmoOrd_F", 25,25],
 	["Explosives C", "Box_IND_AmmoOrd_F", 25,25]
 ];
-crateArray_Ammo = compileFinal str
+crateArray_Launchers = compileFinal str
 [
-    ["//---Ammo---//", "", 0,0],
-	["Ammo A", "Box_NATO_Ammo_F", 25,25],
-	["Ammo B", "Box_East_Ammo_F", 25,25],
-	["Ammo C", "Box_IND_Ammo_F", 25,25]
+    ["//---Launchers---//", "", 0,0],
+	["Launchers A", "Box_NATO_WpsLaunch_F", 25,25],
+	["Launchers B", "Box_East_WpsLaunch_F", 25,25],
+	["Launchers C", "Box_IND_WpsLaunch_F", 25,25]
+];
+crateArray_LargeCache = compileFinal str
+[
+    ["//---Large Cache---//", "", 0,0],
+	["NATO Cache", "B_CargoNet_01_ammo_F", 25,25],
+	["CSAT Cache", "O_CargoNet_01_ammo_F", 25,25],
+	["AAF Cache", "I_CargoNet_01_ammo_F", 25,25]
 ];
 
-allCrateArrays = (call crateArray_Basic + call crateArray_Explosives + call crateArray_Special + call crateArray_Supplies + call crateArray_Support);
+allCrateArrays = (call crateArray_Ammo + call crateArray_Basic + call crateArray_Support + call crateArray_Supplies + call crateArray_Special + call crateArray_Explosives + call crateArray_Launchers + call crateArray_LargeCache);
 
 ////////////////////////////////////////////////////////////
 //--------------------Fortifications----------------------//
@@ -122,7 +148,7 @@ allCrateArrays = (call crateArray_Basic + call crateArray_Explosives + call crat
 
 fortificationArray = compileFinal str
 [
-    ["//---Base Fortifications---//", "", 25,25],
+    ["//---Base Fortifications---//", "", 0,0],
 	["HBarrier 1", "Land_HBarrier_1_F", 25,25],
 	["HBarrier 3", "Land_HBarrier_3_F", 25,25],
 	["HBarrier 5", "Land_HBarrier_5_F", 25,25],
@@ -137,6 +163,14 @@ fortificationArray = compileFinal str
 	["BagFence Long", "Land_BagFence_Long_F", 25,25],
 	["BagFence Corner", "Land_BagFence_Corner_F", 25,25],
 	["BagBunker Small", "Land_BagBunker_Small_F", 25,25],
-	["BagBunker Large", "Land_BagBunker_Large_F", 25,25]
+	["BagBunker Large", "Land_BagBunker_Large_F", 25,25],
+	
+	["//---Static Weapons---//", "", 0,0],
+	["Static HMG Short", "B_HMG_01_F", 0,0],
+	["Static HMG Tall", "B_HMG_01_high_F", 0,0],
+	["GMG Short", "B_GMG_01_F", 0,0],
+	["Static GMG Tall", "B_GMG_01_high_F", 0,0],
+	["Static AA", "B_static_AA_F", 0,0],
+	["Static AT", "B_static_AT_F", 0,0]
 ];
 allFortificationArrays = (call fortificationArray);

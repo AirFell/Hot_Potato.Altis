@@ -1,26 +1,22 @@
-add countdown timer scripts.
-
 set up a place for crates and fortifications to spawn at.
-
-finish off base dialogs.
 
 repair points on base
 
 spawn a bomb truck at each base
 
-remove little bird
-
 add some side-neutral cash-only shops.
+
+add colors and priorities to addactions
+
+finish off base dialogs.
+
+clear fortification objects from vehicle spawn areas so people can't trap people
+
+tutorial dialog on addaction for explaining the game
 
 money system/scoring system- event handlers of some sort?
 	points for wounding enemy players when friendly finishes them off
 	points for destroying enemy vehicles
-
-tutorial dialog on addaction for explaining the game
-
-add colors and priorities to addactions
-
-clear fortification objects from vehicle spawn areas so people can't trap people
 
 _____________________________________________________________________________________
 Polish things for later:
