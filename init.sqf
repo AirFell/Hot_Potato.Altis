@@ -48,6 +48,8 @@ if (isDedicated) then {
 ///////////////////////////////////////////////////////////////
 ///////////////////////Client-side stuff///////////////////////
 ///////////////////////////////////////////////////////////////
+	
+	titleCut ["", "BLACK FADED", 999];
 
 	diag_log "client entering loading loop.";
 	_loading = 0;
@@ -102,6 +104,8 @@ if (isDedicated) then {
 			_nul = []execVM "client\radar_listener_guer.sqf";
 		};
 	};
+	
+	titlecut [" ","BLACK IN",5];
 	
 	forceRespawn player;
 	
