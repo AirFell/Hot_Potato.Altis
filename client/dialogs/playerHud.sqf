@@ -9,7 +9,6 @@
 #define hud_activity_icon_idc 3602
 #define hud_activity_textbox_idc 3603
 #define hud_score_idc 3604
-#define hud_bomb_status_idc 3605;
 
 disableSerialization;
 private ["_lastHealthReading", "_activityIconOrigPos", "_activityTextboxOrigPos", "_dispUnitInfo"];
@@ -25,8 +24,7 @@ while {true} do
     1000 cutRsc ["HPHud","PLAIN"];
     _ui = uiNameSpace getVariable "HPHud";
     _vitals = _ui displayCtrl hud_status_idc;
-	_score = _ui displayCtrl hud_score_idc;
-	_status = _ui displayCtrl hud_bomb_status_idc; 	
+	_score = _ui displayCtrl hud_score_idc; 
     _hudVehicle = _ui displayCtrl hud_vehicle_idc;
     _hudActivityIcon = _ui displayCtrl hud_activity_icon_idc;
     _hudActivityTextbox = _ui displayCtrl hud_activity_textbox_idc;
@@ -86,10 +84,8 @@ while {true} do
 	_str = format["<br/>%1<br/>%2 <img size='1' image='client\icons\money.paa'/>", _str,  playerCredits];
 	_str = format["<br/>%1<br/>%2 <img size='1' image='client\icons\resource.paa'/>", _str,  _base_resources];
 	_str1 = format["<t size='1'> <img size='1' image='client\icons\west.paa'/> %1 <img size='1' image='client\icons\east.paa'/> %2 <img size='1' image='client\icons\guer.paa'/> %3</t>", West_Score, East_Score, Guer_Score];
-	_str2 = format["<t size='0.7'>%1</t>", HUD_Bomb_Status];
+	//_str1 = format["<br/><t size='1'> <img size='1' image='client\icons\bomb.paa'/> %1</t>", HUD_Bomb_Status];
 	
-	_status ctrlSetStructuredText parseText _str2;
-	_status ctrlCommit 0;
 	_score ctrlSetStructuredText parseText _str1;
 	_score ctrlCommit 0;
 	_vitals ctrlSetStructuredText parseText _str;
