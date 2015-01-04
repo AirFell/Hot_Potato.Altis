@@ -116,7 +116,6 @@ if (isDedicated) then {
 	diag_log "The client got through all its init files!";
 	sleep 14;
 	
-	titlecut [" ","BLACK IN",5];
 	
 	_nul = []execVM "client\dialogs\playerHud.sqf";
 	

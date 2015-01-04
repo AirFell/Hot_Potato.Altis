@@ -11,6 +11,7 @@
 #define hud_activity_icon_idc 3602
 #define hud_activity_textbox_idc 3603
 #define hud_score_idc 3604
+#define hud_bomb_status_idc 3605
 
 class HPHud {
 	idd = -1;
@@ -62,7 +63,7 @@ class HPHud {
 			size = 0.040;
 			x = safeZoneX + (safeZoneW * 0.43);
 			y = safeZoneY + (safeZoneH * 0.011);
-			w = 0.25; h = 0.22;
+			w = 0.25; h = 0.11;
 			colorText[] = {1,1,1,1};
 			lineSpacing = 3;
 			colorBackground[] = {0,0,0,0};
@@ -70,6 +71,23 @@ class HPHud {
 			shadow = 2;
 			class Attributes {
 				align = "left";
+			};
+		};
+		class HPHud_Bomb_Status:w_RscText
+		{
+			idc = hud_bomb_status_idc;
+			type = CT_STRUCTURED_TEXT;
+			size = 0.040;
+			x = safeZoneX + (safeZoneW * 0.43);
+			y = safeZoneY + (safeZoneH * 0.044);
+			w = 0.25; h = 0.11;
+			colorText[] = {1,1,1,1};
+			lineSpacing = 3;
+			colorBackground[] = {0,0,0,0};
+			text = "";
+			shadow = 2;
+			class Attributes {
+				align = "center";
 			};
 		};
 		class HPHud_ActivityIcon:w_RscText

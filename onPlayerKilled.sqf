@@ -11,7 +11,7 @@ diag_log "Finding random spawn position.";
 	_RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
 	"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
 */
-cutText ["","BLACK"];
+
 diag_log "player killed. scripts restarting.";
 
 waitUntil {alive player};
