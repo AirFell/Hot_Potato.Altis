@@ -60,6 +60,7 @@ for "_i" from 0 to ((count _objs) - 1) do
 		//if (!isNil "_fuel") then {_newObj setFuel _fuel};
 		if (!isNil "_damage") then {_newObj setDamage _damage};
 		_newObj setVariable ["R3F_LOG_disabled", true,true];
+		_newObj setVectorUp [0,0,1];
 		//if (!isNil "_vehicleinit") then {_newObj setVehicleInit format ["%1;",_vehicleinit]};
 		//processInitCommands;
 		_newObjs = _newObjs + [_newObj];

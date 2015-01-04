@@ -33,7 +33,7 @@ player addAction [
 ////////////////////////////////////////
 player addAction [
 	"Weapon/Gear Store", {
-		createVehicle ["Box_NATO_Wps_F", (getPos west_inf_depot_mrkr), [], 0, "NONE"];
+		createVehicle ["Box_NATO_Wps_F", getPos west_inf_depot_mrkr, [], 0, "NONE"];
 	},
 	nil, 1, True, True, "", "(player distance west_inf_shop) < 3"
 ];
