@@ -24,7 +24,7 @@ if (isDedicated) then {
 	publicVariable "day";
 	diag_log format["Day is %1", day];
 	_hours = [6,7,8,9,10,11,12,13,14,15,16,17,18];
-	hour = _hours select floor random count _hours;
+	hour = _hours select round random count _hours;
 	publicVariable "hour";
 	diag_log format["Hour is %1", hour];
 	serverTimeSet = 1;
@@ -90,34 +90,43 @@ if (isDedicated) then {
 	_nul = []execVM "client\taginit.sqf";
 	_nul = []execVM "client\client_mission_end.sqf";
 	_nul = []execVM "client\base_update.sqf";
-		_nul = switch (side player) do {
+	
+	forceRespawn player;
+	
+	_nul = switch (side player) do {
 		case west: {
 			_nul = []execVM "client\user_addactions\helper_west.sqf";
 			_nul = []execVM "client\radar_listener_west.sqf";
+			_nul = []execVM "client\user_addactions\base_west_addactions.sqf";
 		};
 		case east: {
 			_nul = []execVM "client\user_addactions\helper_east.sqf";
 			_nul = []execVM "client\radar_listener_east.sqf";
+			_nul = []execVM "client\user_addactions\base_east_addactions.sqf";
 		};
 		case resistance: {
 			_nul = []execVM "client\user_addactions\helper_guer.sqf";
 			_nul = []execVM "client\radar_listener_guer.sqf";
+			_nul = []execVM "client\user_addactions\base_guer_addactions.sqf";
 		};
 	};
-	
-	forceRespawn player;
 	
 	client_respawn_counter = 1;
 	HUD_Bomb_Status = "Bomb Status: Initializing";
 
-	"mrkMission" setMarkerAlpha 0;
-	"respawn_bomb" setMarkerAlpha 0;
+	"mrkMission" setMarkerAlphaLocal 0;
+	"respawn_bomb" setMarkerAlphaLocal 0;
 	
 	diag_log "The client got through all its init files!";
 	sleep 14;
 	
-	titlecut [" ","BLACK IN",5];
-	
 	_nul = []execVM "client\dialogs\playerHud.sqf";
 	
+	//USE FOR TEST ADDACTIONS
+	player addAction [
+	"TEST ADDACTION",
+	{
+		hint HUD_Bomb_Status;
+	},
+	nil, 1, True, True, "", ""];
 };
