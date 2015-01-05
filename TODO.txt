@@ -1,14 +1,14 @@
-set up a place for crates and fortifications to spawn at.
+HUD bomb status.
 
-repair points on base
+add "ending" to resource missions- make new ones spawn.
 
-spawn a bomb truck at each base
+create an addaction to test changing class(private environment)
+
+check bases for accuracy on map. Some are jacked up.
 
 add some side-neutral cash-only shops.
 
-add colors and priorities to addactions
-
-finish off base dialogs.
+finish off base-related dialogs.
 
 clear fortification objects from vehicle spawn areas so people can't trap people
 
@@ -17,6 +17,8 @@ tutorial dialog on addaction for explaining the game
 money system/scoring system- event handlers of some sort?
 	points for wounding enemy players when friendly finishes them off
 	points for destroying enemy vehicles
+
+get into using automated RCON
 
 _____________________________________________________________________________________
 Polish things for later:

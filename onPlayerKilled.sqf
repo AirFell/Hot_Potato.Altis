@@ -45,7 +45,6 @@ _nul = switch (side player) do {
 _nul = []execVM "client\user_addactions\Arm_Bomb.sqf";
 _nul = []execVM "client\user_addactions\Disarm_Bomb.sqf";
 _nul = []execVM "client\user_addactions\Load_Bomb.sqf";
-//wtf with these? ^^
 
 The_Bomb setVariable ["R3F_LOG_disabled", false, true];
 The_Bomb addEventHandler ["HandleDamage", {false}];

@@ -39,7 +39,7 @@ diag_log "BaseRespawn.sqf loaded.";
 					publicVariable "west_base_resources";
 					sleep 5;
 					
-					_RandomPos_West_Base = West_Base_Array select floor random count West_Base_Array;
+					_RandomPos_West_Base = West_Base_Array call BIS_fnc_selectRandom;
 					_posMrk = getMarkerPos _RandomPos_West_Base;
 //					_posMrk = getMarkerPos "west_base_respawn";
 						
@@ -115,7 +115,7 @@ diag_log "BaseRespawn.sqf loaded.";
 					publicVariable "east_base_resources";
 					sleep 5;
 					
-					_RandomPos_East_Base = East_Base_Array select floor random count East_Base_Array;
+					_RandomPos_East_Base = East_Base_Array call BIS_fnc_selectRandom;
 					_posMrk = getMarkerPos _RandomPos_East_Base;
 //					_posMrk = getMarkerPos "east_base_respawn";
 							
@@ -192,7 +192,7 @@ diag_log "BaseRespawn.sqf loaded.";
 					publicVariable "guer_base_resources";
 					sleep 5;
 					
-					_RandomPos_Guer_Base = Guer_Base_Array select floor random count Guer_Base_Array;
+					_RandomPos_Guer_Base = Guer_Base_Array call BIS_fnc_selectRandom;
 					_posMrk = getMarkerPos _RandomPos_Guer_Base;
 //					_posMrk = getMarkerPos "guer_base_respawn";
 							

@@ -2,7 +2,7 @@
 ////////////Resource Depot//////////////
 ////////////////////////////////////////
 player addAction [
-	"Resource Deposit", {
+	("<t color=""#FFFFFF"">" + ("Resource Deposit") + "</t>"), {
 //Make a list of the barrels within the radius of the marker.
 	_barrels = nearestObjects [getPos west_resc_depot_mrkr, ["Land_MetalBarrel_F"], 10];
 			
@@ -26,41 +26,41 @@ player addAction [
 	_payOut = 0;
 	_addResources = 0;
 	},
-	nil, 1, True, True, "", "(player distance west_resc_depot_ctrl) < 3"
+	nil, 0.5, True, True, "", "(player distance west_resc_depot_ctrl) < 3"
 ];
 ////////////////////////////////////////
 ////////////Infantry Store//////////////
 ////////////////////////////////////////
 player addAction [
-	"Weapon/Gear Store", {
+	("<t color=""#FFFFFF"">" + ("Weapon/Gear Store") + "</t>"), {
 		createVehicle ["Box_NATO_Wps_F", getPos west_inf_depot_mrkr, [], 0, "NONE"];
 	},
-	nil, 1, True, True, "", "(player distance west_inf_shop) < 3"
+	nil, 0.5, True, True, "", "(player distance west_inf_shop) < 3"
 ];
 ////////////////////////////////////////
 ////////////Auto Zone///////////////
 ////////////////////////////////////////
 player addAction [
-	"Auto Zone", 
+	("<t color=""#FFFFFF"">" + ("Auto Zone") + "</t>"),
 		"client\dialogs\autoZone\autoZone_Load.sqf", 
-	nil, 1, True, True, "", "(player distance west_veh_shop) < 3"
+	nil, 0.5, True, True, "", "(player distance west_veh_shop) < 3"
 ];
 
 ////////////////////////////////////////
 ////////////Fortifications//////////////
 ////////////////////////////////////////
 player addAction [
-	"Home Depot", 
+	("<t color=""#FFFFFF"">" + ("Home Depot") + "</t>"),
 		"client\dialogs\homeDepot\homeDepot_Load.sqf", 
-	nil, 1, True, True, "", "(player distance west_fort_shop) < 3"
+	nil, 0.5, True, True, "", "(player distance west_fort_shop) < 3"
 ];
 
 ////////////////////////////////////////
 ////////////Vehicle Repair//////////////
 ////////////////////////////////////////
-/*
+
 player addAction [
-	"Repair and Rearm Vehicle", {
+	("<t color=""#E0E635"">" + ("Repair and Rearm Vehicle") + "</t>"), {
 		_veh = (vehicle player);
 		hint format ["Please wait %1 seconds for repair and rearm.",10];
 		sleep 10;
@@ -68,7 +68,5 @@ player addAction [
 		_veh setDamage 0;
 		_veh setVehicleAmmo 1;
 	}, 
-	nil, 1, True, True, "", "driver vehicle == player && vehicle player != player"
+	nil, 2, True, True, "", "vehicle player != player && (assignedVehicleRole player select 0) == ""Driver"" && ((player distance west_veh_shop_spawn1) < 10 || (player distance west_veh_shop_spawn2) < 10 || (player distance west_veh_shop_spawn3) < 10 || (player distance west_veh_shop_spawn4) < 10 || (player distance west_veh_shop_spawn5) < 10)"
 ];
-*/
-// ( && ((player distance west_veh_shop_spawn1) < 10 || (player distance west_veh_shop_spawn2) < 10 || (player distance west_veh_shop_spawn3) < 10 || (player distance west_veh_shop_spawn4) < 10 || (player distance west_veh_shop_spawn5) < 10)) < 3

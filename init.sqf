@@ -24,7 +24,7 @@ if (isDedicated) then {
 	publicVariable "day";
 	diag_log format["Day is %1", day];
 	_hours = [6,7,8,9,10,11,12,13,14,15,16,17,18];
-	hour = _hours select round random count _hours;
+	hour = _hours call BIS_fnc_selectRandom;
 	publicVariable "hour";
 	diag_log format["Hour is %1", hour];
 	serverTimeSet = 1;
@@ -71,19 +71,6 @@ if (isDedicated) then {
 		
 	diag_log "Finding random spawn position.";
 
-/*
-//This is commented out to test the new spawn marker system. !!!!!Also exists in onPlayerKilled.sqf!!!!!
-	_RandomPosW = westRespawnArray select floor random count westRespawnArray;
-	"respawn_west" setMarkerPosLocal getMarkerPos _RandomPosW;
-
-	_RandomPosE = EastRespawnArray select floor random count EastRespawnArray;
-	"respawn_east" setMarkerPosLocal getMarkerPos _RandomPosE;
-
-	_RandomPosG = GuerRespawnArray select floor random count GuerRespawnArray;
-	"respawn_guerrila" setMarkerPosLocal getMarkerPos _RandomPosG;
-*/
-
-//	_nul = []execVM "client\side_switch.sqf";
 	call compile preprocessFileLineNumbers "client\baseConfig.sqf";
 	_nul = []execVM "client\credit_time.sqf";
 	_nul = []execVM "client\player_markers.sqf";
@@ -93,6 +80,7 @@ if (isDedicated) then {
 	
 	forceRespawn player;
 	
+	waitUntil {alive player};
 	_nul = switch (side player) do {
 		case west: {
 			_nul = []execVM "client\user_addactions\helper_west.sqf";
@@ -128,5 +116,5 @@ if (isDedicated) then {
 	{
 		hint HUD_Bomb_Status;
 	},
-	nil, 1, True, True, "", ""];
+	nil, 0, False, True, "", ""];
 };

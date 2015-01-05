@@ -33,11 +33,11 @@ if(_playerSide == "WEST") then {
 			if(_creditCost > _credits) exitWith {hintsilent "You do not have enough Credits"};
 			if(_resourceCost > _base_resources) exitWith {hintsilent "You do not have enough Resources"};
 			if(_resourceCost < 1) exitWith {hintsilent "You cant buy this silly."};
-			_ObjectsInArea0 = [(getPos west_veh_shop_spawn1) select 0, (getPos west_veh_shop_spawn1) select 1] nearObjects 3;
-			_ObjectsInArea1 = [(getPos west_veh_shop_spawn2) select 0, (getPos west_veh_shop_spawn2) select 1] nearObjects 3;
-			_ObjectsInArea2 = [(getPos west_veh_shop_spawn3) select 0, (getPos west_veh_shop_spawn3) select 1] nearObjects 3;
-			_ObjectsInArea3 = [(getPos west_veh_shop_spawn4) select 0, (getPos west_veh_shop_spawn4) select 1] nearObjects 3;
-			_ObjectsInArea4 = [(getPos west_veh_shop_spawn5) select 0, (getPos west_veh_shop_spawn5) select 1] nearObjects 3;
+			_ObjectsInArea0 = [(getPos west_veh_shop_spawn1) select 0, (getPos west_veh_shop_spawn1) select 1] nearObjects 5;
+			_ObjectsInArea1 = [(getPos west_veh_shop_spawn2) select 0, (getPos west_veh_shop_spawn2) select 1] nearObjects 5;
+			_ObjectsInArea2 = [(getPos west_veh_shop_spawn3) select 0, (getPos west_veh_shop_spawn3) select 1] nearObjects 5;
+			_ObjectsInArea3 = [(getPos west_veh_shop_spawn4) select 0, (getPos west_veh_shop_spawn4) select 1] nearObjects 5;
+			_ObjectsInArea4 = [(getPos west_veh_shop_spawn5) select 0, (getPos west_veh_shop_spawn5) select 1] nearObjects 5;
 			
 			if (((_x select 1) isKindOf "Tank")&&(typeOf player != _tankClassType)) exitWith {hint "You aren't the required class to operate this vehicle"};
 			if (((_x select 1) isKindOf "Air")&&(typeOf player != _airClassType)) exitWith {hint "You aren't the required class to operate this vehicle"};
@@ -133,11 +133,11 @@ if(_playerSide == "EAST") then {
 			if(_creditCost > _credits) exitWith {hintsilent "You do not have enough Credits"};
 			if(_resourceCost > _base_resources) exitWith {hintsilent "You do not have enough Resources"};
 			if(_resourceCost < 1) exitWith {hintsilent "You cant buy this silly."};
-			_ObjectsInArea0 = [(getPos east_veh_shop_spawn1) select 0, (getPos east_veh_shop_spawn1) select 1] nearObjects 3;
-			_ObjectsInArea1 = [(getPos east_veh_shop_spawn2) select 0, (getPos east_veh_shop_spawn2) select 1] nearObjects 3;
-			_ObjectsInArea2 = [(getPos east_veh_shop_spawn3) select 0, (getPos east_veh_shop_spawn3) select 1] nearObjects 3;
-			_ObjectsInArea3 = [(getPos east_veh_shop_spawn4) select 0, (getPos east_veh_shop_spawn4) select 1] nearObjects 3;
-			_ObjectsInArea4 = [(getPos east_veh_shop_spawn5) select 0, (getPos east_veh_shop_spawn5) select 1] nearObjects 3;
+			_ObjectsInArea0 = [(getPos east_veh_shop_spawn1) select 0, (getPos east_veh_shop_spawn1) select 1] nearObjects 5;
+			_ObjectsInArea1 = [(getPos east_veh_shop_spawn2) select 0, (getPos east_veh_shop_spawn2) select 1] nearObjects 5;
+			_ObjectsInArea2 = [(getPos east_veh_shop_spawn3) select 0, (getPos east_veh_shop_spawn3) select 1] nearObjects 5;
+			_ObjectsInArea3 = [(getPos east_veh_shop_spawn4) select 0, (getPos east_veh_shop_spawn4) select 1] nearObjects 5;
+			_ObjectsInArea4 = [(getPos east_veh_shop_spawn5) select 0, (getPos east_veh_shop_spawn5) select 1] nearObjects 5;
 			if (((_x select 1) isKindOf "Tank")&&(typeOf player != _tankClassType)) exitWith {hint "You aren't the required class to operate this vehicle"};
 			if (((_x select 1) isKindOf "Air")&&(typeOf player != _airClassType)) exitWith {hint "You aren't the required class to operate this vehicle"};
 			
@@ -233,11 +233,11 @@ if(_playerSide == "GUER") then {
 			if(_creditCost > _credits) exitWith {hintsilent "You do not have enough Credits"};
 			if(_resourceCost > _base_resources) exitWith {hintsilent "You do not have enough Resources"};
 			if(_resourceCost < 1) exitWith {hintsilent "You cant buy this silly."};
-			_ObjectsInArea0 = [(getPos guer_veh_shop_spawn1) select 0, (getPos guer_veh_shop_spawn1) select 1] nearObjects 3;
-			_ObjectsInArea1 = [(getPos guer_veh_shop_spawn2) select 0, (getPos guer_veh_shop_spawn2) select 1] nearObjects 3;
-			_ObjectsInArea2 = [(getPos guer_veh_shop_spawn3) select 0, (getPos guer_veh_shop_spawn3) select 1] nearObjects 3;
-			_ObjectsInArea3 = [(getPos guer_veh_shop_spawn4) select 0, (getPos guer_veh_shop_spawn4) select 1] nearObjects 3;
-			_ObjectsInArea4 = [(getPos guer_veh_shop_spawn5) select 0, (getPos guer_veh_shop_spawn5) select 1] nearObjects 3;
+			_ObjectsInArea0 = [(getPos guer_veh_shop_spawn1) select 0, (getPos guer_veh_shop_spawn1) select 1] nearObjects 5;
+			_ObjectsInArea1 = [(getPos guer_veh_shop_spawn2) select 0, (getPos guer_veh_shop_spawn2) select 1] nearObjects 5;
+			_ObjectsInArea2 = [(getPos guer_veh_shop_spawn3) select 0, (getPos guer_veh_shop_spawn3) select 1] nearObjects 5;
+			_ObjectsInArea3 = [(getPos guer_veh_shop_spawn4) select 0, (getPos guer_veh_shop_spawn4) select 1] nearObjects 5;
+			_ObjectsInArea4 = [(getPos guer_veh_shop_spawn5) select 0, (getPos guer_veh_shop_spawn5) select 1] nearObjects 5;
 			if (((_x select 1) isKindOf "Tank")&&(typeOf player != _tankClassType)) exitWith {hint "You aren't the required class to operate this vehicle"};
 			if (((_x select 1) isKindOf "Air")&&(typeOf player != _airClassType)) exitWith {hint "You aren't the required class to operate this vehicle"};
 			

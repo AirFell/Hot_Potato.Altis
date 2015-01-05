@@ -7,7 +7,7 @@ _vehtype = "Land_Cargo_Tower_V1_No1_F";
 /////////////////////////
 /////Spawn West Base/////
 /////////////////////////
-_RandomPos_West_Base = West_Base_Array select floor random count West_Base_Array;
+_RandomPos_West_Base = West_Base_Array call BIS_fnc_selectRandom;
 _posMrk = getMarkerPos _RandomPos_West_Base;
 //_posMrk = getMarkerPos "west_base_respawn";
 						
@@ -49,7 +49,7 @@ _nul = execVM "server\compositions\west_base_objects.sqf";
 /////////////////////////
 /////Spawn East Base/////
 ///////////////////	/////			
-_RandomPos_East_Base = East_Base_Array select floor random count East_Base_Array;
+_RandomPos_East_Base = East_Base_Array call BIS_fnc_selectRandom;
 _posMrk = getMarkerPos _RandomPos_East_Base;
 //_posMrk = getMarkerPos "east_base_respawn";
 							
@@ -92,7 +92,7 @@ _nul = execVM "server\compositions\east_base_objects.sqf";
 /////////////////////////
 /////Spawn Guer Base/////
 /////////////////////////	
-_RandomPos_Guer_Base = Guer_Base_Array select floor random count Guer_Base_Array;
+_RandomPos_Guer_Base = Guer_Base_Array call BIS_fnc_selectRandom;
 _posMrk = getMarkerPos _RandomPos_Guer_Base;
 //_posMrk = getMarkerPos "guer_base_respawn";
 							

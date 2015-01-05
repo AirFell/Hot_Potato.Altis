@@ -924,7 +924,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={21252.504,14.623315,15757.044};
+			position[]={21256.797,14.609795,15754.658};
 			name="east_base_random_3";
 			type="Empty";
 			angle=59.630333;
@@ -1075,7 +1075,7 @@ class Mission
 		};
 		class Item29
 		{
-			position[]={19278.283,26.93865,16855.035};
+			position[]={18648.596,32.762878,16902.801};
 			name="guer_base_random_7";
 			type="Empty";
 			angle=210.77043;
@@ -1089,7 +1089,7 @@ class Mission
 		};
 		class Item31
 		{
-			position[]={19108.299,34.428375,17169.244};
+			position[]={19473.383,25.794048,17044.633};
 			name="guer_base_random_9";
 			type="Empty";
 			angle=210.77043;
