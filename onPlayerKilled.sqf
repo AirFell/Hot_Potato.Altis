@@ -1,6 +1,5 @@
 diag_log "Finding random spawn position.";
 
-cutText ["","BLACK"];
 diag_log "player killed. scripts restarting.";
 
 waitUntil {alive player};
