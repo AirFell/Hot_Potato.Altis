@@ -117,5 +117,5 @@ if (isDedicated) then {
 		hint HUD_Bomb_Status;
 	},
 	nil, 0, False, True, "", ""];
-};
 */
+};
