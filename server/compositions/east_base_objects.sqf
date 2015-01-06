@@ -144,6 +144,8 @@ publicVariable "east_fort_depot_mrkr";
 east_fort_depot_mrkr addEventHandler ["HandleDamage", {false}];
 east_fort_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
 
+
+
 //_________________________________RESOURCES_____________________________________________
 
 //Resource Deposit Control
