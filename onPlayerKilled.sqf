@@ -11,6 +11,15 @@ cutText ["","BLACK IN"];
 playerCredits = playerCredits * 0.25;
 playerCredits = round playerCredits;
 
+removeAllWeapons player;
+player addmagazines ["30Rnd_556x45_Stanag", 3];
+player addweapon "arifle_TRG20_F";
+player addmagazines ["16Rnd_9x21_Mag", 3];
+player addweapon "hgun_Rook40_F";
+player addMagazine "handGrenade";
+player addMagazine "SmokeShell";
+player additem "FirstAidKit";
+
 _nul = switch (side player) do {
 	case west: {
 		"mrkBlue" setMarkerAlphaLocal 0;
