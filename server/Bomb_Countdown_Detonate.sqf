@@ -23,21 +23,21 @@ unless someone disarms it. Just remove scoring.
 */
 			switch (Bombed_Team) do {
 				case west: {
-					if ((west_base distance The_Bomb) >= 251) then {
+					if ((west_base distance The_Bomb) >= 151) then {
 						bombdistanceCheck = 1;
 					} else {
 						bombdistanceCheck = 0;
 					};
 				};
 				case east: {
-					if ((east_base distance The_Bomb) >= 251) then {
+					if ((east_base distance The_Bomb) >= 151) then {
 						bombdistanceCheck = 1;
 					} else {
 						bombdistanceCheck = 0;
 					};
 				};
 				case resistance: {
-					if ((guer_base distance The_Bomb) >= 251) then {
+					if ((guer_base distance The_Bomb) >= 151) then {
 						bombdistanceCheck = 1;
 					} else {
 						bombdistanceCheck = 0;
@@ -91,7 +91,7 @@ unless someone disarms it. Just remove scoring.
 				_bomb9 = "M_Mo_82mm_AT_LG" createVehicle [(getPos The_Bomb select 0) - _number,(getPos The_Bomb select 1) + _number, 0];
 				sleep _number2;
 				
-				_objectsList2 = nearestObjects [getPos The_Bomb, ["Static","Thing","Strategic","Object"], 250] - [The_Bomb];
+				_objectsList2 = nearestObjects [getPos The_Bomb, ["Static","Thing","Strategic","Object"], 150] - [The_Bomb];
 				{
 					_x setDamage 50;
 				}forEach _objectsList2;

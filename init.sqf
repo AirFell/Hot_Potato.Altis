@@ -108,7 +108,8 @@ if (isDedicated) then {
 	diag_log "The client got through all its init files!";
 	
 	_nul = []execVM "client\dialogs\playerHud.sqf";
-	
+
+/*
 	//USE FOR TEST ADDACTIONS
 	player addAction [
 	"TEST ADDACTION",
@@ -117,3 +118,4 @@ if (isDedicated) then {
 	},
 	nil, 0, False, True, "", ""];
 };
+*/

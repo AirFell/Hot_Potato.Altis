@@ -3,7 +3,7 @@ diag_log "Finding random spawn position.";
 diag_log "player killed. scripts restarting.";
 
 waitUntil {alive player};
-cutText ["","BLACK IN"];
+
 playerCredits = playerCredits * 0.25;
 playerCredits = round playerCredits;
 
@@ -17,6 +17,7 @@ _nul = switch (side player) do {
 		"mrknoGreen" setMarkerAlphaLocal 0;
 		"mrkMission" setMarkerAlphaLocal 0;
 		"respawn_bomb" setMarkerAlphaLocal 0;
+		_nul = []execVM "client\user_addactions\base_west_addactions.sqf";
 	};
 		
 	case east: {
@@ -28,6 +29,7 @@ _nul = switch (side player) do {
 		"mrknoGreen" setMarkerAlphaLocal 0;
 		"mrkMission" setMarkerAlphaLocal 0;
 		"respawn_bomb" setMarkerAlphaLocal 0;
+		_nul = []execVM "client\user_addactions\base_east_addactions.sqf";
 	};
 	
 	case resistance: {
@@ -39,6 +41,7 @@ _nul = switch (side player) do {
 		"mrknoGreen" setMarkerAlphaLocal 0.5;
 		"mrkMission" setMarkerAlphaLocal 0;
 		"respawn_bomb" setMarkerAlphaLocal 0;
+		_nul = []execVM "client\user_addactions\base_guer_addactions.sqf";
 	};
 };
 _nul = []execVM "client\user_addactions\Arm_Bomb.sqf";

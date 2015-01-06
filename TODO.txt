@@ -1,5 +1,3 @@
-HUD bomb status.
-
 add "ending" to resource missions- make new ones spawn.
 
 create an addaction to test changing class(private environment)
@@ -20,10 +18,13 @@ money system/scoring system- event handlers of some sort?
 
 get into using automated RCON
 
+
+**Thoughts on scoring: Keep it at an Up/Down scoring, first to 3 or 5 wins. If the bomb is on auto-detonate
+	team with most players around the bomb/base get the score.(obviously excluding the defenders)
 _____________________________________________________________________________________
 Polish things for later:
 how many times will a base be destroyed?(Should we make more base spawn markers?)
-create dialog for bomb interaction
+
 pretty up closing end-mission things.
 	-Idea: stop player movement and then force everyone into a camera that spawns near the last destroyed tower, then "endMission"
 check crew placement on attach bomb addaction
