@@ -18,9 +18,7 @@ money system/scoring system- event handlers of some sort?
 
 get into using automated RCON
 
-
-**Thoughts on scoring: Keep it at an Up/Down scoring, first to 3 or 5 wins. If the bomb is on auto-detonate
-	team with most players around the bomb/base get the score.(obviously excluding the defenders)
+add custom loading screen?
 _____________________________________________________________________________________
 Polish things for later:
 how many times will a base be destroyed?(Should we make more base spawn markers?)

@@ -2,7 +2,11 @@ diag_log "Finding random spawn position.";
 
 diag_log "player killed. scripts restarting.";
 
+cutText ["","BLACK FADED", 0];
+
 waitUntil {alive player};
+
+cutText ["","BLACK IN"];
 
 playerCredits = playerCredits * 0.25;
 playerCredits = round playerCredits;

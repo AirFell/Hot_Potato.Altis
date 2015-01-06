@@ -26,7 +26,7 @@ player addaction [
 				
 				while {_lockDuration > 1} do {
 					if (alive player) then {// If the player dies, end loop.
-						if(player distance The_Bomb < 3) then { // If the player moves away, end loop.
+						if(player distance The_Bomb < 5) then { // If the player moves away, end loop.
 							if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the placement.
 								player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 							};
@@ -95,5 +95,5 @@ player addaction [
 			hint "You can't arm the bomb here!";
 		};
 	},
-	nil, 1, True, True, "", "(vehicle player) == player && arming_bomb == 0 && Bomb_Armed_Tracker == 0 && (player distance The_Bomb) < 4 && ((player distance EnemyBase1) < 100 || (player distance EnemyBase2) < 100)"
+	nil, 1, True, True, "", "(vehicle player) == player && arming_bomb == 0 && Bomb_Armed_Tracker == 0 && (player distance The_Bomb) < 5 && ((player distance EnemyBase1) < 100 || (player distance EnemyBase2) < 100)"
 ];
