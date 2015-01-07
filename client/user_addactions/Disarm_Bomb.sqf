@@ -72,8 +72,6 @@ player addaction [
 					publicVariable "Bombed_Team";
 					diag_log format["Armed Team = %1", Bombed_Team];
 					
-					The_Bomb setVariable ["R3F_LOG_disabled", false, true];
-					
 					disarming_bomb = 0;
 					publicVariable "disarming_bomb";
 					playerCredits = playerCredits + 250;

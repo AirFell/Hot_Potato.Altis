@@ -11,7 +11,6 @@ for [{_autocount = 5}, {_autocount > 0}, {_autocount = _autocount - 1}] do {
 				} else {
 					Bomb_Armed_Tracker = 1;
 					publicVariable "Bomb_Armed_Tracker";
-					The_Bomb setVariable ["R3F_LOG_disabled", true, true];
 					diag_log "Auto-Timer Armed bomb.";
 					HUD_Bomb_Status = "Bomb Status: ARMED";
 					publicVariable "HUD_Bomb_Status";

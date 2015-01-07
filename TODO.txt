@@ -30,19 +30,6 @@ check crew placement on attach bomb addaction
 
 Change functions to complilefinal. Holy shit thats going to be hard.
 
-**Should we replace the bomb addaction with a GUI arm/disarm function?
-This will make it easier to set counters and handle who can and can't manage it.
-Will look more professional as well.
-Arm/Disarm Dialog:
-top center has a bomb status and timer.
-Status: Locked/Stable/Armed X digit randomizer in top left that brings up a random
-code when you open the dialog. Below the code display is AF's keypad script in the
-bottom left with a display for entering code. Right side has buttons
-(in order top to bottom) arm bomb, disarm bomb, cancel(closes the display)
-PLayers must match the code on the top with the keypad, then hit the arm or disarm button.
-
-this setVariable ["R3F_LOG_disabled", false];
-
 Variables that need to be adjusted for gameplay:
 Bomb marker timer: server\Bomb_Marker.sqf line 2
 Bomb arm addaction range of enemy base: client\Arm_Bomb.sqf line 92
