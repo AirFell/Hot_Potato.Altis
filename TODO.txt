@@ -1,6 +1,7 @@
-add "ending" to resource missions- make new ones spawn.
+-Ok. The method for changing classes is garbage. Instead, change uniform, then change the store checks
+to what uniform they're wearing.
 
-create an addaction to test changing class(private environment)
+add "ending" to resource missions- make new ones spawn.
 
 check bases for accuracy on map. Some are jacked up.
 

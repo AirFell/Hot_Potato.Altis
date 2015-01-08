@@ -2,11 +2,9 @@ diag_log "Finding random spawn position.";
 
 diag_log "player killed. scripts restarting.";
 
-cutText ["","BLACK FADED", 0];
-
 waitUntil {alive player};
 
-cutText ["","BLACK IN"];
+cutText ["","BLACK IN", 5];
 
 playerCredits = playerCredits * 0.25;
 playerCredits = round playerCredits;
@@ -57,6 +55,7 @@ _nul = switch (side player) do {
 		_nul = []execVM "client\user_addactions\base_guer_addactions.sqf";
 	};
 };
+
 _nul = []execVM "client\user_addactions\Arm_Bomb.sqf";
 _nul = []execVM "client\user_addactions\Disarm_Bomb.sqf";
 _nul = []execVM "client\user_addactions\Load_Bomb.sqf";
@@ -66,3 +65,27 @@ The_Bomb addEventHandler ["HandleDamage", {false}];
 west_base addEventHandler ["HandleDamage", {false}];
 east_base addEventHandler ["HandleDamage", {false}];
 guer_base addEventHandler ["HandleDamage", {false}];
+
+/*
+	//USE FOR TEST ADDACTIONS
+	player addAction [
+	"TEST ADDACTION",
+	{
+		oldUnit = player;
+		_group = group player;
+		_direction = getDir player;
+		_position = getPos player;
+//		_newUnitClass = "B_Helipilot_F";
+		_unitSide = side player;
+		_tempGroup = createGroup _unitSide;
+		newUnit = "B_Helipilot_F" createUnit [getPos player, _tempGroup];
+		addSwitchableUnit newUnit;
+		selectPlayer newUnit;
+		removeSwitchableUnit oldUnit;
+		
+		player setDir _direction;
+		player setPos _position;
+		[_newUnit] join _group;
+	},
+	nil, 0, False, True, "", ""];
+*/

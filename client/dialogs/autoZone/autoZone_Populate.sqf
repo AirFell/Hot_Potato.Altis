@@ -13,8 +13,7 @@ _vehlist = _dialog displayCtrl VEHICLELIST;
 lbClear _vehlist;
 _vehlist lbSetCurSel -1;
 
-_vehArray = switch (_switch) do 
-{
+_vehArray = switch (_switch) do {
 	case 0: { call vehicleArray_Light };
 	case 1: { call vehicleArray_Heavy };
 	case 2: { call vehicleArray_Air };

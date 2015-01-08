@@ -37,13 +37,12 @@ class Mission
 	class Intel
 	{
 		resistanceWest=0;
-		startWeather=0.84999996;
+		startWeather=0.099999994;
 		startWind=0.099999994;
 		startWaves=0.099999994;
-		forecastWeather=0.84999996;
+		forecastWeather=0.099999994;
 		forecastWind=0.099999994;
 		forecastWaves=0.099999994;
-		forecastLightnings=0.099999994;
 		rainForced=1;
 		lightningsForced=1;
 		wavesForced=1;
@@ -693,7 +692,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=41;
+		items=42;
 		class Item0
 		{
 			position[]={14477.336,25.066919,6180.9336};
@@ -744,7 +743,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={21256.797,14.609795,15754.658};
+			position[]={21261.492,14.673789,15754.658};
 			name="east_base_random_3";
 			type="Empty";
 			angle=59.630333;
@@ -923,7 +922,7 @@ class Mission
 		};
 		class Item33
 		{
-			position[]={21058.535,27.848522,16526.877};
+			position[]={21052.959,28.072763,16529.109};
 			name="east_base_random_9";
 			type="Empty";
 			angle=59.630333;
@@ -1011,6 +1010,12 @@ class Mission
 			a=2000;
 			b=2000;
 			drawBorder=1;
+		};
+		class Item41
+		{
+			position[]={14471.642,25.070045,6183.6074};
+			name="body_snatcher";
+			type="Empty";
 		};
 	};
 };

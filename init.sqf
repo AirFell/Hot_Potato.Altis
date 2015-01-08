@@ -18,14 +18,11 @@ if (isDedicated) then {
 	diag_log "The server is Running!";
 	
 	month = floor(random 12) + 1;
-	publicVariable "month";
 	diag_log format["Month is %1", month];
 	day = floor(random 28) + 1;
-	publicVariable "day";
 	diag_log format["Day is %1", day];
 	_hours = [6,7,8,9,10,11,12,13,14,15,16,17,18];
 	hour = _hours call BIS_fnc_selectRandom;
-	publicVariable "hour";
 	diag_log format["Hour is %1", hour];
 	serverTimeSet = 1;
 	publicVariable "serverTimeSet";
@@ -49,7 +46,7 @@ if (isDedicated) then {
 ///////////////////////Client-side stuff///////////////////////
 ///////////////////////////////////////////////////////////////
 	
-	titleCut ["Mission Loading. Please Wait.", "BLACK FADED", 999];
+	titleCut ["Mission Loading. Please Wait.", "BLACK FADED", 15];
 
 	diag_log "client entering loading loop.";
 	_loading = 0;
@@ -81,7 +78,6 @@ if (isDedicated) then {
 	forceRespawn player;
 	
 	waitUntil {alive player};
-	cutText ["","BLACK IN"];
 	
 	_nul = switch (side player) do {
 		case west: {
