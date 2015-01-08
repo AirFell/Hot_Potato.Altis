@@ -66,26 +66,34 @@ west_base addEventHandler ["HandleDamage", {false}];
 east_base addEventHandler ["HandleDamage", {false}];
 guer_base addEventHandler ["HandleDamage", {false}];
 
-/*
+
 	//USE FOR TEST ADDACTIONS
 	player addAction [
 	"TEST ADDACTION",
 	{
-		oldUnit = player;
-		_group = group player;
-		_direction = getDir player;
-		_position = getPos player;
-//		_newUnitClass = "B_Helipilot_F";
-		_unitSide = side player;
-		_tempGroup = createGroup _unitSide;
-		newUnit = "B_Helipilot_F" createUnit [getPos player, _tempGroup];
-		addSwitchableUnit newUnit;
-		selectPlayer newUnit;
-		removeSwitchableUnit oldUnit;
+/*
+All we will change for players are their Uniform, Vest, and Headgear.
+Script is written as need for a pilot as example.
+*/
+		//get all player stuff we need.
+		_Uitems = uniformItems player;
+		_Vitems = vestItems player;
 		
-		player setDir _direction;
-		player setPos _position;
-		[_newUnit] join _group;
+		//remove the old uniform, add a new one.
+		removeUniform player;
+		removeVest player;
+		removeHeadgear player;
+		sleep 0.1;
+		player addUniform "U_B_HeliPilotCoveralls";
+		player addVest "V_TacVest_blk";
+		player addHeadgear "H_PilotHelmetHeli_B";
+		
+		//put everything back.
+		{
+			player addItemToUniform _x;
+		} foreach _Uitems;
+		{
+			player addItemToVest _x;
+		} foreach _Vitems;
 	},
 	nil, 0, False, True, "", ""];
-*/

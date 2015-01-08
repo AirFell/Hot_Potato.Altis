@@ -1,5 +1,10 @@
 -Ok. The method for changing classes is garbage. Instead, change uniform, then change the store checks
 to what uniform they're wearing.
+NOTE: For engineer's with this method we'll need a custom addaction for repairing vehicles.
+When players purchase the engineer kit, we give them another addaction to repair/flip vehicles.
+IF's-
+	wearing the right uniform(mind player sides)
+	in distance from a vehicle
 
 add "ending" to resource missions- make new ones spawn.
 

@@ -21,9 +21,8 @@ class Mission
 	};
 	addOnsAuto[]=
 	{
-		"A3_Characters_F_BLUFOR",
-		"a3_characters_f",
 		"A3_Data_F_Curator_Characters",
+		"a3_characters_f",
 		"A3_Modules_F_Intel",
 		"A3_Soft_F_Gamma_Offroad",
 		"a3_soft_f_offroad_01",
@@ -37,10 +36,10 @@ class Mission
 	class Intel
 	{
 		resistanceWest=0;
-		startWeather=0.099999994;
+		startWeather=0.1;
 		startWind=0.099999994;
 		startWaves=0.099999994;
-		forecastWeather=0.099999994;
+		forecastWeather=0.1;
 		forecastWind=0.099999994;
 		forecastWaves=0.099999994;
 		rainForced=1;
@@ -70,7 +69,7 @@ class Mission
 					azimut=-400.20499;
 					id=0;
 					side="WEST";
-					vehicle="B_Helipilot_F";
+					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -89,7 +88,7 @@ class Mission
 					azimut=-213.84399;
 					id=1;
 					side="WEST";
-					vehicle="B_crew_F";
+					vehicle="b_soldier_unarmed_f";
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;

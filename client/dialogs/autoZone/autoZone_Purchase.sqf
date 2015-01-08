@@ -44,7 +44,8 @@ if(_playerSide == "EAST") then {
 	_spawn5 = east_veh_shop_spawn5;
 };
 if(_playerSide == "GUER") then {
-	_airClassType = "I_Helipilot_F";
+	_Puniform = uniform player;
+	_airClassType = "U_B_HeliPilotCoveralls";
 	_tankClassType = "I_crew_F";
 	_base_resources = guer_base_resources;
 	_spawn1 = guer_veh_shop_spawn1;
@@ -64,8 +65,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do {
 		if(_creditCost > _credits) exitWith {hintsilent "You do not have enough Credits"};
 		if(_resourceCost > _base_resources) exitWith {hintsilent "You do not have enough Resources"};
 		if(_resourceCost < 1) exitWith {};
-		if (((_x select 1) isKindOf "Tank")&&(typeOf player != _tankClassType)) exitWith {hintsilent "You aren't the required class to operate this vehicle"};
-		if (((_x select 1) isKindOf "Air")&&(typeOf player != _airClassType)) exitWith {hintsilent "You aren't the required class to operate this vehicle"};
+		if (((_x select 1) isKindOf "Tank")&&(typeOf player != _tankClassType)) exitWith {hintsilent "You must be a crewman to operate this vehicle."};
+		if (((_x select 1) isKindOf "Air")&&(_Puniform != _airClassType)) exitWith {hintsilent "You must be a pilot to operate this vehicle."};
 		_ObjectsInArea0 = [(getPos _spawn1) select 0, (getPos _spawn1) select 1] nearObjects 3;
 		_ObjectsInArea1 = [(getPos _spawn2) select 0, (getPos _spawn2) select 1] nearObjects 3;
 		_ObjectsInArea2 = [(getPos _spawn3) select 0, (getPos _spawn3) select 1] nearObjects 3;

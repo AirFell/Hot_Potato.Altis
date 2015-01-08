@@ -178,40 +178,142 @@ this addBackpackCargo ["B_TacticalPack_ocamo",2];
 
 /////Functional/////
 WEST:
-??"B_medic_F"?? -honestly not sure if we need this $50/15
-"B_engineer_F" Engineer $50/15
-"B_Helipilot_F" Helicopter Pilot $150/40
-"B_crew_F" Tank Driver $150/45
-/////Cosmetic/////
-"B_sniper_F" Ghillie Suit $200/50
-"B_recon_F" Special Forces $100/25
-"B_officer_F" Officer $100/25
-"B_G_Soldier_AR_F" PMC 1 $125/30
-"B_G_Soldier_exp_F" PMC 2 $125/30
+Medic $50/15
+U_B_CombatUniform_mcam_tshirt
+V_PlateCarrierSpec_rgr
+H_HelmetB_light_desert
+
+Engineer $50/15
+U_B_CombatUniform_mcam_vest
+V_Chestrig_rgr
+H_HelmetB_desert
+
+Helicopter Pilot $150/40
+U_B_HeliPilotCoveralls
+V_TacVest_blk
+H_PilotHelmetHeli_B
+
+Tank Driver $150/45
+U_B_CombatUniform_mcam_vest
+V_BandollierB_rgr
+H_HelmetCrew_B
+
+Ghillie Suit $200/50
+U_B_GhillieSuit
+V_Chestrig_rgr
+
+Special Forces $100/25
+U_B_CombatUniform_mcam_vest
+V_Chestrig_rgr
+H_Watchcap_camo
+
+Officer $100/25
+U_B_CombatUniform_mcam
+V_BandollierB_rgr
+H_MilCap_mcamo
+
+PMC 1 $125/30
+U_BG_Guerilla2_1
+V_TacVest_blk
+H_Bandanna_khk
+
+PMC 2 $125/30
+U_BG_Guerilla2_3
+V_TacVest_blk
+H_Booniehat_khk_hs
+
 
 EAST:
-??"O_medic_F"?? -honestly not sure if we need this $50/15
-"O_engineer_F" Engineer $50/15
-"O_helipilot_F" Helicopter Pilot $150/40
-"O_crew_F" Tank Driver $150/45
-/////Cosmetic/////
-"O_sniper_F" Ghillie Suit $200/50
-"O_soldierU_F" Special Forces $100/25
-"O_officer_F" Officer $100/25
-"O_G_Soldier_F" Mercinary 1 $125/30
-"O_G_Soldier_lite_F" Mercinary 2 $125/30
+Medic $50/15
+U_O_CombatUniform_ocamo
+V_TacVest_khk
+H_HelmetO_ocamo
+
+Engineer $50/15
+U_O_CombatUniform_ocamo
+V_HarnessO_brn
+H_HelmetO_ocamo
+
+Helicopter Pilot $150/40
+U_O_PilotCoveralls
+H_PilotHelmetHeli_O
+V_TacVest_khk
+
+Tank Driver $150/45
+U_O_SpecopsUniform_ocamo
+V_BandollierB_khk
+H_HelmetCrew_O
+
+Ghillie Suit $200/50
+U_O_GhillieSuit
+V_Chestrig_khk
+
+Special Forces $100/25
+U_O_CombatUniform_oucamo
+V_HarnessO_gry
+H_HelmetO_oucamo
+
+Officer $100/25
+U_O_OfficerUniform_ocamo
+V_BandollierB_khk
+H_Beret_ocamo
+
+Mercinary 1 $125/30
+U_OG_Guerilla1_1
+V_Chestrig_oli
+H_Shemag_olive
+
+Mercinary 2 $125/30
+U_OG_Guerilla1_1
+V_BandollierB_blk
+H_Cap_oli
+
 
 GUER:
-??"I_medic_F"?? -honestly not sure if we need this $50/15
-"I_engineer_F" Engineer $50/15
-"I_helipilot_F" Helicopter Pilot $150/40
-"I_crew_F" Tank Driver $150/45
-/////Cosmetic/////
-"I_Sniper_F" Ghillie Suit $200/50
-"I_Soldier_lite_F" Special Forces $100/25
-"I_officer_F" Officer $100/25
-"I_G_Soldier_SL_F" Partisan 1 $125/30
-"I_G_Soldier_TL_F" Partisan 2 $125/30
+Medic $50/15
+U_I_CombatUniform_shortsleeve
+V_PlateCarrierIA2_dgtl
+H_HelmetIA
+
+Engineer $50/15
+U_I_CombatUniform
+V_PlateCarrierIA1_dgtl
+H_HelmetIA
+
+Helicopter Pilot $150/40
+U_I_HeliPilotCoveralls
+H_PilotHelmetHeli_I
+V_TacVest_oli
+
+Tank Driver $150/45
+U_I_CombatUniform
+V_BandollierB_oli
+H_HelmetCrew_I
+
+Ghillie Suit $200/50
+U_I_GhillieSuit
+V_Chestrig_oli
+
+Special Forces $100/25
+U_I_CombatUniform_shortsleeve
+V_Chestrig_oli
+H_MilCap_dgtl
+
+Officer $100/25
+U_I_OfficerUniform
+V_BandollierB_oli
+H_MilCap_dgtl
+
+Partisan 1 $125/30
+U_IG_leader
+V_Chestrig_blk
+H_Watchcap_blk
+
+Partisan 2 $125/30
+U_IG_Guerilla3_1
+V_BandollierB_khk
+H_Shemag_olive
+
 
 
 _________________________________________________________
