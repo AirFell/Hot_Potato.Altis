@@ -12,7 +12,7 @@ _pos = getMarkerPos _RandomPosM;
 _newPos = [_pos, 0, 15, 15, 0, 10, 0] call BIS_fnc_findSafePos;
 Truck_1 = createVehicle ["C_Van_01_transport_F", _newPos, [], 0, "None"];
 
-diag_log "truck has been created!";
+diag_log "truck has been created! -Mission 3";
 
 //create a marker to show everyone where the truck is.
 _missionMarker = createMarker [format ["Mission_%1", MissionCounter],_pos];
