@@ -36,10 +36,10 @@ class Mission
 	class Intel
 	{
 		resistanceWest=0;
-		startWeather=0.1;
+		startWeather=0;
 		startWind=0.099999994;
 		startWaves=0.099999994;
-		forecastWeather=0.1;
+		forecastWeather=0;
 		forecastWind=0.099999994;
 		forecastWaves=0.099999994;
 		rainForced=1;
