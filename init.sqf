@@ -18,14 +18,22 @@ if (isDedicated) then {
 	diag_log "The server is Running!";
 	
 	month = floor(random 12) + 1;
+	publicVariable "month";
 	diag_log format["Month is %1", month];
+	
 	day = floor(random 28) + 1;
+	publicVariable "day";
 	diag_log format["Day is %1", day];
+	
 	_hours = [6,7,8,9,10,11,12,13,14,15,16,17,18];
 	hour = _hours call BIS_fnc_selectRandom;
+	publicVariable "hour";
 	diag_log format["Hour is %1", hour];
+	
 	AF_Weather = ["CLEAR","CLOUDY","RAIN"] call BIS_fnc_SelectRandom;
+	publicVariable "AF_Weather";
 	diag_log format ["Weather is %1", AF_Weather];
+	
 	serverTimeSet = 1;
 	publicVariable "serverTimeSet";
 	
