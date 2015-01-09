@@ -3,6 +3,7 @@
 //"Where's Barry?!?" script by Axek, edited for use in this mission by AirFell
 //[R3F] Logistics 3.0 by R3F Projects
 //Real Weather - dynamic weather for MP games by Code34 ~slight edit by AirFell to randomize mission time on server start.
+//Zuff's Group Management
 
 enableSaving [false, false];
 
@@ -113,6 +114,11 @@ if (isDedicated) then {
 	
 	_nul = []execVM "client\dialogs\playerHud.sqf";
 
+	
+	execVM "client\groupsMenu\initGroups.sqf";
+	player addEventHandler ["Respawn", {
+        [player] execVM "client\groupsMenu\initGroups.sqf";
+    }];
 /*
 	//USE FOR TEST ADDACTIONS
 	player addAction [
