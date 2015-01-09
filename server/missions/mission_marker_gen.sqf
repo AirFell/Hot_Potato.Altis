@@ -20,8 +20,6 @@ for "_i" from 0 to 100 do {
 	MissionMarkerArray = MissionMarkerArray + [format["marker_Mission%1", _markerLoopCounterMission]];
 	_markerLoopCounterMission = _markerLoopCounterMission + 1;
 };
-
-MissionCounter = MissionCounter + 1;
 _nul = []execVM "server\missions\mission_1.sqf";
 sleep 30;
 _nul = []execVM "server\missions\mission_init.sqf";

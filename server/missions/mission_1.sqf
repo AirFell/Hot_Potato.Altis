@@ -11,6 +11,8 @@ _number = 0;
 _autocount = 0;
 sleep 30;
 
+MissionCounter = MissionCounter + 1;
+
 //chooses a random marker from the array
 _RandomPosM = MissionMarkerArray select floor random count MissionMarkerArray;
 MissionMarkerArray = MissionMarkerArray - [_RandomPosM];
