@@ -107,7 +107,7 @@
 	};
 
 	// SERVER SIDE SCRIPT
-	if (!isServer) exitWith{};
+	if (!isDedicated) exitWith{};
 
 	if(!_realtime) then { setTimeMultiplier _timeratio; };
 

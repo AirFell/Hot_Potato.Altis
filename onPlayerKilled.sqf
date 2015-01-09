@@ -84,9 +84,25 @@ Script is written as need for a pilot as example.
 		removeVest player;
 		removeHeadgear player;
 		sleep 0.1;
-		player addUniform "U_B_HeliPilotCoveralls";
-		player addVest "V_TacVest_blk";
-		player addHeadgear "H_PilotHelmetHeli_B";
+		_nul = switch (side player) do {
+			case west: {
+				player addUniform "U_B_HeliPilotCoveralls";
+				player addVest "V_TacVest_blk";
+				player addHeadgear "H_PilotHelmetHeli_B";
+			};
+				
+			case east: {
+				player addUniform "U_O_PilotCoveralls";
+				player addVest "V_TacVest_khk";
+				player addHeadgear "H_PilotHelmetHeli_O";
+			};
+			
+			case resistance: {
+				player addUniform "U_I_HeliPilotCoveralls";
+				player addVest "V_TacVest_oli";
+				player addHeadgear "H_PilotHelmetHeli_I";
+			};
+		};
 		
 		//put everything back.
 		{
