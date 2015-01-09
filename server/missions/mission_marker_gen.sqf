@@ -14,7 +14,7 @@ fnc_createMarkerMission = {
   //format["%1", _m] setMarkerText format["Mission%1", _markerLoopCounterMission];
 };
 
-for "_i" from 0 to 50 do {
+for "_i" from 0 to 100 do {
     _p = ["mrkMission",0,["mrkBlue","mrkRed","mrkGreen"], 100] call SHK_pos;
     [_p,"ColorBlack"] call fnc_createMarkerMission;
 	MissionMarkerArray = MissionMarkerArray + [format["marker_Mission%1", _markerLoopCounterMission]];
@@ -22,4 +22,8 @@ for "_i" from 0 to 50 do {
 };
 
 
+_nul = []execVM "server\missions\mission_init.sqf";
+sleep 5;
+_nul = []execVM "server\missions\mission_init.sqf";
+sleep 5;
 _nul = []execVM "server\missions\mission_init.sqf";

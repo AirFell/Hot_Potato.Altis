@@ -39,7 +39,6 @@ if (isDedicated) then {
 
 	diag_log "The server got through all its init files!";
 	
-//	_nul = []execVM "server\missions\mission_init.sqf";
 } else {
 
 ///////////////////////////////////////////////////////////////
