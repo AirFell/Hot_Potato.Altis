@@ -52,7 +52,7 @@
 	_startingdate = [2013, month, day, hour, 00];
 
 	// Mission starting weather "CLEAR|CLOUDY|RAIN";
-	_startingweather = "CLEAR";
+	_startingweather = AF_Weather;
 
 	/////////////////////////////////////////////////////////////////
 	// Do not edit below

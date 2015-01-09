@@ -3,7 +3,7 @@ guer_enemy_detected = 0;
 while {True} do {
 	_list = [];
 	sleep 1;
-	_list = (getPos guer_base) nearEntities ["Man", 250];
+	_list = (getPos guer_base) nearEntities ["CAManBase", 250];
 	{
 		if (_x distance guer_base < 250 && side _x != resistance) then {
 			guer_enemy_detected = 1;

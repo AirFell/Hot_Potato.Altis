@@ -3,7 +3,7 @@ east_enemy_detected = 0;
 while {True} do {
 	_list = [];
 	sleep 1;
-	_list = (getPos east_base) nearEntities ["Man", 250];
+	_list = (getPos east_base) nearEntities ["CAManBase", 250];
 	{
 		if (_x distance east_base < 250 && side _x != east) then {
 			east_enemy_detected = 1;

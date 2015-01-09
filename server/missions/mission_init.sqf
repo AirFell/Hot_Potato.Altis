@@ -3,6 +3,6 @@ diag_log "Mission_init.sqf is running!";
 sleep 30;
 
 //random mission chooser thing. Raise random number.
-_random = floor(random 3) + 1;
+_random = floor(random 2) + 2;
 MissionCounter = MissionCounter + 1;
 _nul = []execVM format["server\missions\mission_%1.sqf", _random];

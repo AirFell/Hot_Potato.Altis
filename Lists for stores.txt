@@ -188,7 +188,7 @@ U_B_CombatUniform_mcam_vest
 V_Chestrig_rgr
 H_HelmetB_desert
 
-Helicopter Pilot $150/40
+Helicopter Pilot $150/40 -needs NV goggles.
 U_B_HeliPilotCoveralls
 V_TacVest_blk
 H_PilotHelmetHeli_B
@@ -202,7 +202,7 @@ Ghillie Suit $200/50
 U_B_GhillieSuit
 V_Chestrig_rgr
 
-Special Forces $100/25
+Special Forces $100/25 -needs NV goggles
 U_B_CombatUniform_mcam_vest
 V_Chestrig_rgr
 H_Watchcap_camo

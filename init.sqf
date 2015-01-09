@@ -24,6 +24,8 @@ if (isDedicated) then {
 	_hours = [6,7,8,9,10,11,12,13,14,15,16,17,18];
 	hour = _hours call BIS_fnc_selectRandom;
 	diag_log format["Hour is %1", hour];
+	AF_Weather = ["CLEAR","CLOUDY","RAIN"] call BIS_fnc_SelectRandom;
+	diag_log format ["Weather is %1", AF_Weather];
 	serverTimeSet = 1;
 	publicVariable "serverTimeSet";
 	

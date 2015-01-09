@@ -21,9 +21,7 @@ for "_i" from 0 to 100 do {
 	_markerLoopCounterMission = _markerLoopCounterMission + 1;
 };
 
-
-_nul = []execVM "server\missions\mission_init.sqf";
-sleep 5;
-_nul = []execVM "server\missions\mission_init.sqf";
-sleep 5;
+MissionCounter = MissionCounter + 1;
+_nul = []execVM "server\missions\mission_1.sqf";
+sleep 30;
 _nul = []execVM "server\missions\mission_init.sqf";
