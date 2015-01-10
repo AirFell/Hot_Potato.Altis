@@ -28,6 +28,8 @@ switch(_this select 0) do
 {
 	case 9: 
 	{	
+		ctrlShow [VEHICLELIST, false];
+		ctrlShow [MAINPICTURE, true];
 		_picture ctrlSetText "client\icons\classMenu_Main.paa";
 		ctrlShow [BUTTON1, true];
 		_button1 ctrlSetText "Medic";
@@ -60,16 +62,24 @@ switch(_this select 0) do
 	};
 	case 10: 
 	{
-	    _picture ctrlSetText "client\icons\classMenu_Main.paa";
 		//_build buttonSetAction "[""BaseCTRL"", ""FactBuild""]execVM ""client\dialogs\W_TWR1_dialog_functions.sqf""";
 		//_upgrade buttonSetAction "[""BaseCTRL"", ""FactUpgrade""]execVM ""client\dialogs\W_TWR1_dialog_functions.sqf""";
 		//_depotDescription ctrlSetStructuredText parseText "<t size='1'>This is where the factory description bullshit goes!</t>";
+		ctrlShow [MAINPICTURE, false];
 		ctrlShow [VEHICLELIST, true];
 		ctrlShow [PURCHASEBUTTON, false];
 		ctrlShow [BUTTON1, false];
+		_button2 ctrlSetText "";
+		_button2 buttonSetAction "";
 		ctrlShow [BUTTON3, false];
+		_button4 ctrlSetText "";
+		_button4 buttonSetAction "";
 		ctrlShow [BUTTON5, false];
+		_button6 ctrlSetText "";
+		_button6 buttonSetAction "";
 		ctrlShow [BUTTON7, false];
+		_button8 ctrlSetText "";
+		_button8 buttonSetAction "";
 		ctrlShow [BUTTON9, false];
 	};
 	case 11: 
@@ -127,13 +137,6 @@ switch(_this select 0) do
 		ctrlShow [PURCHASEBUTTON, true];
 		ctrlShow [COSTTEXT, true];
 		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 125 Resource Cost:150</t>"];
-	};
-	case 19: 
-	{
-		_picture ctrlSetText "client\icons\classMenu_Recon.paa";
-		ctrlShow [PURCHASEBUTTON, true];
-		ctrlShow [COSTTEXT, true];
-		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 150 Resource Cost:200</t>"];
 	};
 };
 /*

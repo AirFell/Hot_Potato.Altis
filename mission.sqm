@@ -1016,6 +1016,22 @@ class Mission
 			type="Empty";
 		};
 	};
+	class Sensors
+	{
+		items=1;
+		class Item0
+		{
+			position[]={14585.241,-6.3654141,6034.499};
+			activationBy="BRAVO";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="null = []execVM ""client\dialogs\bassPro\bassPro_Load.sqf"";";
+			class Effects
+			{
+			};
+		};
+	};
 };
 class Intro
 {
