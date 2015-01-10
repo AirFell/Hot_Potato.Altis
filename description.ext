@@ -1,6 +1,7 @@
 #include "client\defines.hpp"
 #include "client\dialogs\autoZone\autoZone.hpp"
 #include "client\dialogs\homeDepot\homeDepot.hpp"
+#include "client\dialogs\bassPro\bassPro.hpp"
 #include "R3F_LOG\desc_include.h"
 
 respawn = 3;
