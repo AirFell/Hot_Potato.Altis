@@ -22,11 +22,11 @@ _spawn3 = "";
 _spawn4 = "";
 _spawn5 = "";
 _purchase = "";
-_Puniform = uniform player;
+_P_uniform = uniform player;
 
 if(_playerSide == "WEST") then {
-	_airClassType = "B_Helipilot_F";
-	_tankClassType = "B_crew_F";
+	_airClassType = "U_B_HeliPilotCoveralls";
+	_tankClassType = "U_B_CombatUniform_mcam_vest";
 	_base_resources = west_base_resources;
 	_spawn1 = west_veh_shop_spawn1;
 	_spawn2 = west_veh_shop_spawn2;
@@ -35,8 +35,8 @@ if(_playerSide == "WEST") then {
 	_spawn5 = west_veh_shop_spawn5;
 };
 if(_playerSide == "EAST") then {
-	_airClassType = "O_Helipilot_F";
-	_tankClassType = "O_crew_F";
+	_airClassType = "U_O_PilotCoveralls";
+	_tankClassType = "U_O_SpecopsUniform_ocamo";
 	_base_resources = east_base_resources;
 	_spawn1 = east_veh_shop_spawn1;
 	_spawn2 = east_veh_shop_spawn2;
@@ -45,8 +45,8 @@ if(_playerSide == "EAST") then {
 	_spawn5 = east_veh_shop_spawn5;
 };
 if(_playerSide == "GUER") then {
-	_airClassType = "U_B_HeliPilotCoveralls";
-	_tankClassType = "I_crew_F";
+	_airClassType = "U_I_HeliPilotCoveralls";
+	_tankClassType = "U_I_CombatUniform";
 	_base_resources = guer_base_resources;
 	_spawn1 = guer_veh_shop_spawn1;
 	_spawn2 = guer_veh_shop_spawn2;
@@ -65,8 +65,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do {
 		if(_creditCost > _credits) exitWith {hintsilent "You do not have enough Credits"};
 		if(_resourceCost > _base_resources) exitWith {hintsilent "You do not have enough Resources"};
 		if(_resourceCost < 1) exitWith {};
-		if (((_x select 1) isKindOf "Tank")&&(typeOf player != _tankClassType)) exitWith {hintsilent "You must be a crewman to operate this vehicle."};
-		if (((_x select 1) isKindOf "Air")&&(_Puniform != _airClassType)) exitWith {hintsilent "You must be a pilot to operate this vehicle."};
+		if (((_x select 1) isKindOf "Tank")&&(_P_uniform != _tankClassType)) exitWith {hintsilent "You must be a crewman to operate this vehicle."};
+		if (((_x select 1) isKindOf "Air")&&(_P_uniform != _airClassType)) exitWith {hintsilent "You must be a pilot to operate this vehicle."};
 		_ObjectsInArea0 = [(getPos _spawn1) select 0, (getPos _spawn1) select 1] nearObjects 3;
 		_ObjectsInArea1 = [(getPos _spawn2) select 0, (getPos _spawn2) select 1] nearObjects 3;
 		_ObjectsInArea2 = [(getPos _spawn3) select 0, (getPos _spawn3) select 1] nearObjects 3;

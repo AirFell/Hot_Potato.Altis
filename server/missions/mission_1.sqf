@@ -5,6 +5,7 @@ Primary Resource Mission
 */
 _pos = [];
 _newPos = [];
+_RandomPosM = [];
 _Truck = "";
 _missionMarker = "";
 _number = 0;
@@ -70,20 +71,20 @@ for [{_autocount = 180}, {_autocount > 0}, {_autocount = _autocount - 1}] do {
 				sleep 4;
 			} else {
 				_autocount = 0;
-				diag_log "A player was found near the barrel truck. Mission ended.";
+				diag_log "A player was found near the barrel truck. Mission ended. Mission_1.sqf";
 			};
 		} else {
 			_autocount = 0;
-			diag_log "The truck has left the spawn area. Mission ended.";
+			diag_log "The truck has left the spawn area. Mission ended. Mission_1.sqf";
 		};
 	} else {
 		_autocount = 0;
-		diag_log "The barrel truck was found to be destroyed. Mission ended.";
+		diag_log "The barrel truck was found to be destroyed. Mission ended. Mission_1.sqf";
 	};
 };
-diag_log "Autocount is less than or equal to Zero.";
+diag_log "Autocount finished. Mission_1.sqf";
 deleteMarker _missionMarker;
-["The resource mission has ended.", "hint", true, false] call BIS_fnc_MP;
+["A resource mission has ended.", "hint", true, false] call BIS_fnc_MP;
 sleep 60;
 _nul = []execVM "server\missions\mission_1.sqf";
 

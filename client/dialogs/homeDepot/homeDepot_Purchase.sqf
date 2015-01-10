@@ -1,10 +1,8 @@
 #include "homeDepot_Defines.hpp";
 disableSerialization;
 
-playerCredits = 1000;
-_credits = playerCredits;
-
 _playerSide = str(playerSide);
+_credits = playercredits;
 _size = 1;
 _price = 0;
 _ObjectsInArea = [];

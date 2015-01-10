@@ -18,6 +18,13 @@ Marker_Load_Complete = 0;
 waitUntil {Marker_Load_Complete == 1};
 private "_veh";
 
+_veh = "";
+_temp_pos = [];
+_pos = [];
+_check_pos = [];
+_RandomPosE = [];
+_tem_posMrk = [];
+
 _veh = _this select 0;
 _abandonDelay = (_this select 1) * 60;
 _deadDelay = (_this select 2) * 60;

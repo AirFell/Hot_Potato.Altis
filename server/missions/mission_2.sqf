@@ -5,6 +5,7 @@ Secondary Resource Mission
 */
 _pos = [];
 _newPos = [];
+_RandomPosM = [];
 _Truck = "";
 _missionMarker = "";
 _number = 0;

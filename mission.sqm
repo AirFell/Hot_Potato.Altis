@@ -762,7 +762,7 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={21858.539,17.387526,16439.479};
+			position[]={21858.238,17.394444,16432.82};
 			name="east_base_random_6";
 			type="Empty";
 			angle=59.630333;

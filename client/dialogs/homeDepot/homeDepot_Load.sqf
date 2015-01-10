@@ -41,7 +41,6 @@ _vehlist lbSetCurSel -1;
 		};
 	};
 } forEach allFortificationArrays;
-playerCredits = 1000;
 _resourceCost = 0;
 _creditCost = 0;
 _credits = playerCredits;
