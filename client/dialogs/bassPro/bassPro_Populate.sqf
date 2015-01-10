@@ -18,7 +18,9 @@ _button8 = _Dialog displayCtrl BUTTON8;
 _button9 = _Dialog displayCtrl BUTTON9;
 _picture = _Dialog displayCtrl MAINPICTURE;
 _costText = _Dialog displayCtrl COSTTEXT;
-
+_purchase = _Dialog displayCtrl PURCHASEBUTTON;
+_vehlist = _dialog displayCtrl VEHICLELIST;
+_costText ctrlSetStructuredText parseText format["<t size='0.75'></t>"];
 
 
 
@@ -26,8 +28,185 @@ _costText = _Dialog displayCtrl COSTTEXT;
 
 switch(_this select 0) do 
 {
+	case 1: 
+	{
+		lbClear _vehlist;
+		_vehlist lbSetCurSel -1;
+		_vehArray = call crateArray_Ammo;
+		{
+			_vehClass = _x select 1;
+	
+			if (1<2) then
+			{
+				_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
+		
+				if (2>1) then
+				{
+					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
+					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetData [_vehlistIndex, _vehClass];
+				};
+			};
+		} forEach _vehArray;
+	};
+	case 2: 
+	{
+		lbClear _vehlist;
+		_vehlist lbSetCurSel -1;
+		_vehArray = call crateArray_Basic;
+		{
+			_vehClass = _x select 1;
+	
+			if (1<2) then
+			{
+				_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
+		
+				if (2>1) then
+				{
+					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
+					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetData [_vehlistIndex, _vehClass];
+				};
+			};
+		} forEach _vehArray;	
+	};
+	case 3: 
+	{
+		lbClear _vehlist;
+		_vehlist lbSetCurSel -1;
+		_vehArray = call crateArray_Support;
+		{
+			_vehClass = _x select 1;
+	
+			if (1<2) then
+			{
+				_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
+		
+				if (2>1) then
+				{
+					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
+					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetData [_vehlistIndex, _vehClass];
+				};
+			};
+		} forEach _vehArray;	
+	};
+	case 4: 
+	{
+		lbClear _vehlist;
+		_vehlist lbSetCurSel -1;
+		_vehArray = call crateArray_Supplies;
+		{
+			_vehClass = _x select 1;
+	
+			if (1<2) then
+			{
+				_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
+		
+				if (2>1) then
+				{
+					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
+					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetData [_vehlistIndex, _vehClass];
+				};
+			};
+		} forEach _vehArray;	
+	};
+	case 5: 
+	{
+		lbClear _vehlist;
+		_vehlist lbSetCurSel -1;
+		_vehArray = call crateArray_Special;
+		{
+			_vehClass = _x select 1;
+	
+			if (1<2) then
+			{
+				_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
+		
+				if (2>1) then
+				{
+					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
+					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetData [_vehlistIndex, _vehClass];
+				};
+			};
+		} forEach _vehArray;	
+	};
+	case 6: 
+	{
+		lbClear _vehlist;
+		_vehlist lbSetCurSel -1;
+		_vehArray = call crateArray_Explosives;
+		{
+			_vehClass = _x select 1;
+	
+			if (1<2) then
+			{
+				_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
+		
+				if (2>1) then
+				{
+					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
+					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetData [_vehlistIndex, _vehClass];
+				};
+			};
+		} forEach _vehArray;	
+	};
+	case 7: 
+	{
+		lbClear _vehlist;
+		_vehlist lbSetCurSel -1;
+		_vehArray = call crateArray_Launchers;
+		{
+			_vehClass = _x select 1;
+	
+			if (1<2) then
+			{
+				_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
+		
+				if (2>1) then
+				{
+					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
+					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetData [_vehlistIndex, _vehClass];
+				};
+			};
+		} forEach _vehArray;	
+	};
+	case 8: 
+	{
+		lbClear _vehlist;
+		_vehlist lbSetCurSel -1;
+		_vehArray = call crateArray_LargeCache;
+		{
+			_vehClass = _x select 1;
+	
+			if (1<2) then
+			{
+				_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
+		
+				if (2>1) then
+				{
+					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
+					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetData [_vehlistIndex, _vehClass];
+				};
+			};
+		} forEach _vehArray;	
+	};
 	case 9: 
 	{	
+		ctrlShow [COSTTEXT, false];
 		ctrlShow [VEHICLELIST, false];
 		ctrlShow [MAINPICTURE, true];
 		_picture ctrlSetText "client\icons\classMenu_Main.paa";
@@ -62,123 +241,101 @@ switch(_this select 0) do
 	};
 	case 10: 
 	{
-		//_build buttonSetAction "[""BaseCTRL"", ""FactBuild""]execVM ""client\dialogs\W_TWR1_dialog_functions.sqf""";
-		//_upgrade buttonSetAction "[""BaseCTRL"", ""FactUpgrade""]execVM ""client\dialogs\W_TWR1_dialog_functions.sqf""";
-		//_depotDescription ctrlSetStructuredText parseText "<t size='1'>This is where the factory description bullshit goes!</t>";
 		ctrlShow [MAINPICTURE, false];
 		ctrlShow [VEHICLELIST, true];
 		ctrlShow [PURCHASEBUTTON, false];
-		ctrlShow [BUTTON1, false];
-		_button2 ctrlSetText "";
-		_button2 buttonSetAction "";
-		ctrlShow [BUTTON3, false];
-		_button4 ctrlSetText "";
-		_button4 buttonSetAction "";
-		ctrlShow [BUTTON5, false];
-		_button6 ctrlSetText "";
-		_button6 buttonSetAction "";
-		ctrlShow [BUTTON7, false];
-		_button8 ctrlSetText "";
-		_button8 buttonSetAction "";
+		ctrlShow [BUTTON1, true];
+		_button1 ctrlSetText "Ammo";
+		_button1 buttonSetAction "[1] execVM 'client\dialogs\bassPro\bassPro_Populate.sqf'";
+		_button2 ctrlSetText "Basic";
+		_button2 buttonSetAction "[2] execVM 'client\dialogs\bassPro\bassPro_Populate.sqf'";
+		ctrlShow [BUTTON3, true];
+		_button3 ctrlSetText "Support";
+		_button3 buttonSetAction "[3] execVM 'client\dialogs\bassPro\bassPro_Populate.sqf'";
+		_button4 ctrlSetText "Supplies";
+		_button4 buttonSetAction "[4] execVM 'client\dialogs\bassPro\bassPro_Populate.sqf'";
+		ctrlShow [BUTTON5, true];
+		_button5 ctrlSetText "Special";
+		_button5 buttonSetAction "[5] execVM 'client\dialogs\bassPro\bassPro_Populate.sqf'";
+		_button6 ctrlSetText "Explosive";
+		_button6 buttonSetAction "[6] execVM 'client\dialogs\bassPro\bassPro_Populate.sqf'";
+		ctrlShow [BUTTON7, true];
+		_button7 ctrlSetText "Launchers";
+		_button7 buttonSetAction "[7] execVM 'client\dialogs\bassPro\bassPro_Populate.sqf'";
+		_button8 ctrlSetText "Cache";
+		_button8 buttonSetAction "[8] execVM 'client\dialogs\bassPro\bassPro_Populate.sqf'";
 		ctrlShow [BUTTON9, false];
 	};
 	case 11: 
 	{
 		_picture ctrlSetText "client\icons\classMenu_Recon.paa";
 		ctrlShow [PURCHASEBUTTON, true];
+		_purchase buttonSetAction "[1] execVM 'client\dialogs\bassPro\bassPro_Purchase.sqf'";
 		ctrlShow [COSTTEXT, true];
-		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 125 Resource Cost:125</t>"];
+		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 50</t>"];
 	};
 	case 12: 
 	{
 		_picture ctrlSetText "client\icons\classMenu_Recon.paa";
 		ctrlShow [PURCHASEBUTTON, true];
+		_purchase buttonSetAction "[2] execVM 'client\dialogs\bassPro\bassPro_Purchase.sqf'";
 		ctrlShow [COSTTEXT, true];
-		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 150 Resource Cost:150</t>"];
+		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 50</t>"];
 	};	
 	case 13: 
 	{
 		_picture ctrlSetText "client\icons\classMenu_Recon.paa";
 		ctrlShow [PURCHASEBUTTON, true];
+		_purchase buttonSetAction "[3] execVM 'client\dialogs\bassPro\bassPro_Purchase.sqf'";
 		ctrlShow [COSTTEXT, true];
-		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 150 Resource Cost:150</t>"];
+		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 150</t>"];
 	};
 	case 14: 
 	{
 		_picture ctrlSetText "client\icons\classMenu_Recon.paa";
 		ctrlShow [PURCHASEBUTTON, true];
+		_purchase buttonSetAction "[4] execVM 'client\dialogs\bassPro\bassPro_Purchase.sqf'";
 		ctrlShow [COSTTEXT, true];
-		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 150 Resource Cost:125</t>"];
+		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 150</t>"];
 	};
 	case 15: 
 	{
 		_picture ctrlSetText "client\icons\classMenu_Recon.paa";
 		ctrlShow [PURCHASEBUTTON, true];
+		_purchase buttonSetAction "[5] execVM 'client\dialogs\bassPro\bassPro_Purchase.sqf'";
 		ctrlShow [COSTTEXT, true];
-		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 175 Resource Cost:150</t>"];
+		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 200</t>"];
 	};
 	case 16: 
 	{
 		_picture ctrlSetText "client\icons\classMenu_Recon.paa";
 		ctrlShow [PURCHASEBUTTON, true];
+		_purchase buttonSetAction "[6] execVM 'client\dialogs\bassPro\bassPro_Purchase.sqf'";
 		ctrlShow [COSTTEXT, true];
-		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 150 Resource Cost:175</t>"];
+		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 100</t>"];
 	};
 	case 17: 
 	{
 		_picture ctrlSetText "client\icons\classMenu_Recon.paa";
 		ctrlShow [PURCHASEBUTTON, true];
+		_purchase buttonSetAction "[7] execVM 'client\dialogs\bassPro\bassPro_Purchase.sqf'";
 		ctrlShow [COSTTEXT, true];
-		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 200 Resource Cost:150</t>"];
+		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 100</t>"];
 	};
 	case 18: 
 	{
 		_picture ctrlSetText "client\icons\classMenu_Recon.paa";
 		ctrlShow [PURCHASEBUTTON, true];
+		_purchase buttonSetAction "[8] execVM 'client\dialogs\bassPro\bassPro_Purchase.sqf'";
 		ctrlShow [COSTTEXT, true];
-		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 125 Resource Cost:150</t>"];
+		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 125</t>"];
 	};
-};
-/*
-#include "bassPro_Defines.hpp";
-disableSerialization;
-private ["_switch", "_dialog", "_vehlisttext", "_vehlist", "_vehArray", "_vehClass", "_vehPicture", "_vehlistIndex"];
-_switch = _this select 0;
-
-// Grab access to the controls
-_dialog = findDisplay BASSPRO;
-//_vehlisttext = _dialog displayCtrl vehshop_veh_TEXT;
-_vehlist = _dialog displayCtrl VEHICLELIST;
-
-
-lbClear _vehlist;
-_vehlist lbSetCurSel -1;
-
-_vehArray = switch (_switch) do 
-{
-	case 0: { call lightArray_Tier1 +call lightArray_Tier2 +call lightArray_Tier3 };
-	case 1: { call heavyArray_Tier2 +call heavyArray_Tier3};
-	case 2: { call airArray_Tier1 +call airArray_Tier2 +call airArray_Tier3};
-	case 3: { hint "Im not implemented cause im lazy!"};
-	default { [] };
-};
-
-
-// Populate the vehicle shop list
-{
-	_vehClass = _x select 1;
-	
-	if (1<2) then
+	case 19: 
 	{
-		_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
-		
-		if (2>1) then
-		{
-			_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
-			_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
-			_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
-			_vehlist lbSetData [_vehlistIndex, _vehClass];
-		};
+		_picture ctrlSetText "client\icons\classMenu_Recon.paa";
+		ctrlShow [PURCHASEBUTTON, true];
+		_purchase buttonSetAction "[9] execVM 'client\dialogs\bassPro\bassPro_Purchase.sqf'";
+		ctrlShow [COSTTEXT, true];
+		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 125</t>"];
 	};
-} forEach _vehArray;
-*/
+};

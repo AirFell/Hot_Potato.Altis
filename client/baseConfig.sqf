@@ -88,59 +88,51 @@ allFactoryVehicles = (call vehicleArray_Light + call vehicleArray_Heavy + call v
 
 crateArray_Ammo = compileFinal str
 [
-    ["//---Ammo---//", "", 0,0],
-	["Ammo A", "Box_NATO_Ammo_F", 12,50],
-	["Ammo B", "Box_East_Ammo_F", 12,50],
-	["Ammo C", "Box_IND_Ammo_F", 12,50]
+	["West Ammo", "Box_NATO_Ammo_F", 12,50],
+	["East Ammo", "Box_East_Ammo_F", 12,50],
+	["Inde Ammo", "Box_IND_Ammo_F", 12,50]
 ];
 crateArray_Basic = compileFinal str
 [
-    ["//---Basic Weapons---//", "", 0,0],
-	["Nato", "Box_NATO_Wps_F", 25,100],
-	["East", "Box_East_Wps_F", 25,100],
-	["Independent", "Box_IND_Wps_F", 25,100]
+	["West Basic Weapons", "Box_NATO_Wps_F", 25,100],
+	["East Basic Weapons", "Box_East_Wps_F", 25,100],
+	["Inde Basic Weapons", "Box_IND_Wps_F", 25,100]
 ];
 crateArray_Support = compileFinal str
 [
-    ["//---Support---//", "", 0,0],
-	["Support A", "Box_NATO_Support_F", 50,200],
-	["Support B", "Box_East_Support_F", 50,200],
-	["Support C", "Box_IND_Support_F", 50,200]
+	["West Support", "Box_NATO_Support_F", 50,200],
+	["East Support", "Box_East_Support_F", 50,200],
+	["Inde Support", "Box_IND_Support_F", 50,200]
 ];
 crateArray_Supplies = compileFinal str
 [
-    ["//---Supplies---//", "", 0,0],
-	["Supplies A", "B_supplyCrate_F", 75,300],
-	["Supplies B", "O_supplyCrate_F", 75,300],
-	["Supplies C", "I_supplyCrate_F", 75,300]
+	["West Supplies", "B_supplyCrate_F", 75,300],
+	["East Supplies", "O_supplyCrate_F", 75,300],
+	["Inde Supplies", "I_supplyCrate_F", 75,300]
 ];
 crateArray_Special = compileFinal str
 [
-	["//---Special Weapons---//", "", 0,0],
-    ["Nato", "Box_NATO_WpsSpecial_F", 100,400],
-	["East", "Box_East_WpsSpecial_F", 100,400],
-	["Independent", "Box_IND_WpsSpecial_F", 100,400]
+    ["West Special Weapons", "Box_NATO_WpsSpecial_F", 100,400],
+	["East Special Weapons", "Box_East_WpsSpecial_F", 100,400],
+	["Inde Special Weapons", "Box_IND_WpsSpecial_F", 100,400]
 ];
 crateArray_Explosives = compileFinal str
 [
-    ["//---Explosives---//", "", 0,0],
-	["Explosives A", "Box_NATO_AmmoOrd_F", 125,500],
-	["Explosives B", "Box_East_AmmoOrd_F", 125,500],
-	["Explosives C", "Box_IND_AmmoOrd_F", 125,500]
+	["West Explosives", "Box_NATO_AmmoOrd_F", 125,500],
+	["East Explosives", "Box_East_AmmoOrd_F", 125,500],
+	["Inde Explosives", "Box_IND_AmmoOrd_F", 125,500]
 ];
 crateArray_Launchers = compileFinal str
 [
-    ["//---Launchers---//", "", 0,0],
-	["Launchers A", "Box_NATO_WpsLaunch_F", 150,600],
-	["Launchers B", "Box_East_WpsLaunch_F", 150,600],
-	["Launchers C", "Box_IND_WpsLaunch_F", 150,600]
+	["West Launchers", "Box_NATO_WpsLaunch_F", 150,600],
+	["East Launchers", "Box_East_WpsLaunch_F", 150,600],
+	["Inde Launchers", "Box_IND_WpsLaunch_F", 150,600]
 ];
 crateArray_LargeCache = compileFinal str
 [
-    ["//---Large Cache---//", "", 0,0],
-	["NATO Cache", "B_CargoNet_01_ammo_F", 175,700],
-	["CSAT Cache", "O_CargoNet_01_ammo_F", 175,700],
-	["AAF Cache", "I_CargoNet_01_ammo_F", 175,700]
+	["West Cache", "B_CargoNet_01_ammo_F", 175,700],
+	["East Cache", "O_CargoNet_01_ammo_F", 175,700],
+	["Inde Cache", "I_CargoNet_01_ammo_F", 175,700]
 ];
 
 allCrateArrays = (call crateArray_Ammo + call crateArray_Basic + call crateArray_Support + call crateArray_Supplies + call crateArray_Special + call crateArray_Explosives + call crateArray_Launchers + call crateArray_LargeCache);

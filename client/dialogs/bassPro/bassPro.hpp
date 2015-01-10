@@ -59,7 +59,7 @@ class bassPro_Dialog
 	class bassPro_MenuTitleText: RscStructuredTextLeft
 	{
 		idc = -1;
-		text = "Factory Control"; //--- ToDo: Localize;
+		text = "Bass Pro Shop"; //--- ToDo: Localize;
 		x = 0.280384 * safezoneW + safezoneX;
 		y = 0.21 * safezoneH + safezoneY;
 		w = 0.155146 * safezoneW;
@@ -233,7 +233,7 @@ class bassPro_Dialog
 	{
 		idc = PURCHASEBUTTON;
 		text = "Purchase"; //--- ToDo: Localize;
-		onButtonClick = "[] execVM 'client\dialogs\bassPro\bassPro_Purchase.sqf'";
+		onButtonClick = "";
 		x = 0.544641 * safezoneW + safezoneX;
 		y = 0.67602117 * safezoneH + safezoneY;
 		w = 0.1119588 * safezoneW;

@@ -68,48 +68,4 @@ guer_base addEventHandler ["HandleDamage", {false}];
 
 
 	//USE FOR TEST ADDACTIONS
-	player addAction [
-	"TEST ADDACTION",
-	{
-/*
-All we will change for players are their Uniform, Vest, and Headgear.
-Script is written as need for a pilot as example.
-*/
-		//get all player stuff we need.
-		_Uitems = uniformItems player;
-		_Vitems = vestItems player;
-		
-		//remove the old uniform, add a new one.
-		removeUniform player;
-		removeVest player;
-		removeHeadgear player;
-		sleep 0.1;
-		_nul = switch (side player) do {
-			case west: {
-				player addUniform "U_B_HeliPilotCoveralls";
-				player addVest "V_TacVest_blk";
-				player addHeadgear "H_PilotHelmetHeli_B";
-			};
-				
-			case east: {
-				player addUniform "U_O_PilotCoveralls";
-				player addVest "V_TacVest_khk";
-				player addHeadgear "H_PilotHelmetHeli_O";
-			};
-			
-			case resistance: {
-				player addUniform "U_I_HeliPilotCoveralls";
-				player addVest "V_TacVest_oli";
-				player addHeadgear "H_PilotHelmetHeli_I";
-			};
-		};
-		
-		//put everything back.
-		{
-			player addItemToUniform _x;
-		} foreach _Uitems;
-		{
-			player addItemToVest _x;
-		} foreach _Vitems;
-	},
-	nil, 0, False, True, "", ""];
+
