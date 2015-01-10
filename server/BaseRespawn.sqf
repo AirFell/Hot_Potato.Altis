@@ -53,6 +53,7 @@ diag_log "BaseRespawn.sqf loaded.";
 						
 					
 					"west_base_marker" setMarkerPos getPos west_base;
+					sleep 0.1;
 					"mrkBlue" setMarkerPos getMarkerPos "west_base_marker";
 					"mrknoBlue" setMarkerPos getMarkerPos "west_base_marker";
 					
@@ -128,7 +129,7 @@ diag_log "BaseRespawn.sqf loaded.";
 					east_base setVariable ["R3F_LOG_disabled", true, true];
 					
 					"east_base_marker" setMarkerPos getPos east_base;
-					sleep 1;
+					sleep 0.1;
 					"mrkRed" setMarkerPos getMarkerPos "east_base_marker";
 					"mrknoRed" setMarkerPos getMarkerPos "east_base_marker";
 					
@@ -205,7 +206,7 @@ diag_log "BaseRespawn.sqf loaded.";
 					guer_base setVariable ["R3F_LOG_disabled", true, true];
 					
 					"guer_base_marker" setMarkerPos getPos guer_base;
-					sleep 1;
+					sleep 0.1;
 					"mrkGreen" setMarkerPos getMarkerPos "guer_base_marker";
 					"mrknoGreen" setMarkerPos getMarkerPos "guer_base_marker";
 					
