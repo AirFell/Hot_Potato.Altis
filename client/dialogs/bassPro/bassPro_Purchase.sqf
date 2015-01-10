@@ -25,6 +25,7 @@ switch(_this select 0) do
 		removeHeadgear player;
 		sleep 0.1;
 		_nul = switch (side player) do {
+//MEDIC
 			case west: {
 				player addUniform "U_B_CombatUniform_mcam_tshirt";
 				player addVest "V_PlateCarrierSpec_rgr";
@@ -66,6 +67,7 @@ switch(_this select 0) do
 		removeHeadgear player;
 		sleep 0.1;
 		_nul = switch (side player) do {
+//ENGINEER
 			case west: {
 				player addUniform "U_B_CombatUniform_mcam_vest";
 				player addVest "V_Chestrig_rgr";
@@ -107,22 +109,26 @@ switch(_this select 0) do
 		removeHeadgear player;
 		sleep 0.1;
 		_nul = switch (side player) do {
+//PILOT
 			case west: {
 				player addUniform "U_B_HeliPilotCoveralls";
 				player addVest "V_TacVest_blk";
 				player addHeadgear "H_PilotHelmetHeli_B";
+				player additem "NVGoggles";
 			};
 				
 			case east: {
 				player addUniform "U_O_PilotCoveralls";
 				player addVest "V_TacVest_khk";
 				player addHeadgear "H_PilotHelmetHeli_O";
+				player additem "NVGoggles_OPFOR";
 			};
 			
 			case resistance: {
 				player addUniform "U_I_HeliPilotCoveralls";
 				player addVest "V_TacVest_oli";
 				player addHeadgear "H_PilotHelmetHeli_I";
+				player additem "NVGoggles_INDEP";
 			};
 		};
 		
@@ -148,6 +154,7 @@ switch(_this select 0) do
 		removeHeadgear player;
 		sleep 0.1;
 		_nul = switch (side player) do {
+//TANK DRIVER
 			case west: {
 				player addUniform "U_B_CombatUniform_mcam_vest";
 				player addVest "V_BandollierB_rgr";
@@ -189,6 +196,7 @@ switch(_this select 0) do
 		removeHeadgear player;
 		sleep 0.1;
 		_nul = switch (side player) do {
+//GHILLIE
 			case west: {
 				player addUniform "U_B_GhillieSuit";
 				player addVest "V_Chestrig_rgr";
@@ -227,22 +235,26 @@ switch(_this select 0) do
 		removeHeadgear player;
 		sleep 0.1;
 		_nul = switch (side player) do {
+//SPEC OPS
 			case west: {
 				player addUniform "U_B_CombatUniform_mcam_vest";
 				player addVest "V_Chestrig_rgr";
 				player addHeadgear "H_Watchcap_camo";
+				player additem "NVGoggles";
 			};
 				
 			case east: {
 				player addUniform "U_O_CombatUniform_oucamo";
 				player addVest "V_HarnessO_gry";
 				player addHeadgear "H_HelmetO_oucamo";
+				player additem "NVGoggles_OPFOR";
 			};
 			
 			case resistance: {
 				player addUniform "U_I_CombatUniform_shortsleeve";
 				player addVest "V_Chestrig_oli";
 				player addHeadgear "H_MilCap_dgtl";
+				player additem "NVGoggles_INDEP";
 			};
 		};
 		
@@ -268,6 +280,7 @@ switch(_this select 0) do
 		removeHeadgear player;
 		sleep 0.1;
 		_nul = switch (side player) do {
+//OFFICER
 			case west: {
 				player addUniform "U_B_CombatUniform_mcam";
 				player addVest "V_BandollierB_rgr";
@@ -309,6 +322,7 @@ switch(_this select 0) do
 		removeHeadgear player;
 		sleep 0.1;
 		_nul = switch (side player) do {
+//SPECIAL 1
 			case west: {
 				player addUniform "U_BG_Guerilla2_1";
 				player addVest "V_TacVest_blk";
@@ -350,6 +364,7 @@ switch(_this select 0) do
 		removeHeadgear player;
 		sleep 0.1;
 		_nul = switch (side player) do {
+//SPECIAL 2
 			case west: {
 				player addUniform "U_BG_Guerilla2_3";
 				player addVest "V_TacVest_blk";
