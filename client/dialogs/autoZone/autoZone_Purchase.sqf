@@ -22,6 +22,7 @@ _spawn3 = "";
 _spawn4 = "";
 _spawn5 = "";
 _purchase = "";
+_Puniform = uniform player;
 
 if(_playerSide == "WEST") then {
 	_airClassType = "B_Helipilot_F";
@@ -44,7 +45,6 @@ if(_playerSide == "EAST") then {
 	_spawn5 = east_veh_shop_spawn5;
 };
 if(_playerSide == "GUER") then {
-	_Puniform = uniform player;
 	_airClassType = "U_B_HeliPilotCoveralls";
 	_tankClassType = "I_crew_F";
 	_base_resources = guer_base_resources;

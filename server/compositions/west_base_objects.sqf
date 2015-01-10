@@ -35,6 +35,10 @@ _objectName addEventHandler ["HandleDamage", {false}];
 
 _pos = getPos west_base;
 
+//flag
+west_flag = createVehicle ["Flag_Blue_F", _pos, [], 0, "CAN_COLLIDE"];
+west_flag setPos [(_pos select 0) + 0, (_pos select 1) - 15, 0];
+
 //Vehicle Shop
 west_veh_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
 west_veh_shop setPos [(_pos select 0) + 30, (_pos select 1) + 10, 0];
@@ -134,11 +138,6 @@ west_fort_depot_mrkr setVehicleVarName "west_fort_depot_mrkr";
 publicVariable "west_fort_depot_mrkr";
 west_fort_depot_mrkr addEventHandler ["HandleDamage", {false}];
 west_fort_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
-
-west_fort_depot_crate = createVehicle ["CargoNet_01_box_F", _pos, [], 0, "CAN_COLLIDE"];
-west_fort_depot_crate setPos [(_pos select 0) - 12, (_pos select 1) + 7.5, 0];
-west_fort_depot_crate setVehicleVarName "west_fort_depot_crate";
-publicVariable "west_fort_depot_crate";
 
 //Resource Deposit Control
 west_resc_depot_ctrl = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];

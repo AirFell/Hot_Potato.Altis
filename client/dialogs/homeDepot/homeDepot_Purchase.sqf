@@ -1,10 +1,6 @@
 #include "homeDepot_Defines.hpp";
 disableSerialization;
 
-playerCredits = 1000;
-_credits = playerCredits;
-
-_playerSide = str(playerSide);
 _size = 1;
 _price = 0;
 _ObjectsInArea = [];
@@ -13,7 +9,72 @@ _base_resources = "";
 _dialog = findDisplay HOMEDEPOT;
 _itemlist = _dialog displayCtrl VEHICLELIST;
 
+switch (side player) do {
+	case west: {
+		_base_resources = west_base_resources;
+		_spawn1 = west_fort_depot_mrkr;
+	};
+		
+	case east: {
+		_base_resources = east_base_resources;
+		_spawn1 = east_fort_depot_mrkr;
+	};
+	
+	case resistance: {
+		_base_resources = guer_base_resources;
+		_spawn1 = guer_fort_depot_mrkr;
+	};
+};
 
+for [{_x=0},{_x<=_size},{_x=_x+1}] do {
+	_selectedItem = lbCurSel _itemlist;
+	_vehText = _itemlist lbText _selectedItem;
+	{if(_vehText == _x select 0) then{
+		sleep 1;
+		_resourceCost = _x select 2;
+		_creditCost = _x select 3;
+		if(_creditCost > _credits) exitWith {hintsilent "You do not have enough Credits"};
+		if(_resourceCost > _base_resources) exitWith {hintsilent "You do not have enough Resources"};
+		if(_resourceCost < 1) exitWith {};
+		_ObjectsInArea0 = [(getPos _spawn1) select 0, (getPos _spawn1) select 1] nearObjects 3;
+		if (((_x select 1) isKindOf "Land")&&(count _ObjectsInArea0 <= 1)) then {
+			_purchase = "success";
+			_spawn = _spawn1;
+		} else {
+			hintsilent "There is another object or player blocking the spawn point!";
+		};
+		if (_purchase == "success") then {
+			switch (side player) do {
+				case west: {
+					west_base_resources = _base_resources - _resourceCost;
+				};
+					
+				case east: {
+					east_base_resources = _base_resources - _resourceCost;
+				};
+				
+				case resistance: {
+					guer_base_resources = _base_resources - _resourceCost;
+				};
+			};
+			playerCredits = playerCredits - _creditCost;
+			_fundsText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: %2 Resource Cost: %1</t>", _base_resources, _credits];
+			hintsilent "Item purchase successful";
+			closeDialog 0;
+			_spawnVehicle = createVehicle [(_x select 1),[getPos _spawn select 0, getPos _spawn select 1, 0],[], 0,"CAN_COLLIDE"];
+		};
+	}}forEach allFactoryVehicles;
+};
+
+
+
+
+
+
+
+
+
+/*
 hintsilent "Checking Purchase";
 closeDialog 0;
 if (_playerside == "WEST") then {
@@ -34,12 +95,13 @@ _complete_purchase = {
 	
 	_success
 };
- 
+ */
 /*
  * Spawns the given object in at the west_resc_depot_mrkr.
  * Usage: [ "Misc_Cargo1B_military" ] call _spawn_object;
  * Returns: Reference to the object
  */
+ /*
 _spawn_object = {
 	_name = _this select 1;
  
@@ -113,4 +175,4 @@ _spawn_object = {
 			
 		}}forEach allFortificationArrays;
 	};
-
+*/

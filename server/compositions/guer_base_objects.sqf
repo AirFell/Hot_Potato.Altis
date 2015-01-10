@@ -35,6 +35,10 @@ _objectName addEventHandler ["HandleDamage", {false}];
 
 _pos = getPos guer_base;
 
+//flag
+guer_flag = createVehicle ["Flag_Green_F", _pos, [], 0, "CAN_COLLIDE"];
+guer_flag setPos [(_pos select 0) + 0, (_pos select 1) - 15, 0];
+
 //Vehicle Shop
 guer_veh_shop = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
 guer_veh_shop setPos [(_pos select 0) + 30, (_pos select 1) + 10, 0];

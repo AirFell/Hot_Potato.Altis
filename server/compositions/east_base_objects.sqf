@@ -35,6 +35,10 @@ _objectName addEventHandler ["HandleDamage", {false}];
 
 _pos = getPos east_base;
 
+//flag
+east_flag = createVehicle ["Flag_Red_F", _pos, [], 0, "CAN_COLLIDE"];
+east_flag setPos [(_pos select 0) + 0, (_pos select 1) - 15, 0];
+
 
 //_________________________________VEHICLES_____________________________________________
 
