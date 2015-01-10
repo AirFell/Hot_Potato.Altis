@@ -114,11 +114,6 @@ if (isDedicated) then {
 	
 	_nul = []execVM "client\dialogs\playerHud.sqf";
 
-	
-	execVM "client\groupsMenu\initGroups.sqf";
-	player addEventHandler ["Respawn", {
-        [player] execVM "client\groupsMenu\initGroups.sqf";
-    }];
 /*
 	//USE FOR TEST ADDACTIONS
 	player addAction [
