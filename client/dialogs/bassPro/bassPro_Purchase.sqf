@@ -94,7 +94,10 @@ switch(_this select 0) do
 		{
 			player addItemToVest _x;
 		} foreach _Vitems;
+		
+	//addaction for engineer things.
 	};
+	
 	case 3: 
 	{
 		_price = 150;
