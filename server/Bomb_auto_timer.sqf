@@ -1,3 +1,5 @@
+//execVM'd by server\Bomb_Spawn.sqf
+
 diag_log "Bomb_auto_timer.sqf script started.";
 
 //_autocount = X is the time it takes to count down.

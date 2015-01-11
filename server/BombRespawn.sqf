@@ -1,3 +1,5 @@
+//execVM'd by server\Bomb_Marker.sqf
+
 /* ----------------------------------------------------------------------------------------------------
 File: vehRespawn.sqf
 Author: Iceman77

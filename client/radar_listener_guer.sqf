@@ -13,7 +13,6 @@ while {True} do {
 	"mrkGreen" setMarkerAlphaLocal 0;
 	"mrknoBlue" setMarkerAlphaLocal 0;
 	"mrknoRed" setMarkerAlphaLocal 0;
-	"mrknoGreen" setMarkerAlphaLocal 0.5;
 	"mrkMission" setMarkerAlphaLocal 0;
 	"respawn_bomb" setMarkerAlphaLocal 0;
 };

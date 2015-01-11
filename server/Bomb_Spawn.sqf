@@ -1,3 +1,5 @@
+//execVM'd by server\Base_Spawn.sqf
+
 waitUntil {Marker_Load_Complete == 1};
 diag_log "**4** Bomb_Spawn.sqf loading...";
 

@@ -1,3 +1,5 @@
+//execVM'd by server\missions\mission_init.sqf
+
 diag_log "Mission_3.sqf has started.";
 /*
 notes:

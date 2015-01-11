@@ -1,3 +1,5 @@
+//ExecVM'd by Init.sqf
+
 diag_log "**1** GlobalVars.sqf loading...";
 
 Error_pos = [10808.3,10582.9];

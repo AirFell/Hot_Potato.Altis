@@ -1,3 +1,5 @@
+//execVM'd by server\GlobalVars.sqf
+
 diag_log "**2** Base_Spawn.sqf loading...";
 
 
@@ -139,7 +141,7 @@ Base_Array = [west_base, east_base, guer_base];
 //publicVariable "Base_Array";
 
 _nul = []execVM "server\randomMarkerGen.sqf";
-_nul = []execVM "server\missions\mission_marker_gen.sqf";
+//_nul = []execVM "server\missions\mission_marker_gen.sqf";
 _nul = []execVM "server\Bomb_Spawn.sqf";
 diag_log "Base_Spawn.sqf loaded.";
 

@@ -1,3 +1,5 @@
+//execVM'd by server\missions\mission_marker_gen.sqf
+
 diag_log "Mission_init.sqf is running!";
 //starts a new mission after 15 min (900) seconds
 sleep 30;

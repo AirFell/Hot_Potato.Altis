@@ -1,3 +1,5 @@
+//execVM'd by server\GlobalVars.sqf
+
 diag_log "**?** Server_Mission_End Listener loaded.";
 
 _end_mission_loop = 0;

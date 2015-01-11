@@ -1,3 +1,5 @@
+//execVM'd by server\Base_Spawn.sqf
+
 /*SHK_pos Script by Shuko, edited for use by AirFell
 
 having issues with this script, needs to turn "mil_dot" into "empty" but the script fails when named "empty"

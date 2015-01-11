@@ -1,3 +1,5 @@
+//execVM'd by server\Base_Spawn.sqf
+
 east_enemy_detected = 0;
 
 while {True} do {
@@ -5,6 +7,7 @@ while {True} do {
 	sleep 1;
 	_list = (getPos east_base) nearEntities ["CAManBase", 250];
 	{
+		_RandomPosE = [];
 		if (_x distance east_base < 250 && side _x != east) then {
 			east_enemy_detected = 1;
 			publicVariable "east_enemy_detected";

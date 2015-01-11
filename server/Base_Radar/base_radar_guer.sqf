@@ -1,3 +1,5 @@
+//execVM'd by server\Base_Spawn.sqf
+
 guer_enemy_detected = 0;
 
 while {True} do {
@@ -5,6 +7,7 @@ while {True} do {
 	sleep 1;
 	_list = (getPos guer_base) nearEntities ["CAManBase", 250];
 	{
+		_RandomPosG = [];
 		if (_x distance guer_base < 250 && side _x != resistance) then {
 			guer_enemy_detected = 1;
 			publicVariable "guer_enemy_detected";

@@ -1,3 +1,5 @@
+//execVM'd by server\Bomb_Spawn.sqf
+
 diag_log "**5** loading bomb marker...";
 
 
