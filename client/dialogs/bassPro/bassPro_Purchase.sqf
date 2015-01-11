@@ -71,18 +71,18 @@ switch(_this select 0) do
 			case west: {
 				player addUniform "U_B_CombatUniform_mcam_vest";
 				player addVest "V_Chestrig_rgr";
-				player addHeadgear "H_HelmetB_desert";
+				player addHeadgear "H_HelmetB_desert";//only engy wears this
 			};
 				
 			case east: {
 				player addUniform "U_O_CombatUniform_ocamo";
-				player addVest "V_HarnessO_brn";
+				player addVest "V_HarnessO_brn";//only engy wears this
 				player addHeadgear "H_HelmetO_ocamo";
 			};
 			
 			case resistance: {
 				player addUniform "U_I_CombatUniform";
-				player addVest "V_PlateCarrierIA1_dgtl";
+				player addVest "V_PlateCarrierIA1_dgtl";//only engy wears this
 				player addHeadgear "H_HelmetIA";
 			};
 		};
