@@ -5,7 +5,7 @@ Sanguine
 #include "bassPro_Defines.hpp";
 disableSerialization;
 
-//Grab control of display elements
+Grab control of display elements
 _Dialog = findDisplay BASSPRO;
 _button1 = _Dialog displayCtrl BUTTON1;
 _button2 = _Dialog displayCtrl BUTTON2;
@@ -33,7 +33,7 @@ switch(_this select 0) do
 		lbClear _vehlist;
 		_vehlist lbSetCurSel -1;
 		_vehArray = call crateArray_Ammo;
-		{
+					{
 			_vehClass = _x select 1;
 	
 			if (1<2) then
@@ -42,9 +42,9 @@ switch(_this select 0) do
 		
 				if (2>1) then
 				{
-					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
 					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
-					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
 					_vehlist lbSetData [_vehlistIndex, _vehClass];
 				};
 			};
@@ -55,7 +55,7 @@ switch(_this select 0) do
 		lbClear _vehlist;
 		_vehlist lbSetCurSel -1;
 		_vehArray = call crateArray_Basic;
-		{
+			{
 			_vehClass = _x select 1;
 	
 			if (1<2) then
@@ -64,20 +64,20 @@ switch(_this select 0) do
 		
 				if (2>1) then
 				{
-					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
 					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
-					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
 					_vehlist lbSetData [_vehlistIndex, _vehClass];
 				};
 			};
-		} forEach _vehArray;	
+		} forEach _vehArray;		
 	};
 	case 3: 
 	{
 		lbClear _vehlist;
 		_vehlist lbSetCurSel -1;
 		_vehArray = call crateArray_Support;
-		{
+			{
 			_vehClass = _x select 1;
 	
 			if (1<2) then
@@ -86,20 +86,20 @@ switch(_this select 0) do
 		
 				if (2>1) then
 				{
-					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
 					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
-					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
 					_vehlist lbSetData [_vehlistIndex, _vehClass];
 				};
 			};
-		} forEach _vehArray;	
+		} forEach _vehArray;		
 	};
 	case 4: 
 	{
 		lbClear _vehlist;
 		_vehlist lbSetCurSel -1;
 		_vehArray = call crateArray_Supplies;
-		{
+			{
 			_vehClass = _x select 1;
 	
 			if (1<2) then
@@ -108,20 +108,20 @@ switch(_this select 0) do
 		
 				if (2>1) then
 				{
-					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
 					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
-					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
 					_vehlist lbSetData [_vehlistIndex, _vehClass];
 				};
 			};
-		} forEach _vehArray;	
+		} forEach _vehArray;		
 	};
 	case 5: 
 	{
 		lbClear _vehlist;
 		_vehlist lbSetCurSel -1;
 		_vehArray = call crateArray_Special;
-		{
+			{
 			_vehClass = _x select 1;
 	
 			if (1<2) then
@@ -130,20 +130,20 @@ switch(_this select 0) do
 		
 				if (2>1) then
 				{
-					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
 					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
-					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
 					_vehlist lbSetData [_vehlistIndex, _vehClass];
 				};
 			};
-		} forEach _vehArray;	
+		} forEach _vehArray;		
 	};
 	case 6: 
 	{
 		lbClear _vehlist;
 		_vehlist lbSetCurSel -1;
 		_vehArray = call crateArray_Explosives;
-		{
+					{
 			_vehClass = _x select 1;
 	
 			if (1<2) then
@@ -152,20 +152,20 @@ switch(_this select 0) do
 		
 				if (2>1) then
 				{
-					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
 					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
-					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
 					_vehlist lbSetData [_vehlistIndex, _vehClass];
 				};
 			};
-		} forEach _vehArray;	
+		} forEach _vehArray;
 	};
 	case 7: 
 	{
 		lbClear _vehlist;
 		_vehlist lbSetCurSel -1;
 		_vehArray = call crateArray_Launchers;
-		{
+					{
 			_vehClass = _x select 1;
 	
 			if (1<2) then
@@ -174,20 +174,20 @@ switch(_this select 0) do
 		
 				if (2>1) then
 				{
-					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
 					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
-					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
 					_vehlist lbSetData [_vehlistIndex, _vehClass];
 				};
 			};
-		} forEach _vehArray;	
+		} forEach _vehArray;
 	};
 	case 8: 
 	{
 		lbClear _vehlist;
 		_vehlist lbSetCurSel -1;
 		_vehArray = call crateArray_LargeCache;
-		{
+					{
 			_vehClass = _x select 1;
 	
 			if (1<2) then
@@ -196,13 +196,13 @@ switch(_this select 0) do
 		
 				if (2>1) then
 				{
-					//_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
+					_vehPicture = getText (configFile >> "CfgVehicles" >> _vehClass >> "picture");
 					_vehlistIndex = _vehlist lbAdd format ["%1", _x select 0];
-					//_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
+					_vehlist lbSetPicture [_vehlistIndex, _vehPicture];
 					_vehlist lbSetData [_vehlistIndex, _vehClass];
 				};
 			};
-		} forEach _vehArray;	
+		} forEach _vehArray;
 	};
 	case 9: 
 	{	
@@ -338,4 +338,5 @@ switch(_this select 0) do
 		ctrlShow [COSTTEXT, true];
 		_costText ctrlSetStructuredText parseText format["<t size='0.75'>Credit Cost: 125</t>"];
 	};
+
 };
