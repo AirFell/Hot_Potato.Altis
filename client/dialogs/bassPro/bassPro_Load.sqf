@@ -1,10 +1,22 @@
 #include "bassPro_Defines.hpp";
 disableSerialization;
 	
+	playerCredits = 10000;
+	west_base_resources = 10000;
+	east_base_resources = 10000;
+	guer_base_resources = 10000;
+	
+	
+	
 _factoryDiag = createdialog "bassPro_Dialog";
 
 _Dialog = findDisplay BASSPRO;
 _fundsText = _Dialog displayCtrl FUNDSTEXT;
+_button2 = _Dialog displayCtrl BUTTON2;
+_button4 = _Dialog displayCtrl BUTTON4;
+_button6 = _Dialog displayCtrl BUTTON6;
+_button8 = _Dialog displayCtrl BUTTON8;
+
 
 _resourceCost = 0;
 _creditCost = 0;
@@ -23,11 +35,14 @@ _base_resources = "";
 
 ctrlShow [VEHICLELIST, false];
 ctrlShow [COSTTEXT, false];
-ctrlShow [PURCHASEBUTTON, false];
 ctrlShow [BUTTON1, false];
+_button2 buttonSetAction "";
 ctrlShow [BUTTON3, false];
+_button4 buttonSetAction "";
 ctrlShow [BUTTON5, false];
+_button6 buttonSetAction "";
 ctrlShow [BUTTON7, false];
+_button8 buttonSetAction "";
 ctrlShow [BUTTON9, false];
 
 

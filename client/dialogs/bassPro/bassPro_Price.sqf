@@ -20,7 +20,6 @@ _vehText = _dialog displayCtrl COSTTEXT;
 _itemIndex = lbCurSel _vehlist;
 _itemText = _vehlist lbText _itemIndex;
 _itemData = _vehlist lbData _itemIndex;
-ctrlShow [PURCHASEBUTTON, true];
 ctrlShow [COSTTEXT, true];
 
 {	
