@@ -139,6 +139,8 @@ publicVariable "guer_fort_depot_mrkr";
 guer_fort_depot_mrkr addEventHandler ["HandleDamage", {false}];
 guer_fort_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
 
+/*
+
 //Resource Deposit Control
 guer_resc_depot_ctrl = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
 guer_resc_depot_ctrl setPos [(_pos select 0) - 28, (_pos select 1) + 27, 0];
@@ -159,3 +161,5 @@ guer_resc_depot_mrkr setVehicleVarName "guer_resc_depot_mrkr";
 publicVariable "guer_resc_depot_mrkr";
 guer_resc_depot_mrkr addEventHandler ["HandleDamage", {false}];
 guer_resc_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
+
+*/

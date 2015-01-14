@@ -1,13 +1,6 @@
 #include "bassPro_Defines.hpp";
 disableSerialization;
 	
-	playerCredits = 10000;
-	west_base_resources = 10000;
-	east_base_resources = 10000;
-	guer_base_resources = 10000;
-	
-	
-	
 _factoryDiag = createdialog "bassPro_Dialog";
 
 _Dialog = findDisplay BASSPRO;

@@ -340,7 +340,7 @@ switch(_this select 0) do
 		_nul = switch (side player) do {
 //SPECIAL 1
 			case west: {
-				player addUniform "U_BG_Guerilla2_1";
+				player addUniform "U_BG_Guerilla2_3";
 				player addVest "V_TacVest_blk";
 				player addHeadgear "H_Bandanna_khk";
 			};

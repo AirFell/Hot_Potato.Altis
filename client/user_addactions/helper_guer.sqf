@@ -1,4 +1,6 @@
 //guer_resc_depot_ctrl
+
+/*
 addMissionEventHandler ["Draw3D", {
 	if (player distance guer_resc_depot_ctrl < 75) then {
 		_currentDistance = player distance guer_resc_depot_ctrl;
@@ -7,6 +9,7 @@ addMissionEventHandler ["Draw3D", {
 		drawIcon3D ["\A3\ui_f\data\map\groupicons\selector_selectable_ca.paa", [0.825,0.825,0.825,_fadeValue], [(getPos guer_resc_depot_ctrl select 0), (getPos guer_resc_depot_ctrl select 1), 1], 1, 1, 0, "Resource Depot", 0.9, 0.035, "puristaLight"];
 	};
 }];
+*/
 
 //guer_inf_shop
 addMissionEventHandler ["Draw3D", {

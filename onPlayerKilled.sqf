@@ -23,7 +23,6 @@ _nul = switch (side player) do {
 		"mrkBlue" setMarkerAlphaLocal 0;
 		"mrkRed" setMarkerAlphaLocal 0;
 		"mrkGreen" setMarkerAlphaLocal 0;
-		"mrknoBlue" setMarkerAlphaLocal 0.5;
 		"mrknoRed" setMarkerAlphaLocal 0;
 		"mrknoGreen" setMarkerAlphaLocal 0;
 		"mrkMission" setMarkerAlphaLocal 0;
@@ -36,7 +35,6 @@ _nul = switch (side player) do {
 		"mrkRed" setMarkerAlphaLocal 0;
 		"mrkGreen" setMarkerAlphaLocal 0;
 		"mrknoBlue" setMarkerAlphaLocal 0;
-		"mrknoRed" setMarkerAlphaLocal 0.5;
 		"mrknoGreen" setMarkerAlphaLocal 0;
 		"mrkMission" setMarkerAlphaLocal 0;
 		"respawn_bomb" setMarkerAlphaLocal 0;
@@ -49,7 +47,6 @@ _nul = switch (side player) do {
 		"mrkGreen" setMarkerAlphaLocal 0;
 		"mrknoBlue" setMarkerAlphaLocal 0;
 		"mrknoRed" setMarkerAlphaLocal 0;
-		"mrknoGreen" setMarkerAlphaLocal 0.5;
 		"mrkMission" setMarkerAlphaLocal 0;
 		"respawn_bomb" setMarkerAlphaLocal 0;
 		_nul = []execVM "client\user_addactions\base_guer_addactions.sqf";

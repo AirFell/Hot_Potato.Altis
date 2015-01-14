@@ -1,6 +1,8 @@
 ////////////////////////////////////////
 ////////////Resource Depot//////////////
 ////////////////////////////////////////
+
+/*
 player addAction [
 	("<t color=""#FFFFFF"">" + ("Resource Deposit") + "</t>"), {
 //Make a list of the barrels within the radius of the marker.
@@ -28,13 +30,15 @@ player addAction [
 	},
 	nil, 0.5, True, True, "", "(player distance east_resc_depot_ctrl) < 3"
 ];
+
+*/
+
 ////////////////////////////////////////
 ////////////Infantry Store//////////////
 ////////////////////////////////////////
 player addAction [
-	("<t color=""#FFFFFF"">" + ("Weapon/Gear Store") + "</t>"), {
-		createVehicle ["Box_East_Wps_F", getPos east_inf_depot_mrkr, [], 0, "NONE"];
-	},
+	("<t color=""#FFFFFF"">" + ("Weapon/Gear Store") + "</t>"),
+	"client\dialogs\bassPro\bassPro_Load.sqf",
 	nil, 0.5, True, True, "", "(player distance east_inf_shop) < 3"
 ];
 ////////////////////////////////////////

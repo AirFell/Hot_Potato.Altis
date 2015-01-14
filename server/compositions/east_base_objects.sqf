@@ -152,6 +152,8 @@ east_fort_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
 
 //_________________________________RESOURCES_____________________________________________
 
+/*
+
 //Resource Deposit Control
 east_resc_depot_ctrl = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
 east_resc_depot_ctrl setPos [(_pos select 0) - 28, (_pos select 1) + 27, 0];
@@ -172,3 +174,5 @@ east_resc_depot_mrkr setVehicleVarName "east_resc_depot_mrkr";
 publicVariable "east_resc_depot_mrkr";
 east_resc_depot_mrkr addEventHandler ["HandleDamage", {false}];
 east_resc_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
+
+*/

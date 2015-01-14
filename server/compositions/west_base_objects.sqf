@@ -139,6 +139,8 @@ publicVariable "west_fort_depot_mrkr";
 west_fort_depot_mrkr addEventHandler ["HandleDamage", {false}];
 west_fort_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
 
+/*
+
 //Resource Deposit Control
 west_resc_depot_ctrl = createVehicle ["Land_InfoStand_V2_F", _pos, [], 0, "CAN_COLLIDE"];
 west_resc_depot_ctrl setPos [(_pos select 0) - 28, (_pos select 1) + 27, 0];
@@ -159,3 +161,5 @@ west_resc_depot_mrkr setVehicleVarName "west_resc_depot_mrkr";
 publicVariable "west_resc_depot_mrkr";
 west_resc_depot_mrkr addEventHandler ["HandleDamage", {false}];
 west_resc_depot_mrkr setVariable ["R3F_LOG_disabled", true,true];
+
+*/

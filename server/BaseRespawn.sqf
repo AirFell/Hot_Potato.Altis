@@ -35,7 +35,8 @@ diag_log "BaseRespawn.sqf loaded.";
 					publicVariable "west_veh_shop_spawn4";
 					west_veh_shop_spawn5 setVehicleVarName "";
 					publicVariable "west_veh_shop_spawn5";
-					west_base_resources = 0;
+					west_base_resources = west_base_resources * 0.25;
+					west_base_resources = round west_base_resources;
 					publicVariable "west_base_resources";
 					sleep 5;
 					
@@ -112,7 +113,8 @@ diag_log "BaseRespawn.sqf loaded.";
 					publicVariable "east_veh_shop_spawn4";
 					east_veh_shop_spawn5 setVehicleVarName "";
 					publicVariable "east_veh_shop_spawn5";
-					east_base_resources = 0;
+					east_base_resources = east_base_resources * 0.25;
+					east_base_resources = round east_base_resources;
 					publicVariable "east_base_resources";
 					sleep 5;
 					
@@ -189,7 +191,8 @@ diag_log "BaseRespawn.sqf loaded.";
 					publicVariable "guer_veh_shop_spawn4";
 					guer_veh_shop_spawn5 setVehicleVarName "";
 					publicVariable "guer_veh_shop_spawn5";
-					guer_base_resources = 0;
+					guer_base_resources = guer_base_resources * 0.25;
+					guer_base_resources = round guer_base_resources;
 					publicVariable "guer_base_resources";
 					sleep 5;
 					
